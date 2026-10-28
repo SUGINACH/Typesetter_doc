@@ -1,0 +1,1004 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3.5-flash",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": true,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": true,
+    "googleSearch": {
+    },
+    "thinkingLevel": "THINKING_MEDIUM",
+    "enableImageSearch": false,
+    "enableGoogleMaps": false,
+    "enableAgentThinkingSummariesControl": false,
+    "enableAgentVisualizationControl": false,
+    "enableAgentCollaborativePlanningControl": false,
+    "environmentMode": "new"
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveDocument": {
+        "id": "1EVBDmlHQSZzN5NNkgeOoM9IbssiEKH4s"
+      },
+      "role": "user",
+      "tokenCount": 4468,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1IbCiasi2uKzqXBNEuxfVRKcnEnRQNS2t"
+      },
+      "role": "user",
+      "tokenCount": 8193,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1aNNf45kbibykB8HL2sW8Sc1iYvvqnm3o"
+      },
+      "role": "user",
+      "tokenCount": 7312,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1I_vsFS-6UHSCNKk0FeCZ3CxnoSpiV0Uh"
+      },
+      "role": "user",
+      "tokenCount": 24301,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1M01q7yenSDJ7Ak_VlXY_wH1RD2p2mgJP"
+      },
+      "role": "user",
+      "tokenCount": 17113,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "14IKBTPUk3xWGPY8M6P2K7vMl4p0b3iLD"
+      },
+      "role": "user",
+      "tokenCount": 15412,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1yxsfoIsk1TK7hIRNV1UXXcgH-lbnQn4o"
+      },
+      "role": "user",
+      "tokenCount": 9428,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "14Ve6yTX3qSZjM_RYNqLBtrK0kZdBKW-h"
+      },
+      "role": "user",
+      "tokenCount": 21354,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1sdgufJ786TR23weVhT621TwxbkyDadZR"
+      },
+      "role": "user",
+      "tokenCount": 17970,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1TlRKTZWJ3MxAcheXfeQ1ePyfbMZex_yi"
+      },
+      "role": "user",
+      "tokenCount": 19320,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1wSRX9-ODg2FV3nTnoAnry4Af5evDdBp3"
+      },
+      "role": "user",
+      "tokenCount": 28123,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1QofjaemrxgkaQ_9Nhkj1_jZcaskOx2qb"
+      },
+      "role": "user",
+      "tokenCount": 25694,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1iVIpys1SIoHn1hizV9EjF4ND-jKl_k3n"
+      },
+      "role": "user",
+      "tokenCount": 52511,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1IO2SfKwbE6_lRKirduKSqA2D-64YtlRM"
+      },
+      "role": "user",
+      "tokenCount": 28485,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1DmwT8AI4ukIeVkpKPYP2k5Ax-ML7w7ni"
+      },
+      "role": "user",
+      "tokenCount": 29132,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1z3CSWoHb0nxj2-wXvLeHjwx7Y7LlxCVp"
+      },
+      "role": "user",
+      "tokenCount": 22700,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1EuTc85HjARaQ3mq0WvRve12CXpX7D8f5"
+      },
+      "role": "user",
+      "tokenCount": 2732,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "12DImGPqumHEtrko9yU1XAfQzyG-DO2Ns"
+      },
+      "role": "user",
+      "tokenCount": 42025,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1ANMZmdkJQji_sbcZCRxujDN2Vl54kC2q"
+      },
+      "role": "user",
+      "tokenCount": 3440,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1NrQ9JhdiEnsLizhaUbNYPGxX5-noRePd"
+      },
+      "role": "user",
+      "tokenCount": 5930,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1pYAGasmTFqX8EcpfURwDdJ49I40dwPcT"
+      },
+      "role": "user",
+      "tokenCount": 28160,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1bb7ifW97R1ZWCrwD-GwmcMV7ACR5AZ_9"
+      },
+      "role": "user",
+      "tokenCount": 28279,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1PBG_JZOWQJdF6fJBNCbapX6w9TVIm6-d"
+      },
+      "role": "user",
+      "tokenCount": 40605,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "driveDocument": {
+        "id": "1FtC6c6-bLloldZXMzpBvfwZ5CfS2iO5h"
+      },
+      "role": "user",
+      "tokenCount": 4205,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "text": "יש כאן כמה קבצים עם שמות לא מזוהים, תוכל לערוך רשימה של הקבצים עם הצעה לשם מבהיר ומסכם, (ואולי תקדם אצלכם שלחיצה על הורדה תוריד קובץ עם שם לא גנרי)",
+      "role": "user",
+      "tokenCount": 67,
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "text": "**Analyzing the Documents**\n\nI\u0027m currently focused on dissecting the provided HTML documents to understand the structure of this Hebrew \"Solar and Storage Calculator.\" My primary concern is the potential issue the user mentioned, which I need to identify. I am now looking at the individual files to see how they fit together.\n\n\n**Renaming the Files**\n\nI am now focusing on the generic filenames, and I feel renaming them would be beneficial. I\u0027ve compiled a list of descriptive suggested names based on the content of each file, considering the \"Download\" functionality should create non-generic names as well. I\u0027m now delving into each chunk of the HTML for better identification.\n\n\n**Differentiating Calculator Versions**\n\nI\u0027m now carefully differentiating between the calculator versions. I\u0027ve pinpointed key variations: the step-by-step UI, classic scroll-based layout, and advanced versions with SVG charts. I\u0027m also cataloging the presence or absence of battery simulation cubes, the Excel export functionality, and zmanim calculations to fully grasp the nuances.\n\n\n**Cataloging The Features**\n\nI\u0027m now cataloging the diverse features. File 9 is a very advanced 3-step system with AstroEngine, while file 10 is for PDF output (dynamic inputs and all). I\u0027m seeing similar things in File 12. File 11 is the step-by-step with customer metadata. Lastly, File 13 shows a peak/offpeak split.\n\n\n**Identifying the Details**\n\nI\u0027m now zeroing in on the specifics of each file to understand their functionality. File 14 handles PDF printing with financial model cards, while File 15 is a step-by-step classic scroll with battery simulations. File 17 explains the Excel export engine\u0027s design. File 18 offers a Financial Report template, and File 19 is a stand-alone calculator.\n\n\n**Comparing the Files**\n\nI\u0027m now focused on directly comparing the files to each other, so I can start to understand them more easily. I\u0027ve found there are 20 different HTML files in total. I\u0027m focusing on their `\u003ctitle\u003e` tags and headers to help me properly identify them. I have the files that are titled \"Data Flow Map - Solar and Storage Calculator\", \"Extended Technical Specification — 3-Layer Architecture\", \"Consumption Enrichment Engine Specification — Bereshit Solar\" so far.\n\n\n**Translating and Categorizing**\n\nI\u0027m now diving into the Hebrew file titles, translating them to English for a clearer understanding. I\u0027ve begun categorizing them based on their identified purpose. This will enable proper mapping of these files to the English translations. I\u0027m focusing on the descriptions to ensure accurate file suggestions.\n\n\n**Organizing the File List**\n\nI\u0027m now generating a table to organize all 20 files, including clear English titles and suggested filenames for each. I\u0027m also addressing the user\u0027s feedback, focusing on a dynamic filename scheme upon download. I\u0027m exploring how to retrieve client data (metadata or URL parameters) to customize the exported filenames from \"דוח סופי\" into something more customer-specific.\n\n\n**Structuring the Response**\n\nI\u0027m now drafting the response in Hebrew, systematically grouping the 20 files. I\u0027ve begun with categorizing the files, as specs/architecture, calculators/engines, document/proposal generators, UI components, and comparisons/analyses. Each file is then being listed with its original Hebrew title, a brief description, and a proposed, clear English filename. I\u0027m focusing on clarifying how dynamic download naming works with Excel exports, and how it will provide meaningful filenames.\n\n\n",
+      "role": "model",
+      "tokenCount": 2550,
+      "isThought": true,
+      "parts": [{
+        "text": "**Analyzing the Documents**\n\nI\u0027m currently focused on dissecting the provided HTML documents to understand the structure of this Hebrew \"Solar and Storage Calculator.\" My primary concern is the potential issue the user mentioned, which I need to identify. I am now looking at the individual files to see how they fit together.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Renaming the Files**\n\nI am now focusing on the generic filenames, and I feel renaming them would be beneficial. I\u0027ve compiled a list of descriptive suggested names based on the content of each file, considering the \"Download\" functionality should create non-generic names as well. I\u0027m now delving into each chunk of the HTML for better identification.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Differentiating Calculator Versions**\n\nI\u0027m now carefully differentiating between the calculator versions. I\u0027ve pinpointed key variations: the step-by-step UI, classic scroll-based layout, and advanced versions with SVG charts. I\u0027m also cataloging the presence or absence of battery simulation cubes, the Excel export functionality, and zmanim calculations to fully grasp the nuances.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Cataloging The Features**\n\nI\u0027m now cataloging the diverse features. File 9 is a very advanced 3-step system with AstroEngine, while file 10 is for PDF output (dynamic inputs and all). I\u0027m seeing similar things in File 12. File 11 is the step-by-step with customer metadata. Lastly, File 13 shows a peak/offpeak split.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Identifying the Details**\n\nI\u0027m now zeroing in on the specifics of each file to understand their functionality. File 14 handles PDF printing with financial model cards, while File 15 is a step-by-step classic scroll with battery simulations. File 17 explains the Excel export engine\u0027s design. File 18 offers a Financial Report template, and File 19 is a stand-alone calculator.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Comparing the Files**\n\nI\u0027m now focused on directly comparing the files to each other, so I can start to understand them more easily. I\u0027ve found there are 20 different HTML files in total. I\u0027m focusing on their `\u003ctitle\u003e` tags and headers to help me properly identify them. I have the files that are titled \"Data Flow Map - Solar and Storage Calculator\", \"Extended Technical Specification — 3-Layer Architecture\", \"Consumption Enrichment Engine Specification — Bereshit Solar\" so far.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Translating and Categorizing**\n\nI\u0027m now diving into the Hebrew file titles, translating them to English for a clearer understanding. I\u0027ve begun categorizing them based on their identified purpose. This will enable proper mapping of these files to the English translations. I\u0027m focusing on the descriptions to ensure accurate file suggestions.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the File List**\n\nI\u0027m now generating a table to organize all 20 files, including clear English titles and suggested filenames for each. I\u0027m also addressing the user\u0027s feedback, focusing on a dynamic filename scheme upon download. I\u0027m exploring how to retrieve client data (metadata or URL parameters) to customize the exported filenames from \"דוח סופי\" into something more customer-specific.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Response**\n\nI\u0027m now drafting the response in Hebrew, systematically grouping the 20 files. I\u0027ve begun with categorizing the files, as specs/architecture, calculators/engines, document/proposal generators, UI components, and comparisons/analyses. Each file is then being listed with its original Hebrew title, a brief description, and a proposed, clear English filename. I\u0027m focusing on clarifying how dynamic download naming works with Excel exports, and how it will provide meaningful filenames.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-21T10:52:44.020Z"
+    }, {
+      "text": "להלן רשימה מפורטת וממוינת של 20 הקבצים שהעלית, המחולקים לפי קטגוריות מקצועיות ברורות. לכל קובץ מצורף תיאור של תפקידו במערכת, יחד עם הצעה לשם קובץ קריא ומסודר (באנגלית ובעברית) שימנע בלבול בעתיד.\n\nבסוף הרשימה תמצא התייחסות והצעת קוד קונקרטית לפתרון סוגיית הורדת הקבצים עם שמות דינמיים ולא גנריים.\n\n---\n\n### קבוצה א\u0027: מסמכי אפיון וארכיטקטורה (System Specs)\nמסמכים אלו מפרטים את הלוגיקה, זרימת המידע והארכיטקטורה שמאחורי המערכת.\n\n| # | כותרת מקורית בקובץ | תפקיד הקובץ במערכת | שם קובץ מומלץ (אנגלית) | שם קובץ מומלץ (עברית) |\n| :--- | :--- | :--- | :--- | :--- |\n| **1** | מפת זרימת נתונים (Data Flow) - המערכת המושלמת | תרשים זרימת הנתונים במערכת, משתנים, תלויות ומנגנוני חלופות (Fallbacks). | `spec_01_data_flow_map.html` | `אפיון_01_מפת_זרימת_נתונים.html` |\n| **2** | אפיון טכני מורחב — ארכיטקטורת 3 השכבות | פירוט מבנה הקוד (פיזיקה, פיננסים וממשק משתמש) ומיפוי העמודות בטבלאות. | `spec_02_three_layer_architecture.html` | `אפיון_02_ארכיטקטורת_שלוש_השכבות.html` |\n| **3** | אפיון מנוע העשרת נתוני צריכה | אפיון ה-Pipeline של הצריכה: סוגי נכסים, תיקון אנומליות שבת (גנרטור) ופקטור גדילה. | `spec_03_consumption_enrichment.html` | `אפיון_03_מנוע_העשרת_צריכה.html` |\n| **17** | מנוע ייצוא אקסל - מבנה דליל | אפיון מתמטי של מבנה הייצוא הדליל (Sparse) המונע קריסות דפדפן במיזוגי תאים מרובים. | `spec_04_sparse_excel_export.html` | `אפיון_04_מבנה_דליל_לייצוא_אקסל.html` |\n\n---\n\n### קבוצה ב\u0027: מחשבונים ומנועי סימולציה אינטראקטיביים (Calculators \u0026 Simulators)\nדפי ממשק המשתמש (UI) והמנועים הפיזיקליים/כלכליים שמבצעים את החישובים בפועל.\n\n| # | כותרת מקורית בקובץ | תפקיד הקובץ במערכת | שם קובץ מומלץ (אנגלית) | שם קובץ מומלץ (עברית) |\n| :--- | :--- | :--- | :--- | :--- |\n| **4** | מערכת ניתוח תעו\"ז ואגירה סולארית | מחשבון שלבים (SPA) מתקדם: שלב 1 (פענוח CSV), שלב 2 (הנדסה), שלב 3 (פיננסים וייצוא). | `app_solar_storage_spa.html` | `מחשבון_סולאר_ואגירה_שלבים.html` |\n| **5** | מחשבון כדאיות, אגירה וניתוח צריכה (CSV) | המחשבון המונוליטי המקורי (Long Scroll) לניתוח מהיר בעמוד יחיד. | `app_solar_storage_classic.html` | `מחשבון_סולאר_ואגירה_קלאסי.html` |\n| **6** | מחשבון כדאיות, אגירה וניתוח צריכה (CSV) | מחשבון המשלב סימולציות אגירה מתקדמות וגרפי SVG אינטראקטיביים להמחשת תפוקה שולית. | `app_storage_simulation_charts.html` | `מחשבון_אגירה_וסימולציית_גרפים.html` |\n| **7** | מחשבון כדאיות, אגירה וניתוח צריכה (CSV) | גרסה אינטראקטיבית המציגה את סימולציית 20 קוביות האגירה להמחשת כדאיות נפחי סוללות שונים. | `app_battery_cube_simulation.html` | `מחשבון_סימולציית_קוביות_אגירה.html` |\n| **8** | מחשבון כדאיות, אגירה וניתוח צריכה (CSV) | מחשבון המכיל ייצוא מלא ל-ExcelJS של 8,760 שורות עם תאריכים עבריים וזמני שקיעה. | `app_solar_storage_zmanim_export.html` | `מחשבון_ייצוא_אקסל_וזמני_שקיעה.html` |\n| **9** | מערכת תעו\"ז, סימולציית אגירה ותכנון מערכות סולאריות | הגרסה האדפטיבית המלאה של המערכת המשלבת את כלל מנועי הנירמול, הסינתזה, ואופטימיזציית האגירה. | `app_full_solar_dispatch_optimizer.html` | `מערכת_אופטימיזציית_אגירה_מלאה.html` |\n| **11** | מחשבון כדאיות, אגירה וניתוח צריכה (CSV) | מחשבון קלאסי הכולל את תצוגת קוביות האגירה ללא הגרפים המורכבים (גרסה קלת משקל). | `app_battery_cube_lightweight.html` | `מחשבון_אגירה_מרוכז_ללא_גרפים.html` |\n| **15** | מחשבון כדאיות, אגירה וניתוח צריכה (CSV) | מחשבון המשלב את מנוע חישוב התפוקה המשוערת לפי טווחי תאריכים מוגדרים. | `app_yield_range_simulator.html` | `מחשבון_סימולציית_תפוקה_עונתית.html` |\n| **19** | מחשבון כדאיות, אגירה וניתוח צריכה (CSV) | גרסה בסיסית מונוליטית המיועדת להרצה עצמאית מהירה (Stand-alone). | `app_solar_calc_standalone.html` | `מחשבון_סולארי_בסיסי.html` |\n\n---\n\n### קבוצה ג\u0027: מחוללי מסמכים והצעות מחיר (Document \u0026 Proposal Generators)\nדפים המעוצבים להדפסת הצעות מחיר ללקוח (A4) בצורה נקייה או הפקת דוחות פיננסיים מעוצבים.\n\n| # | כותרת מקורית בקובץ | תפקיד הקובץ במערכת | שם קובץ מומלץ (אנגלית) | שם קובץ מומלץ (עברית) |\n| :--- | :--- | :--- | :--- | :--- |\n| **10** | הדפסת הצעת מחיר - בראשית סולאר | מחולל הצעות המחיר להדפסה בפורמט PDF (A4) כולל הזנת פרטים ידנית ואינטגרציות. | `pdf_proposal_generator_full.html` | `מחולל_הצעות_מחיר_מלא.html` |\n| **12** | הדפסת הצעת מחיר - בראשית סולאר | גרסת ההצעה המשלבת גרפי זרימה פיננסיים (עוגה ותזרים) בתוך מסמך ה-PDF. | `pdf_proposal_with_charts.html` | `מחולל_הצעת_מחיר_משולב_גרפים.html` |\n| **14** | הדפסת הצעת מחיר - בראשית סולאר | גרסת הדפסה ממוקדת המכילה את כרטיסי ה-KPI הפיננסיים הייעודיים וטבלת תזרים קומפקטית. | `pdf_proposal_financial_compact.html` | `מחולל_הצעת_מחיר_כלכלי_קומפקטי.html` |\n| **16** | הדפסת הצעת מחיר - בראשית סולאר | מחולל ההצעות בגרסה הבסיסית ביותר (ללא אינטגרציות או גרפים כבדים). | `pdf_proposal_lightweight.html` | `מחולל_הצעת_מחיר_בסיסי.html` |\n| **18** | דוח פיננסי - מערכת סולארית | תבנית דוח פיננסי מעוצבת באמצעות Tailwind CSS, הכוללת דיאגרמות תזרים חזוי ל-25 שנה. | `report_financial_dashboard.html` | `תבנית_דוח_כלכלי_מעוצב.html` |\n\n---\n\n### קבוצה ד\u0027: רכיבי תצוגה ייעודיים והשוואות (UI Components \u0026 Analysis)\nרכיבי תצוגה ספציפיים וקובצי השוואה בין הגרסאות השונות.\n\n| # | כותרת מקורית בקובץ | תפקיד הקובץ במערכת | שם קובץ מומלץ (אנגלית) | שם קובץ מומלץ (עברית) |\n| :--- | :--- | :--- | :--- | :--- |\n| **13** | טבלת צריכה עם פיצול פסגה/שפל | רכיב תצוגה ויזואלי של טבלה עם פיצול שורות צריכה יומית ועונתית (השכבה האנרגטית). | `ui_energetic_layer_split_table.html` | `רכיב_טבלת_צריכה_מפוצלת.html` |\n| **20** | ניתוח והשוואת מחשבוני סולאר ואגירה | דף סיכום המשווה בין קובצי המחשבון השונים ומציע מתווה אינטגרציה ביניהם. | `dev_calculators_comparison.html` | `השוואה_וניתוח_גרסאות_מחשבון.html` |\n\n---\n\n### הצעת פיתוח: פתרון קבוע להורדת קבצים עם שמות דינמיים ולא גנריים\nהצעתך לשנות את שמות הקבצים המורדים במערכת (כמו קובצי ה-XLSX או ה-CSV) משמות גנריים לשמות דינמיים מבוססי לקוח היא נכונה הנדסית ומקצועית מאוד.\n\nכדי ליישם זאת במחשבונים, אנו יכולים לדלות את שם הלקוח (מתוך פרטי ה-CRM, ה-URL או מפענוח ה-metadata של קובץ ה-CSV הגולמי) ולשלב אותו בשם הקובץ המורד.\n\n#### דוגמת קוד לשינוי דינמי (עבור ExcelJS / XLSX):\n\nבמקום הקוד הגנרי הקיים בחלק מהמחשבונים:\n```javascript\nXLSX.writeFile(wb, \u0027דוח_סופי.xlsx\u0027);\n```\n\nנחליף אותו בלוגיקה הבאה הבוחנת אם קיים שם לקוח:\n```javascript\n// חילוץ דינמי של שם הלקוח או שימוש בברירת מחדל\nconst clientName \u003d document.getElementById(\u0027md_name\u0027)?.innerText.trim() !\u003d\u003d \"-\" \n    ? document.getElementById(\u0027md_name\u0027).innerText.trim() \n    : \"לקוח_כללי\";\n\n// המרת תווים לא חוקיים בשמות קבצים לתו קו תחתון\nconst safeClientName \u003d clientName.replace(/[\\/\\\\?%*:|\"\u003c\u003e]/g, \u0027_\u0027);\n\n// הורדת הקובץ עם שם דינמי ומזהה זמן ייחודי למניעת דריסה\nconst dateStamp \u003d new Date().toISOString().slice(0,10); // YYYY-MM-DD\nXLSX.writeFile(wb, `אנליזת_תעוז_ואגירה_${safeClientName}_${dateStamp}.xlsx`);\n```\n\nשינוי פשוט זה יבטיח שכל קובץ שיורד מהמערכת ישא שם משמעותי ומזוהה, שיקל על אנשי המכירות והלקוחות לאתר את הקובץ המתאים במחשב שלהם.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3181,
+      "parts": [{
+        "text": "להלן רשימה מפורטת וממוינת של "
+      }, {
+        "text": "20 הקבצים שהעלית, המחולקים לפי קטגוריות מקצועיות ברורות. ל"
+      }, {
+        "text": "כל קובץ מצורף תיאור של תפקידו במערכת, יחד עם הצעה לשם קובץ קריא"
+      }, {
+        "text": " ומסודר (באנגלית ובעברית) שימנע בלבול בעתיד.\n\nבסוף"
+      }, {
+        "text": " הרשימה תמצא התייחסות והצעת קוד קונקרטית לפתרון סוגיית"
+      }, {
+        "text": " הורדת הקבצים עם שמות דינמיים ולא גנריים.\n\n---\n\n### קבו"
+      }, {
+        "text": "צה א\u0027: מסמכי אפיון וארכיטקטורה (System Specs)\nמסמכים אלו מפר"
+      }, {
+        "text": "טים את הלוגיקה, זרימת המידע והארכיטקטורה שמאחורי המ"
+      }, {
+        "text": "ערכת.\n\n| # | כותרת מקורית בקובץ | תפקיד הקובץ במ"
+      }, {
+        "text": "ערכת | שם קובץ מומלץ (אנגלית) | שם קובץ מומלץ (ע"
+      }, {
+        "text": "ברית) |\n| :--- | :--- | :--- | :--- | :--- |\n| **1"
+      }, {
+        "text": "** | מפת זרימת נתונים (Data Flow) - המערכת המושלמת | תרשים ז"
+      }, {
+        "text": "רימת הנתונים במערכת, משתנים, תלויות ומנגנוני חלופות ("
+      }, {
+        "text": "Fallbacks). | `spec_01_data_flow_map.html` | `אפיון_01_מ"
+      }, {
+        "text": "פת_זרימת_נתונים.html` |\n| **2** | אפיון טכני מורחב — ארכי"
+      }, {
+        "text": "טקטורת 3 השכבות | פירוט מבנה הקוד (פיזיקה, פיננסים ומ"
+      }, {
+        "text": "משק משתמש) ומיפוי העמודות בטבלאות. | `spec_0"
+      }, {
+        "text": "2_three_layer_architecture.html` | `אפיון_02_ארכיטקטור"
+      }, {
+        "text": "ת_שלוש_השכבות.html` |\n| **3** | אפיון מנוע העשרת נתו"
+      }, {
+        "text": "ני צריכה | אפיון ה-Pipeline של הצריכה: סוגי נכסים, תיקון א"
+      }, {
+        "text": "נומליות שבת (גנרטור) ופקטור גדילה. | `spec_0"
+      }, {
+        "text": "3_consumption_enrichment.html` | `אפיון_03_מנוע_הע"
+      }, {
+        "text": "שרת_צריכה.html` |\n| **17** | מנוע ייצוא א"
+      }, {
+        "text": "קסל - מבנה דליל | אפיון מתמטי של מבנה הייצוא הדליל ("
+      }, {
+        "text": "Sparse) המונע קריסות דפדפן במיזוגי תאים מרובים. | `spec_0"
+      }, {
+        "text": "4_sparse_excel_export.html` | `אפיון_04_מבנה_ד"
+      }, {
+        "text": "ליל_לייצוא_אקסל.html` |\n\n---\n\n### קבוצה ב\u0027: מחשב"
+      }, {
+        "text": "ונים ומנועי סימולציה אינטראקטיביים (Calculators \u0026 Simulators)\nד"
+      }, {
+        "text": "פי ממשק המשתמש (UI) והמנועים הפיזיקליים/כלכליים שמב"
+      }, {
+        "text": "צעים את החישובים בפועל.\n\n| # | כותרת מקורית בקובץ"
+      }, {
+        "text": " | תפקיד הקובץ במערכת | שם קובץ מומלץ (אנגלית) |"
+      }, {
+        "text": " שם קובץ מומלץ (עברית) |\n| :--- | :--- | :---"
+      }, {
+        "text": " | :--- | :--- |\n| **4** | מערכת ניתוח תעו\"ז וא"
+      }, {
+        "text": "גירה סולארית | מחשבון שלבים (SPA) מתקדם: שלב 1 ("
+      }, {
+        "text": "פענוח CSV), שלב 2 (הנדסה), שלב 3 (פיננסים ו"
+      }, {
+        "text": "ייצוא). | `app_solar_storage_spa.html` | `מחשבון_סולאר_וא"
+      }, {
+        "text": "גירה_שלבים.html` |\n| **5** | מחשבון כדאיות,"
+      }, {
+        "text": " אגירה וניתוח צריכה (CSV) | המחשבון המונוליטי המקורי ("
+      }, {
+        "text": "Long Scroll) לניתוח מהיר בעמוד יחיד. | `app_solar_storage_classic.html` | `מ"
+      }, {
+        "text": "חשבון_סולאר_ואגירה_קלאסי.html` |\n| **6** | מחשבון"
+      }, {
+        "text": " כדאיות, אגירה וניתוח צריכה (CSV) | מחשבון המ"
+      }, {
+        "text": "שלב סימולציות אגירה מתקדמות וגרפי SVG אינטראקטיביים להמח"
+      }, {
+        "text": "שת תפוקה שולית. | `app_storage_simulation_charts.html` | `מחשב"
+      }, {
+        "text": "ון_אגירה_וסימולציית_גרפים.html` |\n| **7** | מחש"
+      }, {
+        "text": "בון כדאיות, אגירה וניתוח צריכה (CSV) | גרסה אינטראקטיבית המ"
+      }, {
+        "text": "ציגה את סימולציית 20 קוביות האגירה להמחשת כדאיות נפ"
+      }, {
+        "text": "חי סוללות שונים. | `app_battery_cube_simulation.html` | `מחשבון"
+      }, {
+        "text": "_סימולציית_קוביות_אגירה.html` |\n| **8** | מחש"
+      }, {
+        "text": "בון כדאיות, אגירה וניתוח צריכה (CSV) | מחשבון המכ"
+      }, {
+        "text": "יל ייצוא מלא ל-ExcelJS של 8,760 שורות עם תאריכים עברי"
+      }, {
+        "text": "ים וזמני שקיעה. | `app_solar_storage_zmanim_export.html` |"
+      }, {
+        "text": " `מחשבון_ייצוא_אקסל_וזמני_שקיעה.html` |\n| **9"
+      }, {
+        "text": "** | מערכת תעו\"ז, סימולציית אגירה ותכנון מערכות ס"
+      }, {
+        "text": "ולאריות | הגרסה האדפטיבית המלאה של המערכת המשלבת את"
+      }, {
+        "text": " כלל מנועי הנירמול, הסינתזה, ואופטימיזציית האגירה."
+      }, {
+        "text": " | `app_full_solar_dispatch_optimizer.html` | `מערכת_אופטימיזציית_א"
+      }, {
+        "text": "גירה_מלאה.html` |\n| **11** | מחשבון כדאיות, אג"
+      }, {
+        "text": "ירה וניתוח צריכה (CSV) | מחשבון קלאסי הכולל את ת"
+      }, {
+        "text": "צוגת קוביות האגירה ללא הגרפים המורכבים (גרסה קלת משקל). | `app_"
+      }, {
+        "text": "battery_cube_lightweight.html` | `מחשבון_אגירה_מרוכז_ל"
+      }, {
+        "text": "לא_גרפים.html` |\n| **15** | מחשבון כדאיות,"
+      }, {
+        "text": " אגירה וניתוח צריכה (CSV) | מחשבון המשלב את מנוע חי"
+      }, {
+        "text": "שוב התפוקה המשוערת לפי טווחי תאריכים מוגדרים. | `app_"
+      }, {
+        "text": "yield_range_simulator.html` | `מחשבון_סימולציית_תפוקה_ע"
+      }, {
+        "text": "ונתית.html` |\n| **19** | מחשבון כדאיות, אגירה"
+      }, {
+        "text": " וניתוח צריכה (CSV) | גרסה בסיסית מונוליטית המיועדת להר"
+      }, {
+        "text": "צה עצמאית מהירה (Stand-alone). | `app_solar_calc_standalone.html` | `מ"
+      }, {
+        "text": "חשבון_סולארי_בסיסי.html` |\n\n---\n\n### קבוצה ג"
+      }, {
+        "text": "\u0027: מחוללי מסמכים והצעות מחיר (Document \u0026 Proposal Generators)\nדפים המעוצבים להד"
+      }, {
+        "text": "פסת הצעות מחיר ללקוח (A4) בצורה נקייה או הפקת דוחות פיננסיים מע"
+      }, {
+        "text": "וצבים.\n\n| # | כותרת מקורית בקובץ | תפקיד הקובץ"
+      }, {
+        "text": " במערכת | שם קובץ מומלץ (אנגלית) | שם קובץ מומלץ (עברית)"
+      }, {
+        "text": " |\n| :--- | :--- | :--- | :--- | :--- |\n| **10**"
+      }, {
+        "text": " | הדפסת הצעת מחיר - בראשית סולאר | מחולל הצעות המחיר לה"
+      }, {
+        "text": "דפסה בפורמט PDF (A4) כולל הזנת פרטים ידנית ואינטגרציות."
+      }, {
+        "text": " | `pdf_proposal_generator_full.html` | `מחולל_הצעות_מחיר_מלא.html"
+      }, {
+        "text": "` |\n| **12** | הדפסת הצעת מחיר - בראשית סולאר"
+      }, {
+        "text": " | גרסת ההצעה המשלבת גרפי זרימה פיננסיים (עוגה ות"
+      }, {
+        "text": "זרים) בתוך מסמך ה-PDF. | `pdf_proposal_with_charts.html` | `מח"
+      }, {
+        "text": "ולל_הצעת_מחיר_משולב_גרפים.html` |\n| **14** | הדפ"
+      }, {
+        "text": "סת הצעת מחיר - בראשית סולאר | גרסת הדפסה ממוקדת המכילה את"
+      }, {
+        "text": " כרטיסי ה-KPI הפיננסיים הייעודיים וטבלת תזרים קומ"
+      }, {
+        "text": "פקטית. | `pdf_proposal_financial_compact.html` | `מחולל_הצעת_מחיר_כלכלי"
+      }, {
+        "text": "_קומפקטי.html` |\n| **16** | הדפסת הצעת מחיר"
+      }, {
+        "text": " - בראשית סולאר | מחולל ההצעות בגרסה הבסיסית ביותר (ל"
+      }, {
+        "text": "לא אינטגרציות או גרפים כבדים). | `pdf_proposal_lightweight.html` | `מחול"
+      }, {
+        "text": "ל_הצעת_מחיר_בסיסי.html` |\n| **18** | דוח"
+      }, {
+        "text": " פיננסי - מערכת סולארית | תבנית דוח פיננסי מעוצבת באמצעות"
+      }, {
+        "text": " Tailwind CSS, הכוללת דיאגרמות תזרים חזוי ל-25 שנה. | `report"
+      }, {
+        "text": "_financial_dashboard.html` | `תבנית_דוח_כלכלי_מעוצב.html` |\n\n---\n\n###"
+      }, {
+        "text": " קבוצה ד\u0027: רכיבי תצוגה ייעודיים והשוואות (UI Components \u0026 Analysis"
+      }, {
+        "text": ")\nרכיבי תצוגה ספציפיים וקובצי השוואה בין הגרסאות הש"
+      }, {
+        "text": "ונות.\n\n| # | כותרת מקורית בקובץ | תפקיד הקובץ במערכת | שם קובץ מ"
+      }, {
+        "text": "ומלץ (אנגלית) | שם קובץ מומלץ (עברית) |\n|"
+      }, {
+        "text": " :--- | :--- | :--- | :--- | :--- |\n| **13** | טבל"
+      }, {
+        "text": "ת צריכה עם פיצול פסגה/שפל | רכיב תצוגה ויזואלי של טבלה"
+      }, {
+        "text": " עם פיצול שורות צריכה יומית ועונתית (השכבה האנרגטית)."
+      }, {
+        "text": " | `ui_energetic_layer_split_table.html` | `רכיב_טבלת_צ"
+      }, {
+        "text": "ריכה_מפוצלת.html` |\n| **20** | ניתוח והשווא"
+      }, {
+        "text": "ת מחשבוני סולאר ואגירה | דף סיכום המשווה בין קובצי המ"
+      }, {
+        "text": "חשבון השונים ומציע מתווה אינטגרציה ביניהם. | `dev_calcul"
+      }, {
+        "text": "ators_comparison.html` | `השוואה_וניתוח_גרסאות_מחשבון"
+      }, {
+        "text": ".html` |\n\n---\n\n### הצעת פיתוח: פתרון קבוע להורדת קבצים עם שמות"
+      }, {
+        "text": " דינמיים ולא גנריים\nהצעתך לשנות את שמות הקבצים המורדים במער"
+      }, {
+        "text": "כת (כמו קובצי ה-XLSX או ה-CSV) משמות גנריים לש"
+      }, {
+        "text": "מות דינמיים מבוססי לקוח היא נכונה הנדסית ומקצועית מאוד.\n\nכ"
+      }, {
+        "text": "די ליישם זאת במחשבונים, אנו יכולים לדלות את שם הלקוח (מתוך פר"
+      }, {
+        "text": "טי ה-CRM, ה-URL או מפענוח ה-metadata של קובץ ה-CSV הג"
+      }, {
+        "text": "ולמי) ולשלב אותו בשם הקובץ המורד.\n\n#### דוגמת קוד ל"
+      }, {
+        "text": "שינוי דינמי (עבור ExcelJS / XLSX):\n\nבמקום הקוד הגנרי ה"
+      }, {
+        "text": "קיים בחלק מהמחשבונים:\n```javascript\nXLSX.writeFile(wb, \u0027דוח"
+      }, {
+        "text": "_סופי.xlsx\u0027);\n```\n\nנחליף אותו בלוגיקה הבאה הבוחנת אם קי"
+      }, {
+        "text": "ים שם לקוח:\n```javascript\n// חילוץ דינמי של שם הלקוח או שימוש ב"
+      }, {
+        "text": "ברירת מחדל\nconst clientName \u003d document.getElementById(\u0027md_name\u0027)?.innerText.trim() !\u003d\u003d \"-\" \n"
+      }, {
+        "text": "    ? document.getElementById(\u0027md_name\u0027).innerText.trim() \n    : \"לקוח_כללי"
+      }, {
+        "text": "\";\n\n// המרת תווים לא חוקיים בשמות קבצים לתו קו תחתון\nconst safe"
+      }, {
+        "text": "ClientName \u003d clientName.replace(/[\\/\\\\?%*:|\"\u003c\u003e]/g, \u0027_\u0027);\n\n// הור"
+      }, {
+        "text": "דת הקובץ עם שם דינמי ומזהה זמן ייחודי למניעת דריסה\nconst dateStamp"
+      }, {
+        "text": " \u003d new Date().toISOString().slice(0,10); // YYYY-MM-DD\nXLSX.writeFile(wb, "
+      }, {
+        "text": "`אנליזת_תעוז_ואגירה_${safeClientName}_${dateStamp}.xlsx`);\n```\n\n"
+      }, {
+        "text": "שינוי פשוט זה יבטיח שכל קובץ שיורד מהמערכת ישא"
+      }, {
+        "text": " שם משמעותי ומזוהה, שיקל על אנשי המכירות והלקוחות לאתר את הק"
+      }, {
+        "text": "ובץ המתאים במחשב שלהם."
+      }, {
+        "text": "",
+        "thoughtSignature": "EqJWCp9WARFNMg8tlcjs+I8ryr9gRtGIMw8SMYfwamx8VZZy1QqWlJE7vuGvlQ1QPmvInJkgCeF24cWetJ8H7QHoiYmdnMRlTnxTcVxNwxg3J1X+xWL1F4JGiSsUHY2ogRaYs1tvoZHYfA5ZmhdURQahm3yPIIdJr6T6D2ssDvt3nsz/2JSLiYMVjVoXNEnRsQZQ8O5esfmuYOJUjSs5ECZNBc6lud238eDJqHzv6aQihlZ04QXSFzZEogRfPtoqRLP/UQl1H/y1qfdhxzcnWRU6dtNLiEZebI5UAhSIyrJ+jYWJOCNJor+qSYXri16S228xfbCjG32g30kfdfEAsjo/hFIF03I2IzmYQmAZg9ezpr5yp29Tuv5CnFrXicvadax3S7JAe3V2AOuRZ0dGFqBppUNcpGN+JIl044OtZEdKzB0z6wrQ0Ntu/Zfp1YtDCrrgyl7jVxKXGZy4uOhNVwP8nfNHdxr2FNZNtiYj5h0EUT1nYDZPWr/Ck/virITIlcrGBJAvo7Vz86Y11amVL7tzmx2aHHiD9LF3ytJjrKikcvIx5pzEEvCVHWU8VEWfIibj5md6zxh142+VNV/+OaDCtVADqGy/aqSttnDrzdqr705kenwYSX3mbdSVQEOpcsinvCYJka6YS43YYmoJUfIH6WbsilOUDxUhTIxwexJHCXgv2PLO4PuvrRl5hEP5ypkNqkBhCPC5duuZifyQw9WiNIUGnaLqoxTxbPaUu+Nj8jXawJxEDWerhk32NCDJrFrPq9UcLK6whlHpWSATOikbTUte4n10JvFL/ViNdVIGjoX3a+68f8lvrGYIZxOzrCSLfne5Ubabq9GFDrDEhXU1OeSOv3s2hvBmhEelNQ6LTOsSXO9hObZkTmJADbTA9dAFfmr0NRi+yt23UBr3vTNLwMEJa8QCLW7L+r28o01hhOmdAg353o90jWiaLU6clvCaYsXE3VePtqROQkzpDmjeh5URAeb+s5/IrzlI3o41yAp0Un6bEmrmz70u7C94jFZBIPGKyraL4sCQufe74HEM1fBsznCrOOATZqGRCiWbHRH0UcD4Q9zEX3zClf/eUu811aqKBv9CKegSM8NO9gAQubWpdy6TK9XUPA2IE0GJJqikg8g4EmMd4BXa+m2DvUS7b4LlhXS6P8Tju/97BfKIrYexuX1GK4fi9VyyaNqtAAi5afHaCLwAP4+m3QaEROt2WtCFZlD19xjGDpetvd7gRp8kBucn41c1CFuY8XFcDUeSJ6FtN7TXAMLMuI/m9syzoeJ+HoEehmmWDNQ+fxPbwY7T47MTYR4ubY29QgPfRsO7wiAaZhb3a7QPKC54le53AyidOpoAUnprvI0cuNevyRxmiIlxOvBXSKtYLU8N9DB4FSZdHaI68Zi5gWUKnEC1dMSTJy5wx4hIq6S7OXC44mF6dX60xjO0WlJfF7WwuCtR0x7lW1EIMHs9WZbSHGaxzZbCBYC2RNzUq35vMUPNHcwNxiiOxJd7vvmiK5HtYQPiXW1EtlrIdSwuRPXGIhN9yuYvAjv5Q9ks3Z0VdX1bahu1/exVnIyOF/gtPRxd6OIl7BCbReJ+7677+JUF9jo6pANa5q1Ci1NZto8zdr4Cjf1vCuU0WQfA6BEoui/bCfKmEauXV2BVV6D8zk8+IYNLTLZ8+GvLOiNGtA42fxg5EiUTgf7bb0aqU9WS13uYvaEIpi1SP4iew9rnBIBu+/QrSnlFmECrConHV2M6l6+hdr28uRSCT7CbVrk/3d+s0j2n3+E9ed0KYjMiCZhoFGvVB5b0iiSaNOKj9iEyUqjkBlwC9N6fFlyBEd5cXUFa4mwD9J2Xommk6tQYP+HlxN0tIk7h0TIzorMUlsxgJXZiV73E2/4FoXPHpeksmVf063aKJ7kjThPK/Qfejq5A/2I539pt4OSoDkyNgIq1pKjDI7mLE5MeFmmlLesd8vn+lBZU7zh1S4LZD5OPHU54IqvHuLDlfe4OuVl6llK8gam98tIL0faOIzkW9i3nCQ1IlQfiZe+QZ6wJQRl19uAY5O12gDThh32rR4Q6GinLNk2EudfY7E/308h6VxFcC8xr9tFumg+treYFgWCQCDMBPNF7/qFA+vVtD8ytzEGO6ruwbduJt4e912zsoZArOVa7gH3ly2ryOEPmzf/0mnahpH57P79HAkKpjtg3zwEfK7Ph5r/3EFzg9w57RfGikEhTmoA0JA/V4yYTgA+Z+Lz9Tpvc2GSvVaQbUIl1QhT5Ih87a8lS7fNwNUcmP9QgwThO3FihpVTbisfuly+tm+IKllZ21F/CHuoMLN/4HZT6U2/NARWkIpGANwvTo5lFa9XX2yb4p5Mz8jMGI4XklVQXZUwFCqyCSen2gGC38dQ2L+Bbmb2aMoMyrxeIdO3wvGJuQniPgtmsCCCBZmuqXTBQXbPbOPti3bbQ43MxuY1sEV3zn3KA3uThLidTwS6vfGfNASMszm6UIZy/dUDYBo+0szthIHZ9c5dPrUcuhnNAX9p/rFWIkMRwhuJhVjsiyGVOVPI4wHk5x4LTNzezjWkt8LpA2ureZv+lzPa4ZiYG2pnzV9Hn+xm8u6Bn1uP/35oJKSSnkEmBJ+YCg4kL76we9HR527SHXOm8tdUnJlqQffsqcCPRimgJDkMNIK8yUfP3XF+KN5W7yW/4sSpXX22gE7HWtf6pCJ54OTz1qQG3nYeYjmDThdnP5rnPvKvDeETbp1wGan9u8X8eAtC1ps91mdXKeCpA9+5wQ2DXC4g3Hlb7mW/ysNI6W4hLyfltC8gEpknsZmngSqJr5GBTLeDZy13cv02+lfrqwb0KAS7pbi2ZS9P/TOxlZMYFmCp37+4ugYfCCDaHOZ8XXMk2YkHYdushcDxpzxhxPt/8AEcLjgGTHlxV8gxHjTD6pDdWYRC4dRZPm39ssdro+MqdQv/7D2nm8wokWS2b5DEmgz3bu1Cw7wRMzec+DZp830+73F/WAiHFyn9shdVmtxw4I7nMHuOEb0nhsDsP4eZx29EtWSP29km3BU4ptfAleKVoc3o0ESDk0+SF6l2fGnbX3o1LfDbJ8rjs769z6MEf+CLchf+Y54l8zu72tSXXtZ/s6LKVWtXab+L5eK9AsQGMLo1Qk0GUb95WWqcD8wT/SPxUvAOOM/ATo+EA/O2J0YshLcgJzKcCD9Vh0qKiIcpkYsfbi0GrKEourVebV7uukOGpyylofb2I0jlUsuYmj7Rn2fd5q3ZhIUXtwijHqqF9Rev17AZeUaAJ+lhQuPH2gteqaqHAtiL31faLBtBt/yCZbIWrYmVyEthewKY72cSpTKM7QnxfXIFlWVdAAGfck+4prinQ6Da4Ozz6bPfs8lN7td/PHJiWzgoJBxnluAyAK64KoS/luzKgjEL3vTWSCdVeRTnXSCSTcoqXA03C2aO8D65Oj5rGTnzEgLt+e4U6yK6lzosxpH3L3CHar3xXM8HxKkFoJ9VD7/niUamIEJhfGOMd1bLQT5vdf4pTExHsmG0J1GUxtp8ZpV3p2OVO7grU9AEFj1Wxdwnk0XcfvkKHePeOykIT0pshxHuu817Dcdn9I/JT28ENgR++lCmqFjyFvI1JvSQPMc1S4Vd8nb28W0rI9lzqNdFD+3+rl5wakG5JE+d9jBd++AFg9aWRuC1qrTVOjKone5Tn0Ppo949hAZ2ToMzK1dfG5PqLjK4zkUGTeyUA4nt4R8bukkfvLynps3Yu3MpGjZ9YkQE7+HXJkK6Na5Ts67k6RETseQkl3bvJS9kvqxkm8wrNoA68jwyL+2hHOhdMNnZeSZvB97llAogxYkoETM29tOFRmq7biNcLeb2jSwRp/q3aW9rBTLlc6Rq3gIoiOX3kYK7xjg1igD0PrjqB5Ymw5VddV4OvXYNeffGnMd1JvSI82i0ZDuerAvmsYKojr1SbUrHMn0oRJBpLNzhJaYeZRFnlYP2p+F2xfBjcwpCJFmZafN0tBUztOSr6Qegyo7Af8nxtobEjMDH2ew2s8ZnO7TrACjDil4TxVAor2rLgNcOGkY6LrleZuvGGWiS1Xuhjl504anIdaSjEBYJ6lbnt8gesHNm15ZKGaWV6Ycuy5EWdEnCx1WseNQHafPD7xjqc0IJNlRJLm02mRCkIPOGjNBPRq5q5p/EFBCol7+docZsIIgjVFz90+kWlimzO7G3JZaJJ03V6POiZ+51NPDJbvvVNdnwqZCVOcmzsxwBu18dEqkvZw5ikaamTdknZ1BSSwEkwngot/O2YgAV3pwqS4/c92UqlcHJkPc9v3PnSX4THVPoOuOMpNzFviUHNBMuJG6tYfE53e+v4LCsp7fMUuNVnZYUVvkLhqtsD2z4tGOi9RniKVpVbx5Q7kOikbhuBxpFIrbScL9gQkQWielw4TNvL9blTH4QMPKyWeT8yIlOYbRCX4zy9jeyq+n84SK4ht5LFdCRMmZp4tBJLVxwxvAajqeu6TZVRPBV8IllccPqzYevZESV/641x6ieTHdyUsSOWLBhX+zC+it+3L/JIHkGy9CFALh04iJyQVN1F7K3OSHlHf0bmRWs1owgOtqyc4gP1GnnvjvYHvSGb4Gr1pHdyTcR+5wWGJF36e7TOIn1hBy8GZ5bdyecrmljKh1OzNeeBqcZHdRGHNxzUbfFGtyQfHlf9n2w54THsTGRjMTgFsdO6u0+1+f/yGYTFUfxen7p8XPDmtlpXCQ1GDn6G/c98oyNI00gyAQ6fArgzSIyQiJrP9btydCoqMMwo/Rjpptga2fhmy4si7GjPaltJwsW54+/qNeOu3t0SntQUrSYoAJ7TtGSDCaGyQN3FDtCZ5rrn2H6BacIh/FlcRFzf6upVqot0KMPqQ3vfbpEytbumaR71o6RAtriFG5VU9F6OCo1LrLH894mb9sN6Mzzo+SXRYEd7045GYKCiwpN/+RLi3tIhcfB24NzS7viCgBpBGArPk7a3rbxnQZk1ndyN99V4zqex3ZX68BdMdg+0Kih4tzZ8vmv3TV+x3gEmIwtIqaojfIDrTcu9yV5rQFuP32smMfseYSPgKW79EHcnO9KboEJlG8/x58gfgpQUoNU9cHhRagW+9GIrsYBbPXNSApPrmNFNVcnsjIY7YtaHYTTUrtciLQSaK/nPAMCAX1j1bUF6O8u68hhi+Nskg5N+uJnE/KIqXzwyDgN4LDqUs97r/lFgkE6pjDSa74EwbGUd5vi0H9IoAylG3oKMMLiUz8kdJwB1BDt0wBFJXX7TfPVkbjoaO63nGSn1Y7JX3YcQ9NamRK/keUcnk3KZmIqf9vS+3YelPVDJyAhKg0Cf5SG1F+ikxGCYYiPeVzD846Y7INeob7mizBx5xtoa/aI8RAYHRTbJZu7ubEO8efvkQdJKSBezyqEHcRNATUrMM4W/Wt3AKFugBkCLkvGWi/nXeSnoLxRwt6ZT3ZOtAzcaKIAATu1aM0DYN9apNzb6bY+CcUOxUei3Oo6RfvtNxcRz2sqqWI6O+fcrTrUx6btNpu6W9zNRoxDjMxVuGV6vHC/Ib4VATjYsVGxzOW7MnogaqH9hyJp+XCk8xzgw9sa5ZzxqRsGlBiSorNKCF+pJLa8Z159JwsMK6bCJshC9JRHkPtLhFhx0MnQtZkcEo1/9zco292BgMDwxfgnMfUQ+fQ/kOV5E5RVsBSXHDixg3HZd3h5FYncfLQIuJypsZcTpe/i5eywfisb8CWBWUfcPVl3rOtk3HQQSHAoNs0LPXbwRn8EUlePT4MFZriDKbNborUda4kFwjrn/GdWkWZWPlE9QhA4xhhDwMd9QnU0Bnj0lr0IPXsVwyY1pY4KjDvBKW2AUs8D2u+yf33aYhO/V/6eoO9EbwemQRxR1OmaOBhxUonopQ+XR5qoeeu0squBVP+6M+KylHTEn/rNifa8uLx1VQiWvUmObP3xM/aysYxkzIOUijIx/N4XEhYO3hISGtT7rOIG9NPHEdlZzONL5K9csbvBKIzI7tbWrivqiMZrT0wgD4meACfw15AGY1RfauR/qUnvxjGo8Z+yJGuOQpzOUOd3JMLzkleq7y8A/3FWGIY4OovVPF7inCb5qHa9Kk5ZS/TOEwwWreY/U9Ksbd+NcxaHMccdzz3GtlI3BR20wEkMsgd0lwCfsVhm56WpI+8nmJlZLF+XCaqoj+/Cwx0Vu3Dup6rUHCsc/NT1oh42ZhdBDuKh1itftEiZoNI3AR7kJHZ6D0+F6wNhIEGAZ/uoryc72VJVEPv4R2FOnEeg0xra6lDrx/+zSz901bmTKiXVN3HaoyZ9C5vU4TAcK5y4uAouE90+B5qU7j/PTk4qzW4s6Z1JREQIQjSGFs+ZWHc6IyBNHVst3HmHnhiV47UWH4Oc5O0yZ0hhrgke0xdD3yKT0TOGSXH8gv+8KTKS5SI2h5QyLDhWqQVQZBRloERQcZJVmV/sEj87il0tv7pVtcmvzyEPWv1eyMrGMXjg3rF/U9a7MM5B+Uc0EdMQlAPS0p7n1mxVVEaifINfrTFtW5H4ODj3AWZbIH4FdL6f4Us7XKrT9tRY432jZQ/+n6iAHBuShl//bR0bQfx4Rwy10edIlIaJWu3PPc0NpxDHR0MajsDKEPJ86bzabHvXPOqSXwVsOoG35XkYA2R3jnKC4ezitgFy8p4XKjw/Psad+Sh7arceR5r8uVsZTNGmzXX631F1MTija/Qtt3B9B8H37XmAwNXHjim3BGA3JsiF9ky7tiOJB72VhoYvG+MT7Bo5KmUxrGY3cNwdHS65xi1lILCy4hFb0TzxvaB+Rq/FC4EH0xQQHPZVUCbtrCIHrUe5Pu4O0WWVsYQakYOqU/p2LvTUbHxsbxaMhxpLEWV3QBiPuMMzr0D/d5kh0gVQc3UUmnNugmufKDdoeQ32PLFPmRgj9Zsh/cQQ5ZfsJeF3oMRbI4BGFdGzmR3Iv61cqaF7EhU2uol5KKv53zauQR2PlVXCs9PsjXh0aYC7xHrgz6RIHk5mlb98uEhy+Sk8SvgkAgENtX/cdIqWofauWmrvvAflI4TSb4+7w8tN8mC8wjm8AAp7TzG4+bXKpyj2ZytbGYTWGuJZCLDaF6tKtkd5ehIeSKzdyC6c9+nu1g7aBHzQskwmoIEkysjTxovaBWdfi2XC9BkCnRBq3Tyvu1R/i1o9EE4Eav+pHa5imxQyheci5BB6pAAsYxbyUYKDxXsDl1oDQzK+InCz5dcQNQ6QglzjdJfXgbs5osyTNKyfvj7dsBAIZ83ybm6eSB7aFsWkPUHhG9JYPhUEnEBgq3owpcIP5iL+MI+rpsXcZ0T0BVoz1++olfJRWugTYOKAqrfFGFVpeakD3E7G+/YU9yMyaClJgVaaPQvwjyZJE0K7LM2ZgJmi/SHwK69DZSoENST0ZzHr/NfAYJ33iqVxWApJo0wS2qbJ9E7SAZJIuuu4Mqm5gF75nCVtUmnh/eHXPksH0RaZLRGvR+t35++85VCJrnnuE3OD5v4OXrXaRs6B3PI0IaYzTq37poCuRtwsa7N2of6sU53mPrgf477YpKp/q/cv5TDW8S+A/iY6ltz0TcmPojz9GtnJj3pPZiIuLIwcf14keRduFCUQ9RRFtzZWm9bJX2jIj3g4/ELTpENgLXKCqKG7e4lK1xIONPQWUUIn9kri7U9lXP6RIRSXt8EJZ1TBmisbJli2/tjGdbXi05YJ0A9N+EMX8DCRjxNp/KeU0xWG4vp8gzmSaE7jRoH/mm00lOQnrnrKef74sNBFgVTBN9tGveVEx3PTvSLl/VXleBRCpLPTHDabWL0Nd2rSxbA14Qbq/MpS2U1WYy9t3l9Z3Pw+N1Qk54Q6z6QeAZkVt5HGMpOrM3Uju5bCIOwyP9gqilJ2ObxK8ojo41KIt1Xkehqi+YAK+PcwuRoavMgWVg+HkUMJHkykuGrXu9oSH56Kn1SIAwldH2HSAs8phm3MYGKp6Cba5LwBwQ6wzAtuISAjAPVGAn+yDOHM1ZX/LdTIdtBXx2/N+2gLLYjk1gg4op6O/ZtofLKpi5PRIMf0KiVHsgGofzDpQBBbyNS1IrbvsV+yMHql+IupiB56GY21MGIYvsPtb89GDmNRf+XKoki17Xwprfi0/lov42zE1wHrzdp2orTYdbymI9mrOebtd8GrOwtJcJNNTN2OM3/sbm2VqoI6QzrcQAb0oAzz9+B8IeNHp5jlDZXiTNL/iwz9ITiXcYa1BfvePTk/yS1fPNCYnHk8ZhGBktQE0EteBgsiIjVuUgCC4eiJydP7clMdIGerdDWY3YweHOZ6IEuipIubmW9HLgfeW+pcsA4ajpZ6+9owlHlfIbQWWbPcfwRw9lBIwCUaZ6ZppslglwwGdC6ydXNU60TkCmE+3ClMungaZFxAWKbIYh6A3gJPuFuIaZPX1sQ16dt8WgjNNjgnjmahEOELy3gVK6snl+CeDCNkjmcS6Y23C+YW+YA14sY+s9YEpIMWfY+hUuG9eeR7XVAzX4/+v5F8J2vZKeVczhNMqwx04z3sshaImkk2d1dS8lOIVr8p/FiZUoDI/Hx9qWKbGuYyNpqK5padfl7T/rvOUJFQCMCsBzp3G8fN8Fh/rLc/xdLq2j0GZOt9++4Qv2g5Re04CZJTrr95DN4C8Huws3KmcxWss+3sle3blGHO+Om1L031UbxCqG6yq8PJl3efgR4QIbbohTBOjT4+TtzMY0TSPOBp2LmBmtKFhjNbVavnSA1N+Psn+oF4dbAtTdaK9+OP5jiDMFrHtWJhbiE366e6089F0OP4Kq+7vSh6pmSTLI8Qv421PHFi3W1l11wsumJocbX1J7r4vyhKqR6kJAwg1lBLlFGh8z6dInbmCXrN/iMKf2GlLqjycY/O2Ekz0npMry3fdBFmsNqQ0nrI+ApdBQFx6wcXg2a81WaOC8K23Oizkgwv6YcAcDjA6jSGmTF2Gk1zjAzrZFaHTdahHC89eEMjZHVhiA4x7Y4ra/EG2YwobwUq5T10gWgXKufaAnLbimY+VdBO36+8SOM0gZm5ETQwhf/grF5+D+rqidMunxhaB7rO4M6EMyebIaGdXATDhrW/aPMgQL3VyRj0kBNjAtgsTRk0wd5JIA6bfvpjHfCOqxqS/6xmQ3pH4JktNlS4MIz31Yt7nyZbO7GhV4qAPtMy5RxycGq0Db2gBDYIUr0+FjOxz9BFNf+Yn0Xn1cm//kLRWkyq7/bVGJWyG/AO8rNHJYmheeYQREIO3WdIyt2CxcoscjlEUDBsGLteO5kUlxbFa7nEH8jP2bq7VqmnIopI5hpcENjDv8k4YlkYWauzl62n8EItecOem7qGcSHaZcU/iB6Zxm/fHvLmVIKx/BWBcKKG8bxreC86Bsq2edb3cszAtNYQqds3fSPJAQZkaEGykq18peIPGgsAJBeEIm4hVLwp7j0D0i8Rgcc2tb2qQ7dY7yWPt129uMDdDN/LWvT1im11afNtb3m90L0PS86ZkBlXWbbHahyDbc/kBZqjwAyButHYCgmlIp0csIlrS/eppxK9LdlBSXCxkp8DeFdXY515Su+5xxvgBAshSwmGXhBzoS24udRWayWOqUVtjpzYvGKtcrzzZ535HNY1EN0fRLRqn3P5fi6E+0z4SP0YtYBpy1qsWGgCjCgw53Nx5l0KzlinxOVLzKpTDE2m6HmNtDWoIu3Um23LE6nTkRxmt0pGkSdVOn1+XGld+TlEpPgjOfSSMgQ1O0K/OrPXu3s3Jpn6jFWYDTVZulKcu9QZMkUZf6Gx0KcJcT+eJ15ytVyFTisN/04UChQuISrSMAJd4TRzXmLv8OkDC3NCI8nkD8KvZL18ils1q53rqQT24pq8qkJ649SbCYWxdo5CPXIxgpBT3NS9wKprBZsvdrAgnqFjeWvDjOBdrDndkQipiUNepo/qvGXjztTQUYwnNrwp1umlnNud8Nh1TJNK7K9N3mRRYCBQMxAgbtEG1cj4Hzu/8npl3NWBifOUqRCwaBo3RMZc3WSLvdUqRpP4rscgLQYtiIVWfdiqrQ0pD1gQlZ5t+4aeHPpjnGlxwuLUm52KxXgktgg1ofYPuha3I4Z5Og0wqOj8TBIUYlTrDt60Ds6AMPUaF5y8dzvPdzGFGZ5kIymv4zz/hmLXs6ezt4F7BYklgjYwZxhYYW1xGbRRMz8peu6ghauwMJxgDDIIHcfj9oCfNUZ6GJ0Un8E9ej/0qQRPHmC1874bmtMgptxuyn7EoemfLH7+qsk9RVnUN/Ca8cnyVsv99r6rPINpV+cGOUbNgtpWTyOI1Gjp/2yUVGpA5vTQcW8u6jtMoQ9NsS/anoUuW74vSyvFNh3S993El12w5Mj2FE84d2iP/R6wCc7CN7s2sf/MzJ3PJCORVKJTnJE9ZcjmVJflMENgIE85TbF32nbYvtH4RM24XWXAJysOIGwYBuBjepNKAZ/VNtj6lB5zMD9b5F8GzqQ9EUpw4W3eal/bN7z/kjYJV9NoJR2i8AMk4YQ5WhWJmltXPwtNC04xB2FjmlCqcwW5UVHZV8zLbl3x1kS5GScuOd0sW8iM3Cx/Foq9AQMABrp0tJnefpkeMx9BNDzQ3opJHpYSppzM+Rtd4CpmaTWlL7G/MSa3RkD0WPdFyFyiPUbjSm28/Q75/SKnG23K1sEruvyAAeFMY5wU4pwB3/Hy+s4G4PSyHmq4J3CVzekw2vvL/lyY708n2i/aw2NMRI6v4gOi4vMgUN8yT4KVo9PIRRZtuGGgN24aAF6Q9lC8P2L2Q/2lRGkW5UQ9as6CHSpIc31xF0k5WjpjT5iivdFznJ/khAOLjm1hZcQMcwbdToGpfpprTbL3zgFHm1+WzUaCfeO8p4MLK1t00WsO+YIV/WVcan7P91P9UzgC+qIp5z0xXY7uBMmy6ye2NFFTYR52qDV4ma55MxgWmfh9v+W/A4IFwHCxC19bJp7f+GM2A6nMP3kbbLKVuFoDC6Qr+Gs0f/udOXzHbzR7ON8I5Edt/f6qvP40n7GTsqnzH3GAOOtGuSJJdQR0So65uInithRIn/HYxDyilm7GzAMdStXRPcnQ0h73bt6yC2CvwcL7xogJe6+qdLa/zox523isQgCMnc1LMXOfzCkBDFRf55J9u231OCTB4eH5weHD9yOVuFjpxntUd24NzGL8QLpb7AAyjirWAM+ctRgLOB7UquK2tzf87K6OxDFPuoiykDnwXLiF9ep9rzCJftII2qFgj4P4M6s0BJvyssOVxnlgMOTjtRULERH/PlvSt+gMczqQUU6Xs05842vs9B4xHJo5+bdsn1NRtxVi6t4cLpEEQ/GpdDaRaycZIZS3VAPwBY8sSYmvvS7zt/mauhmEV3SkyVedHZ7mNoU/XuTZ8SaMeJXx92jh/Vgeh8GFhOhsTyj6euJAnOo0PoZtPGxsCv+wVgqXeU6D05Kv+gBgyRogBzVD7KdCBQuluJKBirIY+1Bg9x+IIcsajjl+3FaoPIGbnNBw0aeLYUY0SrjBe7xpZFutK9vICooZXLt5U7cYOKuVVlpVemEKttjDfAya5hMF/pkDUKER4jxWkXpKJ2YElHuTd4BTRhfriIYt95kZpfW+Gy8TcYgmZUYrMPdBiyuWR5IudTAi6h2dydqhqTz85eJRoXMBmJv/WSmIDuOss0JzkdYBtUFbJkNoI5+2f4c0sC77iz3mzfDS9F4gYaSww4Ds7G0qNYhvolopd1KcUqQRRxGVzEJ9gj3fXQoOQ5vgYhXFmoEWjiqkYlvVU27GKJroYhX88bTXnmtp47snx+fLeEAi2FMsyEzfrly6RyFkhyVBXL07BFI1gjQMe7nZk4orz4F7azX9JpJCOVepYMAXmJGEaIO8rqntxPaN6H/ag298c9Lp1+D9//pnM7cjEPXZ5s9Ph+1dX+q4Ovs0jiaBYOprLak2ph429ebmGKZpiJ8jMWZZcgLFaJOiKXIb1j2uO0XK/gS13jScjY5j7N4IsL122leZRO9H90O9ufadBcInX4q+e1zvSraKH/6Y0ybZiONe95SyO10g3VUJQZMnYx5Ph7/eFCX6fd493CqP0gt2K/e8SdZ6Px9UEhMvY71BMjO8Wnd1Fxj3kPU+dSLAQSfZN3J2YJZCwRKstGi+G+YwGez4EjfTK5jOpLZe9XSC0kQi/KOOw5Dy3E0FCjp38drowmnlt9v7ncI1lVeQvL6eChm6Jq9KK67j8lyLKeh+Eluo5GtTq4PonnBBi8uYpAyxutYKkdWTg7jaLTZS+5kOiqw/rBZCIrlBhObbImT1W0ilghrsSS9rLjfRSv7cT0c545THxls+Oy0Svekps4YenyorI/cHffcRlCMWaXHTVsD/lNNUaafTBDDKK8XolHBMLlxWjiZ3YLrPv91AVHwoDytsqvDWHw2e1o1miuR7iz/oeud0VYgMA/EKU0DFvIpTdsKaBp9mLLn9k2P1Mbvm+l1VXiL0I25Ps1PAh6kj6kAKcPrHFFb+e6RDLkwxROAdB2c6eh7CjKbUa9g8i2zDgwQQ41FrvbbOg4H7DZSMygeUTi+RGMUi3wgyqAWLPXWsh+2+tXMkQIG4qpPoSogNLkNVwhX8TEt9JaMgD2t7/cnnRj/EI4k7S1RQfnazi7tUpwTqSYZ7buHDKW2f4G3HrmAIkyOa7OYW5BP1QcJssT7UWwsRnF2U2UQQMAPrMqMiQF8ND4uXIQUc2gJlBzQ3sxcOh21IoSBVV6WZZUTLNnUHpOA1VyKCWUEfuPELJSYvuZb/ir5PpgzmX4Iay1DRUW1b6byElgCWeskFoxYMBuqmhdoLcPQ3ZARi56xdi51EuXYKeHRqD8mCklhilWerbgj6XPfa9m+NCiv/qqj/95QmWvvgCUpCjL3/MRbe72YzE91ZlEhVaJh65/r80GFpnQmAG0ahtKPTeVewAzNHOkGUMy1D/DmDQHGf46khju1/kT7ezWwIeK5jmkSZ58xhWgbN0BdKHY3K5Lmav6u+icDLhYY+ymFe6dUSjQrKG705xxEI6qckvNFj0H3UHuN4hhMxK48dvtxwgkcLacNzZzg+bC82jwqJG0dDqRuxPN5rKiXkDu5/VVSYLL2Ljrue/H9OtYAII+/pFqJcm5XPsYyGNXsL7Q79f8rfxdXgQpDkVkYj7WiDK7W30MaWildOMg59tWGlP+MQocOsTRQOW6UypK9K2UhlPboyZWa/Ee/wPyJSN/OO4qzLiG1/6SxN55UcFpfk3aF2gRGzIKwiFcE0eku/fg3Y7FASUPWaL+vTyjdHZiJfPwn4DpyOwR8RducdjM7rsl+nGFqiIsi4YVnr1+Y6cr1xdR6yOQAW0SAb/9didKYBcdnSD15QKTAI+8HMFxzCiNxj42SdPXPopvsCawPLYKrL/xZDNwEI/jS/6WlWqx4bVzyimVv1XIgICyCA4/vsnxybv2OuLObXiDkLYFU4N126f0OhdWeW9PMdWX+Z6qij7ll6R8pD5gSmX/uKGk8OxP0SIKVNYRRcssezQsqKSmjDiYrYf5iMtGbANF5wVZpCSDwEgJua0Rsaqm6V64RT3ghDEwIJDmeS+E27V9Mou/MG1LkW2fH9gXatlpvyJsLlWWrk/EcmKYQduGoMuTow5Ina1pWWDEPI8ne377Bl5gweMLghiyvXHnZY7RYgLRzTvRQ3J7VXajtN/ufKyCQpBIIDRW2P5XhdDKbjwG/gg0Pvcp22zcLWMJd8/uTTTKwV3q4oXO4Ze7SUhgwgoCP44BRSHg6ErW8HlZYfzP5/3nZD0XS3KJQvlWc86t5plGT9XmF9iv6kanyUtRC6vWy0Wgyo3nCloXBLHOI+ZKsXtlQJkquO/j7+JN0e1HNj1Ag0L+5c/gq0sgXANw6s3XJR0Zz2vIcjTK1ucY88e9Lj8f3Iz/IkN/g3OWNQYaLqPHIavt18y8jXFhIvr39xcvkGBPPmw/YQc7a78T9UgMnZSXYUegRneDfMgBUiMQJmTaZqHTnOQouJxZV8KlF7Tmmcz8vSkRS2SQgLuxoxLOjD6L/EfimZcxlFpfyAB+TQz/1kolW5R+ukOQGL2hKKsoJG6kHEPeY/10AQsV/IvjvYDdnxwIJBL1eL+ExngXNYf1Z44v6Xez8rd7MbKYE1QzR98+sH5xx5dl0izBLj9HJf2CRaSD/NQ5x0c1QLX2ajgL1fcoRKmpaaImC1HvDm+ToVB9xJSnEQ85fl5rRiLUAf8QJJa8ytYNaCgoSIH7fQ8BdIe+G2AMzPyots1yCOuHq016QyorceB/JKHPln8NiLWlcVfFLwe9gkLrfl+CzgnK90ThIoLwHYaGb5WxAZpzFIm+kNRCExdFNjO3QNnajskedeasfQeBSCTXlwIBvGYLIK0bdkk3F9zWLxMXBwHaT+dParI6x1iLk8S2gzGGzliyAL5V22E5WHc9WCADBEmrcFNu5ZPQGQ3BJJn86QDMo5QMXM1KdM/3hbuBueWobSX9TMXnvxjVwy08I+0Mflqw46rm3kFKgn1ExGMagD9TU/XRGld5isnm3sZBVtkbrosBR1ee0VmK2bfEU2vjJP+aBSBRb6zlaGUlYImTvmg6KhQTU/3+wCdPoLaakovgHgPcgexN7ipsm8BxMl6wkS6LNhDK0cEohnYX/bIfzbuzSSQ/sOSvrEA5ZCjoYuDWUNMS1Pykhu+HWxoBlH+YJad1gyLO0G/76NuQXMuMq5wPWR053CiUNzrbITRe6ccxv63/6a1pt1w6rGqdHbW1a8SO8/fuLs="
+      }],
+      "createTime": "2026-07-21T10:53:19.302Z"
+    }, {
+      "text": "שתי בקשות.\n1. אני מעדיף שם מגדיר בעברית\n2. אם אפשר את כל הקבצים ברשימה אחידה בלי הפסקה שם נוכחי - שם מוצע",
+      "role": "user",
+      "tokenCount": 49,
+      "createTime": "2026-07-21T10:56:08.650Z"
+    }, {
+      "text": "**Refining the Approach**\n\nI\u0027m now focusing on the user\u0027s preference for descriptive Hebrew file names. I\u0027m prioritizing the development of a system to translate or generate these names. I\u0027ll need to account for accuracy and user-friendliness in the naming format. I\u0027m also considering potential edge cases and ambiguities to ensure robust performance.\n\n\n**Listing the Files**\n\nI\u0027ve compiled a unified list of all twenty files, ensuring an uninterrupted flow. I\u0027m focusing on displaying each file\u0027s `Current Name` alongside its `Suggested Hebrew Name`, as requested. I\u0027ve begun with the first five files: `מפת זרימת נתונים (Data Flow) - המערכת המושלמת`, `אפיון טכני מורחב — ארכיטקטורת 3 השכבות`, `אפיון מנוע העשרת נתוני צריכה`, `מערכת ניתוח תעו\"ז ואגירה סולארית`, and `מחשבון כדאיות, אגירה וניתוח צריכה (CSV)`. The list is numbered sequentially.\n\n\n**Verifying the File Mapping**\n\nI\u0027m now meticulously cross-referencing the file list with their corresponding HTML representations. I\u0027ve re-examined each file entry, ensuring that each HTML entry is clearly linked to its original title. I\u0027m focusing on the mapping accuracy, ensuring a proper title and suggested filename pair.\n\n\n**Clarifying the HTML Mapping**\n\nI\u0027m now clarifying the mappings between files and HTML representations, focusing on unambiguous file name associations. I\u0027m noting potential naming conflicts caused by identical titles. I\u0027ve drafted a revised list, clearly matching each file with its HTML counterpart for precision. I am focusing on making sure all files are represented.\n\n\n**Mapping More Files**\n\nI\u0027ve just added files 5-10 to the mapping. I have meticulously linked the file titles to their corresponding HTML files: `מחשבון_תעוז_ואגירה_קלאסי.html`, `מחשבון_אגירה_וסימולציות_SVG.html`, `מחשבון_סימולציית_קוביות_אגירה.html`, `מחשבון_ייצוא_אקסל_וזמני_שקיעה.html`, `מערכת_אופטימיזציית_אגירה_מלאה.html`, and `מחולל_הצעות_מחיר`. This ensures a robust and unambiguous file-to-HTML association. Now I\u0027ll move on to the next set.\n\n\n**Linking More Files**\n\nI\u0027ve just finished mapping files 11 through 17. Specifically, I\u0027ve linked the files: `מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [גרסה קלה]` to `מחשבון_אגירה_ללא_גרפים.html`, `הדפסת הצעת מחיר - בראשית סולאר [עם גרפים]` to `מחולל_הצעת_מחיר_משולב_גרפים.html`, and `טבלת צריכה עם פיצול פסגה/שפל` to `רכיב_טבלת_צריכה_מפוצלת.html`, among others. I\u0027m focusing on ensuring accuracy in these mappings.\n\n\n**Finalizing File Naming**\n\nI\u0027ve just completed the file mapping. I linked `דוח פיננסי - מערכת סולארית` to `תבנית_דוח_כלכלי_מעוצב.html`, `מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עצמאי בסיסי]` to `מחשבון_סולארי_בסיסי.html`, and `ניתוח והשוואת מחשבוני סולאר ואגירה` to `השוואה_וניתוח_גרסאות_מחשבון.html`. I\u0027ve made the connections unambiguous and am ready to produce the complete, formatted list. I\u0027ve re-examined and confirmed the entire association.\n\n\n**Mapping Additional Files**\n\nI\u0027m now mapping the remaining files to their respective HTML representations, paying close attention to nuanced naming details. I\u0027ve drafted connections for these additional files, focusing on clarity. I\u0027ve mapped `מפת זרימת נתונים (Data Flow) - המערכת המושלמת` to `אפיון_מפת_זרימת_נתונים.html`, `אפיון טכני מורחב — ארכיטקטורת 3 השכבות` to `אפיון_ארכיטקטורת_שלוש_השכבות.html`, and `אפיון מנוע העשרת נתוני צריכה` to `אפיון_מנוע_העשרת_צריכה.html`. I\u0027m meticulously cross-referencing file names to their corresponding HTML file.\n\n\n**Completing the Mapping**\n\nI\u0027ve just finished the final mappings, linking files 7-12. Specifically, I\u0027ve confirmed that \"מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם 20 קוביות אגירה]\" corresponds to `מחשבון_סימולציית_קוביות_אגירה.html`. \"מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם ייצוא ExcelJS מורחב]\" is mapped to `מחשבון_ייצוא_אקסל_וזמני_שקיעה.html`. The association is clear now, I\u0027m ready for the next step.\n\n\n",
+      "role": "model",
+      "tokenCount": 3311,
+      "isThought": true,
+      "parts": [{
+        "text": "**Refining the Approach**\n\nI\u0027m now focusing on the user\u0027s preference for descriptive Hebrew file names. I\u0027m prioritizing the development of a system to translate or generate these names. I\u0027ll need to account for accuracy and user-friendliness in the naming format. I\u0027m also considering potential edge cases and ambiguities to ensure robust performance.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Listing the Files**\n\nI\u0027ve compiled a unified list of all twenty files, ensuring an uninterrupted flow. I\u0027m focusing on displaying each file\u0027s `Current Name` alongside its `Suggested Hebrew Name`, as requested. I\u0027ve begun with the first five files: `מפת זרימת נתונים (Data Flow) - המערכת המושלמת`, `אפיון טכני מורחב — ארכיטקטורת 3 השכבות`, `אפיון מנוע העשרת נתוני צריכה`, `מערכת ניתוח תעו\"ז ואגירה סולארית`, and `מחשבון כדאיות, אגירה וניתוח צריכה (CSV)`. The list is numbered sequentially.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Verifying the File Mapping**\n\nI\u0027m now meticulously cross-referencing the file list with their corresponding HTML representations. I\u0027ve re-examined each file entry, ensuring that each HTML entry is clearly linked to its original title. I\u0027m focusing on the mapping accuracy, ensuring a proper title and suggested filename pair.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Clarifying the HTML Mapping**\n\nI\u0027m now clarifying the mappings between files and HTML representations, focusing on unambiguous file name associations. I\u0027m noting potential naming conflicts caused by identical titles. I\u0027ve drafted a revised list, clearly matching each file with its HTML counterpart for precision. I am focusing on making sure all files are represented.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping More Files**\n\nI\u0027ve just added files 5-10 to the mapping. I have meticulously linked the file titles to their corresponding HTML files: `מחשבון_תעוז_ואגירה_קלאסי.html`, `מחשבון_אגירה_וסימולציות_SVG.html`, `מחשבון_סימולציית_קוביות_אגירה.html`, `מחשבון_ייצוא_אקסל_וזמני_שקיעה.html`, `מערכת_אופטימיזציית_אגירה_מלאה.html`, and `מחולל_הצעות_מחיר`. This ensures a robust and unambiguous file-to-HTML association. Now I\u0027ll move on to the next set.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Linking More Files**\n\nI\u0027ve just finished mapping files 11 through 17. Specifically, I\u0027ve linked the files: `מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [גרסה קלה]` to `מחשבון_אגירה_ללא_גרפים.html`, `הדפסת הצעת מחיר - בראשית סולאר [עם גרפים]` to `מחולל_הצעת_מחיר_משולב_גרפים.html`, and `טבלת צריכה עם פיצול פסגה/שפל` to `רכיב_טבלת_צריכה_מפוצלת.html`, among others. I\u0027m focusing on ensuring accuracy in these mappings.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing File Naming**\n\nI\u0027ve just completed the file mapping. I linked `דוח פיננסי - מערכת סולארית` to `תבנית_דוח_כלכלי_מעוצב.html`, `מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עצמאי בסיסי]` to `מחשבון_סולארי_בסיסי.html`, and `ניתוח והשוואת מחשבוני סולאר ואגירה` to `השוואה_וניתוח_גרסאות_מחשבון.html`. I\u0027ve made the connections unambiguous and am ready to produce the complete, formatted list. I\u0027ve re-examined and confirmed the entire association.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping Additional Files**\n\nI\u0027m now mapping the remaining files to their respective HTML representations, paying close attention to nuanced naming details. I\u0027ve drafted connections for these additional files, focusing on clarity. I\u0027ve mapped `מפת זרימת נתונים (Data Flow) - המערכת המושלמת` to `אפיון_מפת_זרימת_נתונים.html`, `אפיון טכני מורחב — ארכיטקטורת 3 השכבות` to `אפיון_ארכיטקטורת_שלוש_השכבות.html`, and `אפיון מנוע העשרת נתוני צריכה` to `אפיון_מנוע_העשרת_צריכה.html`. I\u0027m meticulously cross-referencing file names to their corresponding HTML file.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Completing the Mapping**\n\nI\u0027ve just finished the final mappings, linking files 7-12. Specifically, I\u0027ve confirmed that \"מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם 20 קוביות אגירה]\" corresponds to `מחשבון_סימולציית_קוביות_אגירה.html`. \"מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם ייצוא ExcelJS מורחב]\" is mapped to `מחשבון_ייצוא_אקסל_וזמני_שקיעה.html`. The association is clear now, I\u0027m ready for the next step.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-21T10:56:08.650Z"
+    }, {
+      "text": "להלן רשימה אחידה ורציפה של כל 20 הקבצים שהצגת. \n\nבגלל שלחלק מהקבצים יש כותרות פנימיות זהות במקור (כמו \"מחשבון כדאיות, אגירה וניתוח צריכה\" או \"הדפסת הצעת מחיר\"), הוספנו בסוגריים מרובעים `[...]` לצד השם הנוכחי תיאור קצר ומזהה של הרכיב הייחודי לאותו קובץ, כדי שתוכל להבדיל ביניהם בקלות.\n\n### רשימת הקבצים:\n\n1. **מפת זרימת נתונים (Data Flow) - המערכת המושלמת** ➔ `אפיון_מפת_זרימת_נתונים.html`\n2. **אפיון טכני מורחב — ארכיטקטורת 3 השכבות** ➔ `אפיון_ארכיטקטורת_שלוש_השכבות.html`\n3. **אפיון מנוע העשרת נתוני צריכה** ➔ `אפיון_מנוע_העשרת_צריכה.html`\n4. **מערכת ניתוח תעו\"ז ואגירה סולארית [מחשבון שלבים - SPA]** ➔ `מחשבון_סולאר_ואגירה_שלבים_SPA.html`\n5. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [גרסה מונוליטית בעמוד אחד]** ➔ `מחשבון_סולאר_ואגירה_קלאסי.html`\n6. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם סימולציות אגירה וגרפי SVG]** ➔ `מחשבון_אגירה_וסימולציית_גרפים.html`\n7. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם סימולציית 20 קוביות אגירה]** ➔ `מחשבון_סימולציית_קוביות_אגירה.html`\n8. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם ייצוא ExcelJS מורחב]** ➔ `מחשבון_ייצוא_אקסל_וזמני_שקיעה.html`\n9. **מערכת תעו\"ז, סימולציית אגירה ותכנון מערכות סולאריות [מערכת אופטימיזציה מלאה]** ➔ `מערכת_אופטימיזציית_אגירה_מלאה.html`\n10. **הדפסת הצעת מחיר - בראשית סולאר [מחולל מלא עם לוגו מובנה]** ➔ `מחולל_הצעות_מחיר_מלא.html`\n11. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [גרסה קלה ללא גרפים]** ➔ `מחשבון_אגירה_מרוכז_ללא_גרפים.html`\n12. **הדפסת הצעת מחיר - בראשית סולאר [מחולל משולב גרפים]** ➔ `מחולל_הצעת_מחיר_משולב_גרפים.html`\n13. **טבלת צריכה עם פיצול פסגה/שפל** ➔ `רכיב_טבלת_צריכה_מפוצלת.html`\n14. **הדפסת הצעת מחיר - בראשית סולאר [מחולל כלכלי קומפקטי]** ➔ `מחולל_הצעת_מחיר_כלכלי_קומפקטי.html`\n15. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם סימולציית תפוקה עונתית]** ➔ `מחשבון_סימולציית_תפוקה_עונתית.html`\n16. **הדפסת הצעת מחיר - בראשית סולאר [מחולל בסיסי]** ➔ `מחולל_הצעת_מחיר_בסיסי.html`\n17. **מנוע ייצוא אקסל - מבנה דליל** ➔ `אפיון_מבנה_דליל_לייצוא_אקסל.html`\n18. **דוח פיננסי - מערכת סולארית [תצוגת לוח מחוונים וגרפים]** ➔ `תבנית_דוח_כלכלי_מעוצב.html`\n19. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עצמאי בסיסי ללא אגירה]** ➔ `מחשבון_סולארי_בסיסי.html`\n20. **ניתוח והשוואת מחשבוני סולאר ואגירה** ➔ `השוואה_וניתוח_גרסאות_מחשבון.html`",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1271,
+      "parts": [{
+        "text": "להלן ר"
+      }, {
+        "text": "שימה אחידה ורציפה של כל 20 הקבצים שהצגת. \n\nב"
+      }, {
+        "text": "גלל שלחלק מהקבצים יש כותרות פנימיות זהות במקור (כמו \"מחשבון כד"
+      }, {
+        "text": "איות, אגירה וניתוח צריכה\" או \"הדפסת הצעת מח"
+      }, {
+        "text": "יר\"), הוספנו בסוגריים מרובעים `[...]` לצד השם הנוכחי תיא"
+      }, {
+        "text": "ור קצר ומזהה של הרכיב הייחודי לאותו קובץ, כדי שתוכל לה"
+      }, {
+        "text": "בדיל ביניהם בקלות.\n\n### רשימת הקבצים:\n\n1. **מפת זרימת"
+      }, {
+        "text": " נתונים (Data Flow) - המערכת המושלמת** ➔ `אפיון_מפת"
+      }, {
+        "text": "_זרימת_נתונים.html`\n2. **אפיון טכני מורחב"
+      }, {
+        "text": " — ארכיטקטורת 3 השכבות** ➔ `אפיון_ארכיטקטורת_שלוש_"
+      }, {
+        "text": "השכבות.html`\n3. **אפיון מנוע העשרת נתוני צ"
+      }, {
+        "text": "ריכה** ➔ `אפיון_מנוע_העשרת_צריכה.html"
+      }, {
+        "text": "`\n4. **מערכת ניתוח תעו\"ז ואגירה סולארית"
+      }, {
+        "text": " [מחשבון שלבים - SPA]** ➔ `מחשבון_סולאר_ואגירה_שלבים_SPA"
+      }, {
+        "text": ".html`\n5. **מחשבון כדאיות, אגירה וניתוח צ"
+      }, {
+        "text": "ריכה (CSV) [גרסה מונוליטית בעמוד אחד]** ➔ `מחשבון_סולאר_ואג"
+      }, {
+        "text": "ירה_קלאסי.html`\n6. **מחשבון כדאיות, אגירה וניתוח צ"
+      }, {
+        "text": "ריכה (CSV) [עם סימולציות אגירה וגרפי SVG]** ➔ "
+      }, {
+        "text": "`מחשבון_אגירה_וסימולציית_גרפים.html`\n7."
+      }, {
+        "text": " **מחשבון כדאיות, אגירה וניתוח צריכה (CSV)"
+      }, {
+        "text": " [עם סימולציית 20 קוביות אגירה]** ➔ `מחשב"
+      }, {
+        "text": "ון_סימולציית_קוביות_אגירה.html`\n8. **מחש"
+      }, {
+        "text": "בון כדאיות, אגירה וניתוח צריכה (CSV)"
+      }, {
+        "text": " [עם ייצוא ExcelJS מורחב]** ➔ `מחשבון_ייצוא_אקסל"
+      }, {
+        "text": "_וזמני_שקיעה.html`\n9. **מערכת תעו\"ז"
+      }, {
+        "text": ", סימולציית אגירה ותכנון מערכות סולאריות"
+      }, {
+        "text": " [מערכת אופטימיזציה מלאה]** ➔ `מערכת_אופטימיזציית_אגירה_מ"
+      }, {
+        "text": "לאה.html`\n10. **הדפסת הצעת מחיר - בראשית סולאר"
+      }, {
+        "text": " [מחולל מלא עם לוגו מובנה]** ➔ `מחולל_הצעות_מחיר_מלא.html`\n1"
+      }, {
+        "text": "1. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV"
+      }, {
+        "text": ") [גרסה קלה ללא גרפים]** ➔ `מחשבון_אגירה_"
+      }, {
+        "text": "מרוכז_ללא_גרפים.html`\n12. **הדפסת הצעת"
+      }, {
+        "text": " מחיר - בראשית סולאר [מחולל משולב גרפים]** ➔ `מח"
+      }, {
+        "text": "ולל_הצעת_מחיר_משולב_גרפים.html`\n13. **"
+      }, {
+        "text": "טבלת צריכה עם פיצול פסגה/שפל** ➔ `רכיב_טבלת_צריכה_"
+      }, {
+        "text": "מפוצלת.html`\n14. **הדפסת הצעת מחיר - בראש"
+      }, {
+        "text": "ית סולאר [מחולל כלכלי קומפקטי]** ➔ `מחולל_"
+      }, {
+        "text": "הצעת_מחיר_כלכלי_קומפקטי.html`\n15. **מ"
+      }, {
+        "text": "חשבון כדאיות, אגירה וניתוח צריכה (CSV)"
+      }, {
+        "text": " [עם סימולציית תפוקה עונתית]** ➔ `מחשבון_סימול"
+      }, {
+        "text": "ציית_תפוקה_עונתית.html`\n16. **הדפסת ה"
+      }, {
+        "text": "צעת מחיר - בראשית סולאר [מחולל בסיסי]** ➔ `מח"
+      }, {
+        "text": "ולל_הצעת_מחיר_בסיסי.html`\n17. **מנוע"
+      }, {
+        "text": " ייצוא אקסל - מבנה דליל** ➔ `אפיון_מבנה_"
+      }, {
+        "text": "דליל_לייצוא_אקסל.html`\n18. **דוח פינ"
+      }, {
+        "text": "נסי - מערכת סולארית [תצוגת לוח מחוונים וגרפים]** ➔ `תב"
+      }, {
+        "text": "נית_דוח_כלכלי_מעוצב.html`\n19. **מחשבון כ"
+      }, {
+        "text": "דאיות, אגירה וניתוח צריכה (CSV)"
+      }, {
+        "text": " [עצמאי בסיסי ללא אגירה]** ➔ `מחשבון_סולארי_בסיסי.html`\n"
+      }, {
+        "text": "20. **ניתוח והשוואת מחשבוני סולאר ואגירה** ➔"
+      }, {
+        "text": " `השוואה_וניתוח_גרסאות_מחשבון.html`"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-07-21T10:56:42.516Z"
+    }, {
+      "text": "כתבת את שם הכותרת הנוכחית המופיעה בתוך הקובץ, אני התכוונתי לשם הקובץ\n",
+      "role": "user",
+      "tokenCount": 32,
+      "createTime": "2026-07-21T10:57:46.327Z"
+    }, {
+      "text": "**Clarifying the Request**\n\nOkay, I\u0027ve got it. I realize I misunderstood; the focus is now on extracting the current *filename* and not the title within the file content. I\u0027m adjusting my approach to properly identify and retrieve the filename. I believe I have now grasped what is requested.\n\n\n**Investigating Filename Origins**\n\nI\u0027m now digging into the origin of the filenames I\u0027m supposed to be mapping. I\u0027ve realized the user provided concatenated HTML blocks without explicit filenames, challenging my initial assumption. I\u0027m checking if the platform provided filenames in a system context, since the raw input lacked them. My focus shifted from internal titles to uncovering how the system initially received the files. No luck in identifying explicit filenames in the turn prompts.\n\n\n**Uncovering Missing Filenames**\n\nI realize the crucial information: the user concatenated HTML blocks, eliminating explicit filenames. My immediate thought is to investigate the system\u0027s context for clues about original filenames. It seems the platform *might* extract filenames during upload. Now I\u0027m carefully reviewing the initial prompt, hoping to trace how the system processes this input. My understanding is that the user pasted HTML code. Now I will search in previous turns and comparison file.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Clarifying the Request**\n\nOkay, I\u0027ve got it. I realize I misunderstood; the focus is now on extracting the current *filename* and not the title within the file content. I\u0027m adjusting my approach to properly identify and retrieve the filename. I believe I have now grasped what is requested.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Investigating Filename Origins**\n\nI\u0027m now digging into the origin of the filenames I\u0027m supposed to be mapping. I\u0027ve realized the user provided concatenated HTML blocks without explicit filenames, challenging my initial assumption. I\u0027m checking if the platform provided filenames in a system context, since the raw input lacked them. My focus shifted from internal titles to uncovering how the system initially received the files. No luck in identifying explicit filenames in the turn prompts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Uncovering Missing Filenames**\n\nI realize the crucial information: the user concatenated HTML blocks, eliminating explicit filenames. My immediate thought is to investigate the system\u0027s context for clues about original filenames. It seems the platform *might* extract filenames during upload. Now I\u0027m carefully reviewing the initial prompt, hoping to trace how the system processes this input. My understanding is that the user pasted HTML code. Now I will search in previous turns and comparison file.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-21T10:57:46.327Z"
+    }, {
+      "role": "model",
+      "executableCode": {
+        "language": "PYTHON",
+        "code": "import os\nfiles \u003d os.listdir(\u0027.\u0027)\nprint(files)\n"
+      },
+      "parts": [{
+        "executableCode": {
+          "language": "PYTHON",
+          "code": "import os\nfiles \u003d os.listdir(\u0027.\u0027)\nprint(files)\n"
+        },
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-07-21T10:58:11.684Z"
+    }, {
+      "role": "model",
+      "codeExecutionResult": {
+        "outcome": "OUTCOME_OK",
+        "output": "[]\n"
+      },
+      "parts": [{
+        "codeExecutionResult": {
+          "outcome": "OUTCOME_OK",
+          "output": "[]\n"
+        }
+      }],
+      "createTime": "2026-07-21T10:58:11.685Z"
+    }, {
+      "text": "**Analyzing Input Methods**\n\nI\u0027ve realized the current directory is empty, which suggests the user either pasted files as text or merged them into a single prompt. Examining the initial prompt, it is a single one.\n\n\n**Clarifying File Context**\n\nI\u0027m now focusing on the concatenated HTML files. Since filenames are unavailable, I\u0027ll link each file\u0027s internal title (visible in the browser tab) to a suggested Hebrew filename. This will be presented as: `Internal Title (Easy Identification)` ➔ `Suggested Hebrew Filename`. This provides a direct, useful mapping. I will also check if any original filenames were mentioned within the HTML code itself.\n\n\n**Mapping Filenames Accurately**\n\nI\u0027ve determined I was wrong to focus on internal titles! It appears the user *did* intend the filenames. Since the HTML was pasted, the original filenames are inaccessible. I will now explicitly map internal titles (from the HTML headers) to suggested Hebrew filenames for clarity: this allows them to easily rename the files on their computer. I can now provide a unified list in Hebrew, associating the internal titles with the proposed Hebrew filenames.\n\n\n**Presenting Mapped Filenames**\n\nI am now generating the final file mapping. I will organize it as a clear list. I will map the *internal titles*, found within the HTML files, to suggested Hebrew filenames for clarity. This mapping helps with file organization and renaming: \n**Internal Title** ➔ **Suggested Hebrew Filename**:\n\n1.  **מפת זרימת נתונים (Data Flow) - המערכת המושלמת** ➔ `אפיון_מפת_זרימת_נתונים.html`\n2.  **אפיון טכני מורחב — ארכיטקטורת 3 השכבות** ➔ `אפיון_ארכיטקטורת_שלוש_השכבות.html`\n3.  **אפיון מנוע העשרת נתוני צריכה** ➔ `אפיון_מנוע_העשרת_צריכה.html`\n4.  **מערכת ניתוח תעו\"ז ואגירה סולארית [מחשבון שלבים - SPA]** ➔ `מחשבון_סולאר_ואגירה_שלבים_SPA.html`\n5.  **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [גרסה מונוליטית בעמוד אחד]** ➔ `מחשבון_סולאר_ואגירה_קלאסי.html`\n6.  **מחשבון כדאיות,**\n\n\n",
+      "role": "model",
+      "tokenCount": 2760,
+      "isThought": true,
+      "parts": [{
+        "text": "**Analyzing Input Methods**\n\nI\u0027ve realized the current directory is empty, which suggests the user either pasted files as text or merged them into a single prompt. Examining the initial prompt, it is a single one.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Clarifying File Context**\n\nI\u0027m now focusing on the concatenated HTML files. Since filenames are unavailable, I\u0027ll link each file\u0027s internal title (visible in the browser tab) to a suggested Hebrew filename. This will be presented as: `Internal Title (Easy Identification)` ➔ `Suggested Hebrew Filename`. This provides a direct, useful mapping. I will also check if any original filenames were mentioned within the HTML code itself.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping Filenames Accurately**\n\nI\u0027ve determined I was wrong to focus on internal titles! It appears the user *did* intend the filenames. Since the HTML was pasted, the original filenames are inaccessible. I will now explicitly map internal titles (from the HTML headers) to suggested Hebrew filenames for clarity: this allows them to easily rename the files on their computer. I can now provide a unified list in Hebrew, associating the internal titles with the proposed Hebrew filenames.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Presenting Mapped Filenames**\n\nI am now generating the final file mapping. I will organize it as a clear list. I will map the *internal titles*, found within the HTML files, to suggested Hebrew filenames for clarity. This mapping helps with file organization and renaming: \n**Internal Title** ➔ **Suggested Hebrew Filename**:\n\n1.  **מפת זרימת נתונים (Data Flow) - המערכת המושלמת** ➔ `אפיון_מפת_זרימת_נתונים.html`\n2.  **אפיון טכני מורחב — ארכיטקטורת 3 השכבות** ➔ `אפיון_ארכיטקטורת_שלוש_השכבות.html`\n3.  **אפיון מנוע העשרת נתוני צריכה** ➔ `אפיון_מנוע_העשרת_צריכה.html`\n4.  **מערכת ניתוח תעו\"ז ואגירה סולארית [מחשבון שלבים - SPA]** ➔ `מחשבון_סולאר_ואגירה_שלבים_SPA.html`\n5.  **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [גרסה מונוליטית בעמוד אחד]** ➔ `מחשבון_סולאר_ואגירה_קלאסי.html`\n6.  **מחשבון כדאיות,**\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-21T10:58:14.046Z"
+    }, {
+      "text": "מאחר שהקוד של כל הקבצים הועבר כטקסט רציף בתוך חלון הצ\u0027אט, שמות הקבצים המקוריים שלכם (כפי שהם שמורים במחשב שלכם) אינם נגישים במטא-דאטה של ההודעה, אלא רק התוכן הפנימי שלהם. \n\nכדי שתוכלו לפתוח את הקבצים ולשנות את שמם בקלות בהתאם למה שמופיע לכם במסך, להלן הרשימה הרציפה הממפה את **הכותרת הפנימית של הקובץ** (זו שמופיעה בראש הדף או בלשונית הדפדפן כשפתחתם אותו) אל **שם הקובץ המגדיר בעברית**:\n\n1. **מפת זרימת נתונים (Data Flow) - המערכת המושלמת** ➔ `אפיון_מפת_זרימת_נתונים.html`\n2. **אפיון טכני מורחב — ארכיטקטורת 3 השכבות** ➔ `אפיון_ארכיטקטורת_שלוש_השכבות.html`\n3. **אפיון מנוע העשרת נתוני צריכה** ➔ `אפיון_מנוע_העשרת_צריכה.html`\n4. **מערכת ניתוח תעו\"ז ואגירה סולארית [מחשבון שלבים - SPA]** ➔ `מחשבון_סולאר_ואגירה_שלבים_SPA.html`\n5. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [גרסה מונוליטית בעמוד אחד]** ➔ `מחשבון_סולאר_ואגירה_קלאסי.html`\n6. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם סימולציות אגירה וגרפי SVG]** ➔ `מחשבון_אגירה_וסימולציית_גרפים.html`\n7. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם סימולציית 20 קוביות אגירה]** ➔ `מחשבון_סימולציית_קוביות_אגירה.html`\n8. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם ייצוא ExcelJS מורחב]** ➔ `מחשבון_ייצוא_אקסל_וזמני_שקיעה.html`\n9. **מערכת תעו\"ז, סימולציית אגירה ותכנון מערכות סולאריות [מערכת אופטימיזציה מלאה]** ➔ `מערכת_אופטימיזציית_אגירה_מלאה.html`\n10. **הדפסת הצעת מחיר - בראשית סולאר [מחולל מלא עם לוגו מובנה]** ➔ `מחולל_הצעות_מחיר_מלא.html`\n11. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [גרסה קלה ללא גרפים]** ➔ `מחשבון_אגירה_מרוכז_ללא_גרפים.html`\n12. **הדפסת הצעת מחיר - בראשית סולאר [מחולל משולב גרפים]** ➔ `מחולל_הצעת_מחיר_משולב_גרפים.html`\n13. **טבלת צריכה עם פיצול פסגה/שפל** ➔ `רכיב_טבלת_צריכה_מפוצלת.html`\n14. **הדפסת הצעת מחיר - בראשית סולאר [מחולל כלכלי קומפקטי]** ➔ `מחולל_הצעת_מחיר_כלכלי_קומפקטי.html`\n15. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עם סימולציית תפוקה עונתית]** ➔ `מחשבון_סימולציית_תפוקה_עונתית.html`\n16. **הדפסת הצעת מחיר - בראשית סולאר [מחולל בסיסי]** ➔ `מחולל_הצעת_מחיר_בסיסי.html`\n17. **מנוע ייצוא אקסל - מבנה דליל** ➔ `אפיון_מבנה_דליל_לייצוא_אקסל.html`\n18. **דוח פיננסי - מערכת סולארית [תצוגת לוח מחוונים וגרפים]** ➔ `תבנית_דוח_כלכלי_מעוצב.html`\n19. **מחשבון כדאיות, אגירה וניתוח צריכה (CSV) [עצמאי בסיסי ללא אגירה]** ➔ `מחשבון_סולארי_בסיסי.html`\n20. **ניתוח והשוואת מחשבוני סולאר ואגירה** ➔ `השוואה_וניתוח_גרסאות_מחשבון.html`",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1334,
+      "parts": [{
+        "text": "מא"
+      }, {
+        "text": "חר שהקוד של כל הקבצים הועבר כטקסט רציף בתוך חלון הצ\u0027אט, ש"
+      }, {
+        "text": "מות הקבצים המקוריים שלכם (כפי שהם שמורים במחשב שלכם) אי"
+      }, {
+        "text": "נם נגישים במטא-דאטה של ההודעה, אלא רק התוכן הפנימי שלהם. \n\n"
+      }, {
+        "text": "כדי שתוכלו לפתוח את הקבצים ולשנות את שמם בקלות בהתאם ל"
+      }, {
+        "text": "מה שמופיע לכם במסך, להלן הרשימה הרציפה הממפה את **הכותרת הפני"
+      }, {
+        "text": "מית של הקובץ** (זו שמופיעה בראש הדף או בלשונית הדפדפן כש"
+      }, {
+        "text": "פתחתם אותו) אל **שם הקובץ המגדיר בעברית**:\n\n1. **מפת זרימת נ"
+      }, {
+        "text": "תונים (Data Flow) - המערכת המושלמת** ➔ `אפיון_מפת_"
+      }, {
+        "text": "זרימת_נתונים.html`\n2. **אפיון טכני מורחב —"
+      }, {
+        "text": " ארכיטקטורת 3 השכבות** ➔ `אפיון_ארכיטקטורת_שלו"
+      }, {
+        "text": "ש_השכבות.html`\n3. **אפיון מנוע העשרת נתו"
+      }, {
+        "text": "ני צריכה** ➔ `אפיון_מנוע_העשרת_צריכה."
+      }, {
+        "text": "html`\n4. **מערכת ניתוח תעו\"ז ואגירה סולארית"
+      }, {
+        "text": " [מחשבון שלבים - SPA]** ➔ `מחשבון_סולאר_ואג"
+      }, {
+        "text": "ירה_שלבים_SPA.html`\n5. **מחשבון כדאיות, אגירה וניתו"
+      }, {
+        "text": "ח צריכה (CSV) [גרסה מונוליטית בעמוד אחד]** ➔ `מחשב"
+      }, {
+        "text": "ון_סולאר_ואגירה_קלאסי.html`\n6. **מחשבון כדאיות,"
+      }, {
+        "text": " אגירה וניתוח צריכה (CSV)"
+      }, {
+        "text": " [עם סימולציות אגירה וגרפי SVG]** ➔ `מחשבון_אגירה_וסימולציית_"
+      }, {
+        "text": "גרפים.html`\n7. **מחשבון כדאיות, אגירה וניתו"
+      }, {
+        "text": "ח צריכה (CSV)"
+      }, {
+        "text": " [עם סימולציית 20 קוביות אגירה]** ➔ `מחשבון_סימולציית_קוביות_אגירה.html`\n8. **"
+      }, {
+        "text": "מחשבון כדאיות, אגירה וניתוח צריכה (CSV)"
+      }, {
+        "text": " [עם ייצוא ExcelJS מורחב]** ➔ `מחשבון_ייצוא_א"
+      }, {
+        "text": "קסל_וזמני_שקיעה.html`\n9. **מערכת תעו"
+      }, {
+        "text": "\"ז, סימולציית אגירה ותכנון מערכות סולאריות"
+      }, {
+        "text": " [מערכת אופטימיזציה מלאה]** ➔ `מערכת_אופטימיזציית_אגירה_מ"
+      }, {
+        "text": "לאה.html`\n10. **הדפסת הצעת מחיר - בראשית ס"
+      }, {
+        "text": "ולאר [מחולל מלא עם לוגו מובנה]** ➔ `מחולל_הצעות_מחיר_מ"
+      }, {
+        "text": "לא.html`\n11. **מחשבון כדאיות, אגירה וניתו"
+      }, {
+        "text": "ח צריכה (CSV) [גרסה קלה ללא גרפים]** ➔ `מחשב"
+      }, {
+        "text": "ון_אגירה_מרוכז_ללא_גרפים.html`\n12. **ה"
+      }, {
+        "text": "דפסת הצעת מחיר - בראשית סולאר"
+      }, {
+        "text": " [מחולל משולב גרפים]** ➔ `מחולל_הצעת_מחיר_משולב_גרפים.html`\n1"
+      }, {
+        "text": "3. **טבלת צריכה עם פיצול פסגה/שפל** ➔ `רכי"
+      }, {
+        "text": "ב_טבלת_צריכה_מפוצלת.html`\n14. **הד"
+      }, {
+        "text": "פסת הצעת מחיר - בראשית סולאר [מחולל כלכלי קומפקטי]"
+      }, {
+        "text": "** ➔ `מחולל_הצעת_מחיר_כלכלי_קומפקטי."
+      }, {
+        "text": "html`\n15. **מחשבון כדאיות, אגירה וניתוח צ"
+      }, {
+        "text": "ריכה (CSV) [עם סימולציית תפוקה עונתית]** ➔ "
+      }, {
+        "text": "`מחשבון_סימולציית_תפוקה_עונתית.html`\n1"
+      }, {
+        "text": "6. **הדפסת הצעת מחיר - בראשית סולאר"
+      }, {
+        "text": " [מחולל בסיסי]** ➔ `מחולל_הצעת_מחיר_בסיסי.html"
+      }, {
+        "text": "`\n17. **מנוע ייצוא אקסל - מבנה דליל** ➔ "
+      }, {
+        "text": "`אפיון_מבנה_דליל_לייצוא_אקסל.html`\n"
+      }, {
+        "text": "18. **דוח פיננסי - מערכת סולארית"
+      }, {
+        "text": " [תצוגת לוח מחוונים וגרפים]** ➔ `תבנית_דוח_כלכלי_מעו"
+      }, {
+        "text": "צב.html`\n19. **מחשבון כדאיות, אגירה וניתו"
+      }, {
+        "text": "ח צריכה (CSV) [עצמאי בסיסי ללא אגירה]** ➔"
+      }, {
+        "text": " `מחשבון_סולארי_בסיסי.html`\n20. **ניתוח והשוואת מח"
+      }, {
+        "text": "שבוני סולאר ואגירה** ➔ `השוואה_וניתוח_גרסאות_מ"
+      }, {
+        "text": "חשבון.html`"
+      }, {
+        "text": "",
+        "thoughtSignature": "Eqc4CqQ4ARFNMg+KHXnY7dMxxma2ISr/562zbV/pE2sgus5g1RsaB5VQj8zJ8Ododa7CCfTZBIE2XLMohFkjl3UrcdbphKmex0gWm/4ArwEDekfmAYJ0e0t9jCeUc/aoZ1rjhRx2CKpJZk1xeqxnOIrweXXiC8IdlewonyoInKJ9/07fVEtHAjAQkHBa23OxWyxraGl5yjkAqVFSRZeF9akCNo6M097u5pID6wT4lU+DgACVVev1noRvyS1s3zZhrZUpHwZwPHVLGDKCTLfItnuKU3TwIPXL01GAJLK/nTvu+kdX12il1cAg2SrcKIY8M8co8zbfVEaHEJa9kMHHTMGuTgckeSs5OaRgTxh9lHBfumWu16eIMijaSQn1ADutASXlf+Zyj7z4/yo8vsBd5sq7VsuuLiC4gnchp9W65/rCYlHBGEFJQcA1Mm607zZutrKAqYtnb2L9l9pyTbaoc3v/MG4u2RQkZypdv6zXTCNdG6eAbWVhjnMosnr6XlmH42jiMf65bu2X00qXa78a7B641vq0vmjHKU+DTitTuY5exdqy8JOa8odE0qNjAHoZ4Z3rG7xQ7APRfxbxhXS8vFhf0IFFTrADwt5htNbX8zZlHuevb8lOYXh9mqHX/SAxanZ6MP3xm40s0Htg33AYXT5r83IQV9gYsnsU0QwKhZO/K17uIK4P4ziF6L8DkZwB3yC32xHGJoVAUFgJlL28+3mefwuxTP09e/yhZctNI8gWYbTqDfWa9Qeu6dDmiy0VOUQzsHIZR+b/t9D9FZsIY/xSTDs8qErRuMr2Kdptc7dA/PrbGHwibNB13e0wdDMQPoxcYtmzrSpRNUVhbHktXF1DcS9RbtenG9dMPdbL9lB9bmoI72b+m2YIhZIL5nWDTDDS7wzZmT5GUoYkwqM3NOsq+uTzuJ8zJF/TZI88zwlfvXeH+lfHch3SYeB0c85lUBbHSDqYT2MXlDXpURLDygGtxta2rWc52Y7XxkT7tvPNunoJI9fj6xvaNzq+gzlTSsPwU/B3VGetI/hPuENmU54lCZoaWB8IThfVy2uCRkF1/xih7UdP2vrAMY4SIdDZ7hvD0ua0+bU3kViev6ZY9vbJmv5ExKUmcdkPBi0u/zmWJN3ZqEc6t5eRw6H/L0bxxp8bBJvKfGX5hdBZCQ/ti7K+Z7gxO+wrixdtKQdJhqsBMzeTVwAxTJkmAFUx/Xly9Js/CMcVIEYaX7Hf27JNlR7wLrpVcjXEve2vuZDutnExDRt9BnWMkyRtE3b6st1XQCUwezUIedzjozMsFNR1Pop/h70RtdhJsm8VNTlW83EBvIl6uuZpiCvQgNRyfvoK71V6Mfaey+CcsWFaOcW9SR+xmQCqHAeXZJcZ4lwFyIyf5Yq+rnMojnFLuswGm2NFROq5BAGbcahVs7iIf5AAg0d44IY7luY0WttEfhtSQgnQA4ePjxKNz/EWRHJV31pnD8TrHz1zSwCo5QR3CmXBmZaOcKiK/bqse9jEJxA8IhOICDqoWgz6/8aTAXSb3TcRUlW7UhczpkqKSEWydFVc1PSvUBP1HrUMOG8s4mdLdLP42vsiZxtKNIBHhoAXqE7Iew1/m7v5BqdiM9WM01kWJGoVyk6M9hvO3JpdJxd2Rdg520I90A8YXtdK5+e6RkAtUpzeClHGKvdYHz5H/T8Lbjy0zycdRveaeDai0KwGV9Sizv+EHJ+Wp4MjXvf2QscgeEFuJLKe5/Bd2Q1hBkk5ZOvG5DSb+qJ6lyNVY7Z5VOYnrAXXXxdkFJL7a7gail/LinZgYEWbfFsBHvr56O5ouUKUXD22NKMlSqIrCIqxBE/Eb+txF12Ry8oA10TZa6nOcqkm9za9Iej+XB1SswDRhYrFY2qSxm/U90fheJDRZOyiZ4aeE1Crnk6Jd0NWIX5QMZTrt88ZW2RdUolkSBXV0Z5XENo+kjmQYGmPUHl5KlOu18bC63xuKzJ+8OoYnxVRISUvueA3QMEHBE+kN8LKSdwmdnOhrnk2h/5NIVtNWabqqPBcxywbHwrFMaPuEcdtc4qjIwBNdivR4YQzkKWBEUD4oP6gCbnNNo/OhwxjhaJPxs09qE/yBCHUkZMB/pxKoaW2yT1FL3Ew12frL8G3GyEk3XBELH2ddUrQhrgdmbxs6OO9NPdTm8VmV5tdHC97m8SEmxdwfQXPF3201qgN1jYFeQ/mrcPDZ625ZgxcHXiBhGjnKdE6zF7+6FssCnVBOXqmhS/2mGLimWtNDSzrfQl8rsNH0tY6nMG5A1IU+oHD5Mn7glgFWSVBAf74SrCR5lET1oDZAGVpuQeQmSHRkcZp1X9b79vG0kL5HhPi4TN+EBIuO+QSkd2Bbo2n1NHNR1k2pysh3YtC38T+2O3qT1WAXCTsuBm8HeyY3bLiUjkZqmXCztSZuJuZMZAW1CVwtoXKmE8jQQm6i5oYYjTjg45y15ErGLTTthefy7TJoc7d2Qm/2bIhDoAPXHAwtM54BnGfHsfhp98d/esmQ7bGlCLZjsu5lQsfsd6psuGcO2hACU0e9hsLjCzkufD5e5xTHmu66Z3qbWZpBBhBvjvSMEgw68c+uYHISdzgTtgy7Tt0E77OjYXBmfmYxsPSMmMX5Vg+vypxk3/PkP7cxPGhXj4QlK88FSzlpM/GNvXZlmEppiodtzs6fWrBU1soiWP1u8ayuSYFBqbwxSLVLgkM0tcEhkzQlxgRIH2123D72BUWbVrNUE4PdJ90gZWVr0jJ3QEXC4D31UOcik2hSmcVEIdwvzanY49j7TnB7IDuL23Hv1Ed+Skcd3kBOtjHZy6iXOv/WajKcyrWsfThaZQU5Tv9ugmcDgsQOZHFbOwqMBZ8/6NGf1l2UfGK2xFEOmwaFOGgrOHFaykLexECgYcJlfEMgUvw498HG5LAGFyzxxpKwZCurVmayeYE3zr0iHBJ3CQYzJIrVXLXZ3i9KBcdzFaQdGudoQTJYJ6fKFJEdJ3FQ7uYiZ4kcJqTqV9YbHd2hbL+OkL+VM17pj0r77PCANuw9hA5ZVxPbX+uR2qP2EiXLUds98KVPiewAO8uAAuUHtIv6IhE3a6ZPXOwjXn/tAhedyZX5X8jF6hlMjLJ807hfdeDzxSfCJknEtZ1OCF+WlULF44n7/W+EMsPOxKk8UflTos7a327m8k1tJkLUuzLNNj7HqMEsyERdVeCrKncLsKpOvQbCyHNeREyjTu/oMvKg3bzSloT0jafl1ZF4u16XOz3D7PH4c32fk/tghd/IFv3xVzVbZUGhFoOKy5HL2t9l3j5OK1ZEWtmxDiowkqY+l7BQjlKU9R8dTaiy6NLwOe7I4+SUY+sEAyPdCiXWocILTT+GGpJQK6IXxrUEe5tHqp6N+pvyapPU+9FGJ35Cs/QmbAHKJLs+/XU702a3wyFbFyTFanrM9IlboZLaiqZpkbmssQbraGsPxjPoi1JETpeEgaMl3WJRbbxHVzrSU9EP1TiHcmlBTFUaVx0jw9zBxZr73o9GRXMypbGrwqviA2cpUn34PjK8NoEy27PLQwcIlkiYSdcpm25AhSfu2Wa8/outLLgHFWIbfk4c1N4bkTsUp1hOozdFxeLcbU0Ft7riduq0HtkvItZLNOBsFc3G4+JWfi4CmRIGRZJaZqN1tJhUMBEY7ye4QBu80qnUHQI80RKkDkvggUI1AQIgpMYNE74azoPLSdZuP6aoN78uCELFDsIW+6z8/f5ATxF3rxbz18qcWydrVKSTLuu741xzwATd2ib50yeAWkD/y1zRg9fJLIdCks6enT5V3EiBi/8OBAa/3JQ0mTLPhyPJ/FY5+uns3IC65ZJli8p8dQZOaFmNT622sg3JC56Ld3LEAOZMMhQBD7Q0bCUH/jBjQk8acbWS0vFyDNSx2MKZZ0hieun+vzZdJcAwWcRcLXjRs6j5ryARaPPfDxwj1na37MPYbkGZC+55TkYOiyQsWaYKDo4tqbYDTGNaDY8LcVoPSj38VCov+6pCFMq0Pq8h6HxBWNVhr++yjbqV6KKoplhSTIVwI/SFyoTj015w6R3R0PI1sawk6RsEEVxh1OeESRSOn4jZ8Wudfk25R22p9TSksqCNtPNoUs9078xWDILvNxrd54ZdOnMN1kM8bplTPrrFDYAz9q82ThxNezUd1aJmb22sjn+xsbDhiDvwAYull9bCR9StM7z78lnOYqm7l1nbgrqsNP3KT497YQRlHQtukXLXJfRGASy4Rp0weks4C1H8VA5kgPXve2DH3dq1Fx+z7Kvsy8FY+A+oRKugJ6HTwNaPH2i2RSULPqbhpW0oObO9HRAOKrlqGOAG6YwL/n4xsHXe6bIEzb+DlMoLMTMmBF16zg8HC1Bs8Jz7i3XngLXy1rSnIG/T2opDmWL5mXKdK6yw0eg6iDOTVV+X7SWIvbOGEde9GtmKTuhwbq0ZmrHD3P6Rnp9pFPL3m8QyWiJUCaTWv2ezuzlU9TG5UzVHYPPX/GQEQBCtEDsQMBtomehUI5CJp/Sk09j97gtTPwYqWL2tR3U1qZ34gGfQPAOUkai3on9+m/uOV6ZS5USEJc/sUtkD0zRCU3HGtweYU7mb+RkLHQpwpEfR6ea58uISc2LFzFki2wYkbSqXBGSKaECp8ZNKt40IfgHEB36GzYotS6SCLwzNwHdyT4ZQaboS7gDVJLtRJdJCJnPAViPILfL1wKO7PUiKmbIoBGebIP5DGg/ECEYib4gYXOfsJz9qxQaPPq3Yb7VZK3WD40VYSOLxeFPFIQtWZSwq7PI5I4+8wp5FEMjm27bwiU55bWu6oL5x8lTd+AshaNfa0KP8keELW60mZ0k9vY7c7doV2DlYJc0njFVwqjvMonpv1pBgL7Cezi52qtbxpHLKyuZhFlhRL0I9PfwLckUa3ngKa+iD9xB/pox7OIWL5oc/bz8AR68EewVIKTP3kGKl7xouKQaUuC7g0WnhFDq9DCHVquT2MOShTpwZt9X7KW2quTFpZlCHf3ODDpafcpIvYS6AyyA8nkZaE9/PWVvtCIHeVDQbRsV6uhk8/ppemGDenwZFmBXmgSF5uwhDIWVAIBw/IO3NiPZ0F8D0rbIBMy65pmn8UvR8H2dm01Ddj1oaBmW5Vj0867yi9Xb6cmaDB+YwyF7hnUELNYlnZUCgg1x7nKtGXPB34SrVLGPEwvc/fOYj3KwdklRT22K6NNM1yJwCrBmfIxcSX3kknqOT/+6+gGnSHqk/GyUrzwzWU7Aambe+6PXjncRaoh/SB+0zLw7zFuE5c0I9tIkUzw9oHH5jVg3FHZvoTSGJHBNqwVltWcSTUCf6Is8ZNMOEPVTxpuzC2jicYHziZ2Ve6lLnE8GrjLfBR5AHvsjkNFOm+BGaZQy97WK2RpfuqFxQilF54GNc8qHEYmWMjF9QatUi8Gjgouqy+FddbSXQS9BIRac8Ma3XN0o7l9UcU33zEN/LeIyieiFg5lIm1ePUqJ9r9/PlepZehI/x14j1puzbxnf1B9UQntW8y3TmAfKzdNFGOFjOKA9Ezstf/23IPkdDOXT6Sb+jbo+bvadTFCDnAix80v5ZlV4OKbd4mO8r6eKCSquMeMePZF0b9pYLfkSefvzq9xHYn4I/NjzONNhqBikLC48WlA14IfHW98SyY640CWXmA1AUtFW1jKT/i/+i44u5bBeo31r/sRyivIXL/fYXnY7upJ94bGUKOsPu6SkiLbDH3YMrTDSwvERQzTSCL8/zgCjBg+8ou2QUBq3sP+36FNGSDcgD+j6pYuBCwEFNTIgERrJSr3etgCXnYJu1SLxxMU2ZyuQCUbL4JBL8JwdmRIjZ5Y0k+fsPfCBbkz/g9D42zMxsvwO+j0mwKV8n2JVVIftIwfDlFKthwyQQjiFoRC7Ol73yJEzdv6TduhLvrIOSfZMdxbnGyaGE2ZzDfzpyM5uXL8ArQZuXN9E+pMR/rb2rC56WkSt6ehtzsKrY2j3VVHBTr/zlrQB4gZQZHSn2u/LEqEfsQ+2kOUHkgVsK/klh57pqPMWGEJO3CVgSwBTjseotAnotzqVX6uvyu6r9gdbdUQcsa4hD7jigDF7PwzFbSyYucip9s60WbEXyfW1qOhKAAvLaUCMSoSKkU4hC0CJ9tG53Mxv7NPgMuN65CNugcVgWchMyTcJVp/ZhN9thwpM1/oApMiffFARuZC+m3/yYQ3ZoyxWEMmMVwmli9uDvZP8lkL9NMLG6aVHngyr+Y+qgmoDPuyOKvYE6KILSbd8YAKVur6cn6wqgqGrEwqAOaD6KqubX+GBEde/VNxHNvUedMQ0/bZ2aj7Pjb0caF6qBEe4HNa0LzgG0bwYWywnlo4qZF4ioEaEVLD+4NrQvBcM79KvsvsCY4OeNC7gHv9ncqyWGfZ8KSb66XnANBaFyNG8v6oRVCXJdV/Pmo0JqHVMTqYSByOtAEMOH9UfP5y/GFoLQZBGflCZN5aMtPAuQvJDTQktGAdkvwCVLAPqg9hJz7KtwWMcUYY+OmYJnU1iHHI7SFIJ6im3j8udYu78VZvzruXGEjVdvtkNEJobXFhzS2N7u1xKBRumsRx7BmdM4laj8ymfQSML6/ZkZEUa6CHOR5gOtf64jpujhs3n3O8QtLnEPThk2eRGu/1Ttey4AJGz3DIXKkh3ZyZX/geBh7gbOlLDayaIjkJnIZnRzgD6ALpYhrKT5p30vomoC5vFm1a1NjY6rU4MmN/fPiUYDzY8k6SZdy0Oz9gIoHUC/gpq2EkOj0r1U/u0wYeB1Y5Ezpaok6VXYhsHX0PuFydDktlP4qxe/8RHXausHjszVcsn6374C784VXk/ECJVAjYqvAOSTJpredAl07vquh7TXkPDzOMLyiqACLhs8iqccjavg0y4Q1ZBtUuViASL5w9hsf7alMxDyHOggvIAaI8YO7Isp0jmhIqO2otXRf3THOXU3TkD4y9IYE+Nj3PModEcjBwjJh4heUHlDeAqd3Fi/D7nLpdNdxZgno9NEP3wnA9ju8PNW7JAWgaFZ1/bHxdC9AbrJEi94NG4QZpKInldr7Yc2YhDA9rkwCIFDGQvt6voHkW3jM3vR9EPzArPp7A0ikdaSe1OPM2gDSaltrHPGC2fZ6zGVJUABwsEDhl27lneretdaAhFoNez6x2QnXkWGxXceHjcpu1jEdp3TfsHPnSZLio53VgrGqj9gWcdwPAx02hdChHQk6vb7x+nPYfUPyp1LPqOWzNInAilsct1be+hHSHE32nOBxBCWjW1yOWzyPI5SEAVT4sA4xk0Mg0JXrd054IsK9bYPLyTcZ/N1sGF5Q5wdd1DBga6oh/D51CuZWlpzikZ6h6SGTuzOo8AOQPqH+WNlCFSqYaAHAUKOSu+wdlBRVvlHf00Wy5+wkg9m0Cn6D+LGOpTAAi8mcPg3MX2XXBJ+pQIZILwSz9xespzGOvSLjLh9YlCH5HFyGWNWEZ4Qc/5SjQ2G0vgJ+nduUikCu+8pe7Ij0QsN+yDNNhpKnBiCy89JCLwLph5VzO6juCAFGNxP/w8meXlNlgxU014RtW0O6NkvdH5cEofKoARczag/2SumW7qyXRhx3gO4o3JNI2R3m9UZHU8C+QJdUihMxsJ1c8EWxjkVVJXzoe2Ya8I9kFtCGQXOt2FAn5dNmuB07OscC+NIuaNU38m927FMFZsOCStJKLItBFrWwfNPl+gQW9LoFkGwDv6VTBNz9OG77FMIFUiXVdO+vztHav7U3ndmIRUMoTKBOPCnB3Q3v1a1niIkMwcCptHTQDgc4aWngy3zDFmhedGs6QEyasHVjacO9XPDuxKR6JTjUSoUyZRoS/dJVO4wsQtmnzntuShSRdK6uBOARXN4aIhKzYRWLd7I6g112KOcBscTaQQMynpzJ11O7hbvFbY/BGPDQ/0VmhLvU98pKrGxHnViK4BXZQmZhYUM7UKLs+lmpRNsxGa1aUqUJChg0QUg//T8ke3miVLC6x9DWFiqoGhPEXQ/crjvKdc4dSy7AWiCTDFHXbWwQB+/e2bLcDzsOiXKVQaYy/z8kECY5iVunEm+nV2Clbb6HsEObFMViKwpfiXnwkzE/Z8U83GOMKCJqeWPLc94Lv7DZb8dhce1jWOOm5llor6hMHiB4zUVAcY/aa9QIqU9YLzl81MjmXjm/QIyGfIgLNBVkhrwOPCahPwoMvSRrcnSjderM6vTNMWj+dQX0jrqGwX+fLnOxAfMemMFFLNRLcqx2XbgT2hbR9CIhf0E0pvE9V+O3JxH1PSggXd2X5Ghm2sjMusRnUd5qX+qVzDFB5I9zml39Q3qQ946qtOFkK+KwAVrOflgQNqHApMM6PYozN84HT1TDhg/p8DAvAEEEra2sUD8uWLT+nNi3tCS0Mt8ppY6wCpQeYgUdQGj3Jg15pCr05lasV/WqyJLF+KVwJPdp3FkBhGaZLJnXsxp5MWlFgOr9eZ+XcapLKdyaJKwyx6dz0ersUesbbuIvdbxprSGMXhc982oOl0PoDtxaJQucQzbT4+2hjeEru8Sx2DX/mmd7Srg9hDYLVPm/xMx4z6PgLOMm7QnyBjQwC03YF48f3OhujGre0NlkR5F+6qNRvmwuH1OVBfXqLOhi8KIHjUKrT068ozaSQHgt3HO7FcMcCeNlfxOopV8As9FRRa2P4leZ3k5g9jzAPksLZGhRgNeDoTEIWETHNR8/F7UHkYSjemXHjA4nvqw+/HP7VLuKyURJHC8k/ymiC6PCL384XKP+N6gnnT+vyH4FNV9GBx6pWQMDodMjHAcbujL1Em+f07duNz7fDQNrA9UVqSCUCZKHQWfYuTFt2821cn193uRW4qlstRxSaOBfcMtbtUKDEgGoD7Crwox8OYvTQA+kgqUzZuwzsfSo9ebFnrnRnBn39/u/e/SF+t04vXDdQUD0utswZ0G+pxABrxWW1JsudfQ7GO7bhMNlSYe32xNHUWAdX4VMkc8Zio/o1W3p3A/fgFo11O1I9n6DIb/IsBxckLU0duFTSIj1eQg1scKfo6RaVcldCCpS/rVjEpIdiWux4XOrPIHrcWwBqAvhog3gDut4U8Z2y09eIyTeLd+d1C2eTLZlHz7Eo6l6ZAJDnhMamNlY3vBnlYq8zoUddc9CqnLBimHBV/1nYo5XZDVDdqnOebaq1nGB5gAiSzIjHXV1hpt2F3C3lHdGiJwv79rfWOR/5ATbzdbUVK3Z1lolexkSTtejQt/aCII/7PeIHsHk4457MvcC9f2kLxJE5kF2k3FtCV5s/JUEQECnCav45EiWX0/5baioqsY+pvmObHLjU0EMBJ/ZO2rF0nwRpXXObgDX7scNvImTfiqsyI4aw75gU+qb2F0bgNFVLrG6yaJoCSVNdWLw6NvvEROtNQDtud1LAg4w8+B3YporhDxL1Iz+cc4w52C9RJf8kmnUScwhPG95IrZ6iJhaSWeGUlaXacAtjTsi9w7cLp6oCi8ZVIOqJJe7GyO6kKAeUOFdwvDCyKSWKAMUGZE1q/NkPWfWX9pBiQoP2W18otvc75j+N+1NyswONAG/spptZ7HnCjUBzSKcm59GEPdL12AEfXRwtxD+1OCyVxaGc7AGlmE+2zyX6RdZKXUZCpRZ8/8ukShSwsXw=="
+      }],
+      "createTime": "2026-07-21T10:58:21.087Z"
+    }, {
+      "text": "אז תוכל לכתוב לי סקריפט פייתון שיחליף את שם הקובץ לכותרת HTML הקיימת בו\n",
+      "role": "user",
+      "tokenCount": 34,
+      "createTime": "2026-07-21T10:59:19.515Z"
+    }, {
+      "text": "**Analyzing the Requirements**\n\nI\u0027m currently focused on precisely grasping the user\u0027s intent. The core task is clear: a Python script to rename HTML files based on their `\u003ctitle\u003e` content. I\u0027m taking into account the Hebrew language context.\n\n\n**Defining the Implementation**\n\nI\u0027ve determined the technical approach. The Python script will iterate through HTML/HTM files, extract titles, and handle encoding. I\u0027m focusing on error handling, especially invalid filename characters and duplicate titles. I\u0027m considering `os`, `re`, and `glob` for the implementation to minimize dependencies.\n\n\n**Refining the Regex**\n\nI\u0027ve refined the regular expression for title extraction. I made it more robust to handle attributes within the `\u003ctitle\u003e` tag using `r\u0027\u003ctitle[^\u003e]*\u003e(.*?)\u003c/title\u003e\u0027`. I\u0027m now focusing on filename sanitization using regex to replace invalid characters, specifically using `re.sub(r\u0027[\\/\\\\:\\*\\?\"\u003c\u003e\\|]\u0027, \u0027_\u0027, filename)`. I\u0027ve also solidified the encoding handling: prioritizing `utf-8` then falling back to `cp1255` if needed, with error ignoring.\n\n\n**Implementing the Duplicate Handler**\n\nI\u0027ve implemented the duplicate filename handling logic. The code now iterates if a new filename already exists, appending a counter in parentheses before adding \u0027.html\u0027. I\u0027m also now ready to build a complete, self-contained Python script to do all of the tasks from sanitizing filenames to finding HTML files. The Python script is ready.\n\n\n**Confirming File Handling**\n\nI\u0027m now integrating robust file handling into the script. It skips already renamed files or those unreadable due to encoding issues, reporting errors. I\u0027ve also implemented error handling to skip problem files and print informative messages about encoding attempts and failures, improving the script\u0027s robustness. The goal is to make it user-friendly and accurate.\n\n\n**Refining the Logic**\n\nI\u0027ve added HTML entity unescaping to the title extraction for improved accuracy. I\u0027m focusing on skipping files with empty or invalid titles, providing specific Hebrew messages. The duplicate filename logic now addresses edge cases to avoid unnecessary renaming, and I am ready to implement this logic into a finalized Python script.\n\n\n**Finalizing the Renaming**\n\nI\u0027ve finalized the renaming logic and incorporated it into the script, handling edge cases where a file\u0027s name already matches its title to prevent unnecessary renaming. It includes informative Hebrew messages for such situations and general renaming successes. It also prints error messages for file rename attempts to help with debugging. I\u0027m now certain this will be useful to a user working in the Hebrew language.\n\n\n",
+      "role": "model",
+      "tokenCount": 1874,
+      "isThought": true,
+      "parts": [{
+        "text": "**Analyzing the Requirements**\n\nI\u0027m currently focused on precisely grasping the user\u0027s intent. The core task is clear: a Python script to rename HTML files based on their `\u003ctitle\u003e` content. I\u0027m taking into account the Hebrew language context.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Implementation**\n\nI\u0027ve determined the technical approach. The Python script will iterate through HTML/HTM files, extract titles, and handle encoding. I\u0027m focusing on error handling, especially invalid filename characters and duplicate titles. I\u0027m considering `os`, `re`, and `glob` for the implementation to minimize dependencies.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Regex**\n\nI\u0027ve refined the regular expression for title extraction. I made it more robust to handle attributes within the `\u003ctitle\u003e` tag using `r\u0027\u003ctitle[^\u003e]*\u003e(.*?)\u003c/title\u003e\u0027`. I\u0027m now focusing on filename sanitization using regex to replace invalid characters, specifically using `re.sub(r\u0027[\\/\\\\:\\*\\?\"\u003c\u003e\\|]\u0027, \u0027_\u0027, filename)`. I\u0027ve also solidified the encoding handling: prioritizing `utf-8` then falling back to `cp1255` if needed, with error ignoring.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing the Duplicate Handler**\n\nI\u0027ve implemented the duplicate filename handling logic. The code now iterates if a new filename already exists, appending a counter in parentheses before adding \u0027.html\u0027. I\u0027m also now ready to build a complete, self-contained Python script to do all of the tasks from sanitizing filenames to finding HTML files. The Python script is ready.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Confirming File Handling**\n\nI\u0027m now integrating robust file handling into the script. It skips already renamed files or those unreadable due to encoding issues, reporting errors. I\u0027ve also implemented error handling to skip problem files and print informative messages about encoding attempts and failures, improving the script\u0027s robustness. The goal is to make it user-friendly and accurate.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Logic**\n\nI\u0027ve added HTML entity unescaping to the title extraction for improved accuracy. I\u0027m focusing on skipping files with empty or invalid titles, providing specific Hebrew messages. The duplicate filename logic now addresses edge cases to avoid unnecessary renaming, and I am ready to implement this logic into a finalized Python script.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing the Renaming**\n\nI\u0027ve finalized the renaming logic and incorporated it into the script, handling edge cases where a file\u0027s name already matches its title to prevent unnecessary renaming. It includes informative Hebrew messages for such situations and general renaming successes. It also prints error messages for file rename attempts to help with debugging. I\u0027m now certain this will be useful to a user working in the Hebrew language.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-21T10:59:19.515Z"
+    }, {
+      "text": "להלן סקריפט פייתון (Python) מלא המיועד לרוץ בתיקייה שבה שמורים קובצי ה-HTML שלכם. \n\nהסקריפט סורק את התיקייה, פותח כל קובץ באופן בטוח, מחלץ מתוכו את תגית ה-`\u003ctitle\u003e` הפנימית, ומחליף את שם הקובץ לשם הכותרת שמצא.\n\n### תכונות מובנות בסקריפט:\n* **תמיכה מלאה בעברית** (קידוד UTF-8 ופענוח ישויות HTML כגון גרשיים או מירכאות).\n* **ניקוי תווים לא חוקיים** (מנקה אוטומטית תווים שאסור להשתמש בהם בשמות קבצים במערכות ההפעלה, כמו `\\`, `/`, `:`, `*`, `?`, `\"`, `\u003c`, `\u003e`, `|` ומחליף אותם בקו תחתון).\n* **מניעת דריסת קבצים** (במידה וישנם שני קבצים בעלי כותרת זהה, הסקריפט יוסיף מספור אוטומטי בסוגריים, לדוגמה: `(1)` או `(2)`, כדי למנוע מחיקת מידע).\n\n---\n\n### קוד הסקריפט (`rename_html.py`):\n\n```python\nimport os\nimport re\nimport glob\nimport html\n\ndef sanitize_filename(name):\n    \"\"\"\n    מנקה את שם הקובץ מתווים שאינם חוקיים במערכות הפעלה שונות\n    \"\"\"\n    # החלפת תווים אסורים בקו תחתון\n    sanitized \u003d re.sub(r\u0027[\\/\\\\:\\*\\?\"\u003c\u003e\\|]\u0027, \u0027_\u0027, name)\n    # ניקוי רווחים כפולים או ירידות שורה מיותרות\n    sanitized \u003d re.sub(r\u0027\\s+\u0027, \u0027 \u0027, sanitized).strip()\n    return sanitized\n\ndef rename_html_files_to_title(directory\u003d\".\"):\n    \"\"\"\n    סורק את התיקייה ומחליף את שמות קבצי ה-HTML לכותרת הפנימית שלהם\n    \"\"\"\n    # מציאת כל קבצי ה-HTML בתיקייה שצוינה\n    html_files \u003d glob.glob(os.path.join(directory, \"*.html\")) + glob.glob(os.path.join(directory, \"*.htm\"))\n    \n    if not html_files:\n        print(\"לא נמצאו קבצי HTML בתיקייה שצוינה.\")\n        return\n\n    print(f\"נמצאו {len(html_files)} קבצים לעיבוד.\\n\")\n\n    for filepath in html_files:\n        filename \u003d os.path.basename(filepath)\n        \n        # ניסיון קריאת הקובץ בקידודים שונים (תמיכה מלאה בעברית)\n        content \u003d \"\"\n        try:\n            with open(filepath, \u0027r\u0027, encoding\u003d\u0027utf-8\u0027) as f:\n                content \u003d f.read()\n        except UnicodeDecodeError:\n            try:\n                # ניסיון קידוד חלופי במידה ו-UTF-8 נכשל (Windows-1255 הנפוץ בעברית)\n                with open(filepath, \u0027r\u0027, encoding\u003d\u0027cp1255\u0027, errors\u003d\u0027ignore\u0027) as f:\n                    content \u003d f.read()\n            except Exception as e:\n                print(f\"❌ שגיאה בקריאת הקובץ {filename}: {e}\")\n                continue\n        except Exception as e:\n            print(f\"❌ שגיאה בקריאת הקובץ {filename}: {e}\")\n            continue\n\n        # חילוץ תוכן תגית ה-title באמצעות Regex בצורה גמישה\n        title_match \u003d re.search(r\u0027\u003ctitle[^\u003e]*\u003e(.*?)\u003c/title\u003e\u0027, content, re.IGNORECASE | re.DOTALL)\n        \n        if title_match:\n            raw_title \u003d title_match.group(1)\n            # המרת ישויות HTML (כגון \u0026quot; או \u0026#39; לתווים רגילים)\n            raw_title \u003d html.unescape(raw_title)\n            \n            # ניקוי שם הקובץ החדש\n            new_name \u003d sanitize_filename(raw_title)\n            \n            if not new_name:\n                print(f\"⚠️ דילוג על {filename}: הכותרת שנמצאה אינה חוקית כשם קובץ.\")\n                continue\n            \n            # בניית נתיב היעד החדש\n            new_filepath \u003d os.path.join(directory, f\"{new_name}.html\")\n            \n            # מנגנון מניעת דריסה במקרה של כותרות זהות\n            counter \u003d 1\n            while os.path.exists(new_filepath):\n                # אם הקובץ הקיים הוא בדיוק הקובץ הנוכחי, אין צורך לשנות שם\n                if os.path.abspath(filepath) \u003d\u003d os.path.abspath(new_filepath):\n                    break\n                new_filepath \u003d os.path.join(directory, f\"{new_name} ({counter}).html\")\n                counter +\u003d 1\n            \n            # בדיקה האם השם כבר תואם לכותרת\n            if os.path.abspath(filepath) \u003d\u003d os.path.abspath(new_filepath):\n                print(f\"ℹ️ הקובץ {filename} כבר נושא את שם הכותרת שלו.\")\n                continue\n\n            try:\n                os.rename(filepath, new_filepath)\n                print(f\"✅ שונה בהצלחה: {filename} ➔ {os.path.basename(new_filepath)}\")\n            except Exception as e:\n                print(f\"❌ שגיאה בשינוי השם של {filename}: {e}\")\n        else:\n            print(f\"⚠️ דילוג על {filename}: לא נמצאה תגית \u003ctitle\u003e פנימית בקוד.\")\n\nif __name__ \u003d\u003d \"__main__\":\n    # כברירת מחדל, הסקריפט ירוץ על התיקייה שבה הוא ממוקם\n    rename_html_files_to_title()\n```\n\n---\n\n### הוראות שימוש:\n\n1. שמרו את הקוד שלעיל בקובץ בשם `rename_html.py`.\n2. העבירו את הקובץ `rename_html.py` אל התיקייה שבה נמצאים כל קובצי ה-HTML שאתם מעוניינים לשנות את שמם.\n3. פתחו את ממשק השורה (Terminal / Command Prompt) בתיקייה זו, והריצו את הסקריפט באמצעות הפקודה הבאה:\n   ```bash\n   python rename_html.py\n   ```",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1572,
+      "parts": [{
+        "text": "להלן סקריפט פייתון (Python) מלא המיועד לרוץ ב"
+      }, {
+        "text": "תיקייה שבה שמורים קובצי ה-HTML שלכם. \n\nהסקריפט סורק את"
+      }, {
+        "text": " התיקייה, פותח כל קובץ באופן בטוח, מחלץ מתוכו את תגית ה-`\u003c"
+      }, {
+        "text": "title\u003e` הפנימית, ומחליף את שם הקובץ לשם הכותרת שמצא.\n\n### ת"
+      }, {
+        "text": "כונות מובנות בסקריפט:\n* **תמיכה מלאה בעברית** (קי"
+      }, {
+        "text": "דוד UTF-8 ופענוח ישויות HTML כגון גרשיים או מירכאות).\n* **ניק"
+      }, {
+        "text": "וי תווים לא חוקיים** (מנקה אוטומטית תווים שאסור לה"
+      }, {
+        "text": "שתמש בהם בשמות קבצים במערכות ההפעלה, כמו `\\`, `/`, `:`, `*`, "
+      }, {
+        "text": "`?`, `\"`, `\u003c`, `\u003e`, `|` ומחליף אותם בקו תחתון).\n* **מ"
+      }, {
+        "text": "ניעת דריסת קבצים** (במידה וישנם שני קבצים בעלי כותר"
+      }, {
+        "text": "ת זהה, הסקריפט יוסיף מספור אוטומטי בסוגריים, לדוגמה:"
+      }, {
+        "text": " `(1)` או `(2)`, כדי למנוע מחיקת מידע).\n\n---\n\n### ק"
+      }, {
+        "text": "וד הסקריפט (`rename_html.py`):\n\n```python\nimport os\nimport re\nimport glob\nimport html"
+      }, {
+        "text": "\n\ndef sanitize_filename(name):\n    \"\"\"\n    מנקה את שם הקובץ מתוו"
+      }, {
+        "text": "ים שאינם חוקיים במערכות הפעלה שונות\n    \"\"\"\n    # החלפת תווים אס"
+      }, {
+        "text": "ורים בקו תחתון\n    sanitized \u003d re.sub(r\u0027[\\/\\\\:\\*\\?\"\u003c\u003e\\|]\u0027, \u0027_\u0027, name)\n"
+      }, {
+        "text": "    # ניקוי רווחים כפולים או ירידות שורה מיותרות\n    sanitized \u003d re"
+      }, {
+        "text": ".sub(r\u0027\\s+\u0027, \u0027 \u0027, sanitized).strip()\n    return sanitized\n\ndef rename_html_files"
+      }, {
+        "text": "_to_title(directory\u003d\".\"):\n    \"\"\"\n    סורק את התיקייה ומחליף את"
+      }, {
+        "text": " שמות קבצי ה-HTML לכותרת הפנימית שלהם\n    \"\"\"\n    # מציאת כל"
+      }, {
+        "text": " קבצי ה-HTML בתיקייה שצוינה\n    html_files \u003d glob.glob(os.path"
+      }, {
+        "text": ".join(directory, \"*.html\")) + glob.glob(os.path.join(directory, \"*.htm\"))"
+      }, {
+        "text": "\n    \n    if not html_files:\n        print(\"לא נמצאו קבצי HTML בתיק"
+      }, {
+        "text": "ייה שצוינה.\")\n        return\n\n    print(f\"נמצאו {len(html_files)} קבצים לע"
+      }, {
+        "text": "יבוד.\\n\")\n\n    for filepath in html_files:\n        filename \u003d os.path.basename("
+      }, {
+        "text": "filepath)\n        \n        # ניסיון קריאת הקובץ בקידודים שונים (ת"
+      }, {
+        "text": "מיכה מלאה בעברית)\n        content \u003d \"\"\n        try:\n            with open(filepath, \u0027r\u0027, encoding"
+      }, {
+        "text": "\u003d\u0027utf-8\u0027) as f:\n                content \u003d f.read()\n        except UnicodeDecodeError:\n"
+      }, {
+        "text": "            try:\n                # ניסיון קידוד חלופי במידה ו-UTF-8 נ"
+      }, {
+        "text": "כשל (Windows-1255 הנפוץ בעברית)\n                with open(filepath, \u0027r\u0027,"
+      }, {
+        "text": " encoding\u003d\u0027cp1255\u0027, errors\u003d\u0027ignore\u0027) as f:\n                    content \u003d f.read()\n"
+      }, {
+        "text": "            except Exception as e:\n                print(f\"❌ שגיאה בקריאת הקובץ {filename}: {e}\")\n"
+      }, {
+        "text": "                continue\n        except Exception as e:\n            print(f\"❌ שגיאה בקריאת הקוב"
+      }, {
+        "text": "ץ {filename}: {e}\")\n            continue\n\n        # חילוץ תוכן תגית ה-title"
+      }, {
+        "text": " באמצעות Regex בצורה גמישה\n        title_match \u003d re.search(r\u0027\u003ctitle[^\u003e]*\u003e(.*?)\u003c/title\u003e\u0027, content"
+      }, {
+        "text": ", re.IGNORECASE | re.DOTALL)\n        \n        if title_match:\n            raw_title \u003d title_match.group"
+      }, {
+        "text": "(1)\n            # המרת ישויות HTML (כגון \u0026quot; או \u0026#39; ל"
+      }, {
+        "text": "תווים רגילים)\n            raw_title \u003d html.unescape(raw_title)\n            \n            #"
+      }, {
+        "text": " ניקוי שם הקובץ החדש\n            new_name \u003d sanitize_filename(raw_title)\n"
+      }, {
+        "text": "            \n            if not new_name:\n                print(f\"⚠️ דילוג על {filename}: הכותרת שנ"
+      }, {
+        "text": "מצאה אינה חוקית כשם קובץ.\")\n                continue\n            \n            # בניית נתיב הי"
+      }, {
+        "text": "עד החדש\n            new_filepath \u003d os.path.join(directory, f\"{new_name}.html\")\n"
+      }, {
+        "text": "            \n            # מנגנון מניעת דריסה במקרה של כותרות זהות\n            "
+      }, {
+        "text": "counter \u003d 1\n            while os.path.exists(new_filepath):\n                # אם הקובץ ה"
+      }, {
+        "text": "קיים הוא בדיוק הקובץ הנוכחי, אין צורך לשנות שם\n                if os.path.abspath(filepath)"
+      }, {
+        "text": " \u003d\u003d os.path.abspath(new_filepath):\n                    break\n                new_filepath \u003d os.path.join"
+      }, {
+        "text": "(directory, f\"{new_name} ({counter}).html\")\n                counter +\u003d 1\n            \n            #"
+      }, {
+        "text": " בדיקה האם השם כבר תואם לכותרת\n            if os.path.abspath(filepath) \u003d\u003d os."
+      }, {
+        "text": "path.abspath(new_filepath):\n                print(f\"ℹ️ הקובץ {filename} כבר נושא"
+      }, {
+        "text": " את שם הכותרת שלו.\")\n                continue\n\n            try:\n                os.rename(filepath, new_"
+      }, {
+        "text": "filepath)\n                print(f\"✅ שונה בהצלחה: {filename} ➔ {os.path"
+      }, {
+        "text": ".basename(new_filepath)}\")\n            except Exception as e:\n                print(f\"❌ שגיאה"
+      }, {
+        "text": " בשינוי השם של {filename}: {e}\")\n        else:\n            print(f\"⚠️"
+      }, {
+        "text": " דילוג על {filename}: לא נמצאה תגית \u003ctitle\u003e פנימית בקוד.\")\n\nif"
+      }, {
+        "text": " __name__ \u003d\u003d \"__main__\":\n    # כברירת מחדל, הסקריפט ירוץ על"
+      }, {
+        "text": " התיקייה שבה הוא ממוקם\n    rename_html_files_to_title()\n"
+      }, {
+        "text": "```\n\n---\n\n### הוראות שימוש:\n\n1. שמרו את הקוד שלעיל בקובץ בשם `rename_html"
+      }, {
+        "text": ".py`.\n2. העבירו את הקובץ `rename_html.py` אל התיקייה שבה נמצא"
+      }, {
+        "text": "ים כל קובצי ה-HTML שאתם מעוניינים לשנות את שמם.\n3. פתחו"
+      }, {
+        "text": " את ממשק השורה (Terminal / Command Prompt) בתיקייה זו, והריצו את הסקריפט באמצעות הפק"
+      }, {
+        "text": "ודה הבאה:\n   ```bash\n   python rename_html.py\n   ```"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-07-21T10:59:49.028Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

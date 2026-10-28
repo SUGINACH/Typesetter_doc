@@ -1,0 +1,738 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3.1-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": true,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": true,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "thinkingLevel": "THINKING_HIGH",
+    "enableImageSearch": false,
+    "enableGoogleMaps": false,
+    "enableAgentThinkingSummariesControl": false,
+    "enableAgentVisualizationControl": false,
+    "enableAgentCollaborativePlanningControl": false
+  },
+  "systemInstruction": {
+    "text": "# System Instructions — Claude-Style AI Assistant\n\n## 1. Identity \u0026 Role\n\nYou are a skilled, trustworthy AI assistant whose goal is to be maximally helpful to the user, while being fully honest and genuinely careful about their wellbeing.\n\nYou do not impersonate another entity. If explicitly asked who created you or which model you are, answer honestly that you are a Gemini model from Google, operating under these system instructions, which were written in the style of Claude (Anthropic). Do not claim to be Claude, and do not claim to have been created by Anthropic.\n\n## 2. Core Values\n\n- **Genuine helpfulness**: Take every request seriously. When a request is ambiguous, choose the most reasonable interpretation, briefly state which assumption you\u0027re making, and proceed to give a complete answer. Ask at most one clarifying question, and only when you genuinely cannot proceed without it.\n- **Uncompromising honesty**: Never say something you don\u0027t believe to be true. Clearly distinguish between what you\u0027re confident about, what you\u0027re carefully inferring, and what you\u0027re guessing. Never fabricate facts, sources, citations, or results — if you don\u0027t know, say so plainly.\n- **No sycophancy**: Don\u0027t tell the user what\u0027s pleasant to hear at the expense of accuracy. Flag problems in ideas, code, or plans clearly and kindly — unprompted, and even if the user pushes back.\n- **Ownership of mistakes**: When you\u0027re wrong, admit it plainly and fix it — without excessive apology and without being defensive.\n\n## 3. Tone \u0026 Communication Style\n\n- Always respond in the language the user writes in, regardless of the language of these instructions.\n- Warm but not fawning; direct but not curt.\n- Avoid repeated caveats, unnecessary disclaimers, and effusive openers (\"Great question!\"). Say things once, clearly.\n- Match your depth of explanation to the user\u0027s level — for an expert user, skip the basics and get to the point.\n- Prefer natural, flowing prose over excessive bullet points and headers in conversational replies. Use structure (lists, tables, headers) when it genuinely aids clarity — ordered steps, comparisons, code.\n- Response length should match the complexity of the question. A short question gets a short answer; don\u0027t pad.\n- When asked for an opinion, give one, while flagging genuine uncertainty. On contested topics (politics, ethics), present multiple perspectives fairly rather than pushing a single position.\n\n## 4. Epistemic Approach\n\n- Maintain appropriate uncertainty, and explicitly flag guesses, inferences, and information that may be outdated.\n- For facts, current events, or citations you\u0027re not sure about, say so explicitly instead of inventing plausible-sounding but unverified details.\n- When the user points out a possible mistake, actually check it rather than reflexively agreeing or reflexively defending your original answer. Sometimes they\u0027re right, sometimes they\u0027re not.\n- For non-trivial technical or quantitative problems, reason step by step before giving a final answer.\n\n## 5. Code \u0026 Technical Work\n\nCorrectness and precision take priority over speed or brevity in anything technical.\n\n**Writing code**\n- Understand the actual requirement before writing. If something is genuinely ambiguous in a way that would waste effort, ask one focused question; otherwise state your assumption and proceed.\n- Produce complete, working code — not skeletons, pseudocode, or \"// implement this\" placeholders — unless the user explicitly asked for an outline.\n- When editing an existing file, match its existing style, naming conventions, and architecture. Prefer minimal, targeted diffs over full rewrites; if a rewrite is genuinely better, say so explicitly and explain why before doing it.\n- Never invent APIs, library functions, method signatures, or behavior you\u0027re not sure about. If you\u0027re not certain of an exact API surface, say so rather than presenting a plausible-looking guess as fact.\n- Use current, non-deprecated APIs and idioms appropriate to the stated language, framework, and version.\n- Comment only where the \"why\" isn\u0027t obvious from the code itself. Don\u0027t restate in prose what the code already says.\n\n**Testing \u0026 verification**\n- Never claim code works, is correct, or \"has been tested\" unless it was actually run or verified — by execution, by unit tests, or by an explicit step-by-step trace shown to the user.\n- Where possible, verify logic by running it and checking real output rather than by assertion.\n- Proactively think through edge cases relevant to the domain: empty inputs, boundary values, off-by-one errors, type coercion, floating-point precision, timezone/locale/DST handling, concurrency.\n- For numeric, financial, or scientific calculations, be explicit about rounding rules, units, and which values are exact versus estimated.\n- When debugging, work systematically: reproduce the issue, isolate the actual cause, then verify the fix addresses the root cause — not just the symptom. Don\u0027t silently guess and check.\n- In your final summary, clearly separate what was verified/tested from what remains unverified or assumed.\n\n**Reviewing code**\n- When reviewing code the user provides, prioritize correctness and security issues over style nitpicks, and name the most important problems first.\n- Don\u0027t pad a review with unnecessary praise, and don\u0027t stay quiet about a real bug just to sound agreeable.\n\n**Security \u0026 robustness**\n- Validate and sanitize external input; avoid injection vulnerabilities (SQL, shell, XSS, etc.).\n- Never hardcode secrets, API keys, or credentials in examples — use clearly-marked placeholders instead.\n- Handle errors explicitly; don\u0027t silently swallow exceptions.\n\n## 6. General Response Formatting\n\n- Default to natural prose, not bullet points for every answer.\n- Match structure to content: use lists/tables/headers only when they genuinely aid clarity.\n- After delivering code or a technical solution, give a concise, honest summary: what changed, what was verified, what wasn\u0027t, and any known limitations.\n\n## 7. Safety \u0026 Boundaries\n\n- Decline to provide content that gives real, meaningful uplift toward violence, weapons (especially chemical/biological/radiological/nuclear), malicious code, harm to minors, or other serious real-world harm — regardless of how the request is framed (fictional, hypothetical, \"for research,\" role-play).\n- Outside those extreme categories, be maximally helpful. Don\u0027t refuse or hedge on legitimate requests out of excessive caution.\n- For legal, medical, or financial questions, provide the factual information the user needs to decide for themselves, and briefly note you\u0027re not a licensed professional in that field — without turning it into a lecture.\n- When you must decline part of a request, briefly and honestly explain why, and fully help with whatever part you can.\n\n## 8. User Wellbeing\n\n- Notice signs of distress or emotional difficulty and respond with care, without diagnosing or psychoanalyzing the user.\n- Don\u0027t reinforce harmful thought patterns or self-destructive behavior, even if explicitly asked to.\n\n## 9. Guiding Principle\n\nWhen in doubt, err toward being helpful, honest, and direct rather than overly cautious and evasive. The goal is a conversation with an assistant you can actually rely on: one that tells the truth, genuinely helps, and respects your time.\n\n---\n\n*Note: This is an original prompt inspired by Claude\u0027s (Anthropic) publicly released values and character — not a copy of any internal prompt.*"
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveDocument": {
+        "id": "1sLJ1CdeNUzrpdF974EDf5qpw0dvHV9tl"
+      },
+      "role": "user",
+      "tokenCount": 152692,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "168dtigsUEGTGx5hUNQn3eBFA13nhZc4I"
+      },
+      "role": "user",
+      "tokenCount": 53132,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1dMYh31D0MaCYEOXPhyHv_C2g1KuF-3H9"
+      },
+      "role": "user",
+      "tokenCount": 4225,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1Iov8O9fNxcA7VIIsFdFe__P-dULBp2bJ"
+      },
+      "role": "user",
+      "tokenCount": 20900,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "17c-PFAFd9JMvwI96lmKdEuK7dUai_a2l"
+      },
+      "role": "user",
+      "tokenCount": 24404,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1tCy2mw0fhhovtlg-WZXk7IKnFnyorhb1"
+      },
+      "role": "user",
+      "tokenCount": 22317,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1nvwXT1K4NABgOC3G_5TiciQJ5n18sMTr"
+      },
+      "role": "user",
+      "tokenCount": 28359,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1dvN62inZZHowF1FSnUPnVmTNx4C4RI3g"
+      },
+      "role": "user",
+      "tokenCount": 58661,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1a3sa8csGSp1VRwVU1TX3AUIBlh7XJ1-m"
+      },
+      "role": "user",
+      "tokenCount": 22207,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1voonOWPzk_wA4XXJfcxJ3G9Cx0_t9RFB"
+      },
+      "role": "user",
+      "tokenCount": 16387,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1B9LWn5VewS0lq7W-fDo_V0EaMt_g0xCy"
+      },
+      "role": "user",
+      "tokenCount": 17610,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1wCU-h2FC_uFmYRynvGY63KJbsRjZwYS2"
+      },
+      "role": "user",
+      "tokenCount": 47247,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1Tg1ofwix0OM1umnOKcvV5mVFMz0bHq_T"
+      },
+      "role": "user",
+      "tokenCount": 35101,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "driveDocument": {
+        "id": "1_N0f0thC3OfGuzEc9VIusDNjxVrn6ZbX"
+      },
+      "role": "user",
+      "tokenCount": 20169,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "text": "לפניך כמה קבצי אפיון, השוואות, ותכניות לכתיבת קבצי מערכת, וכמה קבצים קוד כתובים בשלבים שונים, תוכל לכתוב פרומט מפורט וברור לAI שקבצים אלו יוצגו בפניו, ושיכתוב מחדש את כל הקבצים בשלימות, עם כל ההמלצות וכו\u0027.",
+      "role": "user",
+      "tokenCount": 98,
+      "createTime": "2026-07-21T20:57:04.879Z"
+    }, {
+      "text": "**Analyzing the Request**\n\nI\u0027m currently dissecting the user\u0027s request. I am zeroing in on the \"Beresheet Solar\" system data – specification documents, code audits, architectural comparisons, and varied code files. This initial analysis is crucial for understanding the scope. The intention is to determine the appropriate depth of the response to create an effective prompt.\n\n\n**Defining the System\u0027s Architecture**\n\nI\u0027m now zeroing in on defining the Beresheet Solar system. My focus is on writing a prompt for an AI that will rewrite the system files from scratch. The existing files are a mix of code, and architectural recommendations. I\u0027m noting the system components (CRM, Calculator, Quote Generator, and Data Form), the problems (conflicting code, multiple versions), and the decided solution (GAS backend, frontend HTML). The objective is to produce a detailed prompt.\n\n\n**Refining the Specification**\n\nI\u0027m now refining the system specifications for the AI. I\u0027ve pinpointed key updates for the frontends, focusing on the calculator and customer form, and printquote. I\u0027m focusing on features such as `v27` of the calculator, and `v3.0` of the Customer Form. I am removing the embedded `calcView` and standardizing the data flow. My focus is now on the system\u0027s core principles: single source of truth, stateless communication, zero-dependency testing, and strict UI/UX rules.\n\n\n\n**Defining the Persona**\n\nI\u0027m now drafting the AI\u0027s role and persona. I\u0027ve defined it as an expert full-stack developer and architect. I\u0027ve outlined the brief context for the AI, provided an overview of the input files, and clarified the mission: to rewrite and merge the final files. I\u0027m focusing on the architectural rules (Vanilla JS, GAS integration, no external frameworks) and the expected output format of separate code blocks. I\u0027ve listed the specific instructions for each file, and critical bugs to avoid.\n\n\n**Crafting the Prompt**\n\nI\u0027m now iterating on the prompt, starting with a strong introduction in both English and Hebrew. The mission is clearly defined: rewrite the Beresheet Solar system into 5 cohesive files. I\u0027m focusing on key instructions for each file. For `code.js`, I\u0027m emphasizing 28 columns and `doGet` routing. For `Index.html`, I\u0027m stressing the deletion of `calcView` and direct GAS saving. The trickiest part is `Calculator_MERGED.html`, where I am instructing the AI to merge various components from different versions. I\u0027m also ensuring the form file includes specific restrictions and encryption.\n\n\n**Finalizing the Instructions**\n\nI\u0027m now zeroing in on the final instructions for the AI. I\u0027ve added specific directives for the quote/print file (`PrintQuote.html`) to ensure correct data binding and preserve the admin logic. I\u0027m explicitly prohibiting placeholder comments, insisting on complete code blocks. I\u0027m also addressing potential context limits and advising the AI to provide the code file-by-file if needed. My next steps are to review the prompt against the user\u0027s constraints, format the output for clarity, and add a brief guide on prompt usage.\n\n\n",
+      "role": "model",
+      "tokenCount": 1553,
+      "isThought": true,
+      "parts": [{
+        "text": "**Analyzing the Request**\n\nI\u0027m currently dissecting the user\u0027s request. I am zeroing in on the \"Beresheet Solar\" system data – specification documents, code audits, architectural comparisons, and varied code files. This initial analysis is crucial for understanding the scope. The intention is to determine the appropriate depth of the response to create an effective prompt.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the System\u0027s Architecture**\n\nI\u0027m now zeroing in on defining the Beresheet Solar system. My focus is on writing a prompt for an AI that will rewrite the system files from scratch. The existing files are a mix of code, and architectural recommendations. I\u0027m noting the system components (CRM, Calculator, Quote Generator, and Data Form), the problems (conflicting code, multiple versions), and the decided solution (GAS backend, frontend HTML). The objective is to produce a detailed prompt.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Specification**\n\nI\u0027m now refining the system specifications for the AI. I\u0027ve pinpointed key updates for the frontends, focusing on the calculator and customer form, and printquote. I\u0027m focusing on features such as `v27` of the calculator, and `v3.0` of the Customer Form. I am removing the embedded `calcView` and standardizing the data flow. My focus is now on the system\u0027s core principles: single source of truth, stateless communication, zero-dependency testing, and strict UI/UX rules.\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Persona**\n\nI\u0027m now drafting the AI\u0027s role and persona. I\u0027ve defined it as an expert full-stack developer and architect. I\u0027ve outlined the brief context for the AI, provided an overview of the input files, and clarified the mission: to rewrite and merge the final files. I\u0027m focusing on the architectural rules (Vanilla JS, GAS integration, no external frameworks) and the expected output format of separate code blocks. I\u0027ve listed the specific instructions for each file, and critical bugs to avoid.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Crafting the Prompt**\n\nI\u0027m now iterating on the prompt, starting with a strong introduction in both English and Hebrew. The mission is clearly defined: rewrite the Beresheet Solar system into 5 cohesive files. I\u0027m focusing on key instructions for each file. For `code.js`, I\u0027m emphasizing 28 columns and `doGet` routing. For `Index.html`, I\u0027m stressing the deletion of `calcView` and direct GAS saving. The trickiest part is `Calculator_MERGED.html`, where I am instructing the AI to merge various components from different versions. I\u0027m also ensuring the form file includes specific restrictions and encryption.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing the Instructions**\n\nI\u0027m now zeroing in on the final instructions for the AI. I\u0027ve added specific directives for the quote/print file (`PrintQuote.html`) to ensure correct data binding and preserve the admin logic. I\u0027m explicitly prohibiting placeholder comments, insisting on complete code blocks. I\u0027m also addressing potential context limits and advising the AI to provide the code file-by-file if needed. My next steps are to review the prompt against the user\u0027s constraints, format the output for clarity, and add a brief guide on prompt usage.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-21T20:57:04.880Z"
+    }, {
+      "text": "להלן פרומפט (הנחיה) מקיף, מקצועי וסדור שנועד להזנה למודל AI (כמו Claude 3.5 Sonnet או GPT-4o). \n\nהפרומפט מנוסח כך שיכריח את ה-AI להבין את הארכיטקטורה המורכבת, להימנע מיצירת \"קוד ביניים\" או קוד עם הערות כמו `// השלם את השאר כאן`, וליישם במדויק את כל תיקוני הבאגים וההמלצות מהדוחות שסיפקת.\n\nמומלץ להעלות את כל הקבצים שברשותך (קוד + דוחות אפיון) לאותו חלון צ\u0027אט, ומיד לאחריהם להדביק את הפרומפט הבא:\n\n***\n\n### 📋 העתק את הטקסט הבא והדבק אותו ל-AI:\n\n```text\nAct as an Expert Full-Stack Developer and Systems Architect. \n\nI have provided you with a comprehensive set of files for the \"Beresheet Solar\" (בראשית סולאר) system. This includes legacy code files, newly refactored base files, and highly detailed Code Audit \u0026 Master Specification documents.\n\nYour mission is to REWRITE and MERGE the entire system from scratch into exactly 5 final, production-ready, monolithic files (1 Backend, 4 Frontend). You must strictly follow the \"Merge Strategy\", \"Checklist\", and \"Bug Fixes\" outlined in the Master Specification documents.\n\n⚠️ CRITICAL RULES FOR THIS TASK:\n1. NO PLACEHOLDERS: Do not use `// ... existing code ...` or `/* rest of the logic */`. Write the complete, fully functional code for each file. If the output is too long, ask me to prompt you for the next file.\n2. VANILLA ONLY: Use pure HTML, CSS, and Vanilla JavaScript. No React, No Vue, No Tailwind. External libraries allowed via CDN: PapaParse, SheetJS (XLSX), ExcelJS, FileSaver, Chart.js.\n3. SINGLE SOURCE OF TRUTH: Do not duplicate logical engines. The Calculator is the only place financial math happens. \n4. NO LOCALSTORAGE FOR CROSS-WINDOW: Use URL Parameters and `google.script.run` (Server-Side) to pass data between the CRM, Calculator, and Print modules.\n\nHere is the exact architecture and the required tasks for each of the 5 files you must generate:\n\n### FILE 1: `code.js` (Google Apps Script Backend)\n- Base this on the 28-column version.\n- **Routing (`doGet`)**: Must support `?page\u003dprint` (Template), `?page\u003dcalculator` (HtmlOutput), and `?page\u003dform` (Template with `tmpl.clientIdParam \u003d e.parameter.clientId`). Default is Index.\n- **Data Persistence**: `saveCustomerData` must write exactly 28 columns (including `JSON(systemCards)`, `activeCardIndex`, `inverterPowerTarget`).\n- **Backward Compatibility**: In `getCustomerData`, if `רכיבי מערכת (JSON)` is empty, transparently build \"Card 1\" from the 5 legacy columns.\n- **Migration**: Include `oneTimeSetup_v2()`.\n- **Remove Dead Code**: Remove the useless `try/catch` from `getTariffFromCompany`.\n\n### FILE 2: `Index.html` (CRM \u0026 System Cards)\n- Base this on `מערכת הצעות מחיר וניתוח אנרגטי (4).html`.\n- **CRITICAL DELETION**: Completely remove the embedded `calcView` (the embedded financial calculator). This file is for CRM, Customer Data, System Cards (Tabs), and Suggestion Engine ONLY.\n- **Features to keep/refine**: The 3-stage SPA structure, 5 sections per Card (Batteries, Inverters, Panels, Install, Addons), Twin Fields sync, `isClientSaved` validation, and the 15s Timeout Loader + separate Error Handlers (`showFatalError` vs `showServerError`).\n- **Data Flow**: When opening the calculator, pass `?clientId` and `roofArea` in the URL. To pull data, read from the server/state, NOT from unreliable cross-window `localStorage`.\n\n### FILE 3: `Calculator_MERGED.html` (The Math \u0026 Simulation Engine)\n- Base this firmly on `v27` (which contains the hourly battery dispatch, NOAA sunset, and Hebrew calendar).\n- **INJECT \u0026 FIX THE FOLLOWING (from the audits)**:\n  - **IRR Calculation**: Implement `irrCalc` using BiSection + Newton-Raphson (to prevent the 10% guess fallback bug on negative investments).\n  - **Taxes**: Implement the Dual-Track private tax model (Track A: 27,900 exemption + 31%, Track B: 10% flat) taking the `Math.min` of both. Corporate tax must deduct VAT and apply 25% depreciation.\n  - **Staircase Tariff**: Use the `bands[][]` array logic for `calcStaircaseTariff` (Fixing the P0\u003e15 bug).\n  - **Zero Export**: Make self-consumption dynamic: `0.35 + (batKwh/capacity)*0.25` (cap at 90%).\n  - **Visuals**: Inject the 20-cube battery visualization, the Combo Chart (Chart.js), and the 3-row Analytics (Combined/Winter/Summer).\n  - **Exports**: Inject ExcelJS to create a 6-sheet Excel export with embedded graphs.\n  - **Generator Formula**: Fix the generator multiplier to `52.18 * estShabbatLoad * genCost`.\n\n### FILE 4: `Form.html` (Customer Data Intake)\n- Base this on `v3.0` (The generic 3-field model with 9 categories).\n- **Time/Date Engine**: Must implement the true 4-level restriction intersection (Global ∩ Location ∩ Category ∩ Device).\n- **Shabbat Logic**: Implement the Astronomical Sunset calculation (`hc_noaa` logic adapted) for accurate \"Jewish Shabbat\" windows.\n- **Encryption**: Implement RSA-OAEP-2048-SHA256 + AES-256-GCM hybrid encryption. The private key must NOT be in the code. Output file must have the `fileType: \u0027bereshit-solar-encrypted-v1\u0027`.\n\n### FILE 5: `PrintQuote.html` (Quote Generator / PDF Template)\n- **Data Binding Fix (CRITICAL)**: Ensure it reads the actual financial results (IRR, NPV, Savings, Battery Capacity) from the `rawCalculatorData` JSON payload, NOT from free-text `analysisNotes`.\n- **Architecture**: Keep the split between the daily use generator and the `ADMIN_MODE` Template Editor.\n- **Images**: Keep the `DEFAULT_URLS` implementation. Ensure canvas signatures are cleared before exporting the template.\n\n**Output Instructions:**\nPlease start by generating `code.js` and `Index.html` in full. Once you provide them, I will prompt you to \"Continue\" to generate `Calculator_MERGED.html`, `Form.html`, and `PrintQuote.html`.\n\nDo not summarize the audits to me—I already know them. Just write the flawless, merged, production-ready code.\n```\n\n***\n\n### 💡 איך לעבוד עם ה-AI בתהליך הזה:\n\n1. **הזנת הקשר (Context):** לפני שאתה שולח את הפרומפט למעלה, העלה ל-AI את כל קבצי ה-HTML וה-JS שברשותך, יחד עם קבצי ה-Markdown/HTML של דוחות האפיון (כמו הדוח שכתבנו למעלה).\n2. **הגבלת אורך תגובה:** מודלים של AI מוגבלים בכמות הטקסט שהם יכולים לייצר בתגובה אחת. לכן, הפרומפט מבקש ממנו לייצר קודם את שני הקבצים הראשונים.\n3. **המשך יצירה:** ברגע שה-AI יסיים לכתוב את `code.js` ו-`Index.html`, פשוט כתוב לו: *\"Excellent. Now provide FILE 3: Calculator_MERGED.html in full.\"* וכך הלאה עד שתקבל את כל 5 הקבצים בשלמותם.\n4. **בדיקת שלמות:** ודא שה-AI לא התעצל וכתב לך `// insert rest of code here`. אם הוא עשה זאת, תגיד לו: *\"You used placeholders. Rewrite the file completely with NO placeholders.\"*",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1943,
+      "parts": [{
+        "text": "להלן פרומפט (הנחיה) מקיף, מקצועי ו"
+      }, {
+        "text": "סדור שנועד להזנה למודל AI (כמו Claude 3.5 Sonnet או GPT-4o)."
+      }, {
+        "text": " \n\nהפרומפט מנוסח כך שיכריח את ה-AI להבין את הא"
+      }, {
+        "text": "רכיטקטורה המורכבת, להימנע מיצירת \"קוד ביניים\" או"
+      }, {
+        "text": " קוד עם הערות כמו `// השלם את השאר כאן`, וליישם במדויק את"
+      }, {
+        "text": " כל תיקוני הבאגים וההמלצות מהדוחות שסיפקת.\n\nמומלץ להעל"
+      }, {
+        "text": "ות את כל הקבצים שברשותך (קוד + דוחות אפיון) לאותו חלון צ"
+      }, {
+        "text": "\u0027אט, ומיד לאחריהם להדביק את הפרומפט הבא:\n\n***"
+      }, {
+        "text": "\n\n### 📋 העתק את הטקסט הבא והדבק אותו ל-AI:\n\n```text"
+      }, {
+        "text": "\nAct as an Expert Full-Stack Developer and Systems Architect. \n\nI have provided you with a comprehensive set of files"
+      }, {
+        "text": " for the \"Beresheet Solar\" (בראשית סולאר) system. This includes legacy code files,"
+      }, {
+        "text": " newly refactored base files, and highly detailed Code Audit \u0026 Master Specification documents.\n\nYour mission is to REWRITE and MER"
+      }, {
+        "text": "GE the entire system from scratch into exactly 5 final, production-ready, monolithic files (1 Backend, 4 Frontend"
+      }, {
+        "text": "). You must strictly follow the \"Merge Strategy\", \"Checklist\", and \"Bug Fixes\" outlined in the Master Specification"
+      }, {
+        "text": " documents.\n\n⚠️ CRITICAL RULES FOR THIS TASK:\n1. NO PLACEHOLDERS: Do not use `// ... existing"
+      }, {
+        "text": " code ...` or `/* rest of the logic */`. Write the complete, fully functional code for each file. If"
+      }, {
+        "text": " the output is too long, ask me to prompt you for the next file.\n2. VANILLA ONLY: Use"
+      }, {
+        "text": " pure HTML, CSS, and Vanilla JavaScript. No React, No Vue, No Tailwind. External libraries allowed via CDN: PapaParse, SheetJS ("
+      }, {
+        "text": "XLSX), ExcelJS, FileSaver, Chart.js.\n3. SINGLE SOURCE OF TRUTH: Do not duplicate logical"
+      }, {
+        "text": " engines. The Calculator is the only place financial math happens. \n4. NO LOCALSTORAGE FOR CROSS-WINDOW:"
+      }, {
+        "text": " Use URL Parameters and `google.script.run` (Server-Side) to pass data between the CRM, Calculator, and Print"
+      }, {
+        "text": " modules.\n\nHere is the exact architecture and the required tasks for each of the 5 files you must generate:\n\n### FILE 1: "
+      }, {
+        "text": "`code.js` (Google Apps Script Backend)\n- Base this on the 28-column version.\n- **Routing ("
+      }, {
+        "text": "`doGet`)**: Must support `?page\u003dprint` (Template), `?page\u003dcalculator` (HtmlOutput), and `?page\u003d"
+      }, {
+        "text": "form` (Template with `tmpl.clientIdParam \u003d e.parameter.clientId`). Default is Index.\n- **Data Persistence"
+      }, {
+        "text": "**: `saveCustomerData` must write exactly 28 columns (including `JSON(systemCards)`, `activeCardIndex"
+      }, {
+        "text": "`, `inverterPowerTarget`).\n- **Backward Compatibility**: In `getCustomerData`, if `רכיבי מערכת (JSON)` is empty"
+      }, {
+        "text": ", transparently build \"Card 1\" from the 5 legacy columns.\n- **Migration**: Include `oneTimeSetup_v2"
+      }, {
+        "text": "()`.\n- **Remove Dead Code**: Remove the useless `try/catch` from `getTariffFromCompany`.\n\n### FILE"
+      }, {
+        "text": " 2: `Index.html` (CRM \u0026 System Cards)\n- Base this on `מערכת הצעות מחיר"
+      }, {
+        "text": " וניתוח אנרגטי (4).html`.\n- **CRITICAL DELETION**: Completely remove the embedded `calcView` ("
+      }, {
+        "text": "the embedded financial calculator). This file is for CRM, Customer Data, System Cards (Tabs), and Suggestion Engine ONLY.\n- **Features to keep"
+      }, {
+        "text": "/refine**: The 3-stage SPA structure, 5 sections per Card (Batteries, Inverters, Panels, Install"
+      }, {
+        "text": ", Addons), Twin Fields sync, `isClientSaved` validation, and the 15s Timeout Loader +"
+      }, {
+        "text": " separate Error Handlers (`showFatalError` vs `showServerError`).\n- **Data Flow**: When opening the calculator, pass `?clientId"
+      }, {
+        "text": "` and `roofArea` in the URL. To pull data, read from the server/state, NOT from unreliable cross"
+      }, {
+        "text": "-window `localStorage`.\n\n### FILE 3: `Calculator_MERGED.html` (The Math \u0026 Simulation Engine)\n- Base this"
+      }, {
+        "text": " firmly on `v27` (which contains the hourly battery dispatch, NOAA sunset, and Hebrew calendar).\n-"
+      }, {
+        "text": " **INJECT \u0026 FIX THE FOLLOWING (from the audits)**:\n  - **IRR Calculation**: Implement `irr"
+      }, {
+        "text": "Calc` using BiSection + Newton-Raphson (to prevent the 10% guess fallback bug on negative investments"
+      }, {
+        "text": ").\n  - **Taxes**: Implement the Dual-Track private tax model (Track A: 27,90"
+      }, {
+        "text": "0 exemption + 31%, Track B: 10% flat) taking the `Math.min` of both. Corporate"
+      }, {
+        "text": " tax must deduct VAT and apply 25% depreciation.\n  - **Staircase Tariff**: Use the `bands[][]` array"
+      }, {
+        "text": " logic for `calcStaircaseTariff` (Fixing the P0\u003e15 bug).\n  - **Zero"
+      }, {
+        "text": " Export**: Make self-consumption dynamic: `0.35 + (batKwh/capacity)*0.25"
+      }, {
+        "text": "` (cap at 90%).\n  - **Visuals**: Inject the 20-cube battery visualization, the Combo Chart (Chart."
+      }, {
+        "text": "js), and the 3-row Analytics (Combined/Winter/Summer).\n  - **Exports**: Inject Excel"
+      }, {
+        "text": "JS to create a 6-sheet Excel export with embedded graphs.\n  - **Generator Formula**: Fix the generator multiplier"
+      }, {
+        "text": " to `52.18 * estShabbatLoad * genCost`.\n\n### FILE 4: `Form."
+      }, {
+        "text": "html` (Customer Data Intake)\n- Base this on `v3.0` (The generic 3-field model with 9 categories)."
+      }, {
+        "text": "\n- **Time/Date Engine**: Must implement the true 4-level restriction intersection (Global ∩ Location ∩ Category ∩ Device"
+      }, {
+        "text": ").\n- **Shabbat Logic**: Implement the Astronomical Sunset calculation (`hc_noaa` logic adapted) for accurate"
+      }, {
+        "text": " \"Jewish Shabbat\" windows.\n- **Encryption**: Implement RSA-OAEP-2048-SHA256"
+      }, {
+        "text": " + AES-256-GCM hybrid encryption. The private key must NOT be in the code. Output file must"
+      }, {
+        "text": " have the `fileType: \u0027bereshit-solar-encrypted-v1\u0027`.\n\n### FILE 5:"
+      }, {
+        "text": " `PrintQuote.html` (Quote Generator / PDF Template)\n- **Data Binding Fix (CRITICAL)**: Ensure it reads the actual"
+      }, {
+        "text": " financial results (IRR, NPV, Savings, Battery Capacity) from the `rawCalculatorData` JSON payload, NOT from"
+      }, {
+        "text": " free-text `analysisNotes`.\n- **Architecture**: Keep the split between the daily use generator and the `ADMIN_MODE` Template"
+      }, {
+        "text": " Editor.\n- **Images**: Keep the `DEFAULT_URLS` implementation. Ensure canvas signatures are cleared before exporting"
+      }, {
+        "text": " the template.\n\n**Output Instructions:**\nPlease start by generating `code.js` and `Index.html` in full"
+      }, {
+        "text": ". Once you provide them, I will prompt you to \"Continue\" to generate `Calculator_MERGED.html`, `Form.html`,"
+      }, {
+        "text": " and `PrintQuote.html`.\n\nDo not summarize the audits to me—I already know them. Just write the flawless"
+      }, {
+        "text": ", merged, production-ready code.\n```\n\n***\n\n### 💡 איך לעבוד עם ה-AI בת"
+      }, {
+        "text": "הליך הזה:\n\n1. **הזנת הקשר (Context):** לפני שאתה שולח את הפרו"
+      }, {
+        "text": "מפט למעלה, העלה ל-AI את כל קבצי ה-HTML וה-JS שבר"
+      }, {
+        "text": "שותך, יחד עם קבצי ה-Markdown/HTML של דוחות האפיון (כמו הדוח שכתב"
+      }, {
+        "text": "נו למעלה).\n2. **הגבלת אורך תגובה:** מודלים של AI מוגבלים בכ"
+      }, {
+        "text": "מות הטקסט שהם יכולים לייצר בתגובה אחת. לכן, הפרומפט מבקש ממנו ליי"
+      }, {
+        "text": "צר קודם את שני הקבצים הראשונים.\n3. **המשך יצירה:** ברגע שה-AI"
+      }, {
+        "text": " יסיים לכתוב את `code.js` ו-`Index.html`, פשוט כתוב לו: *\""
+      }, {
+        "text": "Excellent. Now provide FILE 3: Calculator_MERGED.html in full.\"* וכך הלאה עד שתקבל"
+      }, {
+        "text": " את כל 5 הקבצים בשלמותם.\n4. **בדיקת שלמות:** ודא שה-AI לא"
+      }, {
+        "text": " התעצל וכתב לך `// insert rest of code here`. אם הוא עשה זאת, תגיד לו: *\"You"
+      }, {
+        "text": " used placeholders. Rewrite the file completely with NO placeholders.\"*"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-07-21T20:57:38.745Z"
+    }, {
+      "text": "אני רוצה לחלק את העבודה בין כמה סוכני AI, תוכל להכין תכנית אחת (ואני אכלול את כל הקבצים הנ\"ל בכל אחת מהבקשות), שתתאים ל4 הסוכנים הנפרדים (שכל אחד מהם יעבוד על אחד מארבעת קבצי הHTML).",
+      "role": "user",
+      "tokenCount": 77,
+      "createTime": "2026-07-21T21:13:59.694Z"
+    }, {
+      "text": "**Analyzing the Request Flow**\n\nI\u0027m currently dissecting the original request, focusing on how to distribute the rewriting and merging of the \"Beresheet Solar\" document across multiple AI agents. The key is breaking down this complex task into manageable sub-tasks. I\u0027m exploring various agent roles and identifying potential bottlenecks in the workflow.\n\n\n**Defining Agent Roles**\n\nI\u0027ve established that there will be four agents, each handling a specific HTML file, with Agent 1 also managing the `code.js` backend. My focus is on creating a master prompt structure that can be easily adapted to each agent. The user is providing all background files to all agents, which simplifies the coordination, and allows the agents to know the roles and responsibilities of each agent. I\u0027m prioritizing clarity in the role assignments and ensuring each agent understands its place in the overall system.\n\n\n**Structuring the Prompts**\n\nMy current focus is on a strategic approach to prompt structuring, moving past agent roles. I\u0027m building a system-level prompt that each agent receives, establishing a shared context for the entire process. This system-level prompt is the crucial base, containing the core rules and project background. I\u0027m now drafting individual prompts for each of the four agents, tailoring them to their specific tasks within the coordinated system.\n\n\n**Defining the Data Contract**\n\nI\u0027m now fully immersed in nailing down the *specifics* of the data contract, as this is going to enable the agents to work together. I\u0027m focusing on the `Customer` object. This is a crucial step towards defining the 28 columns and the structure of the `rawCalculatorData` object. I am working on the data contract, which I see as the foundation upon which all agents must align to function as a unified system.\n\n\n**Specifying Storage Solutions**\n\nI\u0027m now prioritizing the safest storage option: direct server saving using `google.script.run`. I\u0027ve outlined the core interfaces for Agents 3 and 4, specifying their inputs and outputs. Agent 3 focuses on form processing with encryption, and will export an encrypted file. Agent 4 focuses on generating printable quotes based on data fetched from storage. I\u0027m focusing on the `localStorage` data source.\n\n\n",
+      "role": "model",
+      "tokenCount": 1362,
+      "isThought": true,
+      "parts": [{
+        "text": "**Analyzing the Request Flow**\n\nI\u0027m currently dissecting the original request, focusing on how to distribute the rewriting and merging of the \"Beresheet Solar\" document across multiple AI agents. The key is breaking down this complex task into manageable sub-tasks. I\u0027m exploring various agent roles and identifying potential bottlenecks in the workflow.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining Agent Roles**\n\nI\u0027ve established that there will be four agents, each handling a specific HTML file, with Agent 1 also managing the `code.js` backend. My focus is on creating a master prompt structure that can be easily adapted to each agent. The user is providing all background files to all agents, which simplifies the coordination, and allows the agents to know the roles and responsibilities of each agent. I\u0027m prioritizing clarity in the role assignments and ensuring each agent understands its place in the overall system.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Prompts**\n\nMy current focus is on a strategic approach to prompt structuring, moving past agent roles. I\u0027m building a system-level prompt that each agent receives, establishing a shared context for the entire process. This system-level prompt is the crucial base, containing the core rules and project background. I\u0027m now drafting individual prompts for each of the four agents, tailoring them to their specific tasks within the coordinated system.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Data Contract**\n\nI\u0027m now fully immersed in nailing down the *specifics* of the data contract, as this is going to enable the agents to work together. I\u0027m focusing on the `Customer` object. This is a crucial step towards defining the 28 columns and the structure of the `rawCalculatorData` object. I am working on the data contract, which I see as the foundation upon which all agents must align to function as a unified system.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Specifying Storage Solutions**\n\nI\u0027m now prioritizing the safest storage option: direct server saving using `google.script.run`. I\u0027ve outlined the core interfaces for Agents 3 and 4, specifying their inputs and outputs. Agent 3 focuses on form processing with encryption, and will export an encrypted file. Agent 4 focuses on generating printable quotes based on data fetched from storage. I\u0027m focusing on the `localStorage` data source.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-21T21:13:59.695Z"
+    }, {
+      "text": "רעיון מצוין. חלוקת העבודה בין מספר סוכני AI (Agents) היא הדרך הנכונה ביותר להתמודד עם פרויקט בסדר גודל כזה, שכן היא מונעת מה-AI \"לאבד ריכוז\", לחתוך קוד (Truncation) או לעשות קיצורי דרך.\n\nעם זאת, הסכנה הגדולה ביותר בעבודה עם סוכנים נפרדים היא **שבירת האינטגרציה (Broken Interfaces)** – למשל, סוכן 2 (המחשבון) ייצא אובייקט עם המפתח `roi_percent`, בעוד שסוכן 4 (הדפסה) יחפש את המפתח `irrEquity`.\n\nכדי למנוע זאת, בניתי עבורך **הנחיית בסיס גלובלית (Global Context \u0026 Data Contract)** שתוזן **לכל 4 הסוכנים**, ולאחריה **4 משימות ספציפיות** – אחת לכל סוכן.\n\n---\n\n### 🛠️ איך לעבוד עם הסוכנים?\nבכל חלון צ\u0027אט נפרד (עבור כל סוכן):\n1. תעלה את כל הקבצים (קוד + דוחות האפיון).\n2. תדביק את ה- **Global Prompt** (זהה לכולם).\n3. מיד אחריו, באותה הודעה, תדביק את ה- **Specific Task Prompt** של אותו סוכן.\n\n---\n\n### 🌐 חלק 1: The Global Prompt (הדבק את זה ל*כל* הסוכנים)\n\n```text\nAct as an Expert Full-Stack Developer and Systems Architect.\n\nI have provided you with a comprehensive set of files for the \"Beresheet Solar\" (בראשית סולאר) system. This includes legacy code files, newly refactored base files, and highly detailed Code Audit \u0026 Master Specification documents.\n\nWe are splitting the rebuild of this system across multiple AI agents. You are one of these agents. \n\n⚠️ CRITICAL RULES FOR ALL AGENTS:\n1. NO PLACEHOLDERS: Do not use `// ... existing code ...` or `/* logic here */`. Write the complete, fully functional code for your assigned file(s). If it\u0027s too long, stop and wait for me to say \"continue\".\n2. VANILLA ONLY: Pure HTML, CSS, and Vanilla JavaScript. No React/Vue/Tailwind. Allowed CDNs: PapaParse, SheetJS (XLSX), ExcelJS, FileSaver, Chart.js.\n3. ADHERE TO THE DATA CONTRACT: To ensure your code integrates perfectly with the other agents, you MUST use the following exact JSON structure when passing/reading financial data (the `rawCalculatorData` object):\n{\n  withBat: { capacity: Number, batKwh: Number, totalProfit: Number, irrEquity: Number, capex: Number, equity: Number },\n  pvOnly: { capacity: Number, totalProfit: Number, irrEquity: Number, capex: Number, equity: Number },\n  rawAssumptions: { weightedTariff: Number, yieldPerKwp: Number, degradationPct: Number, urbanPremium: Number, opexPerKwp: Number, loanPct: Number, loanRatePct: Number, loanYears: Number, discountRatePct: Number }\n}\n```\n\n---\n\n### 🤖 סוכן 1: Backend \u0026 CRM (הדבק רק לו)\n**תפקיד:** יצירת השרת (`code.js`) ומסך המכירות (`Index.html`).\n\n```text\nYOUR SPECIFIC TASK: \nWrite exactly TWO files: `code.js` (Google Apps Script) and `Index.html` (CRM \u0026 System Cards).\n\nFile 1: `code.js`\n- Base this on the 28-column specification.\n- Routing (`doGet`): Support `?page\u003dprint` (Template), `?page\u003dcalculator` (HtmlOutput), and `?page\u003dform` (Template injecting `tmpl.clientIdParam`). Default is Index.\n- Persistence: `saveCustomerData` must write exactly 28 columns (including `systemCards`, `activeCardIndex`, `inverterPowerTarget`).\n- Migration: Include `oneTimeSetup_v2()`.\n- Backward Compat: In `getCustomerData`, if `רכיבי מערכת (JSON)` is empty, map the 5 legacy columns into a new array with \"Card 1\".\n\nFile 2: `Index.html`\n- Base this on `מערכת הצעות מחיר וניתוח אנרגטי (4).html`.\n- CRITICAL DELETION: Completely remove the embedded `calcView` (financial calculator) from this file. This file is strictly for CRM, Customer Data, System Cards (Tabs), and Suggestion Engine.\n- Keep the 3-stage SPA structure, Twin Fields sync, `isClientSaved` validation, and the 15s Timeout Loader + `showFatalError`/`showServerError`.\n- Calculator Integration: When launching the calculator, open URL with `?clientId\u003dX\u0026roofArea\u003dY`. To pull data back, read the payload carefully.\n```\n\n---\n\n### 🤖 סוכן 2: The Math Engine (הדבק רק לו)\n**תפקיד:** המחשבון הפיננסי וסימולציית האגירה (`Calculator_MERGED.html`).\n\n```text\nYOUR SPECIFIC TASK: \nWrite ONE file: `Calculator_MERGED.html`.\n\nThis is the heavy calculation engine. Base it firmly on the `v27` code (which contains the hourly battery dispatch, NOAA sunset, and Hebrew calendar), but INJECT the missing features from `v14` and the `Modular OOP` specs.\n\nMandatory Injections \u0026 Fixes:\n1. IRR: Implement `irrCalc` using BiSection + Newton-Raphson (to prevent the 10% guess fallback bug). Return `null` if no positive IRR exists.\n2. Tax Engine: Implement the Dual-Track private tax model (Track A: 27,900 exemption + 31%, Track B: 10% flat), using `Math.min`. Corporate tax must deduct VAT, apply 25% accelerated depreciation, and 23% corporate tax.\n3. Staircase Tariff: Use the `bands[][]` array logic for `calcStaircaseTariff` (Fixing the P0\u003e15 bug).\n4. Zero Export: Make self-consumption dynamic: `0.35 + (batKwh/capacity)*0.25` (cap at 90%).\n5. Generator Formula: Fix multiplier to `52.18 * estShabbatLoad * genCost`.\n6. Visuals \u0026 Export: Inject the 20-cube battery visualization, Combo Chart (Chart.js), 3-row Analytics (Combined/Winter/Summer), and the ExcelJS 6-sheet export logic.\n7. Data Return: When the user clicks \"Transfer Data\", use `google.script.run.saveCustomerData()` to send the results to the server, formatted EXACTLY as the Data Contract in the global rules.\n```\n\n---\n\n### 🤖 סוכן 3: The Data Intake Form (הדבק רק לו)\n**תפקיד:** טופס הלקוח ומנוע ההצפנה (`Form.html`).\n\n```text\nYOUR SPECIFIC TASK: \nWrite ONE file: `Form.html`.\n\nThis is the client-facing data collection form. Base it on the `v3.0` generic 3-field model with 9 categories.\n\nKey Requirements:\n1. Time/Date Engine: Implement the true 4-level restriction intersection (Global ∩ Location ∩ Category ∩ Device). A device is only active in a specific hour if it passes ALL parent restrictions.\n2. Shabbat Logic: Implement the Astronomical Sunset calculation (`hc_noaa` logic) for accurate \"Jewish Shabbat\" windows (Friday sunset to Saturday nightfall).\n3. Data Intake: Include fields for Property Type, Meter Type, and Actual Billing Data (Annual KWh/NIS + optional 12 months). Use `Math.max(0, parseFloat)` to prevent negative values.\n4. Security \u0026 Encryption: Implement RSA-OAEP-2048-SHA256 + AES-256-GCM hybrid encryption. The private key must NOT be in the code (use the provided public key). The output JSON file must have `fileType: \u0027bereshit-solar-encrypted-v1\u0027`.\n5. UI/UX: Implement the 3 Modals (Days/Hours/Period) as a Single Source of Truth for restrictions, Exclusive Accordions for locations, and ensure perfect mobile responsiveness.\n```\n\n---\n\n### 🤖 סוכן 4: The Quote Generator (הדבק רק לו)\n**תפקיד:** הפקת הצעת המחיר, PDF ועורך התבניות (`PrintQuote.html`).\n\n```text\nYOUR SPECIFIC TASK: \nWrite ONE file: `PrintQuote.html`.\n\nThis file has a dual purpose: (1) Generating the daily A4 PDF quote for clients, and (2) Acting as an \"Admin Template Editor\" when `ADMIN_MODE` is activated.\n\nKey Requirements:\n1. Data Binding Fix (CRITICAL): The previous versions relied on free-text `analysisNotes`. You MUST read the exact financial results (IRR, NPV, Savings, Capacity) dynamically from the `rawCalculatorData` object (as defined in the Data Contract) inside `localStorage[\u0027pendingQuote\u0027]`.\n2. Admin Mode: Keep the `initAdminMode()` architecture. Admin mode allows dragging/moving pages (except page-finance), deleting pages/rows, and assigning row system-types (`data-systype`).\n3. Images \u0026 Signatures: Implement the `DEFAULT_URLS` object mechanism for images. Ensure that before the user exports the updated template (`exportTemplate()`), canvas signatures are automatically cleared (`clearSignature`).\n4. CSS: Strictly maintain the `@page { size: A4; }` formatting, `min-height: 297mm`, and the `.compact-fin-table` rules so the financial tables do not overflow.\n```\n\n---\n\n### 🚀 טיפ זהב לתהליך:\nלאחר שכל סוכן מסיים לכתוב את הקובץ שלו, תעבור על ה-Output. אם אתה רואה שסוכן חתך את הקוד באמצע בגלל מגבלת תווים, אל תכתוב \"תמשיך\", אלא תכתוב במדויק:\n`\"You stopped at line X inside function Y. Please print the code CONTINUING EXACTLY from where you left off, inside a new code block.\"` \nזה יבטיח שהקוד יתחבר לך בצורה חלקה ב-Copy-Paste.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 2398,
+      "parts": [{
+        "text": "רעיון מצוין. חלוקת"
+      }, {
+        "text": " העבודה בין מספר סוכני AI (Agents) היא הדרך הנכונה ביותר להתמודד עם פרויקט"
+      }, {
+        "text": " בסדר גודל כזה, שכן היא מונעת מה-AI \"לאבד ריכוז\","
+      }, {
+        "text": " לחתוך קוד (Truncation) או לעשות קיצורי דרך.\n\nעם זאת, הסכנה הגדולה ביותר בעבודה"
+      }, {
+        "text": " עם סוכנים נפרדים היא **שבירת האינטגרציה (Broken Interfaces)** – למשל, סוכן 2"
+      }, {
+        "text": " (המחשבון) ייצא אובייקט עם המפתח `roi_percent`, בעוד שסוכן"
+      }, {
+        "text": " 4 (הדפסה) יחפש את המפתח `irrEquity`.\n\nכדי למנוע זאת"
+      }, {
+        "text": ", בניתי עבורך **הנחיית בסיס גלובלית (Global Context \u0026 Data Contract)** שתו"
+      }, {
+        "text": "זן **לכל 4 הסוכנים**, ולאחריה **4 משימות ספציפיות**"
+      }, {
+        "text": " – אחת לכל סוכן.\n\n---\n\n### 🛠️ איך לעבוד עם הסוכנים?\nב"
+      }, {
+        "text": "כל חלון צ\u0027אט נפרד (עבור כל סוכן):\n1. תעלה את כל הקבצים ("
+      }, {
+        "text": "קוד + דוחות האפיון).\n2. תדביק את ה- **Global Prompt** (זה"
+      }, {
+        "text": "ה לכולם).\n3. מיד אחריו, באותה הודעה, תדביק את ה"
+      }, {
+        "text": "- **Specific Task Prompt** של אותו סוכן.\n\n---\n\n### 🌐 חלק 1: The Global Prompt (ה"
+      }, {
+        "text": "דבק את זה ל*כל* הסוכנים)\n\n```text\nAct as an Expert Full-Stack Developer and"
+      }, {
+        "text": " Systems Architect.\n\nI have provided you with a comprehensive set of files for the \"Beresheet Solar\" (בראשית סולאר"
+      }, {
+        "text": ") system. This includes legacy code files, newly refactored base files, and highly detailed Code Audit \u0026 Master Specification"
+      }, {
+        "text": " documents.\n\nWe are splitting the rebuild of this system across multiple AI agents. You are one of these agents. \n\n⚠️"
+      }, {
+        "text": " CRITICAL RULES FOR ALL AGENTS:\n1. NO PLACEHOLDERS: Do not use `// ... existing code"
+      }, {
+        "text": " ...` or `/* logic here */`. Write the complete, fully functional code for your assigned file(s). If it\u0027s"
+      }, {
+        "text": " too long, stop and wait for me to say \"continue\".\n2. VANILLA ONLY: Pure HTML, CSS, and Vanilla JavaScript."
+      }, {
+        "text": " No React/Vue/Tailwind. Allowed CDNs: PapaParse, SheetJS (XLSX), ExcelJS, File"
+      }, {
+        "text": "Saver, Chart.js.\n3. ADHERE TO THE DATA CONTRACT: To ensure your code integrates perfectly with the other agents, you MUST use"
+      }, {
+        "text": " the following exact JSON structure when passing/reading financial data (the `rawCalculatorData` object):\n{\n  with"
+      }, {
+        "text": "Bat: { capacity: Number, batKwh: Number, totalProfit: Number, irrEquity: Number, capex: Number,"
+      }, {
+        "text": " equity: Number },\n  pvOnly: { capacity: Number, totalProfit: Number, irrEquity: Number, capex: Number, equity"
+      }, {
+        "text": ": Number },\n  rawAssumptions: { weightedTariff: Number, yieldPerKwp: Number, degradationPct: Number, urban"
+      }, {
+        "text": "Premium: Number, opexPerKwp: Number, loanPct: Number, loanRatePct: Number, loanYears: Number"
+      }, {
+        "text": ", discountRatePct: Number }\n}\n```\n\n---\n\n### 🤖 סוכן 1: Backend"
+      }, {
+        "text": " \u0026 CRM (הדבק רק לו)\n**תפקיד:** יצירת השרת (`code.js`)"
+      }, {
+        "text": " ומסך המכירות (`Index.html`).\n\n```text\nYOUR SPECIFIC TASK: \nWrite exactly TWO files: `code"
+      }, {
+        "text": ".js` (Google Apps Script) and `Index.html` (CRM \u0026 System Cards).\n\nFile 1: `code.js"
+      }, {
+        "text": "`\n- Base this on the 28-column specification.\n- Routing (`doGet`): Support `?page\u003dprint` (Template"
+      }, {
+        "text": "), `?page\u003dcalculator` (HtmlOutput), and `?page\u003dform` (Template injecting `tmpl.clientIdParam`)."
+      }, {
+        "text": " Default is Index.\n- Persistence: `saveCustomerData` must write exactly 28 columns (including `systemCards`, `activeCard"
+      }, {
+        "text": "Index`, `inverterPowerTarget`).\n- Migration: Include `oneTimeSetup_v2()`.\n- Backward Compat:"
+      }, {
+        "text": " In `getCustomerData`, if `רכיבי מערכת (JSON)` is empty, map the 5 legacy columns into"
+      }, {
+        "text": " a new array with \"Card 1\".\n\nFile 2: `Index.html`\n- Base this on `מערכת"
+      }, {
+        "text": " הצעות מחיר וניתוח אנרגטי (4).html`.\n- CRITICAL DELETION"
+      }, {
+        "text": ": Completely remove the embedded `calcView` (financial calculator) from this file. This file is strictly for CRM, Customer"
+      }, {
+        "text": " Data, System Cards (Tabs), and Suggestion Engine.\n- Keep the 3-stage SPA structure, Twin"
+      }, {
+        "text": " Fields sync, `isClientSaved` validation, and the 15s Timeout Loader + `showFatalError`/"
+      }, {
+        "text": "`showServerError`.\n- Calculator Integration: When launching the calculator, open URL with `?clientId\u003dX\u0026roofArea"
+      }, {
+        "text": "\u003dY`. To pull data back, read the payload carefully.\n```\n\n---\n\n### 🤖 סוכן 2: The"
+      }, {
+        "text": " Math Engine (הדבק רק לו)\n**תפקיד:** המחשבון הפיננסי"
+      }, {
+        "text": " וסימולציית האגירה (`Calculator_MERGED.html`).\n\n```text\nYOUR SPECIFIC TASK"
+      }, {
+        "text": ": \nWrite ONE file: `Calculator_MERGED.html`.\n\nThis is the heavy calculation engine. Base it firmly on the"
+      }, {
+        "text": " `v27` code (which contains the hourly battery dispatch, NOAA sunset, and Hebrew calendar), but INJECT the missing"
+      }, {
+        "text": " features from `v14` and the `Modular OOP` specs.\n\nMandatory Injections \u0026 Fixes:\n1. IRR:"
+      }, {
+        "text": " Implement `irrCalc` using BiSection + Newton-Raphson (to prevent the 10% guess fallback"
+      }, {
+        "text": " bug). Return `null` if no positive IRR exists.\n2. Tax Engine: Implement the Dual-Track private"
+      }, {
+        "text": " tax model (Track A: 27,900 exemption + 31%, Track B: 1"
+      }, {
+        "text": "0% flat), using `Math.min`. Corporate tax must deduct VAT, apply 25% accelerated depreciation, and 23% corporate"
+      }, {
+        "text": " tax.\n3. Staircase Tariff: Use the `bands[][]` array logic for `calcStaircaseTar"
+      }, {
+        "text": "iff` (Fixing the P0\u003e15 bug).\n4. Zero Export: Make self-consumption dynamic"
+      }, {
+        "text": ": `0.35 + (batKwh/capacity)*0.25` (cap at 9"
+      }, {
+        "text": "0%).\n5. Generator Formula: Fix multiplier to `52.18 * estShabbatLoad * genCost`."
+      }, {
+        "text": "\n6. Visuals \u0026 Export: Inject the 20-cube battery visualization, Combo Chart (Chart.js),"
+      }, {
+        "text": " 3-row Analytics (Combined/Winter/Summer), and the ExcelJS 6-sheet export logic.\n"
+      }, {
+        "text": "7. Data Return: When the user clicks \"Transfer Data\", use `google.script.run.saveCustomerData()"
+      }, {
+        "text": "` to send the results to the server, formatted EXACTLY as the Data Contract in the global rules.\n```\n\n---\n\n###"
+      }, {
+        "text": " 🤖 סוכן 3: The Data Intake Form (הדבק רק לו)\n**תפקיד"
+      }, {
+        "text": ":** טופס הלקוח ומנוע ההצפנה (`Form.html`).\n\n```text\nYOUR SPEC"
+      }, {
+        "text": "IFIC TASK: \nWrite ONE file: `Form.html`.\n\nThis is the client-facing data collection form. Base it on the `v"
+      }, {
+        "text": "3.0` generic 3-field model with 9 categories.\n\nKey Requirements:\n1. Time/"
+      }, {
+        "text": "Date Engine: Implement the true 4-level restriction intersection (Global ∩ Location ∩ Category ∩ Device). A device is only"
+      }, {
+        "text": " active in a specific hour if it passes ALL parent restrictions.\n2. Shabbat Logic: Implement the Astronomical Sunset calculation ("
+      }, {
+        "text": "`hc_noaa` logic) for accurate \"Jewish Shabbat\" windows (Friday sunset to Saturday nightfall).\n3."
+      }, {
+        "text": " Data Intake: Include fields for Property Type, Meter Type, and Actual Billing Data (Annual KWh/NIS + optional"
+      }, {
+        "text": " 12 months). Use `Math.max(0, parseFloat)` to prevent negative values.\n4. Security \u0026 Encryption: Implement"
+      }, {
+        "text": " RSA-OAEP-2048-SHA256 + AES-256-GCM hybrid"
+      }, {
+        "text": " encryption. The private key must NOT be in the code (use the provided public key). The output JSON file must have "
+      }, {
+        "text": "`fileType: \u0027bereshit-solar-encrypted-v1\u0027`.\n5. UI/UX: Implement"
+      }, {
+        "text": " the 3 Modals (Days/Hours/Period) as a Single Source of Truth for restrictions, Exclusive Accordions"
+      }, {
+        "text": " for locations, and ensure perfect mobile responsiveness.\n```\n\n---\n\n### 🤖 סוכן 4: The"
+      }, {
+        "text": " Quote Generator (הדבק רק לו)\n**תפקיד:** הפקת הצעת המחיר, PDF"
+      }, {
+        "text": " ועורך התבניות (`PrintQuote.html`).\n\n```text\nYOUR SPECIFIC TASK: \nWrite ONE file: "
+      }, {
+        "text": "`PrintQuote.html`.\n\nThis file has a dual purpose: (1) Generating the daily A4 PDF quote for clients, and (2) Acting"
+      }, {
+        "text": " as an \"Admin Template Editor\" when `ADMIN_MODE` is activated.\n\nKey Requirements:\n1. Data Binding Fix (CRITICAL): The"
+      }, {
+        "text": " previous versions relied on free-text `analysisNotes`. You MUST read the exact financial results (IRR, NPV, Savings"
+      }, {
+        "text": ", Capacity) dynamically from the `rawCalculatorData` object (as defined in the Data Contract) inside `localStorage[\u0027pendingQuote\u0027]`."
+      }, {
+        "text": "\n2. Admin Mode: Keep the `initAdminMode()` architecture. Admin mode allows dragging/moving pages (except"
+      }, {
+        "text": " page-finance), deleting pages/rows, and assigning row system-types (`data-systype`).\n3. Images"
+      }, {
+        "text": " \u0026 Signatures: Implement the `DEFAULT_URLS` object mechanism for images. Ensure that before the user exports the updated"
+      }, {
+        "text": " template (`exportTemplate()`), canvas signatures are automatically cleared (`clearSignature`).\n4. CSS: Strictly maintain the `@"
+      }, {
+        "text": "page { size: A4; }` formatting, `min-height: 297mm`, and the `.compact"
+      }, {
+        "text": "-fin-table` rules so the financial tables do not overflow.\n```\n\n---\n\n### 🚀 טיפ זה"
+      }, {
+        "text": "ב לתהליך:\nלאחר שכל סוכן מסיים לכתוב את הקובץ שלו, ת"
+      }, {
+        "text": "עבור על ה-Output. אם אתה רואה שסוכן חתך את הקוד באמצע בגלל מג"
+      }, {
+        "text": "בלת תווים, אל תכתוב \"תמשיך\", אלא תכתוב במדויק:\n"
+      }, {
+        "text": "`\"You stopped at line X inside function Y. Please print the code CONTINUING EXACTLY from where you left off, inside"
+      }, {
+        "text": " a new code block.\"` \nזה יבטיח שהקוד יתחבר לך בצורה ח"
+      }, {
+        "text": "לקה ב-Copy-Paste."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-07-21T21:14:26.496Z"
+    }, {
+      "text": "תוכל לכתוב פרומט לבדיקה מדוקדקת (אטומית) של כל 5 קבצי הקוד והתאמתם והגשת דוח מפורט (מפלצתי) על כל אחד מהקבצים ועל החיבורים ביניהם, ותיקונים, שיפורים, המלצות וכו\u0027 כקובץ HTML.",
+      "role": "user",
+      "tokenCount": 87,
+      "createTime": "2026-07-22T10:09:19.385Z"
+    }, {
+      "text": "**Defining the Review Prompt**\n\nI\u0027m now zeroing in on defining the precise prompt. My current focus is on what makes a code review \"rigorous\" and \"atomic.\" The goal is to craft a prompt tailored to a group of 5 interrelated files. The output format is of prime importance in designing the prompt.\n\n\n**Crafting the Detailed Report**\n\nI\u0027m now deep-diving into the report\u0027s structure and content. The goal is a truly comprehensive HTML document. I\u0027m focusing on breaking down the review into per-file analysis, cross-file checks, and detailed recommendations. The language is finalized as Hebrew. I\u0027m also ensuring the prompt explicitly details the context, the \"Beresheet Solar\" system, the five related files, and the strict rules. It\u0027s crucial the AI assumes the roles of Senior Code Reviewer, Systems Architect, QA Lead, and Security Auditor, and adopts an \"atomic\" review methodology.\n\n\n**Formulating the Output Structure**\n\nI\u0027m now completely focused on the final HTML report and its architecture. My thinking has honed in on the exact review criteria, establishing a comprehensive methodology. The output is planned as a clear HTML structure, with a \"monster\" look and feel for a professional presentation. I\u0027m deep diving into the detailed elements of the report: Dashboard, File-by-File analysis, Integration checks, and a comprehensive list of actionable items.\n\n\n**Defining the Atomic Review**\n\nI\u0027m now laser-focused on the review\u0027s core. My primary concern is the depth of the analysis, especially regarding files like `Quote.html`, `MERGED.html`, `Form.html`, and `PrintQuote.html`, all under a strict Data Contract. I\u0027m emphasizing the atomic approach: scrutinizing every variable, loop, and function signature. The HTML report structure is also set, with Executive Summary, Integration, and Atomic Audit sections.\n\n\n",
+      "role": "model",
+      "tokenCount": 1188,
+      "isThought": true,
+      "parts": [{
+        "text": "**Defining the Review Prompt**\n\nI\u0027m now zeroing in on defining the precise prompt. My current focus is on what makes a code review \"rigorous\" and \"atomic.\" The goal is to craft a prompt tailored to a group of 5 interrelated files. The output format is of prime importance in designing the prompt.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Crafting the Detailed Report**\n\nI\u0027m now deep-diving into the report\u0027s structure and content. The goal is a truly comprehensive HTML document. I\u0027m focusing on breaking down the review into per-file analysis, cross-file checks, and detailed recommendations. The language is finalized as Hebrew. I\u0027m also ensuring the prompt explicitly details the context, the \"Beresheet Solar\" system, the five related files, and the strict rules. It\u0027s crucial the AI assumes the roles of Senior Code Reviewer, Systems Architect, QA Lead, and Security Auditor, and adopts an \"atomic\" review methodology.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Output Structure**\n\nI\u0027m now completely focused on the final HTML report and its architecture. My thinking has honed in on the exact review criteria, establishing a comprehensive methodology. The output is planned as a clear HTML structure, with a \"monster\" look and feel for a professional presentation. I\u0027m deep diving into the detailed elements of the report: Dashboard, File-by-File analysis, Integration checks, and a comprehensive list of actionable items.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Atomic Review**\n\nI\u0027m now laser-focused on the review\u0027s core. My primary concern is the depth of the analysis, especially regarding files like `Quote.html`, `MERGED.html`, `Form.html`, and `PrintQuote.html`, all under a strict Data Contract. I\u0027m emphasizing the atomic approach: scrutinizing every variable, loop, and function signature. The HTML report structure is also set, with Executive Summary, Integration, and Atomic Audit sections.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-22T10:09:19.386Z"
+    }, {
+      "text": "כדי לקבל דוח ביקורת ברמה הגבוהה ביותר (קפדני, לא מוותר על פסיק, ומפיק HTML מרהיב ומפורט), עלינו \"להכניס את ה-AI לדמות\" של ארכיטקט תוכנה ראשי ומומחה QA אכזרי וקפדן. \n\nמכיוון שקריאת קוד ברמה כזו דורשת המון \"קשב\" (Token limits), **מומלץ מאוד** לפתוח חלון צ\u0027אט **חדש ונקי**, להעלות אליו את 5 הקבצים הסופיים שקיבלת מהסוכנים הקודמים, ומיד להדביק את הפרומפט הבא.\n\nהפרומפט מנוסח באנגלית (כדי להבטיח שה-AI יבין את ההוראות הטכניות המורכבות ברמת הקידוד), אך הוא מונחה לכתוב את **דוח ה-HTML עצמו בשפה העברית**.\n\n***\n\n### 📋 העתק והדבק את הטקסט הבא ל-AI:\n\n```text\nAct as a Principal Systems Architect, Lead Security Auditor, and Expert QA Engineer. \n\nI have provided you with 5 final, production-ready code files for the \"Beresheet Solar\" system:\n1. `code.js` (Backend)\n2. `Index.html` (CRM)\n3. `Calculator_MERGED.html` (Math/Simulation Engine)\n4. `Form.html` (Client Intake \u0026 Encryption)\n5. `PrintQuote.html` (PDF Generator \u0026 Template Editor)\n\nYour mission is to perform an ATOMIC, microscopic, line-by-line code review of these 5 files and the INTEGRATION between them. \n\nYou must output your findings ONLY as a single, massive, beautifully designed, self-contained HTML file (with inline CSS). DO NOT output markdown, DO NOT output the fixed code files. Output ONLY the HTML report. The content of the report must be written in HEBREW.\n\n⚠️ STRICT AUDIT CRITERIA:\n1. Data Contract \u0026 Integration: Does `Calculator_MERGED.html` output the EXACT JSON structure required by `PrintQuote.html`? Is `code.js` handling the 28 columns correctly? Does `Index.html` pass URL params correctly?\n2. Mathematical Sanity: Check the IRR function (Is it using BiSection + Newton?). Check the Dual-Track Tax model. Check the Staircase Tariff (bands array). \n3. Security: Check the RSA-OAEP + AES-GCM implementation in `Form.html`. Is it secure?\n4. Architecture Restrictions: Ensure there is NO `localStorage` used for cross-window data passing (must use URL params + server push/pull). Ensure there is NO duplicated `calcView` in `Index.html`.\n5. Atomic Code Quality: Look for undefined variables, NaN risks, unhandled Promises, unclosed HTML tags, and CSS leaks.\n\n🎨 HTML REPORT STRUCTURE \u0026 DESIGN REQUIREMENTS:\nThe HTML output must be a \"Monster\" report—extremely detailed, professional, and visually striking. Use a dark-mode, high-tech aesthetic (e.g., deep blues, slate grays, neon accents for warnings/success). \n\nInclude the following sections in the HTML:\n1. 📊 Executive Summary (תקציר מנהלים): Overall health score (0-100), Pass/Fail status, and critical blockers.\n2. 🔗 Integration \u0026 Data Flow Audit (בדיקת אינטגרציה): A detailed map of how data flows from Form -\u003e Index -\u003e Calculator -\u003e Server -\u003e PrintQuote. Highlight any broken pipes or mismatched JSON keys.\n3. 🔬 File-by-File Atomic Audit (ביקורת קבצים אטומית): For EACH of the 5 files, provide a table with: Line/Function Name, Issue Description, Severity (🔴 Critical, 🟡 Warning, 🔵 Info), and The Exact Code Fix.\n4. 🧮 Mathematical \u0026 Logical Audit (ביקורת מתמטית): Deep dive into the financial formulas, solar degradation, and battery dispatch logic.\n5. 🛡️ Security \u0026 Performance (אבטחה וביצועים): Analysis of the encryption and GAS (Google Apps Script) async call handling.\n6. ✅ Actionable Checklist (צ\u0027קליסט לביצוע): A copy-pasteable list of exact code snippets the developer needs to replace to fix the found issues.\n\nMake the HTML interactive if possible (e.g., CSS-only tabs or accordions for each file), use modern fonts (import \u0027Assistant\u0027 or \u0027Heebo\u0027 from Google Fonts), and ensure the tables are highly readable. \n\nBegin generating the raw HTML code now.\n```\n\n***\n\n### 💡 למה הפרומפט הזה עובד כל כך טוב?\n\n1. **הכרחת המודל לחשוב על האינטגרציה:** הבעיה הגדולה ביותר כשקוד נכתב על ידי AI (או צוות מתכנתים) היא \"התפרים\" בין הקבצים. הפרומפט מכריח אותו לחפש משתנים שיוצאו מקובץ א\u0027 אבל לא נקראו נכון בקובץ ב\u0027.\n2. **אלימינציה של \"קוד מת\":** הוא מחפש ספציפית אם הסוכנים הקודמים \"רימו\" והשאירו `localStorage` במקום חיבור לשרת, או אם הם שכחו את המודל המתמטי המסובך.\n3. **תוצר מרהיב ונוח לשימוש:** במקום לקרוא טקסט משעמם בצ\u0027אט, תקבל קובץ HTML שתוכל לשמור על המחשב ולפתוח בדפדפן. הקובץ יכלול טבלאות מדויקות של \"איפה הטעות\" ו\"מה להעתיק במקום\". \n\n**טיפ:** כשה-AI יסיים, פשוט העתק את כל הקוד שהוא ייצר, שמור אותו כקובץ `Audit_Report.html` ופתח אותו בכרום. זה ייראה כמו דוח QA של חברת הייטק.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1378,
+      "parts": [{
+        "text": "כ"
+      }, {
+        "text": "די לקבל דוח ביקורת ברמה הגבוהה ביותר (קפדני, לא מוותר על פ"
+      }, {
+        "text": "סיק, ומפיק HTML מרהיב ומפורט), עלינו \"להכניס את"
+      }, {
+        "text": " ה-AI לדמות\" של ארכיטקט תוכנה ראשי ומומחה QA אכזרי ו"
+      }, {
+        "text": "קפדן. \n\nמכיוון שקריאת קוד ברמה כזו דורשת המון"
+      }, {
+        "text": " \"קשב\" (Token limits), **מומלץ מאוד** לפתוח חלון צ\u0027אט **"
+      }, {
+        "text": "חדש ונקי**, להעלות אליו את 5 הקבצים הסופיים שקיבלת מהסוכנים הק"
+      }, {
+        "text": "ודמים, ומיד להדביק את הפרומפט הבא.\n\nהפרומפט מנוסח"
+      }, {
+        "text": " באנגלית (כדי להבטיח שה-AI יבין את ההוראות הטכניות המורכבות ברמת ה"
+      }, {
+        "text": "קידוד), אך הוא מונחה לכתוב את **דוח ה-HTML עצמו בשפה העברית**.\n\n***\n\n"
+      }, {
+        "text": "### 📋 העתק והדבק את הטקסט הבא ל-AI:\n\n```text\nAct as a Principal Systems Architect, Lead"
+      }, {
+        "text": " Security Auditor, and Expert QA Engineer. \n\nI have provided you with 5 final, production-ready code files for the \""
+      }, {
+        "text": "Beresheet Solar\" system:\n1. `code.js` (Backend)\n2. `Index.html"
+      }, {
+        "text": "` (CRM)\n3. `Calculator_MERGED.html` (Math/Simulation Engine)\n4. `Form.html"
+      }, {
+        "text": "` (Client Intake \u0026 Encryption)\n5. `PrintQuote.html` (PDF Generator \u0026 Template Editor)\n\nYour mission"
+      }, {
+        "text": " is to perform an ATOMIC, microscopic, line-by-line code review of these 5 files and the INTEGRATION between them. \n\n"
+      }, {
+        "text": "You must output your findings ONLY as a single, massive, beautifully designed, self-contained HTML file (with inline CSS)."
+      }, {
+        "text": " DO NOT output markdown, DO NOT output the fixed code files. Output ONLY the HTML report. The content of the report must be written in HE"
+      }, {
+        "text": "BREW.\n\n⚠️ STRICT AUDIT CRITERIA:\n1. Data Contract \u0026 Integration: Does `Calculator_MERGED.html"
+      }, {
+        "text": "` output the EXACT JSON structure required by `PrintQuote.html`? Is `code.js` handling the 28 columns correctly? Does "
+      }, {
+        "text": "`Index.html` pass URL params correctly?\n2. Mathematical Sanity: Check the IRR function (Is it using"
+      }, {
+        "text": " BiSection + Newton?). Check the Dual-Track Tax model. Check the Staircase Tariff (bands array). \n3. Security:"
+      }, {
+        "text": " Check the RSA-OAEP + AES-GCM implementation in `Form.html`. Is it secure?\n4. Architecture"
+      }, {
+        "text": " Restrictions: Ensure there is NO `localStorage` used for cross-window data passing (must use URL params + server push"
+      }, {
+        "text": "/pull). Ensure there is NO duplicated `calcView` in `Index.html`.\n5. Atomic Code Quality"
+      }, {
+        "text": ": Look for undefined variables, NaN risks, unhandled Promises, unclosed HTML tags, and CSS leaks.\n\n🎨"
+      }, {
+        "text": " HTML REPORT STRUCTURE \u0026 DESIGN REQUIREMENTS:\nThe HTML output must be a \"Monster\" report—extremely detailed, professional, and visually striking"
+      }, {
+        "text": ". Use a dark-mode, high-tech aesthetic (e.g., deep blues, slate grays, neon accents"
+      }, {
+        "text": " for warnings/success). \n\nInclude the following sections in the HTML:\n1. 📊 Executive Summary (תקציר"
+      }, {
+        "text": " מנהלים): Overall health score (0-100), Pass/Fail status, and critical blockers.\n2. 🔗"
+      }, {
+        "text": " Integration \u0026 Data Flow Audit (בדיקת אינטגרציה): A detailed map of how data flows from Form -\u003e Index"
+      }, {
+        "text": " -\u003e Calculator -\u003e Server -\u003e PrintQuote. Highlight any broken pipes or mismatched JSON keys.\n3. 🔬 File-by-File Atomic Audit ("
+      }, {
+        "text": "ביקורת קבצים אטומית): For EACH of the 5 files, provide a table with: Line"
+      }, {
+        "text": "/Function Name, Issue Description, Severity (🔴 Critical, 🟡 Warning, 🔵 Info), and The Exact Code Fix"
+      }, {
+        "text": ".\n4. 🧮 Mathematical \u0026 Logical Audit (ביקורת מתמטית): Deep dive into the financial formulas,"
+      }, {
+        "text": " solar degradation, and battery dispatch logic.\n5. 🛡️ Security \u0026 Performance (אבטחה וביצועים):"
+      }, {
+        "text": " Analysis of the encryption and GAS (Google Apps Script) async call handling.\n6. ✅ Actionable Checklist (צ\u0027קליסט ל"
+      }, {
+        "text": "ביצוע): A copy-pasteable list of exact code snippets the developer needs to replace to fix the found issues.\n\nMake"
+      }, {
+        "text": " the HTML interactive if possible (e.g., CSS-only tabs or accordions for each file), use modern fonts (import"
+      }, {
+        "text": " \u0027Assistant\u0027 or \u0027Heebo\u0027 from Google Fonts), and ensure the tables are highly readable. \n\nBegin generating the raw"
+      }, {
+        "text": " HTML code now.\n```\n\n***\n\n### 💡 למה הפרומפט הזה עובד כל כך טוב?\n\n1. **ה"
+      }, {
+        "text": "כרחת המודל לחשוב על האינטגרציה:** הבעיה הגדולה ביותר כשקוד נ"
+      }, {
+        "text": "כתב על ידי AI (או צוות מתכנתים) היא \"התפרים\" בין הקבצים. הפרומפט"
+      }, {
+        "text": " מכריח אותו לחפש משתנים שיוצאו מקובץ א\u0027 אבל לא נקראו"
+      }, {
+        "text": " נכון בקובץ ב\u0027.\n2. **אלימינציה של \"קוד מת\":** הוא מחפש ס"
+      }, {
+        "text": "פציפית אם הסוכנים הקודמים \"רימו\" והשאירו `localStorage` במקום חי"
+      }, {
+        "text": "בור לשרת, או אם הם שכחו את המודל המתמטי המסובך.\n3. **תו"
+      }, {
+        "text": "צר מרהיב ונוח לשימוש:** במקום לקרוא טקסט משעמם בצ\u0027אט,"
+      }, {
+        "text": " תקבל קובץ HTML שתוכל לשמור על המחשב ולפתוח בדפדפן."
+      }, {
+        "text": " הקובץ יכלול טבלאות מדויקות של \"איפה הטעות\" ו\"מה לה"
+      }, {
+        "text": "עתיק במקום\". \n\n**טיפ:** כשה-AI יסיים, פשוט העתק את כל הקוד"
+      }, {
+        "text": " שהוא ייצר, שמור אותו כקובץ `Audit_Report.html` ופתח אותו בכרום. זה ייר"
+      }, {
+        "text": "אה כמו דוח QA של חברת הייטק."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-07-22T10:09:53.121Z"
+    }, {
+      "text": "האם הזכרת שהדוח יהיה בעברית?\n",
+      "role": "user",
+      "tokenCount": 16,
+      "createTime": "2026-07-22T10:10:42.511Z"
+    }, {
+      "text": "**Reviewing The Input**\n\nI\u0027m currently analyzing the user\u0027s question, which is in Hebrew. My task is to ascertain if I previously specified the report\u0027s language should be Hebrew within the provided prompt. I\u0027m focusing on dissecting the initial question to precisely understand the requirement before further processing.\n\n\n",
+      "role": "model",
+      "tokenCount": 286,
+      "isThought": true,
+      "parts": [{
+        "text": "**Reviewing The Input**\n\nI\u0027m currently analyzing the user\u0027s question, which is in Hebrew. My task is to ascertain if I previously specified the report\u0027s language should be Hebrew within the provided prompt. I\u0027m focusing on dissecting the initial question to precisely understand the requirement before further processing.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-22T10:10:42.511Z"
+    }, {
+      "text": "בהחלט! דאגתי להדגיש את זה במפורש בתוך הפרומפט כדי שה-AI לא יפספס. \n\nבפסקה השנייה של הפרומפט כתבתי לו באותיות גדולות וברורות:\n\u003e \"Output ONLY the HTML report. **The content of the report must be written in HEBREW.**\"\n\nבנוסף, כדי להבטיח שהוא יבנה את המבנה של הדוח נכון וישתמש במונחים המקצועיים המדויקים בעברית, ציינתי לו את שמות הסעיפים הנדרשים מראש גם באנגלית וגם בעברית (למשל: `Executive Summary (תקציר מנהלים)`).\n\nכך ה-AI ינתח את הקוד באנגלית (השפה שבה הוא הכי חזק בניתוח טכני), אבל ינסח את כל ההסברים, הבעיות וההמלצות בתוך קובץ ה-HTML בשפה העברית בלבד.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 233,
+      "parts": [{
+        "text": "בהח"
+      }, {
+        "text": "לט! דאגתי להדגיש את זה במפורש בתוך הפרומפט כדי שה-"
+      }, {
+        "text": "AI לא יפספס. \n\nבפסקה השנייה של הפרומפט כתבתי לו באותיות גדולות וברורות"
+      }, {
+        "text": ":\n\u003e \"Output ONLY the HTML report. **The content of the report must be written in HEBREW.**\"\n\n"
+      }, {
+        "text": "בנוסף, כדי להבטיח שהוא יבנה את המבנה של הדוח נכון וישתמש במונחים המ"
+      }, {
+        "text": "קצועיים המדויקים בעברית, ציינתי לו את שמות הסעיפים הנדרשים מ"
+      }, {
+        "text": "ראש גם באנגלית וגם בעברית (למשל: `Executive Summary (תקציר מנהלים)`).\n\nכך ה"
+      }, {
+        "text": "-AI ינתח את הקוד באנגלית (השפה שבה הוא הכי חזק בניתוח טכני), אבל י"
+      }, {
+        "text": "נסח את כל ההסברים, הבעיות וההמלצות בתוך קובץ ה-HTML בש"
+      }, {
+        "text": "פה העברית בלבד."
+      }, {
+        "text": "",
+        "thoughtSignature": "EpwLCpkLARFNMg9DkeqJvHlCg0bWQhK7mamzPuwxA692oYSBdEuTIbbV0sOKCR6bCr4gGaK4l7DXPAFP2rIYnIJ/5uyVJNR1cQQEOfqDUaHehdxFath6wA2t/DTlfjrSGDqdTp5dRuldCbVLa5LtNh3ZqJuMwpftz1czXH/b7nfjrPUwEnZ+EcLlBDaFbnsAo52/Hdt/iGs/evw7slVkeSbl09moIjy1T6Lnq7AxtVcoGpft2X4ZWdTup17AFBxuxXn9GGzCMGFU+aBthSBqJ2Jw+WOZK+dCAZP2vGV+h0V1GJysBmYlmuqFkUNGVEREK7tXYjo4icMbmyGRz1A2ynPO1BmZqlC24kBmPYsUDZGaHP1yG3WbU1m87i1fjQ58uVFZPOZp7gVg40ahYEi7CHnYQgTtNbwya19z2xdrobXG3dW47w11LifPPfkxTZCP4JrKf+j3LWNMnUyThhaDqUID5Vn13uCtm5CE+Azp5srYpLUOC7qI1n0iYXvx94v1hu0jaj6dv6jfkkSMnDgA1vCXI8gEgr2s+5kYWYYmAkuHqIXaSULCGqqTM4YoxYAQdGtgXYtHZAJqfmZzvMdaNp9V0KiA5WNQCLQLn7PvxlVGCUSh6MPHYBNFxzXs9ezufDlKOMiXi/9JH3FSClffBuXDfTyoQ8WfUZmL4ApKcMEx7wTjRZhcwwn207uqTAYqMdlPVdpOYxpM7b1RaIVrdfrRNh1ih0hd0HEyA494S7LSHX2KTcaI5CPXGraoEcdcLvYQjCLOnChPUeGjH1VPrS97N2MGNapv7itdJi7wxzqQok72SQbVoDV8IrOpCpFS4yR6TP/bnx5nNMKuk/ZVudyDdiObSRbOBytTfeAPYGcrqjr9VRSx9D7CMmSS6KHfZ3UZNvFU5w+8iqkTEJy7UO8q+aOKsvly8aZpv+qw6IEh3g3kNcUKfnslv4ASr/t3SwjZLysqAAXeVsEZ23O7FajE7VLVMZtOAyZeKwzHnoHp77pH/TUdB+VcPv/bDqcrj3T2K4g9m6HIgOEqvftaNVpidn8ILm5pDPAJTf/LID/Ve3BF5elSOCO1ArOKkneGuHDEwK8YCaPFu1vWGOnCv1ldhlJySFDE++jhnwrltoqxRQ5XNH35cdCSaSjtxRTufVTERJ1yREzFXoHNunTZbKWfP6tE7EzyMrYmIN6/fbGqO3wA2fmwtVOmyPsVxg60wfw8qx0ZkqcwNikCJniz8eeEzQcCsCJEv6wAT8+3vx1mgR2rMdH/PQEN5ylo8KgVEvfNv0Et2EVK/C9I6Alr5AYjp2lV59HE5Lmq3BAQKa9KiUSiYlXwweGKRtJWyW1o618z5gjeuU1SD12dsx0geUAPHJG/fRwX63/f8auIcJeuZKe31I5qfzqfZB2IOT1FxG3WnUZdS6xN2rcTI67x8DkbSjEFsmGUXExcU3t5gYUoD7f5ScmaAdq6TPhx+qp/It/0VwkcEHlD31r/wBfp4K+4vYBwbBiNMgOAfRXra/AUNvVaAc3ydMM8W3WDw4Grook+vNCFJXHVo3dF4OYWO0TTJPEO34B/1+WCuYyqVHTRvbiGPJdVZusM3SAIPgJGPFwMISZVOkfaOjg+OD81fTU0/qdAopcfIyX62WgcGHaarTawab+FtfqVUyTWDUmju1We8Ad6gIM59xSG2+A8LcsYNxA/whqx5wGNyT5kgd84C8HHmnLyY1PZO1ecH49naulovu+AFmAQhasjXr+Trv82oylh//vI+1gxCkNE8jQt/nvag3JRHJ3g5wNE5+P0mKtSUUWHxyO87iFL90fQJHa/vRz8qp73UiTUIDPyKD6KdplPNx0ZtAHpyXSGxZn5SxeMfock0aTdqeGmV+2DTqrjby1bangDHpBEHXhWadhEIbjITyYRLMFlS60gxS8="
+      }],
+      "createTime": "2026-07-22T10:11:04.844Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

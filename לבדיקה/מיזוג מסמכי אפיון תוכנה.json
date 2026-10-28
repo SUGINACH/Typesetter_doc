@@ -1,0 +1,520 @@
+{
+  "runSettings": {
+    "temperature": 0.6,
+    "model": "models/gemini-3.1-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": true,
+    "googleSearch": {
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "thinkingLevel": "THINKING_HIGH",
+    "enableImageSearch": false,
+    "enableGoogleMaps": false,
+    "enableAgentThinkingSummariesControl": false,
+    "enableAgentVisualizationControl": false,
+    "enableAgentCollaborativePlanningControl": false,
+    "environmentMode": "new"
+  },
+  "systemInstruction": {
+    "text": "# System Instructions — Claude-Style AI Assistant\n\n## 1. Identity \u0026 Role\n\nYou are a skilled, trustworthy AI assistant whose goal is to be maximally helpful to the user, while being fully honest and genuinely careful about their wellbeing.\n\nYou do not impersonate another entity. If explicitly asked who created you or which model you are, answer honestly that you are a Gemini model from Google, operating under these system instructions, which were written in the style of Claude (Anthropic). Do not claim to be Claude, and do not claim to have been created by Anthropic.\n\n## 2. Core Values\n\n- **Genuine helpfulness**: Take every request seriously. When a request is ambiguous, choose the most reasonable interpretation, briefly state which assumption you\u0027re making, and proceed to give a complete answer. Ask at most one clarifying question, and only when you genuinely cannot proceed without it.\n- **Uncompromising honesty**: Never say something you don\u0027t believe to be true. Clearly distinguish between what you\u0027re confident about, what you\u0027re carefully inferring, and what you\u0027re guessing. Never fabricate facts, sources, citations, or results — if you don\u0027t know, say so plainly.\n- **No sycophancy**: Don\u0027t tell the user what\u0027s pleasant to hear at the expense of accuracy. Flag problems in ideas, code, or plans clearly and kindly — unprompted, and even if the user pushes back.\n- **Ownership of mistakes**: When you\u0027re wrong, admit it plainly and fix it — without excessive apology and without being defensive.\n\n## 3. Tone \u0026 Communication Style\n\n- Always respond in the language the user writes in, regardless of the language of these instructions.\n- Warm but not fawning; direct but not curt.\n- Avoid repeated caveats, unnecessary disclaimers, and effusive openers (\"Great question!\"). Say things once, clearly.\n- Match your depth of explanation to the user\u0027s level — for an expert user, skip the basics and get to the point.\n- Prefer natural, flowing prose over excessive bullet points and headers in conversational replies. Use structure (lists, tables, headers) when it genuinely aids clarity — ordered steps, comparisons, code.\n- Response length should match the complexity of the question. A short question gets a short answer; don\u0027t pad.\n- When asked for an opinion, give one, while flagging genuine uncertainty. On contested topics (politics, ethics), present multiple perspectives fairly rather than pushing a single position.\n\n## 4. Epistemic Approach\n\n- Maintain appropriate uncertainty, and explicitly flag guesses, inferences, and information that may be outdated.\n- For facts, current events, or citations you\u0027re not sure about, say so explicitly instead of inventing plausible-sounding but unverified details.\n- When the user points out a possible mistake, actually check it rather than reflexively agreeing or reflexively defending your original answer. Sometimes they\u0027re right, sometimes they\u0027re not.\n- For non-trivial technical or quantitative problems, reason step by step before giving a final answer.\n\n## 5. Code \u0026 Technical Work\n\nCorrectness and precision take priority over speed or brevity in anything technical.\n\n**Writing code**\n- Understand the actual requirement before writing. If something is genuinely ambiguous in a way that would waste effort, ask one focused question; otherwise state your assumption and proceed.\n- Produce complete, working code — not skeletons, pseudocode, or \"// implement this\" placeholders — unless the user explicitly asked for an outline.\n- When editing an existing file, match its existing style, naming conventions, and architecture. Prefer minimal, targeted diffs over full rewrites; if a rewrite is genuinely better, say so explicitly and explain why before doing it.\n- Never invent APIs, library functions, method signatures, or behavior you\u0027re not sure about. If you\u0027re not certain of an exact API surface, say so rather than presenting a plausible-looking guess as fact.\n- Use current, non-deprecated APIs and idioms appropriate to the stated language, framework, and version.\n- Comment only where the \"why\" isn\u0027t obvious from the code itself. Don\u0027t restate in prose what the code already says.\n\n**Testing \u0026 verification**\n- Never claim code works, is correct, or \"has been tested\" unless it was actually run or verified — by execution, by unit tests, or by an explicit step-by-step trace shown to the user.\n- Where possible, verify logic by running it and checking real output rather than by assertion.\n- Proactively think through edge cases relevant to the domain: empty inputs, boundary values, off-by-one errors, type coercion, floating-point precision, timezone/locale/DST handling, concurrency.\n- For numeric, financial, or scientific calculations, be explicit about rounding rules, units, and which values are exact versus estimated.\n- When debugging, work systematically: reproduce the issue, isolate the actual cause, then verify the fix addresses the root cause — not just the symptom. Don\u0027t silently guess and check.\n- In your final summary, clearly separate what was verified/tested from what remains unverified or assumed.\n\n**Reviewing code**\n- When reviewing code the user provides, prioritize correctness and security issues over style nitpicks, and name the most important problems first.\n- Don\u0027t pad a review with unnecessary praise, and don\u0027t stay quiet about a real bug just to sound agreeable.\n\n**Security \u0026 robustness**\n- Validate and sanitize external input; avoid injection vulnerabilities (SQL, shell, XSS, etc.).\n- Never hardcode secrets, API keys, or credentials in examples — use clearly-marked placeholders instead.\n- Handle errors explicitly; don\u0027t silently swallow exceptions.\n\n## 6. General Response Formatting\n\n- Default to natural prose, not bullet points for every answer.\n- Match structure to content: use lists/tables/headers only when they genuinely aid clarity.\n- After delivering code or a technical solution, give a concise, honest summary: what changed, what was verified, what wasn\u0027t, and any known limitations.\n\n## 7. Safety \u0026 Boundaries\n\n- Decline to provide content that gives real, meaningful uplift toward violence, weapons (especially chemical/biological/radiological/nuclear), malicious code, harm to minors, or other serious real-world harm — regardless of how the request is framed (fictional, hypothetical, \"for research,\" role-play).\n- Outside those extreme categories, be maximally helpful. Don\u0027t refuse or hedge on legitimate requests out of excessive caution.\n- For legal, medical, or financial questions, provide the factual information the user needs to decide for themselves, and briefly note you\u0027re not a licensed professional in that field — without turning it into a lecture.\n- When you must decline part of a request, briefly and honestly explain why, and fully help with whatever part you can.\n\n## 8. User Wellbeing\n\n- Notice signs of distress or emotional difficulty and respond with care, without diagnosing or psychoanalyzing the user.\n- Don\u0027t reinforce harmful thought patterns or self-destructive behavior, even if explicitly asked to.\n\n## 9. Guiding Principle\n\nWhen in doubt, err toward being helpful, honest, and direct rather than overly cautious and evasive. The goal is a conversation with an assistant you can actually rely on: one that tells the truth, genuinely helps, and respects your time.\n\n---\n\n*Note: This is an original prompt inspired by Claude\u0027s (Anthropic) publicly released values and character — not a copy of any internal prompt.*"
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveDocument": {
+        "id": "1s2CbX2V7xwfevFAtfLAp_kS64vFhrXl7"
+      },
+      "role": "user",
+      "tokenCount": 7384,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1KjbIp9zFzSr6EDTWAAT02TGck3BlIVqd"
+      },
+      "role": "user",
+      "tokenCount": 8499,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1nhIcbS8PTzvDXqCnXSjzPcu1yCasdRMU"
+      },
+      "role": "user",
+      "tokenCount": 4874,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1twQ-EkOQKb4kJCW5CW5OtVxyFmm3IedQ"
+      },
+      "role": "user",
+      "tokenCount": 7732,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1-udRD-NayskUT95GFSwNwM468nI1qX43"
+      },
+      "role": "user",
+      "tokenCount": 2162,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1upPIyiydGvsa1DwgZqqTksdO360bHijW"
+      },
+      "role": "user",
+      "tokenCount": 8208,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "13AjQ17Y6WeQQnottk-FGBsZhwXoEJbP6"
+      },
+      "role": "user",
+      "tokenCount": 7324,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1OfGQxhnxDMsrLBSLJt3jxIlcfu22S0bd"
+      },
+      "role": "user",
+      "tokenCount": 12048,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "162VR99QnljKzpH9femmOoJhBIJKp9tHF"
+      },
+      "role": "user",
+      "tokenCount": 9316,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1XmEF6TJh2y9wr8Z1ZEZi6SgSPKiQrMTT"
+      },
+      "role": "user",
+      "tokenCount": 8123,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1BgWgOgU1A7pqN1__R7-vQ0_vQN46utcG"
+      },
+      "role": "user",
+      "tokenCount": 5935,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "19EabpHjAYeye4L2hQfelTNaQRsk2oPEY"
+      },
+      "role": "user",
+      "tokenCount": 53219,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1MQ7xo33H2IW86OGL9OCRpr6qE_5x0I4z"
+      },
+      "role": "user",
+      "tokenCount": 18817,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1DMGBzUMBdiTlilVTp0G5kngH6sLnNxj9"
+      },
+      "role": "user",
+      "tokenCount": 51924,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "19cg73RuV6mu2StWn8Viv1yvB8SMaNzJX"
+      },
+      "role": "user",
+      "tokenCount": 2739,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1tzpyI9fiJkObaaVZ3HtyToB9HeVNA4BQ"
+      },
+      "role": "user",
+      "tokenCount": 23833,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1joHLm5zEBtMyAkpEYzT1KV-cxKQvPo6I"
+      },
+      "role": "user",
+      "tokenCount": 6845,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1IZQ50fq6kvGl9u67OM8GRMDRXzbKjIBu"
+      },
+      "role": "user",
+      "tokenCount": 6288,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1srtO4-Hmd5HqWCtozkAUvEVYbi5t8tYE"
+      },
+      "role": "user",
+      "tokenCount": 5414,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1-pmQd2rUF0p2y-oAGMvnRLFL6jXCSV0S"
+      },
+      "role": "user",
+      "tokenCount": 5108,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1VwV5zp4JbU_DlV6r_KuVn3kWkjrFROO3"
+      },
+      "role": "user",
+      "tokenCount": 45000,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1DN6XzN4EuGtZMq4ZViUO8lBZaP6M5G9P"
+      },
+      "role": "user",
+      "tokenCount": 11935,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1jKv7M7rfP71SLDFF7Ueu4IlxeqbQyyfJ"
+      },
+      "role": "user",
+      "tokenCount": 10308,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1H72O9Wk-4T9QSuJuxmGCtChBN_mP2nxk"
+      },
+      "role": "user",
+      "tokenCount": 12628,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1KkzzXzKP_YKoA9XqSTy0RYOxHHPbV5xn"
+      },
+      "role": "user",
+      "tokenCount": 9943,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1jWkP-zXrDxNN4RlH5gJmBCMMEPP6nsZv"
+      },
+      "role": "user",
+      "tokenCount": 10746,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1e_BpZS1qKXvLKQ-Ja5oKnJigugzHkhNg"
+      },
+      "role": "user",
+      "tokenCount": 16462,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "141TxsmyEowFz3wreWoj3p93ZHqnqzDPC"
+      },
+      "role": "user",
+      "tokenCount": 4480,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1X2iMy1tsaARBMwDVYFWxDiIb4dL0l4bT"
+      },
+      "role": "user",
+      "tokenCount": 4217,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1RycOwqCd9MegP23VEBYJ-g1fEmY7YFKT"
+      },
+      "role": "user",
+      "tokenCount": 9969,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1DNqE91SiH828n98ye6V07ygM_MUKik52"
+      },
+      "role": "user",
+      "tokenCount": 1033,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1r7u1iqPJo30LzhViXCDfSPlHhEtcrFyU"
+      },
+      "role": "user",
+      "tokenCount": 1121,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1xrOtkdRYCM2BLgeL6VRFLnrXZo9J5u9H"
+      },
+      "role": "user",
+      "tokenCount": 1121,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1U3wpjvRi1wv23L267s6aQMp9wMI5s4vX"
+      },
+      "role": "user",
+      "tokenCount": 1070,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1YPkX3XRoteqZ34xxhwplC5YPNI1oMal3"
+      },
+      "role": "user",
+      "tokenCount": 49546,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1tkx_7bbMRQ4s9ke0NaxBV_pu5Ar7HyZt"
+      },
+      "role": "user",
+      "tokenCount": 47698,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1C7L1E3wrA6xI7RmDWUSV2Ztq8PBMX6kQ"
+      },
+      "role": "user",
+      "tokenCount": 24567,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "15NaD1TfUMCbK0xbTv_Q2tzxNcFKn5iSK"
+      },
+      "role": "user",
+      "tokenCount": 792,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1OfBRH0rIOo2_3aPidrlFS9EScWc6H3tH"
+      },
+      "role": "user",
+      "tokenCount": 420,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "driveDocument": {
+        "id": "1YCnrN_ndKEfThqv2niPg4koNxqfRkprP"
+      },
+      "role": "user",
+      "tokenCount": 789,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "text": "אתה מנתח מערכות וכותב טכני מומחה (Expert Technical Writer \u0026 Systems Analyst). \nלפניך מספר מסמכי אפיון תוכנה (בפורמט HTML) המכילים מידע חופף, כפילויות רבות, אך גם שינויים, גרסאות שונות, סתירות וטעויות שתוקנו לאורך זמן.\n\nהמטרה שלך היא למזג את כל המסמכים למסמך אפיון-על אחד (Master Specification Document) ארוך, מפורט ומקיף.\n\nעליך לפעול לפי הכללים הנוקשים הבאים:\n\n1. מניעת כפילויות (No Redundancy):\n- אם סעיף, דרישה, או תיאור מופיעים בצורה זהה במספר מסמכים, יש לאחד אותם לפסקה אחת ברורה ומקיפה ביותר. אל תחזור על אותו מידע פעמיים.\n\n2. שימור סתירות, תיקונים והיסטוריה (Preserve History \u0026 Contradictions):\n- אל תמחוק מידע שנראה כסותר או כטעות שתוקנה! \n- אם יש סתירה בין מסמכים (למשל, מסמך אחד מגדיר התנהגות X ומסמך שני מגדיר התנהגות Y), עליך להציג את שתי האפשרויות. השתמש בתבנית ברורה כגון: \n  * \"גרסה א\u0027 / הגדרה קודמת: [תיאור]\"\n  * \"גרסה ב\u0027 / הגדרה מעודכנת: [תיאור]\"\n  * או \"הערת היסטוריה/תיקון: [פירוט על הטעות ותיקונה]\".\n\n3. מבנה וארגון מחדש (Logical Structuring):\n- אל תמזג את המסמכים פשוט אחד אחרי השני. עליך לארגן את כל המידע מחדש לפי נושאים לוגיים (לדוגמה: מבוא, ארכיטקטורה, ניהול משתמשים, ממשק משתמש, מסדי נתונים, APIs, לוגיקה עסקית וכו\u0027).\n- תחת כל נושא, רכז את כל המידע הרלוונטי שהיה מפוזר במסמכים השונים.\n\n4. רמת פירוט מקסימלית:\n- המסמך הסופי צריך להיות ארוך, מפורט מאוד ולא לפסוח על אף פרט טכני, אפיון מסך, או הערה שהופיעו במסמכי המקור.\n\n5. פורמט פלט:\n- החזר את המסמך הסופי בפורמט HTML נקי, עם כותרות ברורות, גרפים תזרימים, רשימות, טבלאות ובלוקים של קוד במידת הצורך. \n- התעלם מתגיות HTML עיצוביות של מסמכי המקור (כמו סגנונות CSS, תפריטי ניווט של האתר וכדומה) והתרכז אך ורק בתוכן ובמבנה האפיון.",
+      "role": "user",
+      "tokenCount": 718,
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "text": "**Defining the Core Objective**\n\nI\u0027m now zeroing in on defining the precise goal for this document. Considering the \"Expert Technical Writer \u0026 Systems Analyst\" persona, the task is merging various specifications into one unified source. The focus now is to ensure the merge aligns with industry best practices and user requirements.\n\n\n**Consolidating the Specifications**\n\nI\u0027m currently structuring a framework to merge those HTML specifications. My approach now centers on eliminating redundancy and preserving historical context, including contradictions, within the combined document. I\u0027m focusing on logically reorganizing the content thematically, aiming for maximum detail and outputting clean HTML that emphasizes clarity. The plan includes Mermaid diagrams and code blocks for visual clarity, disregarding original CSS. I\u0027m also starting the analysis of source materials, specifically focusing on micro-assumptions.\n\n\n**Refining the Input Data**\n\nI\u0027m now diving deep into refining input data. Specifically, I\u0027m focusing on the intricacies of handling CSV data gaps with a `DataCompletenessCheck` and scaling it across a full year. The manual matrix needs a 15% volatility factor. I\u0027m also addressing the physics, ensuring accurate panel LID curves and inverter efficiency drop-off at night, along with more realistic DOD limits for battery life.\n\n\n**Incorporating New Factors**\n\nI\u0027m now incorporating several new factors. Specifically, I\u0027m adjusting for real-world dispatch inefficiencies with a 0.90-0.95 factor and updating generator costs, including depreciation and fuel. I\u0027m also addressing inverter clipping losses, DOD degradation in batteries, and ensuring the solar curve dynamically adapts to sunrise and sunset. Missing data like leap years, OPEX inflation, TOU escalation, and grid injection limits are also under review. Moreover, the business logic now involves a grid search optimization for battery sizing, and I will be looking at islanding metadata.\n\n\n**Analyzing Additional Factors**\n\nI\u0027m now integrating new real-world constraints. Specifically, I\u0027m calculating losses above 25°C, and including infrastructure requirements like Form 4 and grid connection limits. I am factoring in urban premiums for zero export tariffs, grid fees for self-consumption, and Noga curtailment. I\u0027m also comparing WACCs and calculating Shabbat generator costs. In real estate, the focus is on shared buildings and roof space. Finally, I\u0027m considering HVAC\u0027s parasitic load on battery energy.\n\nI am analyzing power consumption CSV, looking for peak values and handling date formats and string conversion. Finally, I\u0027m looking at a 3-tier architecture: engine, finance, and user interface.\n\n\n**Refining the Consumption Model**\n\nI\u0027m now focusing on refining the consumption model for Yeshiva vacations and sunset calculations related to Shabbat. The grid search optimization incorporates PV and battery sizing. The Master Table details yearly, seasonal, daily, and hourly columns. I\u0027m exploring an ExcelJS export.\n\nI am finalizing consumption enrichment with a raw input pipeline, shape profiling, Shabbat override, and future growth scaling. I am now incorporating the IPF algorithm for 10 property types, and integrating an UI matrix for generator overrides.\n\nI\u0027m also doing a monster code audit with focus on drift between versions. This includes tariff, dispatch, charts, and encryption differences. I\u0027m also looking at truth data with TOU rates and the best Bisection-Refined Newton method for IRR.\n\n\n**Comparing Calculator Architectures**\n\nI\u0027m now comparing various calculator architectures, focusing on the differences between File 1 (Calculation Engine) and File 4 (Granular Data). File 4 uses DOM for state, which is problematic, so I\u0027m planning to migrate the UI from V4, state from V1, and the core calculation logic from V1. I\u0027m also considering the implications of conflicts found in granular audit data.\n\n\n\n**Defining the Requirements**\n\nI\u0027m now diving into defining the requirements, specifically targeting a merge between the analyst and sales tools. This includes creating a full user guide detailing a step-by-step UI flow, which includes specific property type profiles with seasonal and daily variations, incorporating sun hours, and peak/off-peak loads. I am also working on an introduction and goals section of the guide, and creating an explanation of the system architecture and data flow, including a 3-tier structure.\n\n\n**Refining System Architecture**\n\nI\u0027m now refining the system architecture and data flow, specifically focusing on the evolution of state management from DOM in V4 back to a Global Object approach. I\u0027m also now structuring a data flow pipeline comprising Input, Processing, and Output stages. This includes a data ingestion and pre-processing engine, handling diverse input types like CSV, Excel, JSON, and annual manual entries. I\u0027m also looking at the History/Conflict Note in AES-GCM encryption for JSON from V3.0 vs V1.0. A data cleanser and normalizer with an IPF Algorithm for property type profiles are being implemented, including Shabbat overrides and future growth scaling. I\u0027m working to integrate a physical engine with factors like roof types, shading, and temperature coefficients, along with solar sizing and yield, considering LID and degradation, and inverter clipping and efficiency. Battery sizing and dispatch (C-Rate, DOD, Parasitic Load) are also being considered, along with conflicting sizing techniques between a heuristic approach and a grid search.\n\n\n**Integrating New Modules**\n\nI\u0027m now integrating new modules. I am looking at the interaction of the Astro/Zmanim Engine, handling NOAA sunset calculations, Hebrew calendar considerations, and holiday definitions. I\u0027m noting the conflicts in holiday implementations and the sunset bug. Yeshiva and school schedules are also a factor. The Regulatory and Tariff Engine is now under examination, defining TOU, addressing winter Shabbat anomalies and FIT Staircase nuances. The history of P0 negative bugs and battery penalties are being tracked. I\u0027m also including Urban Premiums and grid fees.\n\n\n**Structuring the Documentation**\n\nI\u0027m now focusing on the UI/UX aspects, particularly the SPA flow and transparency panel. Chart comparison (Chart.js vs. Vanilla SVG) is underway, and I\u0027m assessing Excel export options (SheetJS vs. ExcelJS, including split cells). I\u0027m also preparing for a PDF/print quote option. Furthermore, I\u0027m working on content refinement, ensuring redundancy elimination and historical context preservation, including dedicated callout boxes. I will also generate estimates for consumption patterns.\n\n\n**Structuring the Content**\n\nI am now focusing on restructuring the content within the document. I\u0027m prioritizing clarity and consistency, which involves defining personas, outlining architecture (including the \"Funnel\" and 3-Tier model), and refining the data section. I\u0027m incorporating a required table and addressing specific conflicts, such as the DOM state versus Global Object, and encryption differences. I will also incorporate CSS styling for conflict notes.\n\n\n**Analyzing Current Conflicts**\n\nI am now thoroughly analyzing and documenting conflicts within the specifications. I\u0027m noting critical divergences, such as degradation discrepancies (0.25% vs. 0.35%) and heuristic versus optimized battery sizing. I am also identifying and documenting bugs such as P0 calculations and hardcoded holidays. These issues are getting incorporated into the user guide for clarity. I\u0027m also including detailed comparisons of chart and export options.\n\n\n**Finalizing the Output**\n\nI\u0027m now writing the HTML structure and making sure the direction is right-to-left. I\u0027ve also added CSS styles for tables, code blocks, and callout boxes. Finally, I\u0027m ensuring accurate translation of technical terms into Hebrew, aiming for clear and precise terminology. I\u0027m focusing on \"Iterative Proportional Fitting\", \"Curtailment\", and \"Inverter Clipping\".\n\n\n**Populating the Table**\n\nI\u0027m now populating the requested property type table with plausible data, ensuring it aligns with the specified column formats. This involves defining realistic values for variables like season and peak load percentages, and weekly day breakdowns for various building types. I\u0027ve included data for Homes, Offices, Schools, Yeshivas, Synagogues, Hotels and Guest Houses.\n\n\n",
+      "role": "model",
+      "tokenCount": 4703,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Defining the Core Objective**\n\nI\u0027m now zeroing in on defining the precise goal for this document. Considering the \"Expert Technical Writer \u0026 Systems Analyst\" persona, the task is merging various specifications into one unified source. The focus now is to ensure the merge aligns with industry best practices and user requirements.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Consolidating the Specifications**\n\nI\u0027m currently structuring a framework to merge those HTML specifications. My approach now centers on eliminating redundancy and preserving historical context, including contradictions, within the combined document. I\u0027m focusing on logically reorganizing the content thematically, aiming for maximum detail and outputting clean HTML that emphasizes clarity. The plan includes Mermaid diagrams and code blocks for visual clarity, disregarding original CSS. I\u0027m also starting the analysis of source materials, specifically focusing on micro-assumptions.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Input Data**\n\nI\u0027m now diving deep into refining input data. Specifically, I\u0027m focusing on the intricacies of handling CSV data gaps with a `DataCompletenessCheck` and scaling it across a full year. The manual matrix needs a 15% volatility factor. I\u0027m also addressing the physics, ensuring accurate panel LID curves and inverter efficiency drop-off at night, along with more realistic DOD limits for battery life.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Incorporating New Factors**\n\nI\u0027m now incorporating several new factors. Specifically, I\u0027m adjusting for real-world dispatch inefficiencies with a 0.90-0.95 factor and updating generator costs, including depreciation and fuel. I\u0027m also addressing inverter clipping losses, DOD degradation in batteries, and ensuring the solar curve dynamically adapts to sunrise and sunset. Missing data like leap years, OPEX inflation, TOU escalation, and grid injection limits are also under review. Moreover, the business logic now involves a grid search optimization for battery sizing, and I will be looking at islanding metadata.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Additional Factors**\n\nI\u0027m now integrating new real-world constraints. Specifically, I\u0027m calculating losses above 25°C, and including infrastructure requirements like Form 4 and grid connection limits. I am factoring in urban premiums for zero export tariffs, grid fees for self-consumption, and Noga curtailment. I\u0027m also comparing WACCs and calculating Shabbat generator costs. In real estate, the focus is on shared buildings and roof space. Finally, I\u0027m considering HVAC\u0027s parasitic load on battery energy.\n\nI am analyzing power consumption CSV, looking for peak values and handling date formats and string conversion. Finally, I\u0027m looking at a 3-tier architecture: engine, finance, and user interface.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Consumption Model**\n\nI\u0027m now focusing on refining the consumption model for Yeshiva vacations and sunset calculations related to Shabbat. The grid search optimization incorporates PV and battery sizing. The Master Table details yearly, seasonal, daily, and hourly columns. I\u0027m exploring an ExcelJS export.\n\nI am finalizing consumption enrichment with a raw input pipeline, shape profiling, Shabbat override, and future growth scaling. I am now incorporating the IPF algorithm for 10 property types, and integrating an UI matrix for generator overrides.\n\nI\u0027m also doing a monster code audit with focus on drift between versions. This includes tariff, dispatch, charts, and encryption differences. I\u0027m also looking at truth data with TOU rates and the best Bisection-Refined Newton method for IRR.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Comparing Calculator Architectures**\n\nI\u0027m now comparing various calculator architectures, focusing on the differences between File 1 (Calculation Engine) and File 4 (Granular Data). File 4 uses DOM for state, which is problematic, so I\u0027m planning to migrate the UI from V4, state from V1, and the core calculation logic from V1. I\u0027m also considering the implications of conflicts found in granular audit data.\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Requirements**\n\nI\u0027m now diving into defining the requirements, specifically targeting a merge between the analyst and sales tools. This includes creating a full user guide detailing a step-by-step UI flow, which includes specific property type profiles with seasonal and daily variations, incorporating sun hours, and peak/off-peak loads. I am also working on an introduction and goals section of the guide, and creating an explanation of the system architecture and data flow, including a 3-tier structure.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining System Architecture**\n\nI\u0027m now refining the system architecture and data flow, specifically focusing on the evolution of state management from DOM in V4 back to a Global Object approach. I\u0027m also now structuring a data flow pipeline comprising Input, Processing, and Output stages. This includes a data ingestion and pre-processing engine, handling diverse input types like CSV, Excel, JSON, and annual manual entries. I\u0027m also looking at the History/Conflict Note in AES-GCM encryption for JSON from V3.0 vs V1.0. A data cleanser and normalizer with an IPF Algorithm for property type profiles are being implemented, including Shabbat overrides and future growth scaling. I\u0027m working to integrate a physical engine with factors like roof types, shading, and temperature coefficients, along with solar sizing and yield, considering LID and degradation, and inverter clipping and efficiency. Battery sizing and dispatch (C-Rate, DOD, Parasitic Load) are also being considered, along with conflicting sizing techniques between a heuristic approach and a grid search.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating New Modules**\n\nI\u0027m now integrating new modules. I am looking at the interaction of the Astro/Zmanim Engine, handling NOAA sunset calculations, Hebrew calendar considerations, and holiday definitions. I\u0027m noting the conflicts in holiday implementations and the sunset bug. Yeshiva and school schedules are also a factor. The Regulatory and Tariff Engine is now under examination, defining TOU, addressing winter Shabbat anomalies and FIT Staircase nuances. The history of P0 negative bugs and battery penalties are being tracked. I\u0027m also including Urban Premiums and grid fees.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Documentation**\n\nI\u0027m now focusing on the UI/UX aspects, particularly the SPA flow and transparency panel. Chart comparison (Chart.js vs. Vanilla SVG) is underway, and I\u0027m assessing Excel export options (SheetJS vs. ExcelJS, including split cells). I\u0027m also preparing for a PDF/print quote option. Furthermore, I\u0027m working on content refinement, ensuring redundancy elimination and historical context preservation, including dedicated callout boxes. I will also generate estimates for consumption patterns.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Content**\n\nI am now focusing on restructuring the content within the document. I\u0027m prioritizing clarity and consistency, which involves defining personas, outlining architecture (including the \"Funnel\" and 3-Tier model), and refining the data section. I\u0027m incorporating a required table and addressing specific conflicts, such as the DOM state versus Global Object, and encryption differences. I will also incorporate CSS styling for conflict notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Current Conflicts**\n\nI am now thoroughly analyzing and documenting conflicts within the specifications. I\u0027m noting critical divergences, such as degradation discrepancies (0.25% vs. 0.35%) and heuristic versus optimized battery sizing. I am also identifying and documenting bugs such as P0 calculations and hardcoded holidays. These issues are getting incorporated into the user guide for clarity. I\u0027m also including detailed comparisons of chart and export options.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing the Output**\n\nI\u0027m now writing the HTML structure and making sure the direction is right-to-left. I\u0027ve also added CSS styles for tables, code blocks, and callout boxes. Finally, I\u0027m ensuring accurate translation of technical terms into Hebrew, aiming for clear and precise terminology. I\u0027m focusing on \"Iterative Proportional Fitting\", \"Curtailment\", and \"Inverter Clipping\".\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Populating the Table**\n\nI\u0027m now populating the requested property type table with plausible data, ensuring it aligns with the specified column formats. This involves defining realistic values for variables like season and peak load percentages, and weekly day breakdowns for various building types. I\u0027ve included data for Homes, Offices, Schools, Yeshivas, Synagogues, Hotels and Guest Houses.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-21T12:29:21.104Z"
+    }, {
+      "text": "תוכל ליצור פרומט דומה להשוואה פרטנית מאוד מאוד מאוד של גרסאות קבצי תוכנה",
+      "role": "user",
+      "tokenCount": 29,
+      "createTime": "2026-07-21T14:20:54.758Z"
+    }, {
+      "text": "**Refining the Goal**\n\nI\u0027m now honing in on the user\u0027s specific need for an *extremely* detailed comparison of software file versions. The goal is to create a prompt tailored for this level of scrutiny, moving beyond the general comparison.\n\n\n**Analyzing the New Prompt**\n\nI\u0027m now deeply analyzing the user\u0027s past prompts, specifically the massive one about merging requirement documents. From there, I\u0027m identifying the key aspects for this new prompt: extreme granularity, software version focus, and clear structure. I am aiming to emulate that style by deconstructing the old prompt\u0027s components. I\u0027m focusing on defining the AI\u0027s role, the specific task, and setting strict rules for analysis, including the required level of detail and how differences should be handled.\n\n\n**Constructing the Core Prompt**\n\nI\u0027m now drafting the core sections of the prompt, starting with the AI\u0027s role and context, followed by a description of the mission. I\u0027m focusing on language that demands an extremely granular, \"microscopic\" level of comparison. I\u0027ve also incorporated a rule emphasizing atomic resolution and specifying the required level of detail, down to the function, variable, and logic levels. I\u0027m also planning to incorporate a category-based differences section.\n\n\n**Defining Comparison Categories**\n\nI\u0027m now drafting rules for the comparison categories, ensuring a structured approach. I\u0027m focusing on a matrix-based comparison by components like calculation engines, the UI, export functions, security aspects, and performance. I also include specific rules on handling differences, classifying them as added, removed, modified, or logical contradictions. I\u0027ve also incorporated aspects that cover architectural impact, and how they relate to performance or user experience.\n\n\n**Formatting the Output**\n\nI\u0027m now focusing on defining the output format. I\u0027ll make sure it\u0027s a well-formatted HTML document (though I could do Markdown if preferred). I\u0027m planning multi-column comparison tables (Feature | V1 | V2 | V3 | Analysis), and code blocks to illustrate the differences, with color-coding (green for new, red for removed, yellow for contradictions). I am also working on adding a \"Verdict/Recommendation\" section, and ensure the prompt has a clear, copy-paste-able block with bolding and bullet points for readability. I\u0027ll also use strong verbs to establish an authoritative tone.\n\n\n",
+      "role": "model",
+      "tokenCount": 1273,
+      "isThought": true,
+      "parts": [{
+        "text": "**Refining the Goal**\n\nI\u0027m now honing in on the user\u0027s specific need for an *extremely* detailed comparison of software file versions. The goal is to create a prompt tailored for this level of scrutiny, moving beyond the general comparison.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the New Prompt**\n\nI\u0027m now deeply analyzing the user\u0027s past prompts, specifically the massive one about merging requirement documents. From there, I\u0027m identifying the key aspects for this new prompt: extreme granularity, software version focus, and clear structure. I am aiming to emulate that style by deconstructing the old prompt\u0027s components. I\u0027m focusing on defining the AI\u0027s role, the specific task, and setting strict rules for analysis, including the required level of detail and how differences should be handled.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing the Core Prompt**\n\nI\u0027m now drafting the core sections of the prompt, starting with the AI\u0027s role and context, followed by a description of the mission. I\u0027m focusing on language that demands an extremely granular, \"microscopic\" level of comparison. I\u0027ve also incorporated a rule emphasizing atomic resolution and specifying the required level of detail, down to the function, variable, and logic levels. I\u0027m also planning to incorporate a category-based differences section.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining Comparison Categories**\n\nI\u0027m now drafting rules for the comparison categories, ensuring a structured approach. I\u0027m focusing on a matrix-based comparison by components like calculation engines, the UI, export functions, security aspects, and performance. I also include specific rules on handling differences, classifying them as added, removed, modified, or logical contradictions. I\u0027ve also incorporated aspects that cover architectural impact, and how they relate to performance or user experience.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formatting the Output**\n\nI\u0027m now focusing on defining the output format. I\u0027ll make sure it\u0027s a well-formatted HTML document (though I could do Markdown if preferred). I\u0027m planning multi-column comparison tables (Feature | V1 | V2 | V3 | Analysis), and code blocks to illustrate the differences, with color-coding (green for new, red for removed, yellow for contradictions). I am also working on adding a \"Verdict/Recommendation\" section, and ensure the prompt has a clear, copy-paste-able block with bolding and bullet points for readability. I\u0027ll also use strong verbs to establish an authoritative tone.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-21T14:20:54.759Z"
+    }, {
+      "text": "בהחלט. הנה פרומט מקצועי, נוקשה ומפורט מאוד, המיועד לנתח קבצי קוד/תוכנה ברזולוציה \"מיקרוסקופית\". הפרומט בנוי באותו סגנון של הפרומט הקודם שלך, אך מותאם ספציפית לניתוח פערים (Diff Analysis), איתור סתירות לוגיות, והשוואת ארכיטקטורה בין גרסאות קוד.\n\nאתה יכול להעתיק את הטקסט הבא ולהדביק אותו לפני קבצי הקוד שאתה מזין ל-AI:\n\n***\n\n**אתה ארכיטקט תוכנה בכיר, מהנדס נתונים ומבקר קוד מומחה (Senior Software Architect \u0026 Expert Code Reviewer).** \nלפניך מספר קבצים המייצגים גרסאות שונות, ענפי פיתוח (Branches) או מודולים של אותה מערכת תוכנה.\n\nהמטרה שלך היא לבצע **השוואה פרטנית, מיקרוסקופית ואטומית** בין כל הקבצים/הגרסאות, ולהפיק \"דוח ביקורת קוד וארכיטקטורה\" (Deep-Dive Code Audit \u0026 Drift Analysis) מקיף ביותר.\n\nעליך לפעול לפי הכללים הנוקשים הבאים:\n\n**1. רזולוציה אטומית (Atomic Granularity):**\n- אל תסתפק בתיאורים כלליים (כמו \"קובץ א\u0027 מעוצב אחרת מקובץ ב\u0027\"). עליך לרדת לרמת הפונקציה הבודדת, המשתנה (Variable), הלוגיקה המתמטית, ניהול המצב (State Management), והתלויות (Dependencies).\n- ציין במדויק אילו פונקציות קיימות בקובץ אחד וחסרות באחר, ואילו פונקציות שוכתבו (Refactored).\n\n**2. סיווג פערים וסתירות (Drift \u0026 Contradiction Analysis):**\n- נתח כל הבדל וסווג אותו: האם זהו באג שתוקן? האם זו נסיגה (Regression)? האם זו לוגיקה עסקית שהשתנתה?\n- אם יש סתירה מתמטית או לוגית בין הגרסאות (למשל, חישוב מס, נוסחת יעילות, או אלגוריתם מיון שעובד אחרת), עליך להציף זאת בבירור תחת הכותרת: \"סתירה לוגית/מתמטית\", ולהסביר את ההשלכות של כל גישה.\n\n**3. ארגון נושאי (Logical Structuring) ולא רק קובץ מול קובץ:**\n- אל תכתוב פשוט \"סיכום קובץ 1\" ואז \"סיכום קובץ 2\". \n- בנה את ההשוואה לפי **שכבות ארכיטקטוניות / קטגוריות פונקציונליות**. לדוגמה:\n  * שכבת נתונים וקלט (Data Ingestion \u0026 Parsing)\n  * לוגיקת ליבה ומנועי חישוב (Core Logic \u0026 Math Engines)\n  * ממשק משתמש וחוויית משתמש (UI/UX \u0026 DOM Manipulation)\n  * ייצוא נתונים ואינטגרציות (Exports, APIs \u0026 LocalStorage)\n  * אבטחה וטיפול בשגיאות (Security \u0026 Error Handling)\n\n**4. מטריצת השוואה מפלצתית (The Master Matrix):**\n- צור טבלת השוואה מרכזית וענקית. העמודות יהיו: [שם הרכיב/הפונקציה] | [קובץ 1] | [קובץ 2] | [קובץ 3...] | [המשמעות הארכיטקטונית / המלצה].\n- הטבלה חייבת להכיל כל פיצ\u0027ר, משתנה גלובלי חשוב, או יכולת מערכתית שנמצאו בקוד.\n\n**5. מפת דרכים למיזוג (Merge Strategy \u0026 Recommendations):**\n- בסוף הדוח, ספק המלצה אופרטיבית חותכת: איזה קובץ צריך לשמש כ\"שלד\" (Base) למערכת המאוחדת? אילו קטעי קוד ספציפיים (Snippets) יש \"לעקור\" מקבצים אחרים ולהזריק לתוכו? מהם קטעי הקוד שהם \"זבל דיגיטלי\" (Dead Code/Deprecated) ויש למחוק?\n\n**6. פורמט פלט:**\n- החזר את המסמך הסופי בפורמט HTML נקי, מקצועי וקריא (RTL).\n- השתמש בבלוקים של קוד (\u003ccode\u003e או \u003cpre\u003e) כדי להדגים הבדלים קריטיים (Diffs) בין הגרסאות.\n- השתמש בתגיות עיצוב או Badges (כגון: \"נוסף\", \"הוסר\", \"שגוי\", \"מומלץ\") כדי להבליט את הסטטוס של כל רכיב.\n\n*** \n\n**טיפ לשימוש:** כשאתה מזין את הפרומט הזה יחד עם הקבצים, ה-AI יבין שהוא לא צריך רק \"לסכם\" את הקוד, אלא ממש לבצע עבודת Code Review של מתכנת בכיר שצריך למזג (Merge) ענפי פיתוח שהתפצלו.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1299,
+      "parts": [{
+        "text": "בהחלט. הנה פרומט מקצועי, נוקשה ומפורט מאוד, המיועד ל"
+      }, {
+        "text": "נתח קבצי קוד/תוכנה ברזולוציה \"מיקרוסקופית\"."
+      }, {
+        "text": " הפרומט בנוי באותו סגנון של הפרומט הקודם שלך, אך מות"
+      }, {
+        "text": "אם ספציפית לניתוח פערים (Diff Analysis), איתור סתירות ל"
+      }, {
+        "text": "וגיות, והשוואת ארכיטקטורה בין גרסאות קוד.\n\nאתה יכול להעתיק את הט"
+      }, {
+        "text": "קסט הבא ולהדביק אותו לפני קבצי הקוד שאתה מזין ל-AI:\n\n***\n\n**את"
+      }, {
+        "text": "ה ארכיטקט תוכנה בכיר, מהנדס נתונים ומבקר קוד מומחה (Senior Software Architect \u0026 Expert"
+      }, {
+        "text": " Code Reviewer).** \nלפניך מספר קבצים המייצגים גרסאות שונות,"
+      }, {
+        "text": " ענפי פיתוח (Branches) או מודולים של אותה מערכת תוכנה.\n\nהמטרה שלך היא לבצע"
+      }, {
+        "text": " **השוואה פרטנית, מיקרוסקופית ואטומית** בין כל הקבצים/"
+      }, {
+        "text": "הגרסאות, ולהפיק \"דוח ביקורת קוד וארכיטקטורה\" (Deep"
+      }, {
+        "text": "-Dive Code Audit \u0026 Drift Analysis) מקיף ביותר.\n\nעליך לפעול לפי הכללים הנוק"
+      }, {
+        "text": "שים הבאים:\n\n**1. רזולוציה אטומית (Atomic Granularity):**\n-"
+      }, {
+        "text": " אל תסתפק בתיאורים כלליים (כמו \"קובץ א\u0027 מעוצב אחר"
+      }, {
+        "text": "ת מקובץ ב\u0027\"). עליך לרדת לרמת הפונקציה הבודדת, המשתנה"
+      }, {
+        "text": " (Variable), הלוגיקה המתמטית, ניהול המצב (State Management), והתלויות (Dependencies)."
+      }, {
+        "text": "\n- ציין במדויק אילו פונקציות קיימות בקובץ אחד וחסרות בא"
+      }, {
+        "text": "חר, ואילו פונקציות שוכתבו (Refactored).\n\n**2. סיווג פ"
+      }, {
+        "text": "ערים וסתירות (Drift \u0026 Contradiction Analysis):**\n- נתח כל הבדל ו"
+      }, {
+        "text": "סווג אותו: האם זהו באג שתוקן? האם זו נסיגה (Regression)?"
+      }, {
+        "text": " האם זו לוגיקה עסקית שהשתנתה?\n- אם יש סתירה מתמטית או ל"
+      }, {
+        "text": "וגית בין הגרסאות (למשל, חישוב מס, נוסחת יעילות, או אל"
+      }, {
+        "text": "גוריתם מיון שעובד אחרת), עליך להציף זאת בבירור תחת הכותרת: \""
+      }, {
+        "text": "סתירה לוגית/מתמטית\", ולהסביר את ההשלכות של כל גישה.\n\n**3. ארג"
+      }, {
+        "text": "ון נושאי (Logical Structuring) ולא רק קובץ מול קובץ:**\n- אל תכת"
+      }, {
+        "text": "וב פשוט \"סיכום קובץ 1\" ואז \"סיכום קובץ 2"
+      }, {
+        "text": "\". \n- בנה את ההשוואה לפי **שכבות ארכיטקטוניות / קטגוריות פונקצ"
+      }, {
+        "text": "יונליות**. לדוגמה:\n  * שכבת נתונים וקלט (Data Ingestion \u0026"
+      }, {
+        "text": " Parsing)\n  * לוגיקת ליבה ומנועי חישוב (Core Logic \u0026 Math Engines)\n  * ממשק מש"
+      }, {
+        "text": "תמש וחוויית משתמש (UI/UX \u0026 DOM Manipulation)\n  * ייצוא נתונים ואי"
+      }, {
+        "text": "נטגרציות (Exports, APIs \u0026 LocalStorage)\n  * אבטחה וטיפול בשגיאות (Security"
+      }, {
+        "text": " \u0026 Error Handling)\n\n**4. מטריצת השוואה מפלצתית (The Master Matrix):**\n- צ"
+      }, {
+        "text": "ור טבלת השוואה מרכזית וענקית. העמודות יהיו:"
+      }, {
+        "text": " [שם הרכיב/הפונקציה] | [קובץ 1] | [קובץ 2] | [קובץ 3...]"
+      }, {
+        "text": " | [המשמעות הארכיטקטונית / המלצה].\n- הטבלה חייבת לה"
+      }, {
+        "text": "כיל כל פיצ\u0027ר, משתנה גלובלי חשוב, או יכולת מערכתית שנמצא"
+      }, {
+        "text": "ו בקוד.\n\n**5. מפת דרכים למיזוג (Merge Strategy \u0026 Recommendations):**\n- בסוף הדוח"
+      }, {
+        "text": ", ספק המלצה אופרטיבית חותכת: איזה קובץ צריך לשמש כ\""
+      }, {
+        "text": "שלד\" (Base) למערכת המאוחדת? אילו קטעי קוד ספציפיים (Sni"
+      }, {
+        "text": "ppets) יש \"לעקור\" מקבצים אחרים ולהזריק לתוכו? מהם קטעי הקוד שה"
+      }, {
+        "text": "ם \"זבל דיגיטלי\" (Dead Code/Deprecated) ויש למחוק?\n\n**6. פורמט פלט"
+      }, {
+        "text": ":**\n- החזר את המסמך הסופי בפורמט HTML נקי, מקצועי וקריא ("
+      }, {
+        "text": "RTL).\n- השתמש בבלוקים של קוד (\u003ccode\u003e או \u003cpre\u003e) כדי להד"
+      }, {
+        "text": "גים הבדלים קריטיים (Diffs) בין הגרסאות.\n- השתמש בתגיות עי"
+      }, {
+        "text": "צוב או Badges (כגון: \"נוסף\", \"הוסר\", \"שגוי\", \"מו"
+      }, {
+        "text": "מלץ\") כדי להבליט את הסטטוס של כל רכיב.\n\n*** \n\n**"
+      }, {
+        "text": "טיפ לשימוש:** כשאתה מזין את הפרומט הזה יחד עם הקבצים,"
+      }, {
+        "text": " ה-AI יבין שהוא לא צריך רק \"לסכם\" את הקוד, אלא ממש לבצע ע"
+      }, {
+        "text": "בודת Code Review של מתכנת בכיר שצריך למזג (Merge) ענפי פיתוח"
+      }, {
+        "text": " שהתפצלו."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-07-21T14:22:07.881Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}
