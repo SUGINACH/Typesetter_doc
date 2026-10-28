@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>מסמך השוואה ואפיון-על - מחולל הצעות המחיר של בראשית סולאר</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.7; color: #1c2530; max-width: 1100px; margin: 20px auto; padding: 30px; background: #fbfdfe; }
+  h1 { color: #005a70; border-bottom: 3px solid #00798c; padding-bottom: 12px; }
+  h2 { color: #005a70; margin-top: 40px; border-bottom: 2px solid #d0dde6; padding-bottom: 8px; }
+  h3 { color: #00798c; margin-top: 25px; }
+  h4 { color: #2a9d8f; margin-top: 18px; }
+  .meta { background: #eef6fa; border-right: 4px solid #00798c; padding: 12px 18px; margin: 15px 0; border-radius: 4px; }
+  .version-a { background: #fdf4e2; border-right: 4px solid #e0a339; padding: 12px 18px; margin: 12px 0; border-radius: 4px; }
+  .version-b { background: #e3f2e9; border-right: 4px solid #1e8449; padding: 12px 18px; margin: 12px 0; border-radius: 4px; }
+  .history-note { background: #fdecea; border-right: 4px solid #c0392b; padding: 12px 18px; margin: 12px 0; border-radius: 4px; }
+  .callout { background: #eef2f6; border-right: 4px solid #00798c; padding: 14px 18px; margin: 14px 0; border-radius: 4px; }
+  .warning { background: #fff8e1; border-right: 4px solid #e0a339; padding: 14px 18px; margin: 14px 0; border-radius: 4px; }
+  .danger { background: #fdecea; border-right: 4px solid #c0392b; padding: 14px 18px; margin: 14px 0; border-radius: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th { background: #00798c; color: white; padding: 8px 12px; text-align: right; }
+  td { padding: 8px 12px; border-bottom: 1px solid #d0dde6; vertical-align: top; }
+  tr:nth-child(even) td { background: #f0f6fa; }
+  code { background: #e8eef2; padding: 1px 6px; border-radius: 3px; font-family: 'Consolas', monospace; font-size: 0.92em; direction: ltr; display: inline-block; }
+  pre { background: #14181f; color: #dbe4ee; padding: 16px; border-radius: 6px; overflow-x: auto; direction: ltr; text-align: left; font-family: 'Consolas', monospace; font-size: 0.9em; }
+  .doc-id { font-family: 'Consolas', monospace; font-size: 0.85em; color: #00798c; }
+  ul, ol { margin: 8px 0 16px 0; padding-right: 24px; }
+  li { margin-bottom: 6px; }
+  hr { border: none; border-top: 1px solid #d0dde6; margin: 30px 0; }
+</style>
+</head>
+<body>
+
+<h1>מסמך השוואה ואפיון-על (Master Specification Document)</h1>
+<h2 style="border:none; margin-top:5px;">מחולל הצעות המחיר - בראשית סולאר</h2>
+
+<div class="meta">
+  <strong>תאריך עדכון אחרון:</strong> יולי 2026<br>
+  <strong>מטרת המסמך:</strong> איחוד כל מסמכי הפרויקט (תיעוד טכני, סיכום שיחה, מסמכי אפיון, תיעוד תכנון) למסמך אחד מקיף, הכולל את כל המידע, ההיסטוריה, הסתירות, התיקונים וההחלטות שתועדו לאורך זמן.<br>
+  <strong>מקורות שמוזגו:</strong> 6 מסמכים (ראו טבלת מקורות בסוף).
+</div>
+
+<hr>
+
+<h2>1. מבוא כללי - תיאור המערכת</h2>
+
+<h3>1.1 מהות המערכת</h3>
+<p>הפרויקט הוא אפליקציית דף-יחיד (Single Page Application) מבוססת HTML, CSS ו-Vanilla JavaScript. המטרה היא כלי פנימי עבור נציגי המכירות והמהנדסים של חברת <strong>"בראשית סולאר"</strong> ליצירת הצעות מחיר מורכבות למערכות פוטו-וולטאיות (סולאריות) ומערכות אגירה, ייצואן לקובץ PDF (בגודל A4 מותאם להדפסה), והצגת מודל כלכלי מלא ללקוח.</p>
+
+<p>המערכת פותרת את הבעיה של יצירת מסמך אחיד, מעוצב, נטול שגיאות חישוב, שניתן לערוך אותו בזמן אמת (Live Preview) ללא צורך בתוכנות עריכה מורכבות, וכולל בתוכו את כל התנאים המסחריים, הטכניים והמשפטיים בצורה מודולרית.</p>
+
+<p>המערכת מחליפה את הצורך ביצירת הצעת מחיר במסמך וורד, בניית מודל פיננסי מורכב באקסל נפרד, ושילוב שלהם יחד. היא מספקת ממשק משתמש מחולק לשניים: צד ימין (בממשק RTL) מכיל סיידבר לשליטה והזנת נתונים, וצד שמאל מציג תצוגה מקדימה חיה (Live Preview) של מסמך A4 המיועד להדפסה ישירה ל-PDF.</p>
+
+<div class="callout">
+  <strong>פני השטח החיצוניים של בראשית סולאר:</strong> בשונה משני המחשבונים (מסמכים 01-02 בסדרת האפיון) שהם כלי-עבודה פנימיים לאיש המכירות, מחולל ההצעות הוא מה שהלקוח בפועל רואה, חותם עליו, ולעיתים מראה למשפחה/וועד/רו״ח.
+</div>
+
+<h3>1.2 קהלי יעד</h3>
+<ul>
+  <li><strong>מחולל ההצעה:</strong> אנשי מכירות ללא רקע טכני, לשימוש יומיומי.</li>
+  <li><strong>עורך התבנית:</strong> קומץ אנשי צוות שאמונים על תחזוקת התבנית - עדיין לא בהכרח מתכנתים, אבל בנוחות רבה יותר עם ממשק "מאחורי הקלעים".</li>
+  <li><strong>תיעוד טכני:</strong> מפתחים שצריכים לתחזק, לבדוק או להרחיב את המערכת.</li>
+</ul>
+
+<h3>1.3 הקשר עסקי</h3>
+<p>מדובר במסמך רשמי, בעברית, שנשלח ללקוחות פוטנציאליים אמיתיים של חברת התקנות סולאריות. המשמעות: דיוק בניסוח, במספרים הפיננסיים, ובמראה המקצועי הוא שיקול מרכזי - לא רק תקינות טכנית של הקוד אלא גם שהתוצר הסופי נראה ונשמע כמו מסמך עסקי אמין.</p>
+
+<hr>
+
+<h2>2. רכיבי המערכת - תפקיד הקבצים</h2>
+
+<h3>2.1 סקירת הקבצים העצמאיים</h3>
+
+<div class="history-note">
+  <strong>הערת היסטוריה:</strong> קיימת אי-בהירות לגבי מספר הקבצים המדויק במערכת. התיעודים השונים מציגים גרסאות שונות:
+  <ul>
+    <li>מסמך התיעוד הראשי (תיעוד מלא) מציג <strong>2 קבצים</strong>: מחולל הצעה + עורך תבנית (זה המצב הסופי).</li>
+    <li>סיכום השיחה מתאר תהליך שבו <strong>4 קבצים</strong> התמזגו, ובהמשך התגלה <strong>קובץ חמישי</strong> מתקדם יותר שהפך לבסיס.</li>
+    <li>מסמך האפיון (PrintQuote) מתאר <strong>3 קבצים</strong> שנשמרו (המתקדם + שניים כמקור תוכן).</li>
+    <li>שני מסמכי האפיון הראשונים מתארים קובץ בודד (לפני הוספת עורך התבנית).</li>
+  </ul>
+  <strong>המצב הסופי המאוחד:</strong> 3 קבצים עצמאיים, כל אחד שלם בפני עצמו - מחולל ההצעה, עורך התבנית (שמכיל בתוכו עותק מוטמע של מחולל ההצעה), וקובץ התיעוד הדו-מצבי.
+</div>
+
+<table>
+  <tr><th>קובץ</th><th>תפקיד</th><th>גודל בערך</th></tr>
+  <tr><td><span class="doc-id">bereshit_solar_quote_final.html</span> (מחולל)</td><td>מחולל הצעת המחיר - קובץ יחיד, self-contained, כולל CSS+JS מוטמעים. זה הקובץ שבו משתמשים כל יום ליצירת הצעת מחיר בפועל עבור לקוח.</td><td>~150KB</td></tr>
+  <tr><td><span class="doc-id">bereshit_template_editor.html</span> (עורך)</td><td>עורך תבנית - "עטיפה" דקה סביב עותק מוטמע (base64) של קובץ ה-quote, עם iframe + סרגל כלים. פותחים אותו רק כשרוצים לשנות את התבנית הבסיסית.</td><td>~230KB (כולל ה-payload המוטמע)</td></tr>
+  <tr><td>מסמך תיעוד (HTML, דו-מצבי)</td><td>תיעוד משולב: מדריך למשתמש + תיעוד טכני, עם מתג בין שני המצבים. אינו דורש התקנה, רץ בדפדפן.</td><td>~80KB</td></tr>
+</table>
+
+<h3>2.2 ההבחנה המרכזית: מחולל הצעה מול עורך תבנית</h3>
+
+<div class="version-a">
+  <strong>📄 מחולל הצעת המחיר (הקובץ הרגיל) - תפקיד:</strong>
+  <p>בו משתמשים <strong>כל יום</strong> ליצירת הצעת מחיר בפועל עבור לקוח - מזינים פרטי לקוח, בוחרים אילו סעיפים להציג, ומדפיסים ל-PDF. זה הקובץ ששולחים ללקוח (בתור PDF, לא את קובץ ה-HTML עצמו).</p>
+</div>
+
+<div class="version-b">
+  <strong>⚙️ עורך התבנית - תפקיד:</strong>
+  <p>כלי ניהול לתחזוקת התבנית עצמה. נפתח <strong>רק כשרוצים לשנות את התבנית הבסיסית</strong> - למשל להוסיף/למחוק דף קבוע, לשנות תמונת ברירת מחדל, או לסדר מחדש את סדר הדפים. בסיום העריכה מייצאים ממנו קובץ HTML חדש, שהופך להיות "הקובץ הרגיל" החדש לשימוש יומיומי.</p>
+</div>
+
+<div class="callout">
+  <strong>איך לדעת באיזה קובץ אני?</strong> בקובץ הרגיל, לוח הבקרה (בצד ימין) מתחיל מיד בבורר "סוג המערכת המוצעת". בעורך התבנית יופיע <strong>מעליו</strong> תיבה אדומה עם הכותרת "⚙️ מצב עריכת תבנית (מנהל)" - זה הסימן הברור ביותר.
+</div>
+
+<h3>2.3 רכיב חיצוני שלישי (לא נבנה בשיחה זו)</h3>
+<p>לאורך השיחה התברר שקיים (או אמור להתקיים) רכיב חיצוני, שלא נראה בפועל באף שלב: כלי הזנה שממלא נתונים מחושבים מראש (ככל הנראה מבוסס Google Apps Script, מוזכר בשם "Index.html") ומעביר אותם למחולל ההצעה דרך מנגנון <code>localStorage['pendingQuote']</code>.</p>
+
+<div class="warning">
+  <strong>חשוב:</strong> מנגנון ההזנה הזה הוא <strong>חד-כיווני</strong>: מחולל ההצעה רק קורא ממנו (getItem), אף פעם לא כותב אליו. אם וכאשר הוא ייבנה או ישולב, יש לוודא שהצורה המדויקת של הנתונים שהוא שולח תואמת בדיוק למבנה המתועד בסעיף 11.
+</div>
+
+<hr>
+
+<h2>3. ארכיטקטורה טכנית</h2>
+
+<h3>3.1 עקרונות יסוד</h3>
+<ul>
+  <li><strong>ללא build step, ללא framework, ללא תלות ב-backend או שרת.</strong> הכל רץ client-side בדפדפן.</li>
+  <li><strong>JavaScript וניל (ES6+),</strong> CSS עם custom properties (variables), ו-HTML5 סמנטי.</li>
+  <li><strong>סביבת ההרצה:</strong> הכל רץ בתוך דפדפן אינטרנט רגיל, במחשב של המשתמש עצמו. אין שרת, אין התקנה, אין התחברות/הרשאות.</li>
+  <li><strong>תלות חיצונית יחידה:</strong> <code>Chart.js</code> דרך CDN (<code>cdn.jsdelivr.net/npm/chart.js</code>), נטען רק לצורך שני הגרפים במודל הפיננסי (עמוד 12).</li>
+</ul>
+
+<h3>3.2 עקרון מפתח: ADMIN_MODE הוא דלת חבויה, לא קובץ נפרד</h3>
+
+<div class="callout">
+  <strong>עקרון מפתח:</strong> כל יכולות הניהול (מחיקת שורות/דפים, גרירה, שיוך סוג מערכת, ניהול תמונות) <strong>מוגדרות בתוך קובץ ה-quote עצמו</strong>, אך מותנות בדגל <code>window.ADMIN_MODE</code> שכברירת מחדל הוא <code>false</code>. קובץ העורך רק מדליק את הדגל (דרך <code>initAdminMode()</code>) אחרי טעינת ה-iframe.
+  <p><strong>המשמעות:</strong> אין קוד כפול בין שני הקבצים - כל הלוגיקה חיה במקום אחד. זו הייתה החלטה מודעת לטובת תחזוקתיות עתידית.</p>
+</div>
+
+<h3>3.3 נימוקים לארכיטקטורת עורך התבנית</h3>
+<p>כשעלה הצורך בכלי לעריכת תבנית, שקלו במפורש שתי גישות:</p>
+<ul>
+  <li>(א) להטמיע את כל יכולות הניהול ישירות בתוך קובץ ההצעה עצמו, עם איזשהו מתג הפעלה.</li>
+  <li>(ב) לבנות כלי "עטיפה" נפרד ודק, שטוען בתוכו עותק של קובץ ההצעה ומדליק אצלו יכולות ניהול שמוגדרות בקובץ ההצעה עצמו אך כבויות כברירת מחדל.</li>
+</ul>
+<p>נבחרה האפשרות השנייה, משלושה נימוקים:</p>
+<ol>
+  <li>הקובץ שאיש מכירות פותח כל יום נשאר קטן, נקי ופשוט, בלי כל מנגנוני הניהול שמעולם לא ייגעו בהם.</li>
+  <li>ההפרדה בין "מי שמותר לו לגעת במה" ברורה כבר ברמת הקובץ.</li>
+  <li><strong>אין כפילות קוד</strong> - כל הלוגיקה בפועל (מחיקה, גרירה, שיוך, ניהול תמונות) חיה במקום אחד בלבד.</li>
+</ol>
+
+<h3>3.4 מגבלות טכניות שנשמרות</h3>
+<ul>
+  <li><strong>Vanilla JS + CSS בלבד:</strong> אסור להשתמש ב-Tailwind, React, Vue, jQuery, Bootstrap, או ספריות בנייה (Webpack/Vite).</li>
+  <li><strong>אסור לשנות את ה-CSS המקורי של הלקוח</strong> - רק להוסיף, לא להחליף.</li>
+  <li><strong>אסור להתערב ב-</strong><code>initDynamicEditors</code> - המערכת כולה בנויה סביבו.</li>
+  <li><strong>מותר:</strong> שימוש ב-CDN עבור פונט גוגל (Assistant) ועבור <code>Chart.js</code>.</li>
+</ul>
+
+<hr>
+
+<h2>4. מבנה קובץ ה-quote (מחולל ההצעה)</h2>
+
+<h3>4.1 עמודי הדפסה (בסדר DOM, בתוך <code>.preview-area</code>)</h3>
+<pre>
+page-cover            // 1. שער
+page-summary          // 2. תמצית + KPI
+page-intro            // 3. אודות + המלצות
+page-why              // 4. למה אנחנו
+page-spec             // 5. מפרט טכני (plan + lic)
+page-components       // 6. רכיבים + ניטור
+page-exclusions       // 7. החרגות (טבלה עם # ידני)
+page-warranty         // 8. אחריות
+page-payment          // 9. תנאי תשלום (טבלה עם % מצטבר)
+page-notes            // 10. הערות + חתימות
+page-finance          // 11. מודל פיננסי - לא נגיש לעריכת תבנית
+page-finance-charts   // 12. גרפים ותעריפים - לא נגיש לעריכת תבנית
+page-contact          // 13. יצירת קשר - קבוע, ללא בלוק בקרה משלו
+[page-custom-N ...]   // דפים מותאמים, נוספים תמיד לפני page-contact
+</pre>
+
+<h3>4.2 לוח הבקרה (<code>.sidebar</code>) - סדר ילדים ישירים</h3>
+<p><code>&lt;h2&gt;</code> → <code>.btn-print</code> → <code>#admin-master-panel</code> (מוזרק רק ב-ADMIN_MODE) → <code>.system-type-picker</code> → 11 בלוקי <code>&lt;details&gt;</code> (אחד לכל עמוד/זוג-עמודים; ה-11 הוא "מודל פיננסי" ומכסה גם page-finance וגם page-finance-charts יחד).</p>
+<p>כל <code>&lt;summary&gt;</code> נושא <code>data-target="page-X"</code> - זהו החוט המקשר בין הבקרה לתוכן המודפס, ומנוצל בכל מקום: אקורדיון (סגירת אחרים + גלילה לעמוד), מחיקת דף, וסנכרון סדר.</p>
+
+<h3>4.3 קונבנציות מזהים (id prefixes)</h3>
+<table>
+  <tr><th>תבנית</th><th>משמעות</th><th>דוגמה</th></tr>
+  <tr><td><code>chk-row-{tbl}-N</code></td><td>checkbox לשורה N בטבלה/רשימה <code>{tbl}</code></td><td><code>chk-row-ex-7</code></td></tr>
+  <tr><td><code>row-{tbl}-N</code></td><td>אלמנט השורה/ה-tr עצמו בתצוגה</td><td><code>row-pay-3</code></td></tr>
+  <tr><td><code>tbody-{tbl}</code></td><td>מזהה ה-tbody, יעד ל-appendChild בהוספת שורה + לרינמור</td><td><code>tbody-exclusions</code></td></tr>
+  <tr><td><code>ol-{list}-list</code></td><td>מזהה ה-ol (רשימות ממוספרות טבעיות - plan/lic/mon/notes)</td><td><code>ol-notes-list</code></td></tr>
+  <tr><td><code>tgl-{section}</code></td><td>מזהה ה-<code>.item-toggle-list</code> בלוח הבקרה</td><td><code>tgl-payment</code></td></tr>
+  <tr><td><code>inp-{field}</code></td><td>שדה קלט</td><td><code>inp-battery-kwh</code></td></tr>
+  <tr><td><code>m-N</code></td><td>מדד KPI בעמוד 2</td><td><code>m-3</code></td></tr>
+  <tr><td><code>page-custom-N</code></td><td>דף מותאם שנוסף דרך עריכת תבנית</td><td><code>page-custom-2</code></td></tr>
+  <tr><td><code>img-extra-N</code></td><td>תמונה שנוספה דרך עריכת תבנית</td><td><code>img-extra-1</code></td></tr>
+</table>
+
+<p>כל מנגנוני ה"מספר עוקב הבא" (הוספת שורה/דף/תמונה) <strong>סורקים את ה-DOM בפועל</strong> לפי הקידומת (<code>document.querySelectorAll('[id^="page-custom-"]')</code> וכו') ולוקחים <code>max+1</code>, ולא מסתמכים על משתנה session - כדי שטעינת קובץ שכבר נערך בעבר לא תיצור התנגשות מזהים.</p>
+
+<hr>
+
+<h2>5. ממשק המשתמש</h2>
+
+<h3>5.1 מבנה כללי</h3>
+<p>הממשק מחולק ל-2 אזורים עיקריים: סרגל צידי (Sidebar) ברוחב 450px ואזור תצוגה מקדימה (Preview Area). בעת הדפסה (print), הסרגל מוסתר לחלוטין, וכל <code>div.page</code> מודפס כעמוד A4 נפרד ומדויק.</p>
+
+<h3>5.2 לוח הבקרה (Sidebar) - 11 מקטעים</h3>
+
+<table>
+  <tr><th>מקטע</th><th>תפקיד</th><th>עמוד מודפס</th></tr>
+  <tr><td>בורר "סוג המערכת המוצעת"</td><td>3 אפשרויות: סולארי בלבד / אגירה בלבד / סולארי + אגירה. מסמן/מבטל אוטומטית שורות רלוונטיות.</td><td>משפיע על כל העמודים</td></tr>
+  <tr><td>1. פרטי לקוח ושער</td><td>שם פרויקט, שם לקוח, כתובת, איש קשר, תאריך (אוטומטי בפתיחה), תמונת שער.</td><td>עמוד 1</td></tr>
+  <tr><td>2. תמצית הפרויקט ונתונים</td><td>מדדי KPI: הספק, קיבולת אגירה, עלות, תפוקה שנתית, רווח שנתי, רווח מצטבר, תשואה. + הוספת מדד מותאם.</td><td>עמוד 2</td></tr>
+  <tr><td>3. מתחילים מבראשית (אודות)</td><td>פתיח + 4 קופסאות המלצות צבעוניות. + הוספת המלצה.</td><td>עמוד 3</td></tr>
+  <tr><td>4. למה דווקא אנחנו</td><td>3 בלוקים: איכות/שירות/אחריות. + הוספת סעיף.</td><td>עמוד 4</td></tr>
+  <tr><td>5. מפרט טכני</td><td>2 תתי-פרקים: "תכנון פיקוח וליווי" + "רישוי". כל אחד עם רשימת סעיפים ממוספרת.</td><td>עמוד 5</td></tr>
+  <tr><td>6. רכיבים ועבודות</td><td>טבלת רכיבים (פאנלים, ממירים, מצברים, קונסטרוקציה) + "ניטור ובקרה".</td><td>עמוד 6</td></tr>
+  <tr><td>7. החרגות ותוספות</td><td>טבלה ממוספרת (1-12) של דברים שלא כלולים במחיר. מספור מתעדכן אוטומטית.</td><td>עמוד 7</td></tr>
+  <tr><td>8. אחריות ושירות</td><td>טבלת תקופות אחריות לפי רכיב.</td><td>עמוד 8</td></tr>
+  <tr><td>9. תנאי תשלום</td><td>טבלת אבני דרך עם אחוזים ו"סך מצטבר". סכום מצטבר מתעדכן אוטומטית.</td><td>עמוד 9</td></tr>
+  <tr><td>10. הערות וחתימות</td><td>רשימת הערות משפטיות ממוספרת + 2 שדות חותם (שם+ת.ז.) + 2 לוחות ציור חתימה דיגיטליים.</td><td>עמוד 10</td></tr>
+  <tr><td>11. מודל פיננסי</td><td>המקטע המפורט ביותר. בורר "אופן הצגה": מחשבון אוטומטי / תמונות ידניות. כולל את כל פרמטרי המודל.</td><td>עמודים 11-12</td></tr>
+</table>
+
+<h3>5.3 בורר "סוג המערכת המוצעת" - התנהגות</h3>
+<p>תיבה בצבע תכלת בראש לוח הבקרה, עם 3 אפשרויות: <strong>סולארי בלבד</strong>, <strong>אגירה בלבד</strong>, או <strong>סולארי + אגירה</strong>. הבחירה כאן <strong>מסמנת/מבטלת אוטומטית</strong> שורות שרלוונטיות רק לסוג מסוים - למשל אם בוחרים "אגירה בלבד", השורה "קולטים סולאריים" בטבלת הרכיבים תתבטל אוטומטית. אפשר תמיד לחזור ולסמן ידנית שורות בודדות אחר כך אם צריך חריגה.</p>
+
+<h3>5.4 כלים שחוזרים בכל מקום</h3>
+<table>
+  <tr><th>כלי</th><th>תיאור</th></tr>
+  <tr><td>☑️ תיבת סימון</td><td>מציגה/מסתירה סעיף, שורה או עמוד שלם בתצוגה המקדימה. לא מוחקת כלום - אפשר תמיד לסמן בחזרה.</td></tr>
+  <tr><td>✎ עיפרון עריכה</td><td>ליד כל שורה/סעיף. לחיצה פותחת שדה עריכה קטן שמאפשר לשנות את הטקסט המדויק שיודפס, בלי לגעת בקוד.</td></tr>
+  <tr><td>+ הוסף</td><td>בתחתית כל רשימה/טבלה. יוצר שורה חדשה ריקה, מוכנה לעריכה מיידית דרך ה-✎.</td></tr>
+  <tr><td>🖼️ תמונות</td><td>בכל שדה תמונה: להדביק כתובת URL, או ללחוץ "העלה תמונה" ולבחור קובץ מהמחשב.</td></tr>
+</table>
+
+<h3>5.5 עקרונות עימוד קריטיים (A4)</h3>
+<ul>
+  <li>כל עמוד מוגדר כאלמנט בעל מידות קבועות של <code>width: 210mm</code> ו-<code>height: 297mm</code>.</li>
+  <li><code>min-height: 297mm</code> ו-<code>flex-shrink: 0</code> - כדי למנוע מהדפדפן לכווץ את גובה העמודים.</li>
+  <li>שוליים פנימיים קבועים של <code>padding: 20mm 15mm 25mm</code> - מדמים שולי הדפסה אמיתיים.</li>
+  <li><code>overflow: hidden</code> - תוכן חורג לא ייזלג החוצה.</li>
+</ul>
+
+<h3>5.6 סנכרון נתונים בזמן אמת (Live Synchronization)</h3>
+<p>כל שדה קלט בסרגל הבקרה (שם הלקוח, כתובת, איש קשר, תאריך וכדומה) מסונכרן באופן דו-כיווני עם התצוגה המקדימה. ברגע שהמשתמש מקליד תו בטופס, מופעל אירוע <code>oninput</code> המעדכן באופן מיידי את ה-DOM של הדף המתאים בתצוגה המקדימה. אין כפתור "שמור" או "רענן" - הכל חי.</p>
+
+<div class="warning">
+  <strong>חשוב:</strong> שום דבר לא נשמר אוטומטית לקובץ עצמו. אם סוגרים את הדפדפן באמצע מילוי הצעה, המידע הולך לאיבוד (אלא אם כבר הדפסתם/ייצאתם ל-PDF). מומלץ למלא הצעה ברצף אחד ולהדפיס בסיום. <strong>זה נכון גם למחולל ההצעה וגם לעורך התבנית.</strong>
+</div>
+
+<hr>
+
+<h2>6. מנגנוני הליבה</h2>
+
+<h3>6.1 toggleSec - הפרימיטיב הבסיסי</h3>
+<p><code>toggleSec(elementId, isChecked)</code> - הפונקציה הבסיסית ביותר במערכת. כל checkbox בלוח הבקרה קורא לו דרך <code>onchange</code>. פשוט מגדיר <code>element.style.display = isChecked ? '' : 'none'</code>. כמעט כל שאר המערכת (אקורדיון, סוג מערכת, מחיקת דף) בסופו של דבר מפעילה את הפונקציה הזו בעקיפין.</p>
+
+<h3>6.2 עורכי תוכן דינמיים</h3>
+<p><code>initDynamicEditors()</code> רץ פעם אחת ב-<code>window.onload</code>, ומריץ <code>attachRowEditor(row)</code> על כל <code>.item-toggle-list .toggle-row</code> קיים.</p>
+<p><code>attachRowEditor</code> מזהה את <strong>סוג</strong> אלמנט היעד (<code>targetEl</code>, לפי <code>tagName</code>/class) ובונה שדות עריכה מתאימים:</p>
+<table>
+  <tr><th>סוג היעד</th><th>שדות שנוצרים</th></tr>
+  <tr><td><code>TR</code> (שורת טבלה)</td><td>שדה טקסט לכל <code>&lt;td&gt;</code>, מדלג על עמודת מספר אוטומטי (3 תאים + תא ראשון הוא ספרה בלבד)</td></tr>
+  <tr><td><code>LI</code> (פריט רשימה)</td><td>שדה טקסט יחיד</td></tr>
+  <tr><td><code>.metric-row</code></td><td>שדה לכותרת (<code>.m-label</code>) ולערך (<code>.m-value</code>)</td></tr>
+  <tr><td><code>.testi-box</code></td><td>שם ממליץ + טקסט המלצה</td></tr>
+  <tr><td><code>.feature-block</code></td><td>כותרת + רשימת נקודות (שורה לכל אחת בטקסטאריה)</td></tr>
+</table>
+<p>שדות העריכה נבנים ע"י פונקציית עזר מקומית <code>createField(labelTxt, initialVal, onInputCb, isMultiline)</code> (closure) - כל שורה מקבלת instance נפרד.</p>
+<p>בסוף <code>attachRowEditor</code> יש בדיקה: <code>if (window.ADMIN_MODE) injectAdminRowControls(row, targetId);</code> - הבקרים המנהליים מוזרקים <strong>דרך אותה נקודת כניסה</strong> שמטפלת בעריכה רגילה.</p>
+
+<h3>6.3 מנגנון הוספת שורות</h3>
+<p><code>createToggleRow(container, chkId, targetId, labelText, extraOnchange)</code> - עוזר משותף: בונה div.toggle-row עם checkbox+label, מחבר ל-<code>toggleSec</code> (ובמידת הצורך שרשור onchange נוסף), ומצרפת אליו מיד את <code>attachRowEditor</code>.</p>
+<p>עבור 4 הרשימות המבוססות <code>&lt;ol&gt;</code> טבעי (plan/lic/mon/notes) יש עוזר גנרי נוסף: <code>addOlListItem(olId, tglId, idPrefix, labelPrefix, defaultText)</code>.</p>
+<p>עבור שאר הרשימות/הטבלאות יש פונקציה ייעודית לכל אחת (<code>addMetricRow</code>, <code>addTestimonialRow</code>, <code>addFeatureRow</code>, <code>addComponentRow</code>, <code>addExclusionRow</code>, <code>addWarrantyRow</code>, <code>addPaymentRow</code> וכו').</p>
+
+<h3>6.4 שמירת עקביות: רינמור וסכומים מצטברים</h3>
+
+<p>שתי בעיות אמיתיות שתוקנו:</p>
+
+<pre>
+function renumberTable(tbodyId, cellIndex) {
+  // עובר על כל ה-tr הגלויים בפועל בלבד (style.display !== 'none')
+  // וכותב לתא cellIndex מספר עוקב 1,2,3...
+  // כך שביטול סימון שורה אמצעית לא משאיר "חור" (1,2,4,5 → 1,2,3,4)
+}
+
+function recomputePaymentCumulative() {
+  // עובר על tbody-payment, מחשב סכום רץ (cumulative) רק על שורות
+  // גלויות, ומעדכן את עמודת ה"מצטבר" (index 2) בהתאם
+}
+</pre>
+
+<p>שתיהן מחוברות ל-<code>onchange</code> של כל checkbox רלוונטי, וגם נקראות מחדש מתוך <code>applySystemType()</code> אחרי שינוי גורף.</p>
+
+<p><strong>תיקון שלישי מאותה משפחה:</strong> <code>chk-row-war-4</code> (הכותרת "אחריות התקנה בראשית") מפעיל <code>toggleSec</code> <strong>פעמיים</strong> - גם על <code>row-war-4</code> (שורת הכותרת) וגם על <code>row-war-5</code> (שורת התוכן בפועל) - כדי שביטול סימון לא ישאיר שורת תוכן יתומה בלי הכותרת שלה.</p>
+
+<div class="callout">
+  <strong>הערה: רשימות &lt;ol&gt; לא צריכות תיקון</strong><br>
+  ל-4 הרשימות המבוססות <code>&lt;ol class="num-list"&gt;&lt;li&gt;</code> (plan/lic/mon/notes) <strong>אין</strong> מנגנון רינמור ידני - זו התנהגות CSS/HTML סטנדרטית: אלמנט עם <code>display:none</code> לא משתתף בספירת ה-list-item. זה לא נכון לגבי עמודות "#" שהן טקסט קשיח בתוך <code>&lt;td&gt;</code> (כמו בטבלת ההחרגות) - שם <strong>כן</strong> נדרש <code>renumberTable</code>.
+</div>
+
+<h3>6.5 קסקדת סוג מערכת</h3>
+
+<pre>
+function applySystemType(type) { // 'solar' | 'storage' | 'solar_storage'
+  const showSolar = (type === 'solar' || type === 'solar_storage');
+  const showStorage = (type === 'storage' || type === 'solar_storage');
+  document.querySelectorAll('.toggle-row[data-systype]').forEach(row => {
+    const st = row.getAttribute('data-systype');
+    // st === 'solar' → showSolar, st === 'storage' → showStorage
+    // שורה בלי data-systype כלל = "משותפת", לא מושפעת
+  });
+  // + מסנכרן inp-tech-type (למחשבון הפיננסי) + updateCalculations()
+  // + renumberTable + recomputePaymentCumulative
+}
+</pre>
+
+<div class="history-note">
+  <strong>הערת היסטוריה/תיקון:</strong> עד השדרוג האחרון הסיווג היה מבוסס שני מערכים קשיחים ב-JS (<code>SOLAR_ONLY_IDS</code>, <code>STORAGE_ONLY_IDS</code>). זה הוחלף ב-attribute <code>data-systype="solar"|"storage"</code> על ה-<code>.toggle-row</code> עצמו, כדי שכלי עריכת התבנית יוכל לשנות סיווג בלי לגעת בקוד JS. 13 שורות מתויגות כברירת מחדל (8 solar, 5 storage).
+</div>
+
+<hr>
+
+<h2>7. המנוע הפיננסי (עמודים 11-12)</h2>
+
+<h3>7.1 סקירה</h3>
+<p><code>updateCalculations()</code> היא הפונקציה המרכזית, מופעלת מכל שינוי בפרמטרים הפיננסיים. בונה מודל תזרים מזומנים מלא ל-<code>inp-lifetime</code> שנים (ברירת מחדל 25).</p>
+
+<h3>7.2 התפתחות היסטורית של המודל הפיננסי</h3>
+
+<div class="history-note">
+  <strong>חשוב - ריבוי גרסאות במסמכים השונים:</strong> קיימות 3 גרסאות שונות של המודל הפיננסי במסמכים שמוזגו. הגרסה המתקדמת ביותר (V4) היא זו שמיושמת בקוד הסופי.
+</div>
+
+<table>
+  <tr><th>גרסה</th><th>מקור במסמכים</th><th>מורכבות</th><th>נוסחאות</th></tr>
+  <tr>
+    <td><strong>V1 (פרימיטיבית)</strong></td>
+    <td>מסמך סיכום פרויקט אינטראקטיבי, קובץ bereshit_quote.html (V1)</td>
+    <td>נמוכה מאוד - 4 נוסחאות פשוטות</td>
+    <td>
+      שווי חשמל שנתי = הספק × 1650 × 0.44<br>
+      רווח שנתי נטו = שווי חשמל - 4000<br>
+      רווח כולל = רווח שנתי × 25<br>
+      תשואה = (שווי שנתי / עלות) × 100
+    </td>
+  </tr>
+  <tr>
+    <td><strong>V2/V3 (ביניים)</strong></td>
+    <td>קובץ bereshit_quote_template (2).html</td>
+    <td>בינונית - מורחבת חלקית</td>
+    <td>הרחבה של V1, עדיין ללא NPV/IRR מלאים</td>
+  </tr>
+  <tr>
+    <td><strong>V4 (מתקדמת - הסופית)</strong></td>
+    <td>קובץ PrintQuote.html (המתקדם ביותר)</td>
+    <td>גבוהה - מודל תזרים מלא ל-25 שנה</td>
+    <td>מנוע פיננסי מלא: NPV, IRR, LCOE, Spitzer, דעיכה, אינפלציה, אגירה</td>
+  </tr>
+</table>
+
+<h3>7.3 נוסחאות המודל המתקדם (V4)</h3>
+
+<h4>א. CAPEX (עלות הקמה כוללת)</h4>
+<ul>
+  <li>מחושב כ-<code>הספק מותקן (capacity) × עלות ל-kWp (capexPerKwp)</code>.</li>
+  <li>המשתמש יכול גם להזין עלות כללית ישירות, מה שיעדכן את ה-CAPEX ל-kWp אחורה (פונקציית <code>onCostManualInput</code>).</li>
+  <li><strong>תיקון:</strong> <code>onCostManualInput</code> מפחית <code>batteryCapex</code> לפני חישוב CAPEX/kWp - עלות אגירה לא אמורה להיכלל בעלות הסולארי לצורך זה.</li>
+</ul>
+
+<h4>ב. הלוואה (Loan)</h4>
+<ul>
+  <li>גובה הלוואה: <code>CAPEX × אחוז מימון (loanPct)</code>. הון עצמי הוא היתרה.</li>
+  <li><strong>החזר שפיצר שנתי:</strong> אם הריבית גדולה מ-0, החישוב הוא: <code>(interestRate × loanAmount) / (1 - (1 + interestRate)^(-loanTerm))</code>. אם הריבית 0, ההחזר הוא פשוט החוב חלקי שנות ההלוואה.</li>
+  <li>פיצול קרן וריבית נעשה בכל שנה בהתאם ליתרת הקרן.</li>
+  <li>יש טיפול במקרה קצה בשנה האחרונה של ההלוואה כדי לאפס במדויק את יתרת החוב במקרה של סטייה עשרונית.</li>
+</ul>
+
+<h4>ג. הכנסות ותפוקה (לכל שנה Y מ-1 עד 25)</h4>
+<ul>
+  <li>תפוקה שנתית: <code>yieldVal × (1 - degradation)^(Y-1)</code></li>
+  <li>תעריף שנתי: <code>(baseTariff + urbanPremium) × (1 + escalation)^(Y-1)</code> (פרמיה אורבנית מוגבלת ל-<code>inp-urban-years</code> שנים)</li>
+  <li>הכנסה שנתית: <code>תפוקה כוללת × תעריף שנתי</code></li>
+  <li>הכנסת אגירה (אם קיימת) דועכת בנפרד לפי <code>inp-battery-degradation</code></li>
+</ul>
+
+<h4>ד. הוצאות תפעול (OPEX)</h4>
+<ul>
+  <li>קבוע מראש: <code>Capacity × OpExPerKwp</code></li>
+  <li>דמי רשת: <code>Yearly Yield × GridFee</code> (מחושב <strong>רק</strong> על הכנסת הסולארי, לא על ערך האגירה)</li>
+  <li>שכר דירה: <code>Revenue × RentPct</code> (מחושב <strong>רק</strong> על הכנסת הסולארי)</li>
+</ul>
+
+<h4>ה. תזרים חופשי (FCF)</h4>
+<p><code>הכנסה - OPEX - החזר הלוואה באותה שנה</code></p>
+
+<h4>ו. מדדי כדאיות</h4>
+<ul>
+  <li><strong>NPV:</strong> מחושב מתוך התזרים החופשי בעזרת שיעור ההיוון (Discount Rate). פונקציה ייעודית <code>npv(rate, cashflows)</code>.</li>
+  <li><strong>IRR:</strong> חישוב איטרטיבי המחפש את שיעור ההיוון שמאפס את ה-NPV. מחושב עבור הפרויקט כולו (ללא מימון) ועבור ההון העצמי (FCF אחרי מימון). פונקציה <code>irr(cashflows)</code>.</li>
+  <li><strong>LCOE:</strong> סך ההוצאות על פני 25 שנה (כולל הון עצמי, שפיצר ו-OPEX) מחולק בסך האנרגיה המיוצרת ב-25 שנה.</li>
+</ul>
+
+<div class="version-a">
+  <strong>גרסה א' (מסמך ההעברה):</strong> חישוב IRR תוכנת כחיפוש בינארי בטווח שבין 0.999- עד 2.0. במקרה קצה בו התשואה ענקית (מעל 200%), הפונקציה לא תמצא ערך. במקרה של 100% הלוואה (אין הון עצמי בשנה 0) מחזיר NaN וה-UI כותב "N/A".
+</div>
+
+<div class="version-b">
+  <strong>גרסה ב' (מסמך הסיכום):</strong> חישוב בשיטת החצייה (Bisection method) - למערך התזרים של הפרויקט (Project IRR - לפני מימון) ולתזרים ההון (Equity IRR - אחרי מימון).
+</div>
+
+<div class="version-b">
+  <strong>גרסה ב' (תיעוד טכני):</strong> חישוב IRR באיטרציה (Newton-Raphson או דומה על בסיס NPV=0).
+</div>
+
+<div class="callout">
+  <strong>הערת היסטוריה:</strong> שלוש הגרסאות תואמות ברעיון (חיפוש איטרטיבי) אך נבדלות בפרטי היישום המדויק. הגרסה הסופית בקוד היא זו שמתועדת בתיעוד הטכני (Newton-Raphson או דומה), עם טיפול במקרי קצה כמתואר במסמך ההעברה (טווח חיפוש, טיפול ב-100% הלוואה).
+</div>
+
+<h3>7.4 מבנה עמוד 11 - טבלאות האקסל</h3>
+<p>העמוד מכיל שתי טבלאות <strong>שהועתקו במדויק מתבניות האקסל המקוריות</strong>. העיצוב מתבסס על מחלקה <code>.compact-fin-table</code> המשתמשת בפונט קטן (6.8pt) כדי להבטיח אי-גלישת שורות מעבר לדף A4.</p>
+<ol>
+  <li><strong>טבלה עליונה:</strong> מחולקת לקטגוריות (גודל, הכנסות, הוצאות, מימון, סיכום וכדאיות). עמודות: פרק, סעיף, יחידה, ערך ל-1 kWp, ערך למתקן. מזהים מתחילים ב-<code>m-</code>. כותרת העמוד מתעדכנת לפי סוג ההסדרה.</li>
+  <li><strong>טבלה תחתונה (פירוט תזרים):</strong> 26 שורות (שנה 0 עד סוף הפרויקט). נוצרת דינמית ב-JS לתוך <code>tbody id="financeTableBody"</code>.</li>
+</ol>
+
+<h3>7.5 מבנה עמוד 12 - גרפים ותעריפים</h3>
+<ol>
+  <li><strong>גרף עליון רחב:</strong> "תזרים שנתי". מצויר ב-Chart.js בתוך <code>canvas-cashflow</code>. מציג עמודות (תזרים נטו שנתי) וקו (רווח מצטבר).</li>
+  <li><strong>חלק תחתון שמאלי:</strong> טבלת "תעריפי תעו"ז". טבלה סטטית לחלוטין (חורף/מעבר/קיץ - שפל/גבע/פסגה).</li>
+  <li><strong>חלק תחתון ימני:</strong> "התפלגות עלות הפרויקט". גרף עוגה (Chart.js ב-<code>canvas-pie</code>) + מקרא. אחוזי העוגה משתנים בהתאם לפרמטר <code>inp-tech-type</code>.</li>
+</ol>
+
+<h3>7.6 מצבי תצוגה של המודל הפיננסי</h3>
+<p>בראש מקטע 11 בלוח הבקרה יש בורר "אופן הצגת הניתוח הפיננסי" עם שתי אפשרויות:</p>
+<ul>
+  <li><strong>מחשבון אוטומטי (ברירת מחדל):</strong> כל נתוני עמודים 11-12 מחושבים בזמן אמת מהפרמטרים. המחשבון מפיק טבלת תזרים מזומנים מלאה ל-25 שנה, IRR, NPV, LCOE ושני גרפים אינטראקטיביים.</li>
+  <li><strong>תמונות ידניות - למקרים חריגים:</strong> למקרה שבו הניתוח הפיננסי נעשה מחוץ למחשבון (למשל בגיליון אקסל נפרד) ורוצים פשוט להדביק תמונות מוכנות. מופיעים שני שדות להעלאת תמונה (סיכום פיננסי וטבלת תזרים), שמחליפים את התוכן המחושב.</li>
+</ul>
+<p><code>setFinanceMode(mode)</code> - מנוע ה-toggle בין <code>finance-calc-content</code>/<code>finance-charts-calc-content</code> (מחושב) לבין <code>finance-image-content</code>/<code>finance-charts-image-content</code> (תמונות ידניות).</p>
+
+<h3>7.7 שדות המודל הפיננסי בסיידבר</h3>
+<table>
+  <tr><th>מזהה</th><th>תיאור</th></tr>
+  <tr><td><code>inp-tech-type</code></td><td>Select: סולארי, אגירה, סולארי + אגירה. משפיע על עוגת העלויות.</td></tr>
+  <tr><td><code>inp-reg-type</code></td><td>Select: תעריפית, תחרותית, משולב, מונה נטו. בחירה ב"מונה נטו" או "משולב" פותחת את שדה דמי השימוש ברשת.</td></tr>
+  <tr><td><code>inp-roof-factor</code></td><td>Float. מקדם שטח גג - מ"ר נדרשים לכל 1 קו"ט מותקן (ברירת מחדל 6.9).</td></tr>
+  <tr><td><code>inp-capex</code></td><td>Float. עלות הקמה לקו"ט. מחושב אוטומטית אם המשתמש הזין סה"כ עלות בסעיף 2.</td></tr>
+  <tr><td><code>inp-yield</code></td><td>Integer. שעות ייצור לקו"ט בשנה.</td></tr>
+  <tr><td><code>inp-base-tariff</code>, <code>inp-urban-premium</code>, <code>inp-escalation</code>, <code>inp-degradation</code></td><td>תעריף בסיס, פרמיה אורבנית, עליית מחיר, דעיכה.</td></tr>
+  <tr><td><code>inp-opex</code></td><td>תפעול שנתי לקו"ט.</td></tr>
+  <tr><td><code>inp-rent-pct</code></td><td>שכר דירה לבעלי הגג - אחוז מההכנסה השנתית.</td></tr>
+  <tr><td><code>inp-grid-fee</code></td><td>דמי שימוש ברשת. נחסם/נפתח דינמית לפי סוג ההסדרה (באמצעות <code>handleRegTypeChange</code>).</td></tr>
+  <tr><td><code>inp-loan-pct</code>, <code>inp-interest-rate</code>, <code>inp-loan-term</code></td><td>נתוני הלוואה: אחוז מימון, ריבית, תקופה.</td></tr>
+  <tr><td><code>inp-discount-rate</code></td><td>שיעור היוון (ברירת מחדל 4%).</td></tr>
+  <tr><td><code>inp-lifetime</code></td><td>אורך חיי מתקן (ברירת מחדל 25).</td></tr>
+  <tr><td><code>inp-urban-years</code></td><td>שנות פרמיה אורבנית (מוגבל, ברירת מחדל 17).</td></tr>
+  <tr><td>פרמטרי אגירה</td><td><code>inp-battery-kwh</code>, ערך שנתי, עלות, שחיקה (<code>inp-battery-degradation</code>).</td></tr>
+</table>
+
+<p><code>handleRegTypeChange(type)</code> - ממלא ברירות מחדל שונות (עליית תעריף, עמלת רשת, אורך חיים, כותרת) לפי סוג ההסדרה התעריפית שנבחר.</p>
+
+<div class="warning">
+  <strong>טבלת "תעריפי תעו״ז" מודפסת סטטית (Hardcoded):</strong> אינה משפיעה על המודל הפיננסי (שמחשב לפי ממוצע תעריף אחיד). זו מגבלה ידועה.
+</div>
+
+<div class="warning">
+  <strong>מגבלת טבלת 25 שנה:</strong> הטבלה המפורטת היא בת 26 שורות עבות, היא נדחסה בגודל פונט באמצעות המחלקה <code>.compact-fin-table</code> כדי לוודא שהיא נכנסת כולה לעמוד 11. אם בעתיד תוארך התקופה מעל 25 שנה, הטבלה תגלוש אל מחוץ לעמוד.
+</div>
+
+<h3>7.8 טיפול במקרי קצה ועיצוב ערכים</h3>
+<ul>
+  <li><strong>מניעת חלוקה באפס:</strong> בחישוב התשואה (ROI), המערכת מוודאת שעלות המערכת גדולה מ-0. אם העלות 0 או שלילית, ערך התשואה מוצג כ-0%.</li>
+  <li><strong>ערכים חסרים:</strong> כל שדות הקלט המספריים מנותחים ב-<code>parseFloat</code> ומגובים ב-<code>|| 0</code>. אם המשתמש מוחק את הערך, המערכת מתייחסת אליו כ-0.</li>
+  <li><strong>עיגול והצגת מספרים:</strong> ערכי כסף מעוגלים למספר שלם (<code>Math.round()</code>). ערך ROI עם ספרה אחת לאחר הנקודה (<code>.toFixed(1)</code>). מספרים גדולים עם פסיק מפריד אלפים ב-<code>.toLocaleString('he-IL')</code>.</li>
+  <li><strong>IRR NaN:</strong> מחזיר <code>NaN</code> אם אין תזרים חיובי/שלילי (סימנים הפוכים), או ב-100% הלוואה. ה-UI מציג "N/A".</li>
+</ul>
+
+<h3>7.9 תלות Chart.js ועבודה אופליין</h3>
+<p>ספריית Chart.js נטענת דרך CDN חיצוני. <code>renderInteractiveCharts(...)</code> עטוף ב-<code>try/catch</code> ברמת הקורא - כך שחסימת ה-CDN (חוסם פרסומות, אין אינטרנט) לא תשבור את שאר החישוב. <strong>אם זה נכשל, שאר ההצעה (כולל טבלת התזרים והמספרים עצמם) עדיין תעבוד כרגיל - רק הגרפים לא יופיעו.</strong></p>
+
+<div class="warning">
+  <strong>פער פתוח (ממסמך האפיון של PrintQuote):</strong> תלות ב-CDN סותרת דרישת עצמאות אופליין. אפשרויות פתרון: הטמעת הספרייה כקובץ מקומי בתוך הפרויקט, או מעבר לגרפי SVG ידניים ללא תלות חיצונית. <strong>זו משימה פתוחה לפיתוח עתידי.</strong>
+</div>
+
+<hr>
+
+<h2>8. ניהול תמונות</h2>
+
+<h3>8.1 ההיסטוריה המורכבת של ניהול הלוגו</h3>
+
+<div class="history-note">
+  <strong>⚠️ חשוב מאוד - ריבוי גרסאות ותיקוני כיוון:</strong> קיימות 3 גרסאות שונות של מנגנון ניהול הלוגו והתמונות במסמכים שמוזגו. להלן ההתפתחות ההיסטורית וההחלטה הסופית:
+</div>
+
+<table>
+  <tr><th>גרסה</th><th>מקור</th><th>שיטה</th><th>סטטוס</th></tr>
+  <tr>
+    <td>א'</td>
+    <td>מסמך סיכום פרויקט אינטראקטיבי (הראשון)</td>
+    <td>SVG מוטמע ב-<code>#master-logo-container</code> + שכפול JS + מנגנון פתרון קונפליקטים של IDs (regex)</td>
+    <td>תוארה בפירוט רב, אך <strong>נפסלה</strong> בגרסאות מאוחרות יותר</td>
+  </tr>
+  <tr>
+    <td>ב'</td>
+    <td>מסמך אפיון והעברת פרויקט</td>
+    <td>מעבר ל-<code>DEFAULT_URLS</code> - אובייקט JS עם URLs חיצוניים, <code>injectLogo()</code> יוצר <code>&lt;img&gt;</code> ומושך URL מ-DEFAULT_URLS</td>
+    <td>זו <strong>ההחלטה הסופית</strong> (ראו להלן)</td>
+  </tr>
+  <tr>
+    <td>ג'</td>
+    <td>תיעוד מלא + סיכום שיחה</td>
+    <td>אישור סופי של גרסה ב' + תיעוד מפורט של DEFAULT_URLS, <code>updateImageSrc</code>, <code>adminUploadDefaultImage</code></td>
+    <td>הגרסה המתועדת והנוכחית</td>
+  </tr>
+</table>
+
+<div class="callout">
+  <strong>החלטה סופית (מתועדת בסיכום השיחה):</strong> "עברתי מ'תיקון' (הטמעה) בחזרה ל'מקור' (קישורים חיצוניים), על בסיס מידע שהמשתמש סיפק על ארכיטקטורה חיצונית שלא היה לי מושג עליה קודם. יש מערכת חיצונית אמיתית (זו שמוזכרת למעלה, בפיתוח) שאמורה להזין בדיוק את הקישורים האלה."
+  <p><strong>זה שיעור מרכזי:</strong> מה שנראה כמו פגם מנקודת מבט מקומית, יכול להיות תכונה מכוונת בהקשר מערכתי רחב יותר שלא תמיד גלוי מתוך קובץ בודד.</p>
+</div>
+
+<div class="danger">
+  <strong>אזהרה מתועדת:</strong> זו לא "אולי לא נכון", זו הייתה החלטה שבוטלה באופן מפורש ומוחלט - <strong>אין להחזיר אותה בלי לבדוק מחדש את הסטטוס של אותה מערכת חיצונית</strong>.
+</div>
+
+<h3>8.2 המנגנון הנוכחי (DEFAULT_URLS)</h3>
+<p>אובייקט <code>DEFAULT_URLS</code> בראש הסקריפט מחזיק כתובות ברירת מחדל. במקור 5 מפתחות קבועים:</p>
+<ul>
+  <li><code>logo</code></li>
+  <li><code>cover</code> - תמונת שער</li>
+  <li><code>project</code> - תמונת גג</li>
+  <li><code>page4_bottom</code> - תחתית עמוד 4</li>
+  <li><code>page9_bottom</code> - תחתית עמוד 9</li>
+</ul>
+<p>מאז הוספת יכולת "🖼️ הוסף תמונה" בעורך, האובייקט <strong>ניתן להרחבה</strong> - כל תמונה חדשה נרשמת תחת מפתח בעל שם המזהה שלה (<code>img-extra-1</code> וכו').</p>
+
+<pre>
+function updateImageSrc(targetId, path) {
+  // 4 branches קשיחים לתאימות אחורה עם 4 השדות המקוריים,
+  // + fallback גנרי: DEFAULT_URLS[targetId] לכל דבר אחר
+  img.src = path ? path : defaultPath;
+}
+</pre>
+
+<p><code>injectLogo()</code> משכפל את <code>DEFAULT_URLS.logo</code> לכל <code>.logo-target</code> (לוגו מופיע במספר מקומות - שער, פוטרים).</p>
+<p><code>uploadImage(input, targetIds)</code> קורא קובץ שנבחר כ-base64 (FileReader.readAsDataURL) ומזריק ל-<code>.src</code> ישירות - זו ההעלאה ה"רגילה" הזמינה תמיד (per-quote override), לא תלוית ADMIN_MODE.</p>
+
+<h3>8.3 תיאור מפורט של הגרסה שנפסלה (לתיעוד היסטורי)</h3>
+
+<p>הגרסה הראשונה שתוארה במסמך הסיכום הראשון כללה:</p>
+<ul>
+  <li><strong>קונטיינר מקור מוסתר</strong> <code>#master-logo-container</code> עם קוד SVG של הלוגו.</li>
+  <li><strong>פונקציית JavaScript</strong> שמשכפלת את קוד ה-SVG ומזריקה אותו לכל המקומות המיועדים (עמוד השער, פוטר תחתון של כל עמוד ועמוד הסיום).</li>
+  <li><strong>מנגנון פתרון קונפליקטים של IDs</strong>: כאשר משכפלים SVG המכיל clip-path/mask/gradients עם IDs פנימיים (כמו <code>id="clip0"</code>), הדפדפן נתקל בכפל מזהים ומנטרל את המסכות. הפתרון: regex על ה-SVG, מעניק סיומת ייחודית לפי אינדקס (<code>id="clip0_1"</code>), ומעדכן את כל ההפניות הפנימיות ל-<code>url(#clip0_1)</code> ו-<code>href="#clip0_1"</code>.</li>
+</ul>
+
+<p><strong>מדוע נפסלה:</strong> עברה למודל DEFAULT_URLS עם URLs חיצוניים, בגלל הדרישה של מערכת חיצונית (Index.html) שמזינה את הקישורים. <strong>לא נבדק בפועל</strong> מה סטטוס אותה מערכת כעת.</p>
+
+<h3>8.4 שדות תמונות בממשק</h3>
+<p>בכל שדה תמונה (cover, project, page4_bottom, page9_bottom) יש שתי דרכים למלא:</p>
+<ol>
+  <li>להדביק כתובת URL ישירות בשדה הטקסט (Placeholder מבקש URL).</li>
+  <li>ללחוץ "העלה תמונה" ולבחור קובץ מהמחשב (FileReader → base64 Data URL).</li>
+</ol>
+<p>במידה והמשתמש מוחק את התוכן בשדה, מופעלת פונקציית <code>updateImageSrc</code> ששואבת את תמונת הדיפולט מ-DEFAULT_URLS.</p>
+<p>מזהי השדות עודכנו לאחידות: <code>inp-cover-local</code>, <code>inp-page9-local</code> וכו'.</p>
+
+<h3>8.5 מגבלה: תמונות שנוספו דרך העורך</h3>
+<div class="warning">
+  <strong>תמונות שנוספו דרך "🖼️ הוסף תמונה" (img-extra-N) אין להן שדה per-quote override.</strong> ב-4 התמונות המקוריות (cover/project/page4_bottom/page9_bottom) יש לכל אחת שדה ייעודי בלוח הבקרה הרגיל לדריסה per-quote; תמונות extra מנוהלות רק כברירת מחדל דרך עריכת תבנית. <strong>זו מגבלה מוכרת, לא פספוס</strong> - שיקול היקף מכוון.
+</div>
+
+<h3>8.6 סטטוס שמירת קבצים</h3>
+<div class="warning">
+  <strong>מגבלה נוכחית:</strong> העלאת תמונות דרך הטופס נשמרת כרגע רק ברמת ה-Session המקומי של הדפדפן. אין שרת מאחורי המערכת שיכול לשמור את התמונות הללו כקבצים קבועים על הדיסק. ברענון של הדף, תמונות מועלות ידנית נמחקות וחוזרות לברירת מחדל. <strong>זו משימת פיתוח פתוחה.</strong>
+</div>
+
+<hr>
+
+<h2>9. חתימות דיגיטליות</h2>
+
+<h3>9.1 מימוש</h3>
+<p><code>initSignaturePad(canvasId)</code> מממש ציור חופשי על <code>&lt;canvas&gt;</code> <strong>ללא ספרייה חיצונית</strong>:</p>
+<ul>
+  <li><strong>עכבר:</strong> <code>mousedown/mousemove/mouseup</code></li>
+  <li><strong>מגע:</strong> <code>touchstart/touchmove/touchend</code>, עם <code>passive:false</code> כדי לאפשר <code>preventDefault</code> ולמנוע גלילת הדף תוך כדי חתימה.</li>
+  <li><strong>פונקציית עזר מקומית</strong> <code>getPos(e)</code> ממירה קואורדינטת מסך לקואורדינטת קנבס פנימית, כולל תיקון יחס קנה-מידה (<code>canvas.width / rect.width</code>) למקרה שהקנבס מוצג בגודל CSS שונה מרזולוציית ה-pixel הפנימית.</li>
+</ul>
+<p><code>clearSignature(canvasId)</code> מנקה עם <code>ctx.clearRect</code>. שני ה-canvas מאותחלים ב-<code>window.onload</code>.</p>
+
+<h3>9.2 איך חותמים בפועל</h3>
+<ol>
+  <li>גוללים לעמוד ההערות בתצוגה המקדימה.</li>
+  <li>בתוך המלבן המסומן ("חתימה וחותמת המוסד" / "חתימת נציג בראשית סולאר") פשוט מציירים עם העכבר (או האצבע, במסך מגע) כמו בחתימה על מסמך בטאבלט.</li>
+  <li>בלוח הבקרה, בתחתית מקטע 10, יש שני כפתורים לניקוי חתימה: <code>נקה חתימת מוסד</code> ו-<code>נקה חתימת נציג בראשית</code>.</li>
+</ol>
+
+<h3>9.3 כלל קריטי: חתימות לעולם לא חלק מהתבנית הבסיסית</h3>
+<p>תוכן קנבס <strong>אינו</strong> נלכד ע"י <code>cloneNode</code>/סריאליזציית HTML. לפני כל ייצוא של תבנית מעודכנת, <code>exportTemplate()</code> קורא ל-<code>clearSignature()</code> על שני ה-canvas - כדי שלא ייצאו חתימות בדיקה כברירת מחדל. (זה בעיקר עבור מצב live באותו סבב עריכה; המחיקה העיקרית מובטחת מבנית.)</p>
+
+<hr>
+
+<h2>10. עורך התבנית (Template Editor)</h2>
+
+<h3>10.1 פתיחה</h3>
+<p>לחיצה כפולה על קובץ העורך (למשל <code>bereshit_template_editor.html</code>) פותחת אותו בדפדפן. התבנית הנוכחית כבר טעונה בפנים אוטומטית - <strong>אין צורך להעלות שום קובץ</strong> כדי להתחיל.</p>
+
+<h3>10.2 סרגל הכלים העליון</h3>
+<table>
+  <tr><th>כפתור</th><th>מה הוא עושה</th></tr>
+  <tr><td>⬇ ייצוא תבנית מעודכנת</td><td>מוריד קובץ HTML חדש, המשקף את כל השינויים שנעשו בעריכה, כאשר הם הופכים להיות ברירת המחדל של הקובץ החדש.</td></tr>
+  <tr><td>↺ טען מחדש את התבנית המקורית</td><td>מבטל את כל השינויים שלא יוצאו, וחוזר לתבנית שהייתה מוטמעת בכלי מלכתחילה.</td></tr>
+  <tr><td>📂 טען קובץ תבנית אחר</td><td>מאפשר לבחור קובץ HTML אחר מהמחשב (למשל תבנית מעודכנת שיוצאה בעבר) ולהמשיך לערוך אותו.</td></tr>
+</table>
+
+<h3>10.3 הפאנל האדום - "מצב עריכת תבנית (מנהל)"</h3>
+<p>מופיע כתיבה אדומה בראש לוח הבקרה, ומכיל:</p>
+<ul>
+  <li><strong>רשימת תמונות ברירת מחדל</strong> - הלוגו וכל תמונות ברירת המחדל של ההצעה (כולל תמונות שהוספתם דרך 🖼️). לכל תמונה שדה כתובת URL, ואפשרות "או העלה קובץ" להטמעה ישירה של קובץ מהמחשב.</li>
+  <li><strong>כפתור + הוסף דף חדש</strong> - יוצר עמוד ריק חדש (עם כותרת ואזור תוכן חופשי לעריכה), הנוסף תמיד ממש לפני עמוד יצירת הקשר הסוגר.</li>
+  <li><strong>כפתור 🔄 נקה נתוני לקוח לדוגמה</strong> - מנקה שם לקוח/כתובת/איש קשר/חתימות שאולי הזנתם לצורך בדיקה, לפני שמייצאים - כדי שלא ייצאו בטעות כברירת מחדל.</li>
+</ul>
+
+<h3>10.4 הבקרים שנוספו לכל דף</h3>
+<p>בלוח הבקרה, ליד כותרת כל דף (מלבד עמוד 11-12, המודל הפיננסי, שאינו ניתן לעריכה מבנית), מופיעים סמלים נוספים:</p>
+<table>
+  <tr><th>סמל</th><th>שימוש</th></tr>
+  <tr><td>⠿⠿ (ידית גרירה)</td><td>גוררים ומשחררים כדי לשנות את מיקום הדף בסדר ההצעה.</td></tr>
+  <tr><td>▲ / ▼</td><td>מזיז את הדף מקום אחד למעלה/למטה - חלופה לגרירה, עובדת גם בלי עכבר מדויק.</td></tr>
+  <tr><td>🖼️</td><td>מוסיף תמונה חדשה וריקה לסוף הדף. התמונה מופיעה מיד ברשימת התמונות בפאנל האדום, שם קובעים לה כתובת/מעלים קובץ.</td></tr>
+  <tr><td>🗑️</td><td>מוחק את הדף לצמיתות מהתבנית (מבקש אישור לפני מחיקה).</td></tr>
+</table>
+
+<h3>10.5 הבקרים שנוספו לכל שורה ברשימות/בטבלאות</h3>
+<p>ליד כל שורה בכל רשימה/טבלה (בעמודים 2-10) מופיעים, בנוסף ל-✎ הרגיל:</p>
+<table>
+  <tr><th>בקר</th><th>שימוש</th></tr>
+  <tr><td>בורר "משותף / סולארי / אגירה"</td><td>קובע לאיזה סוג מערכת השורה שייכת. "משותף" - לא מושפעת.</td></tr>
+  <tr><td>🗑️</td><td>מוחק את השורה לצמיתות מהתבנית (בשונה מביטול סימון רגיל, שרק מסתיר).</td></tr>
+</table>
+
+<h3>10.6 initAdminMode - נקודת הכניסה</h3>
+<pre>
+function initAdminMode() {
+  window.ADMIN_MODE = true;
+  document.body.classList.add('admin-mode');
+  injectAdminPanel();          // פאנל אדום עליון
+  initPageAdminControls();     // בקרי דף לכל details קיים
+  initPageDragDropContainer(); // listener יחיד על .sidebar
+  // + injectAdminRowControls לכל toggle-row קיים
+}
+</pre>
+
+<h3>10.7 מנגנוני ניהול תמונות (עריכת תבנית בלבד)</h3>
+<table>
+  <tr><th>פונקציה</th><th>תפקיד</th></tr>
+  <tr><td><code>renderImageUrlFields()</code></td><td>בונה מחדש את רשימת שדות התמונה בפאנל: 5 השדות הקבועים + שדה לכל <code>img[id^="img-extra-"]</code> שנמצא ב-DOM (DOM כמקור אמת יחיד)</td></tr>
+  <tr><td><code>buildImageField(key, label, applyFn, removable)</code></td><td>בונה שדה בודד: label, input טקסט ל-URL, input קובץ להעלאה, כפתור הסרה</td></tr>
+  <tr><td><code>adminUploadDefaultImage(key, inputEl, applyFn)</code></td><td>קורא קובץ כ-base64, כותב ל-<code>DEFAULT_URLS[key]</code> (לא רק ל-<code>.src</code>)</td></tr>
+  <tr><td><code>addImageToPage(pageId)</code></td><td>יוצר <code>&lt;img id="img-extra-N"&gt;</code>, מוסיף ל-DEFAULT_URLS, ממקם ב-DOM</td></tr>
+  <tr><td><code>removeExtraImage(key)</code></td><td>מסיר את ה-img מה-DOM + <code>delete DEFAULT_URLS[key]</code> + מרענן את הפאנל</td></tr>
+</table>
+
+<h3>10.8 גרירה והזזה</h3>
+<p><code>initPageAdminControls()</code> עובר על <code>.sidebar > details > summary[data-target]</code>, <strong>מדלג מפורשות על <code>page-finance</code></strong>, ומזריק לכל summary: ידית גרירה (SVG 6 נקודות, <code>draggable="true"</code>), ▲/▼, 🖼️, 🗑️.</p>
+<p><code>initPageDragDropContainer()</code> נקרא <strong>פעם אחת בלבד</strong> (idempotency guard: <code>sidebar.dataset.dragInit</code>), מצרף <code>dragover</code>/<code>drop</code> ל-<code>.sidebar</code> (event delegation). ב-<code>dragover</code> - "הזזה חיה".</p>
+<p><code>syncPageOrderToPreview()</code> - אחרי כל שינוי סדר, מריץ מחדש את סדר <code>.preview-area</code> לפי סדר ה-<code>&lt;details&gt;</code> הנוכחי: מוסיף (appendChild, שמזיז אלמנט קיים לסוף) כל עמוד רגיל בסדר החדש, ואז <strong>תמיד</strong> מוסיף page-finance → page-finance-charts → page-contact בסוף, בסדר קבוע.</p>
+
+<h3>10.9 addCustomPage - הוספת דף חדש</h3>
+<p>יוצר <code>&lt;div class="page"&gt;</code> חדש (כותרת + <code>contenteditable</code> לתוכן חופשי + פוטר זהה לשאר הדפים), מוכנס תמיד <strong>ממש לפני <code>page-contact</code></strong>, ובלוק <code>&lt;details&gt;</code> תואם בסיידבר, מוכנס לפני בלוק "11. מודל פיננסי".</p>
+<p>מספר עוקב (<code>page-custom-N</code>) מחושב דינמית מסריקת DOM (<code>[id^="page-custom-"]</code>), לא ממשתנה session - נמנע התנגשות מזהים.</p>
+
+<h3>10.10 תהליך הייצוא</h3>
+<ol>
+  <li>מבצעים את כל השינויים הרצויים בתבנית.</li>
+  <li>אם הזנתם נתוני לקוח לדוגמה - לוחצים "🔄 נקה נתוני לקוח לדוגמה".</li>
+  <li>לוחצים "⬇ ייצוא תבנית מעודכן".</li>
+  <li>מתקבל קובץ בשם <code>bereshit_quote_template_updated.html</code> - קובץ הצעת מחיר <strong>רגיל ונקי לגמרי</strong> (ללא סימני עריכה אדומים), עם כל השינויים כברירת מחדל.</li>
+  <li><strong>חשוב:</strong> זה הקובץ שצריך להפיץ לצוות המכירות כ"קובץ הרגיל" החדש.</li>
+</ol>
+<p><strong>אפשר להמשיך לערוך אחרי ייצוא:</strong> הייצוא לא "נועל" או מאפס את העריכה. אם רוצים להמשיך לערוך קובץ שכבר יוצא בעבר, משתמשים ב-"📂 טען קובץ תבנית אחר".</p>
+
+<hr>
+
+<h2>11. מנגנון הייצוא (exportTemplate)</h2>
+
+<p><code>exportTemplate()</code> היא הפונקציה המורכבת ביותר במערכת. שלבים, בסדר:</p>
+
+<ol>
+  <li><strong>ניקוי חתימות</strong> - <code>clearSignature()</code> על שני ה-canvas.</li>
+  <li><strong>הקפאת מצב טפסים ל-attributes</strong> - עובר על כל <code>input, select, textarea</code>: checkbox/radio → <code>toggleAttribute('checked', el.checked)</code>; select → <code>option.toggleAttribute('selected', ...)</code> לכל option; textarea → <code>el.textContent = el.value</code>; אחר → <code>setAttribute('value', el.value)</code>. מדלג על <code>type="file"</code> (לא ניתן לקריאה מטעמי אבטחת דפדפן).</li>
+  <li><strong>שכפול המסמך</strong> - <code>document.documentElement.cloneNode(true)</code>, ואז הסרת כל <code>.admin-only-ui</code> מהעותק (לא מהמסמך החי!) כך שהקובץ המיוצא נקי לגמרי מממשק ניהול.</li>
+  <li><strong>שכתוב DEFAULT_URLS בעותק המיוצא</strong> - ראו הסבר למטה.</li>
+  <li><strong>הורדה</strong> - <code>Blob</code> + <code>URL.createObjectURL</code> + קליק תכנותי על <code>&lt;a download&gt;</code> זמני.</li>
+</ol>
+
+<p><strong>קריטי:</strong> שינוי attribute לא משפיע על ה-property הנוכחי באלמנט שכבר "התלכלך" (dirty value flag) - כך שהעריכה החיה בעורך <strong>לא מושפעת</strong> מהאיפוס הזה, הוא רק קובע מה ישתקף בסריאליזציה הבאה.</p>
+
+<p><code>resetSampleData()</code> - פונקציה נפרדת ומכוונת: מנקה <strong>רק</strong> שדות שהם מטבעם נתוני-הצעה-בודדת (שם/כתובת/איש קשר לקוח, שם+ת.ז. חותם, חתימות) - <strong>לא</strong> נוגעת במבנה/שורות/תמונות/סיווגים. מיועדת ללחיצה ידנית לפני ייצוא.</p>
+
+<hr>
+
+<h2>12. קובץ העורך (העטיפה)</h2>
+
+<p>קובץ "עטיפה" דק (סרגל כלים + iframe), שמטמיע בתוכו עותק מלא של קובץ ה-quote בתוך <code>&lt;textarea id="quote-template-b64" style="display:none"&gt;</code>, מקודד <strong>base64</strong>.</p>
+
+<h3>12.1 למה base64 ולא הטמעה גולמית?</h3>
+<p>הטמעת HTML גולמי (ללא base64) בתוך textarea נשברת אם התוכן המוטמע עצמו מכיל את הרצף המילולי <code>&lt;/textarea&gt;</code> - וזה קורה בפועל: קובץ ה-quote מכיל שדה <code>&lt;textarea&gt;</code> משלו (לתיאור אגירה) שמסתיים ב-<code>&lt;/textarea&gt;</code>, שהיה סוגר את ה-textarea החיצוני מוקדם מדי ומשחית את שאר ההטמעה.</p>
+<p>base64 (אלפבית A-Za-z0-9+/=) לא יכול לכלול את הרצף הזה מבנייתו, כך שהבעיה נמנעת לגמרי, ללא צורך ב-escaping ידני.</p>
+
+<h3>12.2 פענוח בטוח ל-UTF-8</h3>
+<pre>
+const decoded = decodeURIComponent(escape(atob(b64)));
+</pre>
+<p><code>atob()</code> מחזיר "מחרוזת בייטים" (כל תו = ערך בייט 0-255 מקודד UTF-8 גולמי). <code>escape()</code> ממיר כל בייט לרצף <code>%XX</code>, ו-<code>decodeURIComponent()</code> מפרש את הרצפים כ-UTF-8. טכניקה ותיקה אך תקינה ונתמכת בכל דפדפן. <strong>אומת בפועל</strong> ב-Node - השוואת בת-לבת בין המקור לתוצאת הפענוח על כל הקובץ (140K+ תווים, כולל עברית מלאה) - התאמה מדויקת.</p>
+
+<h3>12.3 זרימת הטעינה</h3>
+<pre>
+loadHtmlIntoFrame(htmlString) {
+  frame.onload = () => frame.contentWindow.initAdminMode(); // מוגדר לפני
+  frame.srcdoc = htmlString;                                 // מפעיל load מחדש
+}
+</pre>
+<p><code>iframe.srcdoc</code> נחשב same-origin עם מסמך ההורה לצורכי scripting, כך שאין בעיית CORS בגישה ל-<code>frame.contentWindow</code>.</p>
+<p>שלושה כפתורי סרגל: <code>reloadOriginal()</code> (מפענח מחדש מה-textarea המוטמע, עם אישור לפני דריסת שינויים), <code>loadOtherFile(input)</code> (FileReader על קובץ שנבחר), <code>exportFromFrame()</code> (קורא ל-<code>exportTemplate()</code> בתוך ה-iframe). בטעינה הראשונית של הכלי (<code>window.onload</code>) נקראת <code>reloadOriginalSilent()</code> - זהה ל-<code>reloadOriginal()</code> אך בלי דיאלוג אישור.</p>
+
+<hr>
+
+<h2>13. אינטגרציה חיצונית - pendingQuote</h2>
+
+<h3>13.1 מבנה ה-JSON המצופה</h3>
+<p>ב-<code>window.onload</code>, הקובץ קורא (<strong>רק get, לא set</strong>) מפתח בשם <code>localStorage['pendingQuote']</code>, ומצפה ל-JSON עם המבנה הבא:</p>
+
+<pre>
+{
+  projectTitle, clientName, clientAddress, clientContact, quoteDate,
+  analysisNotes, sysSize, sysCost,
+  selectedCover, selectedProject, selectedLogo,
+  selectedFinSummary, selectedFinTable,   // מפעילים אוטומטית מצב "תמונות ידניות"
+  storageCapacity, annualSavings, roiPercentage, profit25Years,
+  gridQuota, form4Status,                 // מתווספים לתיאור התמצית כטקסט חופשי
+  rawCalculatorData: {
+    withBat: { batKwh, capex, capacity },
+    rawAssumptions: {
+      weightedTariff, yieldPerKwp, degradationPct, urbanEligible,
+      urbanPremium, urbanYears, opexPerKwp, loanPct, loanRatePct,
+      loanYears, discountRatePct, batteryAnnualValue0, batteryCapex,
+      batteryDegradationPct
+    }
+  }
+}
+</pre>
+
+<div class="history-note">
+  <strong>ריבוי גרסאות של ה-JSON:</strong> המסמכים השונים מציגים גרסאות שונות של המבנה. הנה ההבדלים העיקריים:
+  <ul>
+    <li><strong>מסמך ההעברה:</strong> רק 9 שדות בסיסיים: projectTitle, clientName, clientAddress, clientContact, quoteDate, analysisNotes, sysSize, sysCost, selectedCover/Project/Logo. ללא rawCalculatorData.</li>
+    <li><strong>מסמך הסיכום:</strong> דומה אך עם sysType ('tariff', 'storage', 'net_metering', '7th_reg').</li>
+    <li><strong>התיעוד המלא (המתקדם):</strong> המבנה המורחב למעלה, כולל rawCalculatorData מלא.</li>
+  </ul>
+  <strong>הגרסה המורחבת (מהתיעוד המלא) היא המבנה המצופה המלא ביותר.</strong>
+</div>
+
+<h3>13.2 התנהגות בעת טעינה</h3>
+<ul>
+  <li>אם נמצא JSON תקין, המערכת תאכלס אוטומטית את השדות (שם פרויקט, לקוח, גודל, עלות, טקסט אודות, ותמונות).</li>
+  <li>תאריך ההצעה מונח כברירת מחדל להיות "היום" ברגע הפתיחה, בפורמט הישראלי המקומי, אלא אם הוזן תאריך אחר דרך אותה הזנה חיצונית.</li>
+  <li>אם בוצע כבר חישוב פיננסי חיצוני: גם את התוצאות המוכנות וגם את כל ההנחות הגולמיות שמאחוריהן (לא סתם מספרים סותרים), כדי שהמחשבון החי בתוך ההצעה יוכל לחשב מחדש בעצמו.</li>
+  <li>הזנה של <code>selectedFinSummary</code> ו/או <code>selectedFinTable</code> מפעילים אוטומטית את מצב "תמונות ידניות" במודל הפיננסי.</li>
+  <li>שדות <code>storageCapacity, annualSavings, roiPercentage, profit25Years, gridQuota, form4Status</code> מתווספים לתיאור התמצית בעמוד 2 כטקסט חופשי.</li>
+</ul>
+
+<h3>13.3 הפער החמור ביותר</h3>
+<div class="danger">
+  <strong>הפער החמור ביותר ברכיב הזה (מתועד במסמך PrintQuote):</strong> גם הגרסה המתקדמת ביותר (V4) <strong>עדיין לא קוראת בפועל</strong> את שדות סיכום התוצאה מהמחשבון (IRR, NPV, חיסכון שנתי, קיבולת אגירה). המערכת מסתמכת על טקסט חופשי שאיש המכירות מזין/מדביק ידנית.
+  <p><strong>משמעות מעשית:</strong> איש המכירות עלול להעתיק ידנית מספר שגוי מהמחשבון להצעה - כל טעות העתקה הופכת ישירות למסמך משפטי-מסחרי שנשלח ללקוח. <strong>זו משימת החיווט הראשונה ברשימת הפעולות הנדרשות.</strong></p>
+</div>
+
+<h3>13.4 הנחות על המערכת החיצונית</h3>
+<ul>
+  <li>מערכת ה-CRM צריכה לכתוב אובייקט JSON אל <code>localStorage.setItem('pendingQuote', JSON.stringify(...))</code> לפני שמפנה את המשתמש לקובץ ה-quote.</li>
+  <li>הוזן אובייקט <code>DEFAULT_URLS</code> בתחילת הסקריפט, אך הכתובות בו מוגדרות כרגע כ-<code>https://example.com/...</code>. <strong>יהיה עליך לוודא איתו מהן הכתובות האמיתיות (שרת הקבוצים שלו) כדי להחליף אותן בפרודקשן.</strong></li>
+  <li>המערכת החיצונית מעולם לא נראתה בפועל בשיחה זו - רק הוסקה קיומה מתוך מה שהקוד הקיים מצפה לקבל.</li>
+</ul>
+
+<hr>
+
+<h2>14. הדפסה וייצוא</h2>
+
+<h3>14.1 תהליך הפקת PDF</h3>
+<ol>
+  <li>ממלאים את כל הפרטים הרלוונטיים בלוח הבקרה, ומוודאים בתצוגה המקדימה שהכל נראה נכון.</li>
+  <li>לוחצים על הכפתור הירוק-כחול <code>🖨️ הדפסה ישירה ל-PDF (A4)</code> בראש לוח הבקרה.</li>
+  <li>נפתח חלון ההדפסה הרגיל של הדפדפן. תחת "יעד" (Destination) בוחרים <strong>"שמור כ-PDF"</strong> (Save as PDF) במקום מדפסת פיזית.</li>
+  <li>לוחצים "שמור", בוחרים היכן לשמור את הקובץ, וזהו - קובץ ה-PDF המוכן לשליחה ללקוח.</li>
+</ol>
+
+<h3>14.2 התאמה ל-A4</h3>
+<p>לחיצה על כפתור "הדפסה ישירה ל-PDF" מעלימה את הסרגל הצידי, ומחילה חוקי <code>@page { size: A4; margin: 0; }</code> ליצירת מסמך של 13 עמודים מדויקים.</p>
+<p>ה-CSS נשען על חוקי חומרה מחמירים במחלקת <code>.page</code> (גובה 297mm ורוחב 210mm) כך שמנוע ההדפסה של דפדפן כרום ידפיס עמוד A4 מושלם ללא שוליים מיותרים.</p>
+
+<div class="danger">
+  <strong>טעות נפוצה:</strong> אם שולחים בטעות את קובץ ה-<code>.html</code> עצמו ללקוח (במקום ה-PDF שנוצר ממנו), הלקוח יראה קובץ אינטראקטיבי עם לוח בקרה עריך במקום מסמך הצעה סופי. <strong>תמיד לוודא ששולחים את קובץ ה-PDF.</strong>
+</div>
+
+<h3>14.3 פער: ייצוא ישיר ל-PDF ללא דיאלוג</h3>
+<div class="warning">
+  <strong>משימה פתוחה:</strong> כרגע הפקת ה-PDF מתבצעת על ידי הפעלת פונקציית ההדפסה של הדפדפן (<code>window.print()</code>) והנחיית המשתמש לבחור ב-"שמור כ-PDF". לא הוטמעה ספריית צד-לקוח (כמו jsPDF או html2pdf) שמייצרת את הקובץ ישירות בלחיצת כפתור אחת.
+</div>
+
+<hr>
+
+<h2>15. היסטוריה ודורות - ההתפתחות</h2>
+
+<h3>15.1 מקור: 4 דורות של הקובץ</h3>
+<p>דוח הביקורת המקורי מיפה במפורש ארבעה דורות התפתחות של מחולל ההצעה, המתאימים לשלושת הקבצים שנשמרו:</p>
+
+<table>
+  <tr><th>דור</th><th>מאפיין מרכזי</th><th>קובץ מייצג</th></tr>
+  <tr><td><strong>V1</strong></td><td>תצוגה סטטית בלבד - תמונות (<code>fin_summary.jpg</code>), חישוב פרימיטיבי (<code>size*1650*0.44</code>)</td><td>bereshit_quote.html</td></tr>
+  <tr><td><strong>V2 / V3</strong></td><td>נוספה עריכה דינמית של שדות (<code>initDynamicEditors</code>), עדיין תמונות סטטיות לגרפים</td><td>bereshit_quote_template (2).html</td></tr>
+  <tr><td><strong>V4</strong></td><td>מנוע פיננסי מלא: <code>npv()</code>/<code>irr()</code>, טבלאות DOM דינמיות, גרפי Chart.js אמיתיים</td><td>PrintQuote.html (המתקדם)</td></tr>
+</table>
+
+<h3>15.2 שלושה קבצים שנשמרו</h3>
+<table>
+  <tr><th>קובץ</th><th>תפקיד</th><th>סיבת שמירה</th></tr>
+  <tr>
+    <td>PrintQuote.html (המתקדם)</td>
+    <td>הגרסה המתקדמת ביותר - הבסיס לקוד</td>
+    <td>139KB. מוסיף שדות אגירה/סוללה, הגבלת פרמיה אורבנית ל-17 שנה, וחיבור בפועל לשדות תוצאה מהמחשבון (IRR, NPV, קיבולת אגירה).</td>
+  </tr>
+  <tr>
+    <td>bereshit_quote.html</td>
+    <td>מקור תוכן - הגרסה הסטטית הראשונה (V1)</td>
+    <td>64KB. הקוד ההנדסי שלה נחות, אך נמצא בה תוכן שיווקי מילולי (תיאור חברה, המלצת לקוח) שאינו קיים בגרסה המתקדמת. נשמרה אך ורק לצורך חילוץ תוכן.</td>
+  </tr>
+  <tr>
+    <td>bereshit_quote_template (2).html</td>
+    <td>מקור תוכן - דור עריכה דינמית (V2/V3)</td>
+    <td>113KB. מכיל סעיפי קטלוג מחירים ומפרטי סוללה שלא עברו לגרסה הסופית.</td>
+  </tr>
+</table>
+<p>שתי גרסאות ביניים (PrintQuote.html הבסיסי ו-יצירת_הצעת_מחיר.html) נבדקו ונמצאו חסרות-תוכן-ייחודי לחלוטין מול קובץ PrintQuote.html המתקדם - לכן לא נשמרו.</p>
+
+<div class="callout">
+  <strong>מסקנת דוח הביקורת המקורי:</strong> V4 נקבע כ-Single Source of Truth ללוגיקה העסקית של מחולל ההצעות. ההחלטה אושרה מחדש לאחר diff עצמאי בין שלוש הגרסאות המובילות במשפחה.
+</div>
+
+<h3>15.3 תוכן שיווקי שאותר בגרסאות ישנות - לשימור</h3>
+
+<table>
+  <tr><th>נכס תוכן</th><th>מקור</th><th>סטטוס ב-V4</th><th>החלטה</th></tr>
+  <tr>
+    <td>תיאור חברה ומשפט ייעוד ("בראשית סולאר מביאה את בשורת הקיימות...")</td>
+    <td>V1 (קיים גם ב-V4)</td>
+    <td>קיים</td>
+    <td>לא אבד.</td>
+  </tr>
+  <tr>
+    <td><strong>המלצת לקוח שנייה</strong> ("מאז הקמת המערכת חסכנו למעלה מ-70% בעלויות החשמל...")</td>
+    <td>V1 בלבד</td>
+    <td><span class="badge danger">אבדה</span></td>
+    <td>לשחזר - במיוחד לפניות למגזר המוסדי/דתי.</td>
+  </tr>
+  <tr>
+    <td><strong>ארבעה משפטי "למה לבחור בנו"</strong> (תכנון קפדני, התקנה ע"י בעלי מקצוע מוסמכים, ליווי אישי)</td>
+    <td>V2/V3 בלבד</td>
+    <td><span class="badge warning">אבדו</span></td>
+    <td>מועמדת טבעית לסעיף "אודות" בעמוד ההצעה המאוחד.</td>
+  </tr>
+</table>
+
+<h3>15.4 קטלוג מחירים ותוספות שזוהו (מ-V2/V3)</h3>
+<p>פריטים שאינם מופיעים בגרסה הסופית - יש לוודא שנכללים (או נדחו במודע) בקטלוג המאוחד:</p>
+<table>
+  <tr><th>פריט</th><th>מקור</th></tr>
+  <tr><td>שדרוג ממיר היברידי + אגירה 128 קוט"ש</td><td>סעיף 11 בקטלוג</td></tr>
+  <tr><td>שדרוג ממיר היברידי + אגירה 256 קוט"ש</td><td>סעיף 12 בקטלוג</td></tr>
+  <tr><td>מפרט סוללת LiFePO4, קיבולת 1,000 קוט"ש עם BMS</td><td>טקסט מפרט טכני</td></tr>
+  <tr><td>תוספת אופציונלית: אופטימייזרים TIGO</td><td>טקסט תוספות</td></tr>
+</table>
+
+<h3>15.5 תיקונים ושינויי כיוון מתועדים</h3>
+
+<table>
+  <tr><th>שינוי</th><th>מקור במסמכים</th><th>תיאור</th><th>סטטוס סופי</th></tr>
+  <tr>
+    <td>הימנעות משינוי UI של הלקוח</td>
+    <td>מסמך סיכום פרויקט</td>
+    <td>בתחילת העבודה ה-AI "שיפר" את עיצוב ה-HTML באמצעות Tailwind CSS ושינה כליל את נראות המסמך - נשברו פונקציות מקוריות. <strong>החלטה סופית:</strong> חזרה מלאה ל-HTML/CSS הונילה של הלקוח.</td>
+    <td>✓ אומץ</td>
+  </tr>
+  <tr>
+    <td>שדרוג עמודים 3 ו-4</td>
+    <td>מסמך סיכום פרויקט</td>
+    <td>עמוד האודות הישן נמחק. במקומו נבנו שני עמודים חדשים המבוססים על עיצוב ה-PDF המקורי: עמוד 3 (טקסט + גריד המלצות צבעוני) + עמוד 4 (סעיפי ייחודיות + תמונת רוחב מלאה).</td>
+    <td>✓ אומץ</td>
+  </tr>
+  <tr>
+    <td>מבנה עמוד 11</td>
+    <td>מסמך סיכום פרויקט</td>
+    <td>בתחילה הוצעו כרטיסיות KPI מודרניות. <strong>החלטה סופית:</strong> שחזור מדויק 1:1 של טבלאות האקסל.</td>
+    <td>✓ אומץ</td>
+  </tr>
+  <tr>
+    <td>מבנה עמוד 12</td>
+    <td>מסמך סיכום פרויקט</td>
+    <td>בתחילה 2 גרפים זה לצד זה ועוד טבלת עלויות. <strong>החלטה סופית:</strong> סידור מלמעלה למטה.</td>
+    <td>✓ אומץ</td>
+  </tr>
+  <tr>
+    <td>סיווג סוגי מערכת</td>
+    <td>מסמך סיכום פרויקט</td>
+    <td>בתחילה תפריט אחד שאיחד רגולציה וטכנולוגיה. <strong>החלטה סופית:</strong> פיצול לשני Selectors - "טכנולוגיה" ו"הסדרה".</td>
+    <td>✓ אומץ</td>
+  </tr>
+  <tr>
+    <td>תיקון כיווץ הדפים בתצוגה המקדימה (Flexbox Squishing)</td>
+    <td>מסמך סיכום פרויקט</td>
+    <td>הדפים נמעכו אנכית - נפתרה ב-<code>min-height: 297mm</code> ו-<code>flex-shrink: 0</code>.</td>
+    <td>✓ תוקן</td>
+  </tr>
+  <tr>
+    <td>תיקון כיווניות הפוטר (RTL)</td>
+    <td>מסמך סיכום פרויקט</td>
+    <td>הפוטר סודר מ-RTL מלא, מספרי טלפון עם <code>dir="ltr"</code>.</td>
+    <td>✓ תוקן</td>
+  </tr>
+  <tr>
+    <td>מניעת כפילות קוד ה-SVG של הלוגו (גרסה 1)</td>
+    <td>מסמך סיכום פרויקט</td>
+    <td>נפסלה ההדבקה הידנית בכל דף. מיושם מנגנון <code>#master-logo-container</code> + שכפול JS.</td>
+    <td>✓ אומץ (אך הוחלף מאוחר יותר)</td>
+  </tr>
+  <tr>
+    <td>תיקון קריסת מסכות החיתוך של הלוגו המשוכפל</td>
+    <td>מסמך סיכום פרויקט</td>
+    <td>פונקציית JS שמשנה IDs באופן ייחודי לכל עמוד ומעדכן הפניות פנימיות.</td>
+    <td>✓ תוקן (אך הגישה כולה הוחלפה)</td>
+  </tr>
+  <tr>
+    <td>מעבר מ-SVG מוטמע ל-URL חיצוני</td>
+    <td>סיכום שיחה + מסמך העברה</td>
+    <td>"ה-SVG המחריד הזה נמחק לחלוטין". עברו למודל DEFAULT_URLS עם URLs חיצוניים.</td>
+    <td>✓ אומץ (זו ההחלטה הסופית)</td>
+  </tr>
+  <tr>
+    <td>סיווג סוג מערכת: data-systype attribute</td>
+    <td>תיעוד טכני</td>
+    <td>הוחלף מ-2 מערכים קשיחים ב-JS ל-<code>data-systype</code> attribute.</td>
+    <td>✓ תוקן</td>
+  </tr>
+  <tr>
+    <td>הגנת page-finance בגרירה/הזזה</td>
+    <td>תיעוד טכני</td>
+    <td>תוקן באג שבו <code>tagName === 'DETAILS'</code> לבד לא הספיק - בלוק המודל הפיננסי הוא details תקני.</td>
+    <td>✓ תוקן</td>
+  </tr>
+  <tr>
+    <td>addImageToPage בודק cover-wrapper</td>
+    <td>תיעוד טכני</td>
+    <td>page-cover הוא היחיד ללא page-footer, עם עטיפה פנימית ממלאת-גובה.</td>
+    <td>✓ תוקן</td>
+  </tr>
+  <tr>
+    <td>מפתחות דינמיים תמיד עם JSON.stringify(key)</td>
+    <td>תיעוד טכני</td>
+    <td>מקף לא חוקי במפתח object literal לא-מצוטט.</td>
+    <td>✓ תוקן</td>
+  </tr>
+  <tr>
+    <td>DEFAULT_URLS export הפך לגנרי (Object.keys)</td>
+    <td>תיעוד טכני</td>
+    <td>הגרסה הקשיחה (5 מפתחות) פספסה תמונות שנוספו דינמית.</td>
+    <td>✓ תוקן</td>
+  </tr>
+  <tr>
+    <td>base64 להטמעת quote בעורך</td>
+    <td>תיעוד טכני</td>
+    <td>הקובץ המוטמע מכיל <code>&lt;/textarea&gt;</code> אמיתי (שדה תיאור אגירה).</td>
+    <td>✓ תוקן</td>
+  </tr>
+  <tr>
+    <td>מספרים עוקבים מסריקת DOM, לא session counter</td>
+    <td>תיעוד טכני</td>
+    <td>מונע התנגשות מזהים בעריכה חוזרת של קובץ שכבר יוצא.</td>
+    <td>✓ אומץ מלכתחילה</td>
+  </tr>
+  <tr>
+    <td>רינמור טבלת החרגות ידני, רשימות ol לא</td>
+    <td>תיעוד טכני</td>
+    <td>עמודת # היא טקסט קשיח ב-td; ol/li ממוספר טבעית ע"י הדפדפן.</td>
+    <td>✓ אומץ</td>
+  </tr>
+  <tr>
+    <td>renderInteractiveCharts עטוף try/catch</td>
+    <td>תיעוד טכני</td>
+    <td>Chart.js מ-CDN עלול להיחסם; שאר החישוב לא צריך להישבר.</td>
+    <td>✓ אומץ</td>
+  </tr>
+  <tr>
+    <td>onCostManualInput מפחית batteryCapex</td>
+    <td>תיעוד טכני</td>
+    <td>עלות אגירה לא אמורה להיכלל בעלות הסולארי לצורך זה.</td>
+    <td>✓ תוקן</td>
+  </tr>
+</table>
+
+<h3>15.6 תיקוני באגים במהלך השיחה (מתועדים בתיעוד הטכני)</h3>
+
+<ol>
+  <li><strong>תיבות סימון של "החרגות" היו מקושרות לשורה הלא נכונה</strong> (בקובץ מסוים) - תוקן במיזוג.</li>
+  <li><strong>מזהה כפול השבית חלק מתיבות הסימון ב"הערות"</strong> - תוקן במיזוג.</li>
+  <li><strong>בעיה שזוהתה בעת שמירת שינויים מסוימים</strong> - תוקנה בהרצת קוד מבודד.</li>
+  <li><strong>לחיצת ▼ על הדף האחרון (page-notes) הייתה מזיזה בטעות את page-finance</strong> - תוקן עם בדיקה ספציפית ל-page-finance.</li>
+  <li><strong>הוספת תמונה לעמוד השער הייתה ממקמת אותה מחוץ לגבולות הדף</strong> - תוקן בנפרד ב-addImageToPage.</li>
+  <li><strong>cloneNode לא לוכד שינויים ב-DEFAULT_URLS</strong> (משתנה JS) - תוקן עם regex על script.textContent.</li>
+  <li><strong>מפתחות עם מקף באובייקט literal</strong> (<code>{img-extra-1: "..."}</code>) - תוקן עם <code>JSON.stringify(key)</code>.</li>
+</ol>
+
+<hr>
+
+<h2>16. החלטות עיצוב עיקריות - סיכום</h2>
+
+<h3>16.1 החלטה: שני מצבי הצגה למודל הפיננסי, לא בחירה באחד</h3>
+<p>כשהתברר שיש שתי גישות שונות להצגת הניתוח הפיננסי (חישוב חי מול הדבקת תמונות מוכנות), ההחלטה לא הייתה לבחור אחת אלא לשמור את שתיהן, עם ברירת מחדל ברורה: המחשבון החי הוא ברירת המחדל (כי הוא מדויק ועקבי), אבל אפשרות "תמונות ידניות" נשמרה כמסלול חריג.</p>
+
+<h3>16.2 החלטה: הבחנה עקבית בין "הסתרה" ל"מחיקה"</h3>
+<p>לאורך כל השיחה מתקיימת חלוקה ברורה:</p>
+<ul>
+  <li><strong>הסתרה</strong> (דרך תיבת סימון) - פעולה זמינה תמיד, הפיכה לגמרי, וזו הדרך היחידה שהייתה קיימת בהתחלה להשפיע על מה מופיע בהצעה.</li>
+  <li><strong>מחיקה אמיתית</strong> (הסרה קבועה מהתבנית) - יכולת שנוספה מאוחר יותר, זמינה <strong>רק</strong> בעורך התבנית, ותמיד מלווה בבקשת אישור מפורשת.</li>
+</ul>
+<p>ההבחנה הזו לא רק טכנית - היא עיצבה את כל האופן שבו חשבו על כל תוספת חדשה: לוודא שאיש מכירות שממלא הצעה רגילה לעולם לא יכול בטעות למחוק משהו לצמיתות.</p>
+
+<h3>16.3 החלטה: הפיכת שיוך "סוג מערכת" מהחלטת-קוד קשיחה לתגית ניתנת לעריכה</h3>
+<p>בהתחלה, הקביעה אילו שורות שייכות ל"סולארי בלבד" מול "אגירה בלבד" נעשתה על ידי ניתוח תוכן כל שורה, וקוּבעה ישירות בקוד - רשימה קשיחה. כשעלה הצורך לתת למנהל אפשרות לשנות שיוך כזה דרך ממשק, זה חייב שינוי ארכיטקטוני: מעבר מרשימה קבועה בקוד לתיוג <code>data-systype</code> המחובר ישירות לכל שורה בתצוגה עצמה.</p>
+
+<h3>16.4 החלטה: מספור עוקב מבוסס סריקה, לא מונה זיכרון</h3>
+<p>בכל מקום שבו העורך צריך ליצור מזהה חדש (דף חדש, תמונה חדשה) - ההחלטה הייתה לחשב את המספר הבא על ידי <strong>סריקת מה שכבר קיים בפועל</strong> ולקיחת המספר הגבוה ביותר פלוס אחד, ולא על ידי מונה שמתחיל מאפס בכל טעינה. הסיבה: אם מישהו טוען לעריכה קובץ שכבר יוצא ונערך בעבר, מונה שמתחיל מחדש היה יוצר התנגשות מזהים.</p>
+
+<h3>16.5 החלטה: הוספת כפתורי הזזה למעלה/למטה לצד הגרירה</h3>
+<p>המשתמש ביקש גרירה-ושחרור. מעבר לזה שהתבקש, נוספה גם <strong>אפשרות חלופית</strong> - הזזה בלחיצת כפתור - מתוך שיקול עצמאי: גרירה מבוססת-דפדפן ידועה כלא אמינה במסכי מגע, וגם פחות נגישה למי שאין לו שליטת עכבר מדויקת. <strong>תוספת יזומה, לא התבקשה במפורש</strong>.</p>
+
+<h3>16.6 החלטה: תיעוד כמסמך אחד עם שני מצבי תצוגה, לא שני מסמכים</h3>
+<p>כשהתבקש תיעוד גם למשתמשים לא-טכניים וגם למפתחים, ההחלטה הייתה לבנות קובץ אחד עם מתג בין שני "מצבים" (מדריך למשתמש / תיעוד טכני), ולא שני קבצים נפרדים - כדי לשמור על "מקור אמת" אחד, אבל עם הפרדה עיצובית ברורה (פלטת צבעים שונה לכל מצב).</p>
+
+<h3>16.7 החלטה: העלאת קובץ תמונה מוטמעת ישירות בקובץ המיוצא</h3>
+<p>כשנוספה האפשרות להעלות קובץ תמונה לכל אחת מהתמונות בעורך התבנית, ההחלטה הייתה להטמיע את התמונה עצמה בתוך קובץ ה-HTML המיוצא (לא רק לשמור הפניה לקובץ במחשב המקומי). <code>adminUploadDefaultImage</code> כותב ל-<code>DEFAULT_URLS[key]</code> כ-base64, ואז <code>exportTemplate</code> משכתב את הסקריפט המיוצא עם ה-base64 המעודכן.</p>
+
+<h3>16.8 החלטה: טעינת נתונים מ-localStorage ברירת מחדל</h3>
+<p>אם נמצא JSON תקין ב-localStorage, המערכת תאכלס אוטומטית את השדות. אם לא - השדות מתמלאים בברירות מחדל המתוארות במבנה ה-JSON.</p>
+
+<hr>
+
+<h2>17. כללים, מגבלות ומקרי קצה</h2>
+
+<h3>17.1 כללים נוקשים</h3>
+<ul>
+  <li><strong>שני העמודים האחרונים של המודל הפיננסי</strong> (11-12) אסורים לחלוטין בעריכה מבנית - לא מחיקה, לא הזזה, לא הוספת בקרי ניהול. זו הייתה דרישה מפורשת וחוזרת, ונשמרה בעקביות בכל תוספת חדשה (מחיקת שורות, מחיקת דפים, גרירה) - בכל אחת מהן נוספה בדיקה ספציפית שמחריגה את שני העמודים האלה בשם.</li>
+  <li><strong>עמוד יצירת הקשר הסוגר (page-contact)</strong> לא ניתן למחיקה או להזזה - כי אין לו מבנה בקרה עצמאי משלו במערכת, ומבחינה מושגית הוא אמור להישאר תמיד העמוד החותם.</li>
+  <li><strong>כל פעולת מחיקה קבועה מלווה בבקשת אישור מפורשת</strong> - בלי יוצא מן הכלל, בכל אחד מסוגי המחיקה שנוספו (שורה, דף).</li>
+  <li><strong>כל מקום שיש בו מספור רציף או סכום מצטבר גלוי לעין, חייב להתעדכן אוטומטית כשמסתירים או מוסיפים שורה</strong> - כדי שלעולם לא יוצג "חור" במספור או סכום שגוי. זה הפך לדרישת בדיקה שיטתית: כל רשימה ממוספרת וכל טבלה במערכת נסרקה במפורש.</li>
+  <li><strong>חתימות דיגיטליות אף פעם לא חלק מהתבנית הבסיסית</strong> - לפני כל ייצוא, כל חתימה קיימת חייבת להימחק.</li>
+  <li><strong>מזהים חדשים חייבים להימנע מהתנגשות</strong> גם כשעורכים קובץ שכבר נערך ויוצא בעבר.</li>
+  <li><strong>תלות אינטרנט קיימת רק במקום אחד ומוגבל</strong> - טעינת ספריית Chart.js למודל הפיננסי. אם זה נכשל, שאר המערכת חייבת להמשיך לעבוד כרגיל.</li>
+</ul>
+
+<h3>17.2 מגבלות ידועות</h3>
+<ul>
+  <li><strong>גרירת דפים היא desktop-only.</strong> מבוססת HTML5 Drag and Drop הרגיל, שאינו אמין במסכי מגע. כפתורי ▲/▼ הם החלופה הפועלת בכל מכשיר.</li>
+  <li><strong>אין undo/redo בעורך התבנית.</strong> "↺ טען מחדש" מבטל הכל, אין ביטול צעד-בודד.</li>
+  <li><strong>תמונות שנוספו דרך "🖼️ הוסף תמונה" אין להן שדה per-quote override.</strong></li>
+  <li><strong>page-contact אינו ניתן למחיקה/הזזה.</strong></li>
+  <li><strong>אין וידוא זמן-ריצה אמיתי בדפדפן</strong> לכל התיקונים - כולם אומתו בבדיקות יחידה מבוססות-לוגיקה (מוק DOM ב-Node) ובניתוח קוד ידני, לא בהרצה חזותית בדפדפן אמיתי. <strong>מומלץ לבצע QA ידני לפני הפצה רחבה.</strong></li>
+  <li><strong>אין קובץ מזין (feeder) מתועד</strong> ל-<code>pendingQuote</code>.</li>
+  <li><strong>הקובץ המיוצא אינו יודע לקרוא בפועל</strong> את שדות סיכום התוצאה מהמחשבון (IRR, NPV, חיסכון שנתי, קיבולת אגירה) - רק טקסט חופשי.</li>
+  <li><strong>טבלת "תעריפי תעו״ז" מודפסת סטטית (Hardcoded)</strong> ואינה משפיעה על המודל הפיננסי.</li>
+  <li><strong>תלות ב-Chart.js CDN</strong> - עלולה להישבר בעבודה אופליין.</li>
+  <li><strong>שמירת תמונות</strong> - רק ברמת ה-Session.</li>
+  <li><strong>ייצוא PDF</strong> - דרך חלון הדפדפן, לא ישירות.</li>
+  <li><strong>אין תמיכה בכמה אנשים עורכים את אותה תבנית בו-זמנית</strong> - אין מנגנון ליישוב התנגשויות.</li>
+</ul>
+
+<h3>17.3 משתמש יחיד בכל רגע נתון</h3>
+<p>לא הונחה תמיכה בכמה אנשים עורכים את אותה תבנית בו-זמנית; אין מנגנון ליישוב התנגשויות במצב כזה. לא סוכם מה קורה אם שני אנשים ינסו לערוך את אותה תבנית בו-זמנית.</p>
+
+<h3>17.4 הפצת עדכוני תבנית</h3>
+<p>הונח שמישהו (אדם) יפיץ ידנית קובץ תבנית מעודכן שיוצא מעורך התבנית, לכל מי שצריך - שום דבר במערכת לא עושה את זה אוטומטית.</p>
+
+<hr>
+
+<h2>18. דברים שנפסלו במפורש</h2>
+
+<ol>
+  <li><strong>הטמעת הלוגו/תמונות כגרפיקה פנימית (SVG/Base64), במקום קישורים חיצוניים</strong> - נפסל אחרי שנבנה בפועל, ברגע שהתברר שהוא סותר צורך אמיתי במערכת חיצונית. חשוב: זה לא "אולי לא נכון", זו הייתה החלטה שבוטלה באופן מפורש ומוחלט - <strong>אין להחזיר אותה בלי לבדוק מחדש את הסטטוס של אותה מערכת חיצונית</strong>.</li>
+  <li><strong>ניסיון לזהות אוטומטית אילו שדות בטופס הם "נתוני הצעה זמניים" מול "ברירות מחדל אמיתיות של התבנית"</strong>, לצורך ניקוי אוטומטי לפני ייצוא. נשקל ונדחה לטובת פתרון פשוט וגלוי יותר: כפתור ניקוי אחד, מפורש, בשליטת אדם - מהחשש שניחוש אוטומטי יטעה במקרה כלשהו בלי שאף אחד ישים לב.</li>
+  <li><strong>בניית מערכת עריכה גנרית לגמרי</strong>, שמאפשרת לשנות כל פרט אפשרי בתבנית (צבעים, טקסטים קבועים, כל הגדרה אפשרית) - נפסל כהיקף מוגזם. ההיקף שנבחר: דפים, שורות ברשימות/טבלאות, שיוך סוג מערכת, ותמונות. כל דבר מעבר לזה מחוץ להיקף כרגע.</li>
+  <li><strong>גרירה-ושחרור למגע/מובייל</strong> - לא נפסל כרעיון, אבל נפסל כמשימה מלאה בשיחה זו; הוחלט להסתפק בפתרון החלופי (כפתורי הזזה) ולתעד את זה כמגבלה ידועה.</li>
+  <li><strong>שכפול יכולת דריסה-פר-הצעה גם לתמונות שנוספות מאוחר יותר דרך העורך</strong> - עלה כאפשרות טבעית אבל נדחה מפורשות בשלב הזה, מתוך שיקול היקף, ותועד כפער מוכר.</li>
+  <li><strong>ביטול/undo מדורג בעורך התבנית</strong> - לא נבנה. האפשרות היחידה לביטול היא טעינה מחדש מלאה של נקודת ההתחלה, שמוחקת את כל השינויים בבת אחת.</li>
+  <li><strong>Tailwind CSS</strong> - נפסל במפורש. העיצוב צריך להתבסס בלעדית על ה-CSS המקורי של הלקוח.</li>
+  <li><strong>עיצוב מחדש של כרטיסיות פיננסיות</strong> - נפסל. הלקוח דרש העתק מדויק של העימוד המקורי באקסל ולא כרטיסי "דשבורד" מעוצבים.</li>
+  <li><strong>התערבות בפונקציית <code>initDynamicEditors</code></strong> - נפסלה. עריכת הקוד המטפל בפיצ'ר סמל העיפרון הקטן אסורה - המערכת כולה בנויה סביבו.</li>
+  <li><strong>שמירת קבצים קבועה בשרת</strong> - לא הוטמעה.</li>
+  <li><strong>ייצוא ישיר ל-PDF ללא דיאלוג</strong> - לא הוטמע.</li>
+</ol>
+
+<hr>
+
+<h2>19. נקודות פתוחות ומשימות עתידיות</h2>
+
+<h3>19.1 רשימת משימות למיזוג (ממסמך PrintQuote)</h3>
+<table>
+  <tr><th>עדיפות</th><th>משימה</th><th>פירוט</th></tr>
+  <tr><td><span class="badge danger">עדיפות עליונה</span></td><td>חיווט קריאת תוצאות המחשבון</td><td>לחבר את V4 לאובייקט rawCalculatorData בפועל (IRR, NPV, חיסכון, קיבולת אגירה) במקום טקסט חופשי.</td></tr>
+  <tr><td><span class="badge warning">תוכן</span></td><td>שחזור עדות הלקוח שאבדה</td><td>להחזיר את ציטוט ה-70% חיסכון (V1) לגרסה המאוחדת, במיוחד לפניות למגזר המוסדי/דתי.</td></tr>
+  <tr><td><span class="badge warning">תוכן</span></td><td>החלטה על קטלוג המחירים המלא</td><td>לוודא שפריטי שדרוג 128/256 קוט"ש ומפרט LiFePO4/TIGO מ-V2/V3 נכללים במודע בקטלוג הסופי, או שהושמטו בכוונה.</td></tr>
+  <tr><td><span class="badge warning">טכני</span></td><td>פתרון תלות Chart.js לעבודה אופליין</td><td>הטמעה מקומית של הספרייה או מעבר ל-SVG ידני.</td></tr>
+</table>
+
+<h3>19.2 נקודות פתוחות אחרות</h3>
+<ul>
+  <li><strong>המערכת החיצונית שאמורה להזין את מחולל ההצעה מעולם לא נראתה בפועל</strong> בשיחה זו - רק הוסקה קיומה מתוך מה שהקוד הקיים מצפה לקבל. אם וכאשר היא תיבנה או תשולב, יש לוודא שהצורה המדויקת של הנתונים שהיא שולחת תואמת בדיוק למה שמחולל ההצעה מצפה לקרוא.</li>
+  <li><strong>שום דבר לא נבדק בפועל בדפדפן אמיתי</strong> - כל הבדיקות שבוצעו היו ברמת קוד, לוגיקה מבודדת, והשוואות מדויקות של תוצרים, אבל לא צפייה חזותית בהתנהגות בדפדפן חי. זה נכון במיוחד לגבי גרירה-ושחרור, ציור חתימות, והתנהגות חזותית כללית - <strong>מומלץ מאוד ביקורת ידנית לפני הפצה רחבה</strong>.</li>
+  <li><strong>אין עדיין דרך לדרוס תמונה שנוספה מאוחר יותר</strong> (דרך העורך) עבור הצעה ספציפית אחת בלבד - רק ברמת התבנית כולה.</li>
+  <li><strong>אין מנגנון גיבוי/ביטול הדרגתי בעורך התבנית</strong> - רק איפוס מלא לנקודת ההתחלה.</li>
+  <li><strong>אין אוטומציה להפצת תבנית מעודכנת</strong> לאנשי הצוות שמשתמשים בה יומיומית.</li>
+  <li><strong>תמיכה בגרירה במסכי מגע</strong> נותרה פער פתוח (נפתר חלקית באמצעות כפתורי הזזה, אבל לא נסגר במלואו).</li>
+  <li><strong>לא סוכם</strong> מה קורה אם שני אנשים ינסו לערוך את אותה תבנית בו-זמנית.</li>
+</ul>
+
+<hr>
+
+<h2>20. מונחים ומוסכמות</h2>
+
+<table>
+  <tr><th>מונח</th><th>הגדרה</th></tr>
+  <tr><td><strong>מחולל ההצעה / הקובץ הרגיל</strong></td><td>הכלי לשימוש יומיומי, למילוי הצעה בודדת עבור לקוח ספציפי.</td></tr>
+  <tr><td><strong>עורך התבנית / מצב עריכת תבנית</strong></td><td>הכלי הנפרד לעריכת הבסיס המשותף לכל ההצעות העתידיות, ושם היכולת החבויה שהוא מפעיל בתוך עותק של מחולל ההצעה.</td></tr>
+  <tr><td><strong>הסתרה</strong> מול <strong>מחיקה</strong></td><td>הסתרה היא תמיד הפיכה, זמינה בשימוש היומיומי, ופועלת דרך תיבת סימון. מחיקה היא תמיד קבועה, זמינה רק בעורך התבנית, ותמיד מלווה באישור.</td></tr>
+  <tr><td><strong>סוג מערכת</strong></td><td>הסיווג התלת-אפשרי (סולארי בלבד / אגירה בלבד / סולארי ואגירה יחד) שחל הן על ההצעה כולה והן על שורה בודדת. "משותף" = לא מושפע כלל.</td></tr>
+  <tr><td><strong>עמודי המודל הפיננסי</strong></td><td>שני העמודים הסוגרים (החישוב החי, והגרפים/תעריפים) שמוחרגים לחלוטין מכל יכולת עריכה מבנית.</td></tr>
+  <tr><td><strong>עמוד יצירת הקשר</strong></td><td>העמוד האחרון בהצעה, קבוע ולא ניתן לשינוי מבני.</td></tr>
+  <tr><td><strong>תבנית</strong> מול <strong>הצעה</strong></td><td>תבנית היא המבנה הבסיסי הניתן לשימוש חוזר; הצעה היא מופע אחד, ממולא וספציפי ללקוח, שנוצר מהתבנית.</td></tr>
+  <tr><td><strong>נתוני דוגמה</strong></td><td>מידע שהוזן לצורך בדיקה בזמן עריכת תבנית (שם לקוח, חתימות וכו') שצריך להיות מנוקה במפורש לפני ייצוא.</td></tr>
+  <tr><td><strong>pendingQuote</strong></td><td>אובייקט JSON ב-localStorage שמוזן על ידי מערכת חיצונית, וממנו מחולל ההצעה קורא נתונים.</td></tr>
+  <tr><td><strong>DEFAULT_URLS</strong></td><td>אובייקט JS בראש הסקריפט שמכיל את כתובות ברירת המחדל לתמונות.</td></tr>
+  <tr><td><strong>ADMIN_MODE</strong></td><td>דגל <code>window.ADMIN_MODE</code> שכשהוא <code>true</code>, חושף יכולות ניהול (מחיקה, גרירה, שיוך, ניהול תמונות).</td></tr>
+</table>
+
+<hr>
+
+<h2>21. מדריך הרחבה - "איך מוסיפים..."</h2>
+
+<h3>21.1 שדה חדש למחשבון הפיננסי</h3>
+<ol>
+  <li>הוסיפו <code>&lt;input id="inp-xxx"&gt;</code> בתוך בלוק ה-<code>&lt;details&gt;</code> של "11. מודל פיננסי", עם <code>oninput="updateCalculations()"</code></li>
+  <li>קראו את הערך בתוך <code>updateCalculations()</code>: <code>const xxx = parseFloat(document.getElementById('inp-xxx').value) || 0;</code></li>
+  <li>שלבו בנוסחה הרלוונטית בתוך לולאת השנים</li>
+</ol>
+
+<h3>21.2 רשימה/טבלה חדשה שניתנת להוספת שורות</h3>
+<ol>
+  <li>ב-HTML: מבנה קבוע (tr/li) + <code>&lt;tbody id="tbody-xxx"&gt;</code> או <code>&lt;ol id="ol-xxx-list"&gt;</code></li>
+  <li>בלוח הבקרה: <code>&lt;div class="item-toggle-list" id="tgl-xxx"&gt;</code> עם toggle-row לכל שורה קיימת, וכפתור <code>&lt;button class="btn-add-item" onclick="addXxxRow()"&gt;</code> בסוף</li>
+  <li>ב-JS: אם זו רשימת ol רגילה - שורה אחת שקוראת ל-<code>addOlListItem(...)</code>. אחרת - פונקציה ייעודית לפי הדוגמאות הקיימות</li>
+  <li>אם יש עמודת מספור/סכום מצטבר - זכרו לחבר <code>renumberTable</code>/<code>recomputePaymentCumulative</code></li>
+</ol>
+
+<h3>21.3 דף חדש קבוע</h3>
+<ol>
+  <li>הוסיפו <code>&lt;div id="page-xxx" class="page page-preview-shadow"&gt;</code> בתוך <code>.preview-area</code>, במיקום הרצוי</li>
+  <li>הוסיפו <code>&lt;details&gt;&lt;summary data-target="page-xxx"&gt;...&lt;/summary&gt;...&lt;/details&gt;</code> בסיידבר, באותו סדר יחסי</li>
+  <li>אם רוצים שהדף יהיה נגיש למחיקה/גרירה בעריכת תבנית - אין צורך בקוד נוסף, <code>initPageAdminControls</code> ו-<code>initPageDragDropContainer</code> מזהים כל <code>details &gt; summary[data-target]</code> אוטומטית (מלבד page-finance המוחרג בשמו המפורש)</li>
+</ol>
+
+<h3>21.4 שינוי הכללים של סיווג סוג מערכת</h3>
+<p>ערכו ישירות את <code>data-systype="solar"|"storage"</code> על ה-<code>&lt;div class="toggle-row"&gt;</code> הרצוי ב-HTML (או דרך בורר הסיווג בעריכת תבנית - אין צורך לגעת בקוד כלל).</p>
+
+<hr>
+
+<h2>22. טבלת מפתח + אינדקס פונקציות</h2>
+
+<h3>22.1 שורות מתויגות data-systype</h3>
+<table>
+  <tr><th>סוג</th><th>מזהי checkbox</th></tr>
+  <tr><td>solar</td><td><code>chk-m-1</code>, <code>chk-row-comp-1</code>, <code>chk-row-comp-4</code>, <code>chk-row-war-1</code>, <code>chk-row-ex-1</code>, <code>chk-row-ex-6</code>, <code>chk-row-ex-8</code>, <code>chk-row-pay-3</code></td></tr>
+  <tr><td>storage</td><td><code>chk-m-2</code>, <code>chk-row-comp-3</code>, <code>chk-row-war-3</code>, <code>chk-row-ex-11</code>, <code>chk-row-ex-12</code></td></tr>
+</table>
+
+<h3>22.2 אינדקס פונקציות מלא (סדר הופעה בקובץ)</h3>
+<table>
+  <tr><th>קטגוריה</th><th>פונקציות</th></tr>
+  <tr><td>תמונות</td><td><code>injectLogo()</code>, <code>uploadImage(input, targetIds)</code>, <code>updateImageSrc(targetId, path)</code>, <code>renderImageUrlFields()</code>, <code>buildImageField(key, label, applyFn, removable)</code>, <code>adminUploadDefaultImage(key, inputEl, applyFn)</code>, <code>addImageToPage(pageId)</code>, <code>removeExtraImage(key)</code></td></tr>
+  <tr><td>מודל פיננסי</td><td><code>setFinanceMode(mode)</code>, <code>handleRegTypeChange(type)</code>, <code>npv(rate, cashflows)</code>, <code>irr(cashflows)</code>, <code>onCostManualInput()</code>, <code>updateCalculations()</code>, <code>renderInteractiveCharts(...)</code></td></tr>
+  <tr><td>עורכי תוכן</td><td><code>initDynamicEditors()</code>, <code>attachRowEditor(row)</code>, <code>syncAllPreviewFields()</code>, <code>syncText(inputId, targetId)</code></td></tr>
+  <tr><td>ADMIN_MODE</td><td><code>initAdminMode()</code>, <code>injectAdminRowControls(row, targetId)</code>, <code>initPageAdminControls()</code>, <code>initPageDragDropContainer()</code>, <code>movePageInSidebar(details, direction)</code>, <code>syncPageOrderToPreview()</code>, <code>addCustomPage()</code>, <code>injectAdminPanel()</code></td></tr>
+  <tr><td>ייצוא</td><td><code>resetSampleData()</code>, <code>exportTemplate()</code></td></tr>
+  <tr><td>הוספת שורות</td><td><code>createToggleRow(container, chkId, targetId, labelText, extraOnchange)</code>, <code>addOlListItem(olId, tglId, idPrefix, labelPrefix, defaultText)</code>, <code>addMetricRow()</code>, <code>addTestimonialRow()</code>, <code>addFeatureRow()</code>, <code>addPlanRow()</code>, <code>addLicRow()</code>, <code>addComponentRow()</code>, <code>addMonitorRow()</code>, <code>addExclusionRow()</code>, <code>addWarrantyRow()</code>, <code>addPaymentRow()</code>, <code>addNoteRow()</code></td></tr>
+  <tr><td>toggleSec</td><td><code>toggleSec(elementId, isChecked)</code></td></tr>
+  <tr><td>עקביות</td><td><code>renumberTable(tbodyId, cellIndex)</code>, <code>recomputePaymentCumulative()</code></td></tr>
+  <tr><td>סוג מערכת</td><td><code>setCheckboxState(chk, checked)</code>, <code>applySystemType(type)</code></td></tr>
+  <tr><td>חתימות</td><td><code>initSignaturePad(canvasId)</code>, <code>clearSignature(canvasId)</code></td></tr>
+</table>
+
+<hr>
+
+<h2>23. ממשקים מול שאר המערכת</h2>
+
+<h3>23.1 מה מחולל ההצעה מצפה לקבל (קלט)</h3>
+<ul>
+  <li>באופן אופציונלי, חבילת נתונים מוכנה מראש שמונחת (על ידי מערכת חיצונית, לפני הפתיחה) במקום אחסון זמני בדפדפן - כוללת פרטי לקוח/פרויקט, תמונות שנבחרו, ואם בוצע כבר חישוב פיננסי חיצוני: גם את התוצאות המוכנות וגם את כל ההנחות הגולמיות שמאחוריהן.</li>
+  <li>כתובות ברירת-מחדל לתמונות ולוגו, שמצופה שיהיו זמינות בכתובת חיצונית קבועה (אלא אם נדרסות ידנית).</li>
+</ul>
+
+<h3>23.2 מה מחולל ההצעה מחזיר (פלט)</h3>
+<ul>
+  <li>בסופו של דבר, מסמך מודפס או PDF - תוצר סטטי, לא-אינטראקטיבי, מיועד להישלח ללקוח. שום מידע לא זורם חזרה ממנו למערכת אחרת.</li>
+</ul>
+
+<h3>23.3 מה עורך התבנית מצפה לקבל</h3>
+<ul>
+  <li>עותק תקין של קובץ מחולל ההצעה (מוטמע מראש בתוכו, או נטען מהמחשב).</li>
+</ul>
+
+<h3>23.4 מה עורך התבנית מחזיר</h3>
+<ul>
+  <li>קובץ HTML חדש, שהוא בעצם עותק חדש ותקין לגמרי של מחולל ההצעה, עם כל השינויים שנערכו כברירת המחדל שלו. הפצת הקובץ הזה הלאה היא באחריות אנושית, מחוץ למערכת עצמה.</li>
+</ul>
+
+<p>בשום שלב שום חלק מהמערכת לא שולח מידע החוצה ברשת, לא פונה לשירות חיצוני (מלבד טעינת ספריית הגרפים), ולא מדבר עם שרת/בסיס נתונים. כל המצב קיים רק בתוך הכרטיסייה הפתוחה בדפדפן, ונעלם כשסוגרים אותה - אלא אם הודפס/יוצא במפורש.</p>
+
+<hr>
+
+<h2>24. אופי העבודה ואימות</h2>
+
+<p>לאורך כל הפרויקט הושם דגש חוזר על <strong>אימות בפועל, לא הנחה</strong>. בכל שלב משמעותי - בין אם זה שינוי בקוד קיים, מנגנון חדש, או שיטת הטמעה - בוצעה בדיקה ממשית (הרצת קוד מבודד שמדמה את ההתנהגות הצפויה, השוואת תוצרים תו-בתו, בדיקת מקרי-קצה נקודתיים) לפני שהתוצר נחשב מוכן.</p>
+
+<p>זה לא היה טקס - זה תפס בפועל כמה טעויות אמיתיות לפני שהגיעו למשתמש:</p>
+<ul>
+  <li>זיהוי בעיה שהייתה גורמת לתקלה שקטה (בלי הודעת שגיאה גלויה) בשמירת שינויים מסוימים.</li>
+  <li>זיהוי מקרה שבו לחיצה על כפתור פשוט הייתה, במקרה ספציפי, זזה בטעות חלק מהתבנית שאמור היה להישאר קבוע.</li>
+  <li>זיהוי הבדל מבני נסתר בין עמוד אחד לכל שאר העמודים, שהיה עלול לגרום לתוכן חדש "לברוח" מגבולות הדף.</li>
+</ul>
+
+<p>המשמעות המעשית לעמית שממשיך מכאן: אפשר לסמוך במידה גבוהה יחסית על הלוגיקה הפנימית (היא נבדקה ביסודיות), אבל עדיין שווה זהירות סביב כל דבר שתלוי בהתנהגות חזותית בדפדפן אמיתי, שם לא בוצעה צפייה ישירה.</p>
+
+<hr>
+
+<h2>25. שאלות נפוצות ופתרון תקלות (מדריך למשתמש)</h2>
+
+<h3>25.1 התמונות לא נטענות / מופיעות כריבוע שבור</h3>
+<p>תמונות ברירת המחדל (לוגו, תמונת שער וכו') מגיעות מקישורים חיצוניים. אם הקישור השתנה או ההרשאות שונו, התמונה לא תיטען. פתרון: בכלי עריכת התבנית, פאנל התמונות, מעלים קובץ ישירות במקום להסתמך על קישור חיצוני - כך התמונה מוטמעת בתוך הקובץ עצמו ולא תלויה בכלום.</p>
+
+<h3>25.2 הגרפים בעמוד 12 לא מופיעים</h3>
+<p>סימן שאין חיבור לאינטרנט כרגע (הגרפים דורשים ספרייה חיצונית בטעינה הראשונה). כל שאר הנתונים בעמוד ממשיכים לעבוד כרגיל.</p>
+
+<h3>25.3 ביטלתי סימון של שורה בטעות - איך מחזירים?</h3>
+<p>פשוט מסמנים את התיבה בחזרה. ביטול סימון רק מסתיר, לא מוחק. מחיקה אמיתית אפשרית רק דרך כלי עריכת התבנית (🗑️), ותמיד עם בקשת אישור.</p>
+
+<h3>25.4 איך מוסיפים תמונה שלא הייתה קיימת מלכתחילה?</h3>
+<p>רק דרך כלי עריכת התבנית: כפתור 🖼️ ליד כל דף. בקובץ הרגיל (היומיומי) אי אפשר להוסיף שדות תמונה חדשים - רק למלא את הקיימים.</p>
+
+<h3>25.5 מה קורה אם סוגרים את הדפדפן בלי לייצא/להדפיס?</h3>
+<p>כל המידע שהוזן הולך לאיבוד - הקובץ עצמו לא משתנה. זה נכון גם למחולל ההצעה וגם לעורך התבנית.</p>
+
+<h3>25.6 אפשר לפתוח את שני הקבצים בו-זמנית?</h3>
+<p>כן, אין שום בעיה לפתוח כל אחד מהם בכרטיסייה נפרדת בדפדפן - הם לא משפיעים זה על זה.</p>
+
+<hr>
+
+<h2>26. מקורות המסמך</h2>
+
+<p>מסמך זה מבוסס על מיזוג 6 מסמכי מקור:</p>
+
+<table>
+  <tr><th>#</th><th>שם המסמך</th><th>תפקיד במיזוג</th></tr>
+  <tr><td>1</td><td>תיעוד מלא - מחולל הצעות המחיר של בראשית סולאר.html</td><td>התיעוד הטכני המקיף ביותר - מבנה, פונקציות, מזהים, תיקוני באגים</td></tr>
+  <tr><td>2</td><td>איחוד 4 קבצים לקובץ אחד מושלם - תקציר שיחה.md</td><td>תיעוד ה"למה" - היסטוריה, החלטות, דברים שנפסלו, הקשר</td></tr>
+  <tr><td>3</td><td>מחולל הצעות מחיר (PrintQuote) — בראשית סולאר.html</td><td>סקירת 4 דורות, תוכן שיווקי שאותר, קטלוג מחירים, פערי אינטגרציה</td></tr>
+  <tr><td>4</td><td>מסמך אפיון והעברת פרויקט - מחולל הצעות מחיר בראשית סולאר.html</td><td>תיעוד handover - תיאור כללי, חישובים, תיקונים</td></tr>
+  <tr><td>5</td><td>מסמך אפיון וסיכום פרויקט - מערכת הצעות מחיר בראשית סולאר.html</td><td>אפיון מפורט של המודל הפיננסי - נוסחאות, שדות, טבלאות</td></tr>
+  <tr><td>6</td><td>מסמך סיכום פרויקט - מחולל הצעות מחיר אינטראקטיבי (בראשית סולאר).html</td><td>תיאור ראשוני של המערכת - UI, חישובים פשוטים, תיקוני SVG</td></tr>
+</table>
+
+<p><strong>הערה:</strong> רכיבי תיעוד של המסמכים השונים שמתייחסים לאותו נושא אך נוסחו אחרת מוצגים זה לצד זה תחת "גרסה א'" / "גרסה ב'" לשמירת היסטוריה וסתירות. במקומות שבהם תוקנה גרסה ישנה לטובת חדשה, הדבר מצוין במפורש עם הקשר מלא.</p>
+
+<hr>
+
+<footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #d0dde6; text-align: center; color: #5a6b73; font-size: 9pt;">
+מסמך השוואה ואפיון-על · מחולל הצעות המחיר · בראשית סולאר<br>
+מבוסס על 6 מסמכי מקור שמוזגו לתוך מסמך אחד · יולי 2026
+</footer>
+
+</body>
+</html>

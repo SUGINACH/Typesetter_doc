@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>דוח ביקורת קוד וארכיטקטורה — מערכת בראשית סולאר (Deep-Dive Code Audit)</title>
+<style>
+:root{
+  --paper:#F7F5F0; --paper-alt:#EFEBE0; --card:#FFFFFF;
+  --ink:#1C2530; --ink-soft:#4B5768; --ink-faint:#8592A3;
+  --primary:#1A3A5F; --primary-light:#2C5583; --primary-pale:#E8EEF4;
+  --accent:#F39C12; --accent-deep:#B9770E;
+  --success:#1E8449; --success-bg:#EAF6EE; --success-line:#B7E0C4;
+  --danger:#A9401F; --danger-bg:#FBEEE7; --danger-line:#E8C3AE;
+  --warning:#8A6D1F; --warning-bg:#FDF4E2; --warning-line:#F0DBA0;
+  --decision:#2C5583; --decision-bg:#EDF2F8; --decision-line:#C3D2E3;
+  --add:#2C7A2C; --add-bg:#E6F4E6;
+  --remove:#A9401F; --remove-bg:#FBEEE7;
+  --modify:#8A6D1F; --modify-bg:#FDF4E2;
+  --line:#E3DFD3;
+  --mono:'JetBrains Mono',ui-monospace,'Courier New',monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Segoe UI','Assistant',sans-serif; direction:rtl; text-align:right;
+  line-height:1.75; font-size:15.5px; padding:30px 20px;
+}
+.wrap{max-width:1100px; margin:0 auto; background:var(--card); padding:40px 50px; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+h1{color:var(--primary); border-bottom:3px solid var(--accent); padding-bottom:14px; font-size:2rem;}
+h2{color:var(--primary); border-bottom:2px solid var(--primary-pale); padding-bottom:10px; margin-top:42px; font-size:1.55rem;}
+h3{color:var(--primary-light); margin-top:28px; font-size:1.22rem; border-right:4px solid var(--primary-pale); padding-right:12px;}
+h4{color:var(--ink); margin-top:18px; font-size:1.05rem;}
+p{margin:0 0 12px;}
+strong{color:var(--primary);}
+code{background:var(--paper-alt); padding:2px 6px; border-radius:3px; font-size:0.88em; color:var(--primary-light); font-family:var(--mono);}
+pre{background:var(--primary); color:#E7EEF5; padding:16px; border-radius:6px; overflow-x:auto; direction:ltr; text-align:left; font-size:12.5px; line-height:1.6;}
+pre code{background:none; color:inherit; padding:0; font-size:inherit;}
+table{width:100%; border-collapse:collapse; margin:16px 0; font-size:13.5px;}
+th{background:var(--primary); color:#F3F0E6; text-align:right; padding:9px 11px; font-weight:600;}
+td{padding:9px 11px; border-bottom:1px solid var(--line); vertical-align:top;}
+tr:nth-child(even) td{background:var(--paper-alt);}
+.badge{display:inline-block; padding:2px 9px; border-radius:100px; font-size:11.5px; font-weight:600; margin:2px; font-family:var(--mono);}
+.badge.add{background:var(--add); color:white;}
+.badge.remove{background:var(--remove); color:white;}
+.badge.modify{background:var(--modify); color:white;}
+.badge.warning{background:var(--danger); color:white;}
+.badge.success{background:var(--success); color:white;}
+.badge.note{background:var(--paper-alt); color:var(--ink-soft); border:1px solid var(--line);}
+.badge.base{background:var(--accent-deep); color:white;}
+.badge.recommend{background:var(--decision); color:white;}
+.badge.regression{background:#6B0F0F; color:white;}
+.badge.bug{background:#8B0000; color:white;}
+
+.card{background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 18px; margin:14px 0; border-inline-start:4px solid var(--ink-faint);}
+.card.success{border-inline-start-color:var(--success); background:var(--success-bg);}
+.card.danger{border-inline-start-color:var(--danger); background:var(--danger-bg);}
+.card.warning{border-inline-start-color:var(--warning); background:var(--warning-bg);}
+.card.decision{border-inline-start-color:var(--decision); background:var(--decision-bg);}
+.card.add{border-inline-start-color:var(--add); background:var(--add-bg);}
+.card.remove{border-inline-start-color:var(--remove); background:var(--remove-bg);}
+.card.modify{border-inline-start-color:var(--modify); background:var(--modify-bg);}
+
+.contradiction{background:#FFF5E6; border:1px solid #F0DBA0; border-inline-start:4px solid #B9770E; padding:14px 18px; border-radius:6px; margin:14px 0;}
+.contradiction h4{margin-top:0; color:#8A5500;}
+
+.toc{background:var(--paper-alt); padding:18px 22px; border-radius:6px; margin:20px 0;}
+.toc ol{columns:2; column-gap:28px; margin:0; padding-inline-start:22px;}
+.toc a{color:var(--primary); text-decoration:none; font-weight:600;}
+.toc a:hover{color:var(--accent-deep);}
+hr{border:0; height:1px; background:var(--line); margin:28px 0;}
+.checklist{background:#F0F8FF; border:1px solid #B7D4F0; border-radius:6px; padding:18px 22px; margin:18px 0;}
+.checklist h3{margin-top:0; color:var(--decision); border-right:none; padding-right:0;}
+.checklist ul{list-style:none; padding:0;}
+.checklist li{padding:6px 0 6px 28px; position:relative; border-bottom:1px dashed #D8E6F4;}
+.checklist li:before{content:"☐"; position:absolute; right:0; top:6px; font-size:1.4em; color:var(--decision); font-weight:bold;}
+.checklist li strong{color:var(--primary); display:block; margin-bottom:2px;}
+.checklist li code{font-size:0.85em;}
+
+.version-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px; margin:14px 0;}
+.version-grid div{padding:10px 14px; background:var(--paper-alt); border-radius:6px; border-inline-start:3px solid var(--ink-faint);}
+.version-grid div b{display:block; color:var(--primary); margin-bottom:4px; font-size:0.95em;}
+
+.legend{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; padding:10px; background:var(--paper-alt); border-radius:6px; font-size:13px;}
+.legend strong{margin-left:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>דוח ביקורת קוד וארכיטקטורה — מערכת בראשית סולאר</h1>
+<p><strong>סוג מסמך:</strong> Deep-Dive Code Audit & Drift Analysis &nbsp;|&nbsp; <strong>היקף:</strong> 4 קבצי JS + 8 קבצי HTML (8 קבצי htm בינאריים — לא נותחו) &nbsp;|&nbsp; <strong>שיטה:</strong> השוואה אטומית + זיהוי דריפט + מטריצת איחוד</p>
+
+<div class="toc">
+<strong>תוכן עניינים</strong>
+<ol>
+<li><a href="#exec">תקציר מנהלים והחלטת בייס</a></li>
+<li><a href="#files">מיפוי קבצים וגרסאות</a></li>
+<li><a href="#L1">שכבה 1: Backend (Google Apps Script)</a></li>
+<li><a href="#L2">שכבה 2: Data Ingestion (getInitialData)</a></li>
+<li><a href="#L3">שכבה 3: Data Persistence (saveCustomerData)</a></li>
+<li><a href="#L4">שכבה 4: Data Retrieval (getCustomerData)</a></li>
+<li><a href="#L5">שכבה 5: Frontend Bootstrap & State</a></li>
+<li><a href="#L6">שכבה 6: UI / DOM Manipulation</a></li>
+<li><a href="#L7">שכבה 7: Math Engines (חישובים פיננסיים)</a></li>
+<li><a href="#L8">שכבה 8: State Management (כרטיסיות, twins, calculatorDataPulled)</a></li>
+<li><a href="#L9">שכבה 9: Calculator Integration</a></li>
+<li><a href="#L10">שכבה 10: Image / Media Pipeline</a></li>
+<li><a href="#L11">שכבה 11: Error Handling & UX Safety</a></li>
+<li><a href="#L12">שכבה 12: Print / Export Layer</a></li>
+<li><a href="#matrix">מטריצת השוואה ראשית (The Master Matrix)</a></li>
+<li><a href="#contradictions">סתירות לוגיות / מתמטיות</a></li>
+<li><a href="#drift">Drift Analysis — סיווג פערים</a></li>
+<li><a href="#recommend">המלצות רכיבים שאינם בבייס</a></li>
+<li><a href="#merge">אסטרטגיית מיזוג (Merge Strategy)</a></li>
+<li><a href="#checklist">Checklist למתכנת הכותב מחדש</a></li>
+</ol>
+</div>
+
+<div class="legend">
+<strong>מקרא:</strong>
+<span class="badge add">נוסף</span>
+<span class="badge remove">הוסר</span>
+<span class="badge modify">שונה</span>
+<span class="badge bug">באג</span>
+<span class="badge regression">רגרסיה</span>
+<span class="badge base">בייס</span>
+<span class="badge recommend">מומלץ להוסיף</span>
+</div>
+
+<hr>
+
+<h2 id="exec">1. תקציר מנהלים והחלטת בייס</h2>
+
+<h3>1.1 גרסת הבייס המומלצת</h3>
+<div class="card success">
+<strong>🔷 Backend (<code>code.js</code>):</strong> הקובץ <code>code.js</code> (הגרסה המורחבת) — כולל: ניתוב form+calculator+print+index, 28 עמודות, backward compatibility לכרטיסיות, ופונקציית מיגרציה <code>oneTimeSetup_v2</code>.<br><br>
+<strong>🔷 Frontend (Index.html):</strong> <code>מערכת הצעות מחיר וניתוח אנרגטי - בראשית סולאר (4).html</code> — הגרסה היחידה שמכילה את <strong>כל</strong> השכבות: כרטיסיות (שיפור 1), מנוע הצעות (שיפור 2), loader עם timeout, error handling, twin fields, isClientSaved, image pipeline מלא, ושמירה דו-כיוונית לכרטיסיות פעילות + 5 עמודות תאימות.
+</div>
+
+<h3>1.2 סיבות לבחירה</h3>
+<table>
+<tr><th>שכבה</th><th>הזוכה</th><th>למה</th></tr>
+<tr><td>Backend</td><td><code>code.js</code></td><td>יחיד שכולל את <code>oneTimeSetup_v2</code>, את 28 העמודות החדשות (כרטיסיות + אינדקס פעיל + עוצמת ממיר), ואת backward compatibility ללקוחות שנוצרו לפני גרסת הכרטיסיות.</td></tr>
+<tr><td>Frontend</td><td><code>(4).html</code></td><td>היחיד שמימש את שני השיפורים מהתקציר. שאר הגרסאות חסרות את <code>systemCards</code>, את <code>runSuggestionEngine</code>, את <code>calculatorDataPulled</code>, את twins, ואת רוב הגנות ה-UX.</td></tr>
+</table>
+
+<h3>1.3 רכיבים שאינם בבייס אך מומלצים להזרים</h3>
+<div class="card decision">
+<ol>
+<li><strong>מ-Calculator-View המובנה (קובץ 2 בלבד):</strong> לוגיקת ה-TransferDataToQuote המקורית שמעבירה את כל שבעת שדות המחשבון <em>פעם אחת</em> בלי להסתמך על <code>localStorage</code> — שימושי כ-fallback אם המחשבון נפתח באותו חלון.</li>
+<li><strong>מחישוב ה-IRR/NPV (קובץ 2):</strong> קוד הסימולציה הפיננסית המלאה (<code>pmt</code>, <code>npv</code>, <code>irr</code>, <code>runFinancialModel</code>) — אם בעתיד רוצים לחשב כדאיות בצד הלקוח במקום להעביר מהמחשבון.</li>
+<li><strong>מ-Excel Export (קובץ 2):</strong> כפתור "ייצא דוחות לאקסל" שמשתמש ב-XLSX — אם המשתמש צריך גיליונות מוכנים להורדה.</li>
+</ol>
+</div>
+
+<hr>
+
+<h2 id="files">2. מיפוי קבצים וגרסאות</h2>
+
+<h3>2.1 קבצי Backend (Google Apps Script)</h3>
+<div class="version-grid">
+<div><b>code.js</b><span class="badge base">בייס</span><br>28 עמודות, תאימות אחורה, oneTimeSetup_v2, ניתוב form+calculator</div>
+<div><b>code (2).js</b><br>25 עמודות, ניתוב print+calculator+index בלבד (חסר form)</div>
+<div><b>Code (3).js</b><br>25 עמודות, ניתוב print+calculator+index (כמעט זהה ל-code (2))</div>
+</div>
+
+<h3>2.2 קבצי Frontend (Index.html)</h3>
+<div class="version-grid">
+<div><b>בראשית סולאר - ניהול הצעות.html</b><span class="badge remove">גרסה ראשונית</span><br>Loader, parseCatalog, sections חלקיים</div>
+<div><b>מערכת הצעות מחיר - (1).html</b><br>3 תתי-סקשנים (חסר install/addons), toggle גנרי</div>
+<div><b>מערכת הצעות מחיר.html</b><br>5 תתי-סקשנים, saveDataToSheet(isNew), ללא תמונות</div>
+<div><b>... וניתוח אנרגטי.html</b><br>calcView מובנה, ללא תמונות לקוח</div>
+<div><b>... וניתוח אנרגטי (1).html</b><br>חלון חיצוני, תמונות, formula "גסה"</div>
+<div><b>... וניתוח אנרגטי (2).html</b><br>calcView מובנה + תמונות, ללא IRR/NPV בצד הלקוח</div>
+<div><b>... וניתוח אנרגטי (4).html</b><span class="badge base">בייס</span><br>systemCards, runSuggestionEngine, loader+timeout, isClientSaved, twins</div>
+</div>
+
+<h3>2.3 קבצים שלא נותחו</h3>
+<p>קבצי <code>sheet001.htm</code> עד <code>sheet008.htm</code> (8 קבצים) סופקו בפורמט בינארי שאינו UTF-8 תקין (גדלים 10KB-25KB). לא ניתן היה לחלץ מהם תוכן טקסטואלי — ככל הנראה מדובר בייצואי HTML של גיליונות Sheets שלא תורמים לניתוח הקוד.</p>
+
+<hr>
+
+<h2 id="L1">3. שכבה 1: Backend (Google Apps Script)</h2>
+
+<h3>3.1 ניתוב <code>doGet(e)</code></h3>
+<div class="card modify">
+<strong>התפתחות:</strong> כל הגרסאות תומכות ב-<code>?page=print</code> ו-<code>?page=calculator</code>. ה-<code>code.js</code> הוא היחיד שמוסיף <code>?page=form</code> עם <code>createTemplateFromFile</code> (Template, לא HtmlOutput — כדי להזריק <code>clientIdParam</code> בצד השרת).
+</div>
+
+<table>
+<tr><th>פרמטר</th><th>code (2).js</th><th>code.js <span class="badge base">בייס</span></th><th>Code (3).js</th></tr>
+<tr><td><code>?page=print</code></td><td>✓ Template</td><td>✓ Template</td><td>✓ Template</td></tr>
+<tr><td><code>?page=calculator</code></td><td>✓ HtmlOutput</td><td>✓ HtmlOutput</td><td>✓ HtmlOutput</td></tr>
+<tr><td><code>?page=form</code></td><td><span class="badge bug">חסר!</span></td><td>✓ Template + clientIdParam</td><td><span class="badge bug">חסר!</span></td></tr>
+<tr><td>Default = Index</td><td>✓</td><td>✓</td><td>✓</td></tr>
+</table>
+
+<div class="card danger">
+<strong>באג קריטי שאומת ב-code (2) ו-Code (3):</strong> שתי גרסאות אלה מחזירות את <code>Index</code> עבור <code>?page=form</code> — מה שאומר שהלחיצה על "פתח טופס נתונים" תחזיר את ה-CRM במקום את <code>Form.html</code>. רק <code>code.js</code> מטפל בזה נכון.
+</div>
+
+<h3>3.2 פונקציות עזר</h3>
+<table>
+<tr><th>פונקציה</th><th>code (2)</th><th>code.js <span class="badge base">בייס</span></th><th>Code (3)</th></tr>
+<tr><td><code>getWebAppUrl()</code></td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td><code>getTariffFromCompany()</code></td><td>✓ (stub 70.15₪)</td><td>✓ (stub 70.15₪)</td><td>✓ (stub 70.15₪)</td></tr>
+<tr><td><code>oneTimeSetup_v2()</code></td><td><span class="badge remove">חסר</span></td><td>✓ (מיגרציה עמודות 24-28 + עמודות מחירון)</td><td><span class="badge remove">חסר</span></td></tr>
+</table>
+
+<div class="card warning">
+<strong>⚠️ הערה חשובה על <code>getTariffFromCompany</code>:</strong> בכל שלוש הגרסאות הפונקציה מחזירה ערך קבוע ב-<code>try</code> (70.15₪ קבוע, 44.8-123.3 תעו"ז). ה-<code>catch</code> לעולם לא יורץ כי ה-<code>try</code> עצמו לא יכול לזרוק שגיאה. <span class="badge bug">דפוס קוד מת (Dead Code)</span> — מומלץ להסיר את ה-try/catch.
+</div>
+
+<hr>
+
+<h2 id="L2">4. שכבה 2: Data Ingestion (getInitialData)</h2>
+
+<h3>4.1 קריאת המחירון (catalog)</h3>
+<p>כל שלוש הגרסאות זהות כאן. ההבדל היחיד הוא בעיבוד עמודת התמונה:</p>
+<pre><code>// Shared logic across all 3 code files
+const imgColIdx = catalogHeaders.findIndex(
+  h => h.includes('תמונ') || h.includes('לוגו') || h.toLowerCase().includes('image')
+);
+catalogValues.map(row => ({
+  ...row,
+  image: convertCellImageToBase64(row[imgColIdx])
+}))</code></pre>
+
+<h3>4.2 קריאת הגדרות</h3>
+<table>
+<tr><th>מקור</th><th>code (2)</th><th>code.js <span class="badge base">בייס</span></th><th>Code (3)</th></tr>
+<tr><td>עמודה "מקורות חשמל"</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>עמודה "צרכנים"</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>fallback defaults</td><td>['חברת החשמל','חשמל מתחדש','אחר']</td><td>זהה</td><td>זהה</td></tr>
+</table>
+<p>ה-<code>globalCatalog</code> מועבר לכל ה-HTML דרך <code>google.script.run.getInitialData()</code>. ההבדל העיקרי בצד ה-Frontend הוא שגרסה (4) <strong>מסננת</strong> תמונות ב-<code>refreshImageDropdowns</code>:</p>
+<pre><code>// ב-Frontend, רק גרסה (4) + (1) + (2) בודקות typeof:
+if (item.image &amp;&amp; typeof item.image === 'string' &amp;&amp; item.image.trim() !== '') {
+  sel.innerHTML += `&lt;option value="${item.image}"&gt;${item['דגם']} (שיטס)&lt;/option&gt;`;
+}</code></pre>
+
+<div class="card success">
+<strong>הגנה חשובה:</strong> הבדיקה <code>typeof item.image === 'string'</code> קריטית כיוון ש-<code>image</code> עלול להיות <code>null</code>, <code>undefined</code>, או אובייקט <code>{...}</code> ריק — במיוחד אם התא ריק או אם ההמרה ב-Apps Script נכשלה בשקט.
+</div>
+
+<hr>
+
+<h2 id="L3">5. שכבה 3: Data Persistence (saveCustomerData)</h2>
+
+<h3>5.1 מבנה העמודות — ההבדל הקריטי</h3>
+<table>
+<tr><th>עמודה</th><th>code (2) / Code (3) [25 עמודות]</th><th>code.js <span class="badge base">28 עמודות</span></th></tr>
+<tr><td>1</td><td>clientId</td><td>clientId</td></tr>
+<tr><td>2</td><td>clientName</td><td>clientName</td></tr>
+<tr><td>3</td><td>clientAddress</td><td>clientAddress</td></tr>
+<tr><td>4</td><td>clientContact</td><td>clientContact</td></tr>
+<tr><td>5</td><td>clientPhone</td><td>clientPhone</td></tr>
+<tr><td>6</td><td>projectTitle</td><td>projectTitle</td></tr>
+<tr><td>7</td><td>quoteDate</td><td>quoteDate</td></tr>
+<tr><td>8</td><td>roofArea</td><td>roofArea</td></tr>
+<tr><td>9</td><td>form4</td><td>form4</td></tr>
+<tr><td>10</td><td>gridQuota</td><td>gridQuota</td></tr>
+<tr><td>11</td><td>JSON(powerSources)</td><td>JSON(powerSources)</td></tr>
+<tr><td>12</td><td>JSON(consumers)</td><td>JSON(consumers)</td></tr>
+<tr><td>13</td><td>panelPower</td><td>panelPower</td></tr>
+<tr><td>14</td><td>storageCapacity</td><td>storageCapacity</td></tr>
+<tr><td>15-19</td><td>JSON(batteries...extras)</td><td>JSON(batteries...extras) + הערת "כפילות של הכרטיסייה הפעילה"</td></tr>
+<tr><td>20-23</td><td>totalPrice, annualSavings, roi, profit25</td><td>זהה</td></tr>
+<tr><td>24</td><td>analysisNotes <span class="badge bug">בעמודה הלא נכונה!</span></td><td>analysisNotes <span class="badge modify">תוקן לפי הערה</span></td></tr>
+<tr><td>25</td><td>JSON(clientImages) <span class="badge bug">בעמודה הלא נכונה!</span></td><td>JSON(clientImages) <span class="badge modify">תוקן</span></td></tr>
+<tr><td>26</td><td><span class="badge remove">—</span></td><td><span class="badge add">JSON(systemCards)</span></td></tr>
+<tr><td>27</td><td>—</td><td><span class="badge add">activeCardIndex</span></td></tr>
+<tr><td>28</td><td>—</td><td><span class="badge add">inverterPowerTarget</span></td></tr>
+</table>
+
+<div class="contradiction">
+<h4>⚠️ סתירה לוגית-מבנית: עמודות 24-25</h4>
+<p><strong>בעיה:</strong> ב-code (2) ו-Code (3) הקוד כותב <code>analysisNotes</code> לעמודה 24 ו-<code>clientImages</code> לעמודה 25. <strong>אבל ב-frontend</strong> רוב הגרסאות (גרסה 1, 2, 3, 4) קוראות את הערות הניתוח מעמודה שכותרתה "הערות ניתוח" ואת התמונות מעמודה שכותרתה "תמונות לקוח (JSON)". הקוד לא מסונכרן עם הכותרות בפועל.</p>
+<p><strong>התיקון ב-code.js (בייס):</strong> הוסיף הערות inline שמסבירות שהכותרות בגיליון חייבות להיות "הערות ניתוח" בעמודה 24 ו-"תמונות לקוח (JSON)" בעמודה 25. פונקציית <code>oneTimeSetup_v2</code> באה לתקן זאת.</p>
+</div>
+
+<h3>5.2 setValues call — ההבדל המספרי</h3>
+<pre><code>// code (2) / Code (3) — 25 עמודות
+sheet.getRange(rowIndex, 1, 1, 25).setValues([rowData]);
+
+// code.js (בייס) — 28 עמודות
+sheet.getRange(rowIndex, 1, 1, 28).setValues([rowData]);</code></pre>
+<p>ההפרש של 3 עמודות נוספות משמעותי: <code>code (2)</code> ו-<code>Code (3)</code> פשוט לא ישמרו את <code>systemCards</code>, <code>activeCardIndex</code> ו-<code>inverterPowerTarget</code> — הנתונים ייעלמו בשקט.</p>
+
+<div class="card danger">
+<strong>רגרסיה קריטית:</strong> אם משתמשים ב-<code>code (2).js</code> או <code>Code (3).js</code> בסביבת production עם גרסת Frontend (4) — כל הכרטיסיות ייעלמו בכל שמירה. חובה לעבור ל-<code>code.js</code>.
+</div>
+
+<h3>5.3 oneTimeSetup_v2 — פונקציית מיגרציה קריטית</h3>
+<pre><code>function oneTimeSetup_v2() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  
+  // 1. תיקון כותרות עמודות 24-28 ב"לקוחות ופרוייקטים"
+  const custSheet = ss.getSheetByName("לקוחות ופרוייקטים");
+  custSheet.getRange(1, 24).setValue("הערות ניתוח");
+  custSheet.getRange(1, 25).setValue("תמונות לקוח (JSON)");
+  custSheet.getRange(1, 26).setValue("רכיבי מערכת (JSON)");
+  custSheet.getRange(1, 27).setValue("כרטיסייה פעילה (אינדקס)");
+  custSheet.getRange(1, 28).setValue("עוצמת ממיר נדרשת");
+  
+  // 2. הוספת 10 עמודות חדשות במחירון (כותרות בלבד, ערכים ידני)
+  const catSheet = ss.getSheetByName("מחירון");
+  const newCatalogHeaders = [
+    "מידות", "הספק",                                              // פאנלים
+    "קיבולת", "מגבלת הכפלה", "מגבלת שרשור", "BMS כלול",           // מצברים
+    "עוצמה", "היברידי", "התאמה למערכת",                           // ממירים
+    "קבוצת התאמה"                                                  // חוצה-קטגוריות
+  ];
+  // ... (deduplication logic)
+}</code></pre>
+<div class="card decision">
+<strong>אסטרטגיה:</strong> הפונקציה מתועדת כ-<em>"ידנית חד-פעמית, מומלץ למחוק לאחר הרצה"</em>. זה נכון — אין קריאה אוטומטית מקוד אחר.
+</div>
+
+<hr>
+
+<h2 id="L4">6. שכבה 4: Data Retrieval (getCustomerData)</h2>
+
+<h3>6.1 תאימות אחורה — רק ב-code.js</h3>
+<div class="card add">
+<strong>שיפור קריטי ב-code.js (בייס):</strong>
+<pre><code>// תאימות לאחור (שיפור 1): אם 'רכיבי מערכת (JSON)' ריק,
+// בונים "כרטיסייה 1" באופן שקוף מתוך חמשת העמודות הישנות
+if (!obj['רכיבי מערכת (JSON)'] || !obj['רכיבי מערכת (JSON)'].length) {
+  obj['רכיבי מערכת (JSON)'] = [{
+    name: 'רכיבי מערכת 1',
+    batteries: obj['מצברים'],
+    inverters: obj['ממירים'],
+    panels: obj['פאנלים'],
+    installation: obj['התקנה'],
+    addons: obj['תוספות']
+  }];
+}</code></pre>
+</div>
+
+<table>
+<tr><th>התנהגות</th><th>code (2) / Code (3)</th><th>code.js <span class="badge base">בייס</span></th></tr>
+<tr><td>JSON parse ל-7 שדות</td><td>✓</td><td>✓ + <code>רכיבי מערכת (JSON)</code> = 8 שדות</td></tr>
+<tr><td>Backward compat לכרטיסיות</td><td><span class="badge bug">חסר → גרסאות 1-3 ב-Frontend קורסות</span></td><td>✓</td></tr>
+<tr><td>activeCardIndex handling</td><td>—</td><td>✓ (Frontend קורא אותו ישירות)</td></tr>
+</table>
+
+<hr>
+
+<h2 id="L5">7. שכבה 5: Frontend Bootstrap & State</h2>
+
+<h3>7.1 דפוס טעינה — Loader / Error handling</h3>
+<table>
+<tr><th>גרסה</th><th>טעינה</th><th>Timeout</th><th>Error handler</th></tr>
+<tr><td>בראשית סולאר - ניהול הצעות</td><td>✓ #loader</td><td>10s <span class="badge note">קצר</span></td><td>showError inline</td></tr>
+<tr><td>מערכת הצעות (1)</td><td><span class="badge remove">—</span></td><td>—</td><td>—</td></tr>
+<tr><td>מערכת הצעות</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>... וניתוח אנרגטי</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>... וניתוח (1)</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>... וניתוח (2)</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>... וניתוח (4)</strong> <span class="badge base">בייס</span></td><td>✓ #loader</td><td>15s <span class="badge add">+5s</span></td><td>showFatalError + showServerError (שני handlers נפרדים)</td></tr>
+</table>
+
+<div class="card success">
+<strong>הפרדה חשובה ב-(4):</strong>
+<pre><code>// שגיאה לפני שהאפליקציה עלתה — מסך מלא
+function showFatalError(msg) {
+  document.getElementById('loader').innerHTML = `&lt;div class="error-msg"&gt;${msg}&lt;br&gt;&lt;button onclick="location.reload()"&gt;רענן דף&lt;/button&gt;&lt;/div&gt;`;
+}
+
+// שגיאה אחרי שעלתה (שמירה/הדפסה) — alert רגיל
+function showServerError(err) {
+  alert('❌ שגיאת שרת: ' + (err &amp;&amp; err.message ? err.message : err));
+}</code></pre>
+</div>
+
+<h3>7.2 משתני State גלובליים</h3>
+<table>
+<tr><th>משתנה</th><th>גרסה (1)</th><th>גרסה (4) <span class="badge base">בייס</span></th></tr>
+<tr><td><code>globalCatalog</code></td><td>✓</td><td>✓</td></tr>
+<tr><td><code>globalCustomers</code></td><td>✓</td><td>✓</td></tr>
+<tr><td><code>currentClientImages</code></td><td>—</td><td>✓ (חדש ב-(1))</td></tr>
+<tr><td><code>defaultLogoBase64</code></td><td>—</td><td>✓</td></tr>
+<tr><td><code>calculatorDataPulled</code></td><td>—</td><td>✓ <span class="badge add">חדש ב-(1)</span></td></tr>
+<tr><td><code>lastCalculatorRawData</code></td><td>—</td><td>✓ <span class="badge add">חדש ב-(1)</span></td></tr>
+<tr><td><code>systemCards</code> + <code>activeCardIndex</code></td><td>—</td><td>✓ <span class="badge add">חדש ב-(4)</span></td></tr>
+<tr><td><code>loadTimeout</code></td><td>—</td><td>✓</td></tr>
+</table>
+
+<hr>
+
+<h2 id="L6">8. שכבה 6: UI / DOM Manipulation</h2>
+
+<h3>8.1 הוספת שורות רכיבים</h3>
+<table>
+<tr><th>פונקציה</th><th>גרסה (1) (הישנה)</th><th>גרסה (4) <span class="badge base">בייס</span></th></tr>
+<tr><td>מבנה HTML של שורה</td><td>2fr 1fr 1fr 1fr 0.3fr</td><td>זהה (אחיד בכל הגרסאות)</td></tr>
+<tr><td>מיקום ב-DOM</td><td><code>getElementById(contId).appendChild</code></td><td>זהה</td></tr>
+<tr><td>התאמה לקטגוריה</td><td><code>globalCatalog.filter(i =&gt; i['קטגוריה'] === cat)</code></td><td>זהה + ניקוי סימני מטבע <code>replace(/[^0-9.-]+/g,"")</code> במחיר</td></tr>
+</table>
+
+<div class="card modify">
+<strong>שיפור קטן אך חשוב ב-(4) ואילך:</strong> הוספת <code>replace(/[^0-9.-]+/g,"")</code> ב-frontend מאפשר לקלוט מחירים כמו "2,400 ₪" או "₪2400" מבלי להפיל את החישוב.
+<pre><code>// גרסה (1): const price = parseFloat(item['מחיר יחידה (₪)']);  // NaN!
+// גרסה (4): let priceStr = String(item['מחיר יחידה (₪)']).replace(/[^0-9.-]+/g,"");
+//            const price = parseFloat(priceStr) || 0;</code></pre>
+</div>
+
+<h3>8.2 חיפוש לקוחות</h3>
+<p>ההתפתחות: גרסה (1) חיפוש רק על <code>c['שם הלקוח']</code> ב-2 תווים מינימום. גרסה (4) אותו דבר (אין שיפור מהותי). המלצה: <span class="badge recommend">הוסיף fuzzy search + חיפוש לפי clientId/phone.</span></p>
+
+<h3>8.3 selectCustomer — פונקציית טעינת לקוח</h3>
+<table>
+<tr><th>היבט</th><th>גרסה (1) / (2)</th><th>גרסה (4) <span class="badge base">בייס</span></th></tr>
+<tr><td>שדות בסיס (ID, שם, כתובת, טלפון, איש קשר)</td><td>✓</td><td>✓</td></tr>
+<tr><td>שדות פרויקט (כותרת, תאריך, גג, פאנלים, הספק)</td><td>חלקי</td><td>✓ מלא</td></tr>
+<tr><td>storageCapacity / inverterPowerTarget</td><td><span class="badge remove">—</span></td><td>✓</td></tr>
+<tr><td>טעינת systemCards</td><td><span class="badge remove">—</span></td><td>✓ עם normalization בצד השרת</td></tr>
+<tr><td>טעינת תמונות</td><td>✓ (החל מ-(1))</td><td>✓</td></tr>
+<tr><td>טעינת רכיבי המערכת מ-5 עמודות</td><td>✓</td><td>✓ דרך <code>renderActiveCardRows</code></td></tr>
+<tr><td><code>calculatorDataPulled = true</code> אם יש נתונים כלכליים</td><td><span class="badge remove">—</span></td><td>✓ <span class="badge add">חדש</span></td></tr>
+</table>
+
+<h3>8.4 סקשנים קבועים (ID-ים)</h3>
+<p>כל הגרסאות מאז "... וניתוח אנרגטי" כוללות 5 תתי-סקשנים בסקשן 2:</p>
+<pre><code>battery-rows | inverter-rows | panel-rows | install-rows | addons-rows</code></pre>
+<p>החריגות:</p>
+<ul>
+<li><strong>מערכת הצעות (1).html:</strong> חסרים <code>install-rows</code> ו-<code>addons-rows</code> — רק 3 קטגוריות (מצברים, ממירים, פאנלים). זה גרם לבאג ב-code (2): השרת שלח <code>getSectionData('extras-rows')</code> במקום <code>'addons-rows'</code>, ובכלל זה היה "מוסתר" כי אין כלל סקשן תוספות ב-UI.</li>
+</ul>
+
+<hr>
+
+<h2 id="L7">9. שכבה 7: Math Engines (חישובים פיננסיים)</h2>
+
+<h3>9.1 שלוש נוסחאות ROI שונות — סתירה מתמטית קריטית!</h3>
+<div class="contradiction">
+<h4>⚠️ סתירה מתמטית: חישוב annualSave / ROI / profit25</h4>
+
+<table>
+<tr><th>גרסה</th><th>נוסחה</th><th>הערות</th></tr>
+<tr><td>בראשית סולאר - ניהול הצעות</td><td><code>panelKW × 1000 × 0.95 × 1700 × 0.38</code></td><td>כולל גורם "1000" חסר הסבר (כפל מיותר?); 0.95 יעילות; 1700 שעות; 0.38 ₪/קוט"ש</td></tr>
+<tr><td>מערכת הצעות (1) + בראשית</td><td><code>panelKW × 1650 × 0.55</code></td><td>1650 שעות, 0.55 ₪/קוט"ש (תעו"ז ממוצע?)</td></tr>
+<tr><td>מערכת הצעות</td><td><code>panelKW × 1650 × 0.55</code></td><td>זהה ל-(1)</td></tr>
+<tr><td>... וניתוח (1)(2)(4)</td><td><code>panelKW × 1650 × 0.55</code> (אם calculatorDataPulled=false)</td><td>אותה נוסחה, אבל עם bypass אם נמשכו נתונים מהמחשבון</td></tr>
+</table>
+
+<p><strong>מסקנה:</strong> הנוסחה הסטנדרטית שצריכה להיות בכל המקומות היא: <code>panelKW × 1650 × 0.55</code> (1650 שעות שמש בשנה × מחיר ממוצע של 0.55 ₪/קוט"ש).</p>
+<p><strong>הבדלים מהותיים:</strong> גרסת "בראשית סולאר - ניהול הצעות" מכפילה ב-1000 (קוט"ש → ואט?) וב-0.38 — מה שיוצר <em>תוצאה שונה מהותית</em> מהגרסאות האחרות. מומלץ לבצע <span class="badge bug">Audit מתמטי</span> בנוסחה הזו.</p>
+</div>
+
+<h3>9.2 תוספות קבועות — שלוש קבוצות של מחירים</h3>
+<table>
+<tr><th>תוספת</th><th>בראשית סולאר (הראשונה)</th><th>מערכת הצעות (1)</th><th>מערכת הצעות (בייס +)</th></tr>
+<tr><td>גג בטון</td><td>4,000 ₪</td><td>2,500 ₪</td><td><span class="badge remove">הוסר</span> (מנוהל במחירון)</td></tr>
+<tr><td>סינכרון גנרטור</td><td>10,000 ₪</td><td>3,500 ₪</td><td><span class="badge remove">הוסר</span> (מנוהל במחירון)</td></tr>
+</table>
+<div class="card decision">
+<strong>החלטה סופית ב-(2+):</strong> גג בטון וסינכרון גנרטור עברו לקטגוריית "תוספות" במחירון (כל אחד עם שורה משלו). הסרת הקידוד הקשיח הייתה הכרחית כדי שתוכל להיות גמישות מחיר לפי מורכבות.
+</div>
+
+<h3>9.3 IRR / NPV / PMT — נוסחאות פיננסיות מתקדמות</h3>
+<p>נמצאו <strong>רק</strong> ב-... וניתוח אנרגטי (2).html וב-... וניתוח אנרגטי.html (הגרסה הראשונה עם calcView מובנה):</p>
+<pre><code>// רק ב-(2) — לא ב-(4)!
+function pmt(rate, nper, pv) { /* standard loan payment */ }
+function npv(rate, cashFlows) { /* discounted cash flows */ }
+function irr(cashFlows, guess=0.1) { /* Newton-Raphson, 100 iter */ }
+
+const CALC_CONSTANTS = {
+  tariffs: { fit_0_15: 0.48, fit_15_100: 0.3731, fit_100_300: 0.3437 },
+  tou: { summer_peak: 1.4597, summer_low: 0.4358, winter_peak: 0.9774, winter_low: 0.4022 },
+  urban_premium: 0.06,
+  yield_base: 1750, degradation: 0.0035,
+  battery: { dod: 0.95, eff_charge: 0.93, eff_discharge: 0.94 },
+  replacements: { inverter_year: 14, battery_year: 15 }
+};</code></pre>
+<div class="card recommend">
+<strong>המלצה:</strong> אם המחשבון בעתיד ירצה לרוץ בצד הלקוח (ללא תלות בחלון חיצוני), יש להעתיק את הקבועים והפונקציות האלה מ-(2) אל (4). כרגע זה <span class="badge note">לא חובה</span> כי החישוב נעשה בחלון ה-Calculator הנפרד.
+</div>
+
+<hr>
+
+<h2 id="L8">10. שכבה 8: State Management (כרטיסיות, twins, calculatorDataPulled)</h2>
+
+<h3>10.1 מודל הכרטיסיות (שיפור 1) — רק ב-(4)</h3>
+<pre><code>// רק ב-(4)
+let systemCards = [];      // [{name, batteries:[], inverters:[], panels:[], installation:[], addons:[]}, ...]
+let activeCardIndex = 0;
+
+const CARD_SECTIONS = [
+  { key: 'batteries',    contId: 'battery-rows',  cat: 'מצברים' },
+  { key: 'inverters',    contId: 'inverter-rows', cat: 'ממירים' },
+  { key: 'panels',       contId: 'panel-rows',    cat: 'פאנלים' },
+  { key: 'installation', contId: 'install-rows',  cat: 'התקנה' },
+  { key: 'addons',       contId: 'addons-rows',   cat: 'תוספות' },
+];</code></pre>
+
+<div class="card success">
+<strong>ארכיטקטורה נכונה:</strong> 5 התתי-סקשנים משוכפלים <em>פר-כרטיסייה</em> (לא משותפים). זה ההחלטה הסופית מהתקציר. בנוסף, <code>syncActiveCardFromDOM</code> נקרא לפני כל מעבר/שמירה כדי לוודא שהמצב הנוכחי ב-DOM נשמר לפני שעוברים לכרטיסייה אחרת.
+</div>
+
+<h3>10.2 Twin Fields Sync — רק ב-(4)</h3>
+<pre><code>function syncTwin(sourceId, targetId) {
+  document.getElementById(targetId).value = document.getElementById(sourceId).value;
+}
+function syncAllSuggestTwins() {
+  syncTwin('roofArea', 'roofAreaTwin');
+  syncTwin('panelPower', 'panelPowerTwin');
+  syncTwin('storageCapacity', 'storageCapacityTwin');
+}</code></pre>
+<div class="card decision">
+<strong>פתרון אלגנטי לסתירה העיצובית:</strong> הסקשן של הצעת השילובים צריך שדות "הספק סולארי נדרש" ו"שטח גג" — אבל הם כבר קיימים בסקשן "מידע פרויקט". במקום ליצור עותק כפול (ולסכן אי-סנכרון), יוצרים <em>שדות תאומים</em> שמסתנכרנים בכל אירוע.
+</div>
+
+<h3>10.3 calculatorDataPulled — הגנה קריטית</h3>
+<pre><code>// ב-calculateAll() — רק ב-(1) ו-(4):
+if (!calculatorDataPulled) {
+  const annualSave = kwp * 1650 * 0.55;  // הערכה גסה
+  // ...
+}</code></pre>
+<div class="card success">
+<strong>ההיגיון:</strong> הערכה גסה צריכה לרוץ <em>רק</em> אם אין נתונים מדויקים מהמחשבון. ברגע שנמשכו נתונים (או שהלקוח כבר נטען עם חיסכון/תשואה שמורים), הנוסחה הגסה <em>לא</em> דורסת אותם. זה פתרון אלגנטי לבעיית "דריסת תוצאות מתוחכמות".
+</div>
+
+<h3>10.4 isClientSaved — בדיקת קיום</h3>
+<pre><code>// רק ב-(4)
+function isClientSaved(clientId) {
+  return globalCustomers.some(cust =&gt; 
+    String(cust['ID (מזהה)']).trim() === String(clientId).trim()
+  );
+}</code></pre>
+<div class="card add">
+<strong>שימוש:</strong> מונע מהמשתמש לפתוח טופס לקוח או להעתיק קישור לפני שהלקוח <em>באמת</em> שמור בשיטס (ולא רק קיבל ID אוטומטי BS-XXXX).
+</div>
+
+<hr>
+
+<h2 id="L9">11. שכבה 9: Calculator Integration</h2>
+
+<h3>11.1 שלוש אסטרטגיות אינטגרציה</h3>
+<table>
+<tr><th>גרסה</th><th>אסטרטגיה</th><th>העברת נתונים</th><th>חישוב</th></tr>
+<tr><td>... וניתוח.html</td><td>calcView מובנה (toggle)</td><td><code>transferDataToQuote</code> באותו עמוד</td><td>PMT/NPV/IRR בצד הלקוח</td></tr>
+<tr><td>... וניתוח (1).html</td><td>חלון חיצוני + localStorage</td><td><code>localStorage</code> ← <code>pullDataFromCalculator</code></td><td>חיצוני, מעביר רק תוצאות</td></tr>
+<tr><td>... וניתוח (2).html</td><td>calcView מובנה + תמונות</td><td><code>transferDataToQuote</code> באותו עמוד</td><td>PMT/NPV/IRR בצד הלקוח</td></tr>
+<tr><td><strong>... וניתוח (4).html</strong> <span class="badge base">בייס</span></td><td>חלון חיצוני + URL params + localStorage</td><td><code>localStorage</code> ← <code>pullDataFromCalculator</code> (עם <code>lastCalculatorRawData</code>)</td><td>חיצוני, מעביר תוצאות + raw</td></tr>
+</table>
+
+<h3>11.2 pullDataFromCalculator — ההתפתחות</h3>
+<div class="card modify">
+<strong>ב-(1):</strong> מעביר רק 3 שדות (analysisNotes, roofArea, panelPower) + מסיר מ-localStorage.
+<pre><code>document.getElementById('analysisNotes').value = notesText;
+document.getElementById('roofArea').value = inputs.roofArea;
+document.getElementById('panelPower').value = withBat.capacity.toFixed(2);
+calculateAll();
+localStorage.removeItem('transferredCalcData');</code></pre>
+
+<strong>ב-(4):</strong> מעביר 7 שדות, שומר <code>lastCalculatorRawData</code> להעברה לעמוד ההדפסה, ומציג אזהרה אם הלקוח הנוכחי בטופס שונה מזה שבמחשבון.
+<pre><code>document.getElementById('analysisNotes').value = notesText;
+document.getElementById('roofArea').value = inputs.roofArea;
+document.getElementById('panelPower').value = withBat.capacity.toFixed(2);
+document.getElementById('storageCapacity').value = withBat.batKwh.toFixed(1);
+document.getElementById('profit25Years').value = Math.round(withBat.totalProfit).toLocaleString() + ' ₪';
+document.getElementById('roiPercentage').value = withBat.irr + '%';
+const avgAnnual = withBat.totalProfit / 25;
+document.getElementById('annualSavings').value = Math.round(avgAnnual).toLocaleString() + ' ₪ (ממוצע ל-25 שנה)';
+calculatorDataPulled = true;
+lastCalculatorRawData = data;</code></pre>
+</div>
+
+<h3>11.3 openCalculatorWindow — העברת clientId + roofArea</h3>
+<div class="card modify">
+<strong>ב-(1) ה-(2):</strong> רק <code>?page=calculator</code> בלי פרמטרים.<br>
+<strong>ב-(4):</strong> מעבירים גם <code>clientId</code> ו-<code>roofArea</code> כפרמטרים ב-URL — המחשבון יכול לקרוא אותם (לא מומש בצד המחשבון עדיין, אבל התשתית מוכנה).
+<pre><code>let target = url + "?page=calculator";
+if (clientId) target += "&amp;clientId=" + encodeURIComponent(clientId);
+if (roofArea) target += "&amp;roofArea=" + encodeURIComponent(roofArea);</code></pre>
+</div>
+
+<hr>
+
+<h2 id="L10">12. שכבה 10: Image / Media Pipeline</h2>
+
+<h3>12.1 סקשן "תמונות ומדיה" — קיים רק מ-(1) ואילך</h3>
+<table>
+<tr><th>פיצ'ר</th><th>בראשית (הראשונה)</th><th>... וניתוח (1)(2)(4)</th></tr>
+<tr><td>העלאת תמונה ללקוח</td><td><span class="badge remove">—</span></td><td>✓ → <code>currentClientImages</code></td></tr>
+<tr><td>תמונת לוגו (sheet "תמונות" / "לוגו")</td><td>—</td><td>✓ → <code>defaultLogoBase64</code></td></tr>
+<tr><td>תמונת שער / גג / סיכום / טבלת תזרים</td><td>—</td><td>✓ 4 selectors</td></tr>
+<tr><td>הגנת Type-Safe (typeof check)</td><td>—</td><td>✓</td></tr>
+</table>
+
+<h3>12.2 refreshImageDropdowns — מאחד 3 מקורות</h3>
+<pre><code>function refreshImageDropdowns() {
+  // מקור 1: גלריית בראשית מהמחירון (item.image)
+  globalCatalog.forEach(item =&gt; {
+    if (item.image &amp;&amp; typeof item.image === 'string' &amp;&amp; item.image.trim() !== '') {
+      sel.innerHTML += `&lt;option value="${item.image}"&gt;${item['דגם']} (שיטס)&lt;/option&gt;`;
+    }
+  });
+  
+  // מקור 2: תמונות שהועלו ללקוח
+  currentClientImages.forEach(img =&gt; {
+    sel.innerHTML += `&lt;option value="${img.data}"&gt;${img.name} (תמונות לקוח)&lt;/option&gt;`;
+  });
+}</code></pre>
+
+<h3>12.3 openPrintWindow — העברת payload לעמוד ההדפסה</h3>
+<p>כל הגרסאות מאז (1) מעבירות דרך <code>localStorage.pendingQuote</code>:</p>
+<pre><code>localStorage.setItem('pendingQuote', JSON.stringify({
+  clientName, clientAddress, ..., 
+  selectedLogo, selectedCover, selectedProject, selectedFinSummary, selectedFinTable,
+  catalogImages, clientImages
+}));</code></pre>
+
+<div class="card modify">
+<strong>שיפור ב-(1) ו-(4):</strong> הוספת 6 שדות חדשים ל-payload שלא היו בעבר (<code>storageCapacity</code>, <code>annualSavings</code>, <code>roiPercentage</code>, <code>profit25Years</code>, <code>gridQuota</code>, <code>form4Status</code>, <code>rawCalculatorData</code>). אלה היו קיימים בטופס אך מעולם לא הועברו לעמוד ההדפסה.
+</div>
+
+<hr>
+
+<h2 id="L11">13. שכבה 11: Error Handling & UX Safety</h2>
+
+<h3>13.1 רמת החוסן (Robustness) לפי גרסה</h3>
+<table>
+<tr><th>גרסה</th><th>Timeout</th><th>Fatal error UI</th><th>Server error handler</th><th>isClientSaved</th><th>Type-safe image</th></tr>
+<tr><td>בראשית (הראשונה)</td><td>10s</td><td>showError inline</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>מערכת הצעות (1)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>מערכת הצעות</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>... וניתוח (1)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td></tr>
+<tr><td>... וניתוח (2)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td></tr>
+<tr><td><strong>... וניתוח (4)</strong> <span class="badge base">בייס</span></td><td>15s</td><td>showFatalError</td><td>showServerError</td><td>✓</td><td>✓</td></tr>
+</table>
+
+<div class="card success">
+<strong>הגנת עקביות ב-(4):</strong> כל קריאה ל-<code>google.script.run</code> מקבלת <code>.withFailureHandler(showServerError)</code> — מה שמבטיח שאף כשל שרת לא יתוקע את המשתמש בשקט.
+<pre><code>google.script.run
+  .withFailureHandler(showServerError)
+  .withSuccessHandler(url =&gt; { ... })
+  .getWebAppUrl();</code></pre>
+</div>
+
+<hr>
+
+<h2 id="L12">14. שכבה 12: Print / Export Layer</h2>
+
+<h3>14.1 openPrintWindow vs window.print</h3>
+<table>
+<tr><th>גרסה</th><th>פעולה</th><th>Payload</th></tr>
+<tr><td>מערכת הצעות (1)</td><td><code>window.print()</code> (הדפסה מקומית)</td><td>—</td></tr>
+<tr><td>מערכת הצעות</td><td><code>window.print()</code> (הדפסה מקומית)</td><td>—</td></tr>
+<tr><td>... וניתוח.html</td><td><code>window.print()</code></td><td>—</td></tr>
+<tr><td>... וניתוח (1)(2)(4)</td><td><code>openPrintWindow()</code> → חלון נפרד עם <code>?page=print</code></td><td>localStorage.pendingQuote</td></tr>
+</table>
+<div class="card decision">
+<strong>החלטה סופית:</strong> מעבר לחלון נפרד עם payload ב-localStorage. הסיבה: <code>window.print()</code> מדפיס את הטופס הנוכחי כמו שהוא, בעוד שהצעת מחיר צריכה עימוד שונה לחלוטין.
+</div>
+
+<hr>
+
+<h2 id="matrix">15. מטריצת השוואה ראשית (The Master Matrix)</h2>
+
+<table>
+<tr><th>רכיב / יכולת</th><th>code(2)</th><th>code.js <span class="badge base">B</span></th><th>Code(3)</th><th>...הצעות(1)</th><th>...הצעות</th><th>...אנ(1)</th><th>...אנ(2)</th><th>...אנ(4) <span class="badge base">B</span></th><th>המשמעות / המלצה</th></tr>
+<tr><td colspan="10"><strong>BACKEND</strong></td></tr>
+<tr><td>doGet: print</td><td>✓</td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>חיוני</td></tr>
+<tr><td>doGet: calculator</td><td>✓</td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>חיוני</td></tr>
+<tr><td>doGet: form (Template)</td><td><span class="badge bug">✗</span></td><td>✓</td><td><span class="badge bug">✗</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><strong>רק code.js תקין</strong></td></tr>
+<tr><td>getInitialData (catalog+settings)</td><td>✓</td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>זהה בכולם</td></tr>
+<tr><td>CellImage → Base64</td><td>✓</td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>חיוני</td></tr>
+<tr><td>saveCustomerData: 25 cols</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>legacy</td></tr>
+<tr><td>saveCustomerData: 28 cols</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><strong>רק code.js תומך</strong></td></tr>
+<tr><td>getCustomerData + Backward Compat</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><strong>הכרחי ללקוחות ישנים</strong></td></tr>
+<tr><td>oneTimeSetup_v2 (migration)</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><strong>ידני חד-פעמי</strong></td></tr>
+<tr><td>getTariffFromCompany (real impl)</td><td><span class="badge bug">stub</span></td><td><span class="badge bug">stub</span></td><td><span class="badge bug">stub</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge recommend">להחליף בקריאת API אמיתית</span></td></tr>
+<tr><td colspan="10"><strong>FRONTEND: ENTRY &amp; STATE</strong></td></tr>
+<tr><td>Loader עם timeout</td><td>—</td><td>—</td><td>—</td><td>10s (חלקי)</td><td>—</td><td>—</td><td>—</td><td>15s</td><td>בייס</td></tr>
+<tr><td>showFatalError / showServerError</td><td>—</td><td>—</td><td>—</td><td>showError</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>בייס</td></tr>
+<tr><td>isClientSaved (client lookup)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>בייס</td></tr>
+<tr><td colspan="10"><strong>FRONTEND: SECTIONS</strong></td></tr>
+<tr><td>3 sections (battery/inverter/panel)</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>legacy</td></tr>
+<tr><td>5 sections (+install+addons)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>בייס</td></tr>
+<tr><td>Power sources rows (multi-select)</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>זהה</td></tr>
+<tr><td>Consumer rows + TXT import</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>זהה</td></tr>
+<tr><td colspan="10"><strong>FRONTEND: CARDS (שיפור 1)</strong></td></tr>
+<tr><td>systemCards array + activeCardIndex</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td>renderTabBar / switchCard / addCard</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td>renameCard / removeCard (with confirm)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td>calcCardTotal (price tag in tab)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td colspan="10"><strong>FRONTEND: SUGGESTION ENGINE (שיפור 2)</strong></td></tr>
+<tr><td>runSuggestionEngine()</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td>suggestBatteryOptions / suggestPanelOptions</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td>buildInverterSets (hybrid OR split)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td>Modal overlay with combo rows</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td>useCombo → addCard (integration)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td>Twin fields sync (storageCapacity ↔ Twin)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td colspan="10"><strong>FRONTEND: CALCULATOR INTEGRATION</strong></td></tr>
+<tr><td>calcView embedded</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>רק ב-...וניתוח.html ו-(2)</td></tr>
+<tr><td>openCalculatorWindow (external)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>✓</td><td>בייס: URL+clientId+roofArea</td></tr>
+<tr><td>pullDataFromCalculator (3 fields)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>legacy</td></tr>
+<tr><td>pullDataFromCalculator (7 fields + rawData)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>רק ב-(4)</strong></td></tr>
+<tr><td>calculatorDataPulled guard</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>✓</td><td>בייס</td></tr>
+<tr><td>lastCalculatorRawData → print</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>✓</td><td>בייס</td></tr>
+<tr><td>PMT/NPV/IRR (financial math)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>—</td><td><span class="badge recommend">לשקול הזרקה ל-(4)</span></td></tr>
+<tr><td colspan="10"><strong>FRONTEND: IMAGES / MEDIA</strong></td></tr>
+<tr><td>Image section (4 selectors)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>זהה מ-(1) ואילך</td></tr>
+<tr><td>defaultLogoBase64 (auto-detect)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>זהה</td></tr>
+<tr><td>currentClientImages (per-client)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>זהה</td></tr>
+<tr><td>typeof image check (Type-Safe)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>קריטי</td></tr>
+<tr><td colspan="10"><strong>FRONTEND: SAVE / PRINT</strong></td></tr>
+<tr><td>saveDataToSheet (single button)</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>legacy</td></tr>
+<tr><td>saveDataToSheet(isNew)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>בייס</td></tr>
+<tr><td>openPrintWindow (rich payload)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>בייס</td></tr>
+<tr><td>window.print() (simple)</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>legacy</td></tr>
+<tr><td colspan="10"><strong>FRONTEND: PRICE PARSING</strong></td></tr>
+<tr><td>parseFloat only (no sanitization)</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>NaN risk</td></tr>
+<tr><td>replace(/[^0-9.-]+/g,"") sanitization</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>בייס</td></tr>
+<tr><td colspan="10"><strong>FRONTEND: FINANCIAL FORMULA</strong></td></tr>
+<tr><td>×1000 ×0.95 ×1700 ×0.38</td><td>—</td><td>—</td><td>—</td><td>בראשית-הצעות (legacy)</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge bug">לא להשתמש</span></td></tr>
+<tr><td>×1650 ×0.55 (gross estimate)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>בייס (guard: calculatorDataPulled)</td></tr>
+</table>
+
+<hr>
+
+<h2 id="contradictions">16. סתירות לוגיות / מתמטיות</h2>
+
+<div class="contradiction">
+<h4>16.1 עמודות 24-25: כותרות בגיליון vs. מיקום בקוד</h4>
+<p><strong>הסתירה:</strong> ה-frontend רוב הזמן קורא את "הערות ניתוח" מעמודה בשם "הערות ניתוח" ואת "תמונות לקוח" מעמודה בשם "תמונות לקוח (JSON)". ה-backend (ב-code (2) ו-Code (3)) כותב את <code>analysisNotes</code> לעמודה 24 ואת <code>clientImages</code> לעמודה 25 — מבלי לבדוק שהכותרת באמת תואמת.</p>
+<p><strong>ההשלכה:</strong> אם במציאות העמודות הפוכות בכותרות — ההערות של המחשבון יוצגו במקום התמונות, ולהפך.</p>
+<p><strong>הפתרון ב-code.js:</strong> הוספת <code>oneTimeSetup_v2</code> שמכריח את הכותרות להיות נכונות.</p>
+</div>
+
+<div class="contradiction">
+<h4>16.2 חישוב חיסכון: שתי נוסחאות בלתי תואמות</h4>
+<p><strong>גרסת "בראשית סולאר - ניהול הצעות":</strong> <code>panelKW × 1000 × 0.95 × 1700 × 0.38</code> (מכפיל ב-1000 — קוט"ש → ואט?)</p>
+<p><strong>שאר הגרסאות:</strong> <code>panelKW × 1650 × 0.55</code></p>
+<p><strong>דוגמה:</strong> עבור 10kWp: גרסה ישנה = 6,131 ₪, גרסאות חדשות = 9,075 ₪. <span class="badge bug">הפרש של 48%!</span></p>
+</div>
+
+<div class="contradiction">
+<h4>16.3 calcView: שתי גרסאות שונות של transferDataToQuote</h4>
+<p>ב-...וניתוח.html (calcView מובנה): מעביר 3 שדות (roofArea, panelPower, analysisNotes).</p>
+<p>ב-...וניתוח (2).html (calcView מובנה + תמונות): <strong>אותו דבר</strong> — רק 3 שדות, ללא storageCapacity/profit/ROI.</p>
+<p>ב-...וניתוח (1)(4) (חלון חיצוני): 7 שדות + rawData.</p>
+<p><strong>המסקנה:</strong> הגרסה המובנית (calcView) לא תואמת לגרסה החיצונית. <span class="badge recommend">אם תחליטו להחזיר את calcView, יש לעדכן את הפונקציה להעביר 7 שדות.</span></p>
+</div>
+
+<div class="contradiction">
+<h4>16.4 גג בטון / גנרטור: 3 קבוצות מחירים</h4>
+<table>
+<tr><th>תוספת</th><th>בראשית (הראשונה)</th><th>מערכת הצעות (1)</th><th>מערכת הצעות</th></tr>
+<tr><td>גג בטון</td><td>4,000 ₪</td><td>2,500 ₪</td><td>—</td></tr>
+<tr><td>סינכרון גנרטור</td><td>10,000 ₪</td><td>3,500 ₪</td><td>—</td></tr>
+</table>
+<p>בגרסאות (1)+ בייס: הוסרו מהקוד הקשיח ועברו לקטגוריית "תוספות" במחירון. <strong>החלטה נכונה</strong> — אין סתירה אמיתית, אבל הקוד ב-...הצעות.html (השני) עדיין מכיל את המחירים הקשיחים.</p>
+</div>
+
+<hr>
+
+<h2 id="drift">17. Drift Analysis — סיווג פערים</h2>
+
+<table>
+<tr><th>פער</th><th>סיווג</th><th>הסבר</th></tr>
+<tr><td>code (2) חסר ניתוב form</td><td><span class="badge bug">באג</span></td><td>קריאה ל-<code>?page=form</code> תחזיר Index. תוקן ב-code.js.</td></tr>
+<tr><td>code (2) כותב לעמודות 24/25 בלי תיאום כותרות</td><td><span class="badge bug">באג</span></td><td>תוקן ב-code.js (oneTimeSetup_v2).</td></tr>
+<tr><td>מעבר 25 → 28 עמודות בקוד</td><td><span class="badge add">שיפור</span></td><td>תוספת systemCards, activeCardIndex, inverterPowerTarget.</td></tr>
+<tr><td>Backward compat ב-getCustomerData</td><td><span class="badge add">שיפור</span></td><td>לקוחות ישנים שאין להם systemCards מקבלים fallback.</td></tr>
+<tr><td>הוספת systemCards ל-Frontend</td><td><span class="badge add">שיפור</span></td><td>תומך בריבוי שילובים (שיפור 1).</td></tr>
+<tr><td>הוספת runSuggestionEngine</td><td><span class="badge add">שיפור</span></td><td>הצעות אוטומטיות (שיפור 2).</td></tr>
+<tr><td>הוספת isClientSaved</td><td><span class="badge add">שיפור</span></td><td>מניעת פעולות על לקוחות שלא נשמרו בפועל.</td></tr>
+<tr><td>הוספת twin fields</td><td><span class="badge add">שיפור</span></td><td>פתרון לסתירת כפילויות בין סקשנים.</td></tr>
+<tr><td>הוספת loader + timeout</td><td><span class="badge add">שיפור UX</span></td><td>הגנה מפני תקיעות בטעינה.</td></tr>
+<tr><td>הוספת showFatalError vs showServerError</td><td><span class="badge add">שיפור UX</span></td><td>שני handlers נפרדים לפי שלב.</td></tr>
+<tr><td>הסרת window.print() → openPrintWindow</td><td><span class="badge modify">רפקטור</span></td><td>מעבר לחלון עם עימוד מותאם.</td></tr>
+<tr><td>הסרת calcView embedded → חלון חיצוני</td><td><span class="badge modify">רפקטור</span></td><td>הפרדת אחריות (calculator נפרד).</td></tr>
+<tr><td>הסרת גג בטון/גנרטור מהקוד הקשיח</td><td><span class="badge modify">רפקטור</span></td><td>העברה למחירון — מאפשר גמישות.</td></tr>
+<tr><td>שינוי נוסחת החיסכון בין בראשית (הראשונה) לשאר</td><td><span class="badge regression">רגרסיה</span></td><td>הגרסה הראשונה השתמשה ב-1000×0.38, האחרות ב-1650×0.55. <span class="badge bug">הפרש של עד 48%.</span></td></tr>
+<tr><td>pullDataFromCalculator: 3 → 7 שדות</td><td><span class="badge modify">שיפור</span></td><td>העברת storageCapacity, profit25, roi, annualSavings בנוסף ל-3 הבסיסיים.</td></tr>
+<tr><td>הוספת typeof image check</td><td><span class="badge add">שיפור</span></td><td>Type-Safe: תא ריק לא יוצר option שבור.</td></tr>
+<tr><td>הוספת price regex cleaning</td><td><span class="badge add">שיפור</span></td><td>קליטת "2,400 ₪" / "₪2400" בלי להפיל את החישוב.</td></tr>
+<tr><td>הוספת lastCalculatorRawData</td><td><span class="badge add">שיפור</span></td><td>מאפשר לעמוד ההדפסה לחשב מחדש בעקביות.</td></tr>
+<tr><td>הוספת calculatorDataPulled</td><td><span class="badge add">שיפור</span></td><td>מונע מ-<code>calculateAll</code> לדרוס תוצאות מדויקות.</td></tr>
+<tr><td>יצירת grid + isNew param ב-saveDataToSheet</td><td><span class="badge add">שיפור</span></td><td>מאפשר יצירה ועדכון באותה פונקציה.</td></tr>
+<tr><td>הסרת dead code: try/catch ב-getTariffFromCompany</td><td><span class="badge remove">ניקוי</span></td><td>ה-try לא יכול לזרוק.</td></tr>
+</table>
+
+<hr>
+
+<h2 id="recommend">18. המלצות — רכיבים שאינם בבייס</h2>
+
+<table>
+<tr><th>רכיב</th><th>מקור</th><th>עדיפות</th><th>הצדקה</th></tr>
+<tr><td>PMT / NPV / IRR (financial math)</td><td>(2) — רק ב-calcView מובנה</td><td>נמוכה</td><td>אם המחשבון יעבור לרוץ בצד הלקוח בעתיד. כרגע לא חיוני.</td></tr>
+<tr><td>CALC_CONSTANTS (tariffs, yield, degradation)</td><td>(2)</td><td>נמוכה-בינונית</td><td>אם רוצים לבצע sanity-check על הנתונים מהמחשבון החיצוני.</td></tr>
+<tr><td>ייצוא לאקסל (XLSX)</td><td>(2)</td><td>בינונית</td><td>כפתור "ייצא דוחות לאקסל" שכרגע מוגדר כ-id אבל אין handler — מומלץ להוסיף פונקציונליות.</td></tr>
+<tr><td>transferDataToQuote (calcView embedded version)</td><td>(2)</td><td>בינוכה</td><td>אם תרצה להחזיר את calcView מובנה (לא מומלץ כרגע בגלל מורכבות).</td></tr>
+<tr><td>window.print() fallback</td><td>(1), בראשית</td><td>נמוכה</td><td>אם תרצה "הדפסה מהירה" בלי חלון נפרד.</td></tr>
+<tr><td>loadSection (פונקציית עזר)</td><td>...הצעות, (1)(2)</td><td>נמוכה</td><td>ב-(4) זה הוחלף ב-<code>getSectionData</code> + <code>renderActiveCardRows</code>. אין צורך להוסיף.</td></tr>
+<tr><td>addNewPowerSourceRow עם peak/off-peak</td><td>כל הגרסאות</td><td>חיוני <span class="badge add">(כבר ב-(4))</span></td><td>תעו"ז vs. קבוע — נדרש לתעריפים מתקדמים.</td></tr>
+<tr><td>פונקציית <code>addCustomItem</code> למקורות/צרכנים</td><td>בראשית (הראשונה)</td><td>בינונית</td><td>ב-(4) אין <code>addCustomItem</code> — רק דרך ה-dropdown של ה-settings. מומלץ להוסיף.</td></tr>
+<tr><td>חיפוש fuzzy</td><td>—</td><td>בינונית</td><td>כל הגרסאות עושות substring match בלבד.</td></tr>
+<tr><td>Validation לפני שמירה (form completeness)</td><td>—</td><td>גבוהה</td><td>אין שום validation! אפשר לשמור לקוח בלי שם או טלפון.</td></tr>
+</table>
+
+<hr>
+
+<h2 id="merge">19. אסטרטגיית מיזוג (Merge Strategy)</h2>
+
+<h3>19.1 שלד הבייס</h3>
+<div class="card decision">
+<strong>Backend:</strong> <code>code.js</code> בשלמותו.<br>
+<strong>Frontend:</strong> <code>מערכת הצעות מחיר וניתוח אנרגטי - בראשית סולאר (4).html</code> בשלמותו.
+</div>
+
+<h3>19.2 קטעי קוד להזרים</h3>
+<table>
+<tr><th>מקור</th><th>מה להזרים</th><th>איפה בבייס</th></tr>
+<tr><td>...וניתוח (2)</td><td>פונקציות PMT / NPV / IRR</td><td>להוסיף לפני <code>calculateAll</code> כקבוצת utility functions (לשימוש עתידי)</td></tr>
+<tr><td>...וניתוח (2)</td><td>CALC_CONSTANTS</td><td>להוסיף כקבוע בראש הסקריפט</td></tr>
+<tr><td>בראשית (הראשונה)</td><td>addCustomItem pattern</td><td>להוסיף ליד <code>addNewPowerSourceRow</code></td></tr>
+</table>
+
+<h3>19.3 קטעי "זבל דיגיטלי" (Dead Code) למחיקה</h3>
+<ul>
+<li>❌ <code>try/catch</code> ב-<code>getTariffFromCompany</code> — ה-try לא יכול לזרוק.</li>
+<li>❌ הערות מיושנות בקוד שמתייחסות לגרסאות קודמות (אם קיימות).</li>
+<li>❌ ב-...הצעות (1): שדה <code>concrete</code> ו-<code>gen</code> ב-payload — לא בשימוש בבייס (מנוהל במחירון).</li>
+<li>❌ ב-...הצעות: <code>form4: "Yes"</code> קבוע — ב-(4) משתמשים ב-true/false.</li>
+</ul>
+
+<h3>19.4 סדר מימוש מומלץ</h3>
+<ol>
+<li><strong>העתק את code.js</strong> ל-Apps Script — הוא הבייס היציב.</li>
+<li><strong>הרץ <code>oneTimeSetup_v2</code> פעם אחת</strong> — יוצר את 10 עמודות המחירון + 3 עמודות הלקוחות החדשות.</li>
+<li><strong>העתק את ...(4).html</strong> לעמוד Index — הוא הבייס של ה-UI.</li>
+<li><strong>ודא ש-Form.html מקבל clientIdParam</strong> דרך ה-Template (זה כבר קורה ב-code.js).</li>
+<li><strong>הזרק את PMT/NPV/IRR</strong> מ-(2) אם רוצים חישוב מקומי.</li>
+<li><strong>הוסף validation</strong> לפני שמירה (חובה לפני production).</li>
+<li><strong>מחק את code (2).js ו-Code (3).js</strong> כדי למנוע confusion.</li>
+</ol>
+
+<hr>
+
+<h2 id="checklist">20. Checklist למתכנת הכותב מחדש</h2>
+
+<div class="checklist">
+<h3>📋 הוראות למתכנת</h3>
+<p><strong>הנחת יסוד:</strong> אתה לא ראית את הקוד מעולם. תפקידך ליצור קובץ <code>code.js</code> וקובץ <code>Index.html</code> שמקיימים <em>בדיוק</em> את ההתנהגות של גרסת הבייס + ההמלצות. סמן כל פריט ברגע שסיימת אותו.</p>
+
+<h3>20.1 שלב 1: מבנה הקבצים</h3>
+<ul>
+<li><strong>צור קובץ <code>code.js</code> עם הפונקציות:</strong> <code>doGet(e)</code>, <code>getWebAppUrl()</code>, <code>getInitialData()</code>, <code>convertCellImageToBase64()</code>, <code>getCustomerData(clientId)</code>, <code>saveCustomerData(payload)</code>, <code>getTariffFromCompany()</code>, <code>oneTimeSetup_v2()</code> (ידני).</li>
+<li><strong>צור קובץ <code>Index.html</code></strong> עם loader, top-bar, 3 כפתורי פעולה (חדש / שמור / הדפס), סקשנים 1-4 (מידע לקוח, סקשן 2 עם כרטיסיות, תמונות, סיכום כלכלי), ו-modal להצעת שילובים.</li>
+</ul>
+
+<h3>20.2 שלב 2: Backend (code.js)</h3>
+<ul>
+<li><strong><code>doGet</code> תומך ב-4 דפים:</strong> <code>?page=print</code> (Template), <code>?page=calculator</code> (HtmlOutput), <code>?page=form</code> (Template עם <code>tmpl.clientIdParam = e.parameter.clientId</code>), ו-default = Index.</li>
+<li><strong><code>getInitialData</code>:</strong> קורא 3 גיליונות ("מחירון", "לקוחות ופרוייקטים", "הגדרות"). זיהוי דינמי של עמודת תמונה בקטלוג. קריאת מקורות חשמל וצרכנים מ-settings עם fallback לברירות מחדל.</li>
+<li><strong><code>getCustomerData</code>:</strong> מחזיר אובייקט של לקוח לפי clientId. JSON.parse ל-8 שדות JSON (כולל <code>רכיבי מערכת (JSON)</code>). <strong>Backward compat:</strong> אם <code>רכיבי מערכת (JSON)</code> ריק — בנה מערך עם כרטיסייה 1 מתוך 5 העמודות הישנות.</li>
+<li><strong><code>saveCustomerData</code>:</strong> 28 עמודות. סדר מדויק: clientId, clientName, clientAddress, clientContact, clientPhone, projectTitle, quoteDate, roofArea, form4, gridQuota, JSON(powerSources), JSON(consumers), panelPower, storageCapacity, JSON(batteries), JSON(inverters), JSON(panels), JSON(installation), JSON(extras), totalPrice, annualSavings, roi, profit25, analysisNotes, JSON(clientImages), JSON(systemCards), activeCardIndex, inverterPowerTarget. <code>getRange(rowIndex, 1, 1, 28).setValues</code>.</li>
+<li><strong><code>oneTimeSetup_v2</code>:</strong> מגדיר כותרות בעמודות 24-28 של "לקוחות" + 10 כותרות חדשות בסוף "מחירון" (רק אם לא קיימות). מציג alert בסיום.</li>
+<li><strong><code>getTariffFromCompany</code>:</strong> מחזיר { fixed: 70.15, toz: "44.8-123.3" }. <span class="badge note">לא לכלול try/catch</span>.</li>
+</ul>
+
+<h3>20.3 שלב 3: Frontend State & Bootstrap</h3>
+<ul>
+<li><strong>State גלובלי:</strong> <code>globalCatalog</code>, <code>globalCustomers</code>, <code>currentClientImages</code>, <code>defaultLogoBase64</code>, <code>calculatorDataPulled</code>, <code>lastCalculatorRawData</code>, <code>systemCards</code>, <code>activeCardIndex</code>, <code>loadTimeout</code>.</li>
+<li><strong>Loader:</strong> <code>#loader</code> מוסתר אחרי 15s עם <code>showFatalError</code>. אחרי טעינה מוצלחת — <code>#appRoot</code> מוסר מ-hidden.</li>
+<li><strong>Error handlers:</strong> <code>showFatalError(msg)</code> — מסך מלא עם כפתור "רענן". <code>showServerError(err)</code> — alert רגיל. כל קריאה ל-<code>google.script.run</code> מקבלת <code>.withFailureHandler(showServerError)</code>.</li>
+<li><strong><code>isClientSaved(clientId)</code>:</strong> בודק אם <code>globalCustomers.some(cust =&gt; cust['ID (מזהה)'] === clientId)</code>.</li>
+</ul>
+
+<h3>20.4 שלב 4: סקשנים (3 כרטיסיות עליונות)</h3>
+<ul>
+<li><strong>מידע לקוח + פרויקט:</strong> clientId (readonly), clientName, clientContact, clientAddress, clientPhone, projectTitle, quoteDate, roofArea (מקושר ל-roofAreaTwin), panelPower (מקושר ל-panelPowerTwin), form4Toggle, quotaToggle+gridQuota, storageCapacity (מקושר ל-storageCapacityTwin), analysisNotes (textarea).</li>
+<li><strong>הצעת שילובים (חדש!):</strong> storageCapacityTwin, panelPowerTwin, roofAreaTwin, inverterPowerTarget, וכפתור "הצע שילובים" → <code>runSuggestionEngine()</code>.</li>
+<li><strong>רכיבי המערכת (עם כרטיסיות!):</strong> <code>#cardTabsBar</code> + 5 תתי-סקשנים (battery/inverter/panel/install/addons). <code>addNewRow(contId, cat)</code> בונה שורה עם select+input qty+price.</li>
+<li><strong>תמונות ומדיה:</strong> 4 selectors + file input + Type-Safe image handling ב-<code>refreshImageDropdowns</code>.</li>
+<li><strong>סיכום כלכלי:</strong> annualSavings (readonly), roiPercentage (readonly), profit25Years (readonly). חישוב רץ ב-<code>calculateAll</code>.</li>
+</ul>
+
+<h3>20.5 שלב 5: פונקציות ליבה</h3>
+<ul>
+<li><strong><code>syncTwin(source, target)</code> + <code>syncAllSuggestTwins()</code>:</strong> מסנכרן שדות תאומים.</li>
+<li><strong><code>parseCleanPrice(v)</code>:</strong> מנקה סימני מטבע ופסיקים. <code>parseFloat(...) || 0</code>.</li>
+<li><strong><code>parseGroups(v)</code>:</strong> "1,4,5" → [1,4,5]. ריק = [].</li>
+<li><strong><code>groupsOverlap(a, b)</code>:</strong> true אם חיתוך לא ריק. true אם צד אחד ריק (לא חוסמים).</li>
+<li><strong><code>suggestPanelOptions(targetPower, roofArea)</code>:</strong> מסנן פאנלים לפי הספק+שטח. אם אין הספק/מידות — מדלג. אם (units × unitSize) &gt; roofArea — נפסל.</li>
+<li><strong><code>suggestBatteryOptions(targetKwh)</code>:</strong> מסנן מצברים. אם unitsNeeded &gt; mulLimit — נפסל. אם !hasBMS — מחפש BMS בקטגוריית תוספות עם groupsOverlap. bmsMissing = true אם לא נמצא.</li>
+<li><strong><code>buildInverterSets(batOpt, panOpt, inverterTarget)</code>:</strong> מייצר 2 סוגי שילובים — היברידי בודד או זוג נפרד (אגירה+סולארי).</li>
+<li><strong><code>runSuggestionEngine()</code>:</strong> מריץ, ממיין לפי fitScore (נמוך יותר = טוב יותר), קורא ל-<code>showSuggestionModal</code> עם top 8.</li>
+<li><strong><code>showSuggestionModal(combos)</code>:</strong> יוצר overlay+modal, מציג rows עם "השתמש בשילוב זה" → <code>useCombo(idx)</code> → <code>addCard(prefilledCard)</code>.</li>
+</ul>
+
+<h3>20.6 שלב 6: כרטיסיות (systemCards)</h3>
+<ul>
+<li><strong><code>CARD_SECTIONS</code>:</strong> 5 רשומות עם key/contId/cat.</li>
+<li><strong><code>blankCard(name)</code>:</strong> יוצר {name, batteries:[], inverters:[], panels:[], installation:[], addons:[]}.</li>
+<li><strong><code>syncActiveCardFromDOM()</code>:</strong> לפני כל מעבר/שמירה — מעתיק את ה-DOM לתוך האובייקט.</li>
+<li><strong><code>renderActiveCardRows()</code>:</strong> ציור מחדש של 5 הסקשנים מתוך הכרטיסייה הפעילה.</li>
+<li><strong><code>calcCardTotal(card)</code>:</strong> חישוב מחיר מ-data (לא מ-DOM).</li>
+<li><strong><code>renderTabBar()</code>:</strong> ציור tabs + price tags + close × + add + button.</li>
+<li><strong><code>switchCard / addCard / removeCard / renameCard</code>:</strong> כל הפעולות.</li>
+<li><strong>חוק:</strong> לא ניתן למחוק את הכרטיסייה האחרונה (alert).</li>
+</ul>
+
+<h3>20.7 שלב 7: חישובים</h3>
+<ul>
+<li><strong><code>calculateAll()</code>:</strong> סוכם מחירים מ-5 הסקשנים. מסנכרן twins. מעדכן תגי מחיר בכרטיסיות. אם <code>!calculatorDataPulled</code> — חישוב גס: <code>panelKW × 1650 × 0.55</code>.</li>
+<li><strong>נוסחת גסה (gross):</strong> <code>annualSave = kwp × 1650 × 0.55; roi = (annualSave / total) × 100; profit25 = (annualSave × 25) - total</code>.</li>
+<li><strong>PMT/NPV/IRR (מ-(2), אופציונלי):</strong> 3 פונקציות utility בראש הסקריפט.</li>
+</ul>
+
+<h3>20.8 שלב 8: שמירה וטעינה</h3>
+<ul>
+<li><strong><code>saveDataToSheet(isNew)</code>:</strong> בונה payload עם 28 שדות. <code>syncActiveCardFromDOM</code> לפני. 5 העמודות הישנות מקבלות את <em>הכרטיסייה הפעילה בלבד</em> (החלטה סופית). שולח לשרת עם <code>withFailureHandler(showServerError)</code>.</li>
+<li><strong><code>handleSearch / selectCustomer</code>:</strong> חיפוש substring על 'שם הלקוח' (מינימום 2 תווים). <code>selectCustomer</code> מאכלס את כל 28 השדות + טוען systemCards מ-c['רכיבי מערכת (JSON)'] (אם ריק — fallback לכרטיסייה ריקה). מגדיר <code>calculatorDataPulled = !!(c['חיסכון שנתי'] || ...)</code>.</li>
+</ul>
+
+<h3>20.9 שלב 9: Calculator Integration</h3>
+<ul>
+<li><strong><code>openCalculatorWindow</code>:</strong> URL עם clientId + roofArea כפרמטרים. <code>withFailureHandler(showServerError)</code>.</li>
+<li><strong><code>pullDataFromCalculator</code>:</strong> קורא <code>localStorage.transferredCalcData</code>. אם <code>data.clientId !== currentClientId</code> — confirm. מעדכן 7 שדות (analysisNotes, roofArea, panelPower, storageCapacity, profit25Years, roiPercentage, annualSavings כ-"ממוצע ל-25 שנה"). <code>calculatorDataPulled = true</code>. שומר <code>lastCalculatorRawData</code>. מוחק מ-localStorage.</li>
+</ul>
+
+<h3>20.10 שלב 10: תמונות</h3>
+<ul>
+<li><strong><code>uploadClientImage</code>:</strong> FileReader → <code>currentClientImages.push({name, data})</code> + alert.</li>
+<li><strong><code>refreshImageDropdowns</code>:</strong> 4 selectors. מאחד גלריית בראשית (typeof check) + currentClientImages.</li>
+<li><strong><code>openPrintWindow</code>:</strong> בונה payload עם 14 שדות (כולל rawCalculatorData, form4Status, gridQuota). שומר ב-localStorage.pendingQuote. פותח <code>?page=print</code>.</li>
+</ul>
+
+<h3>20.11 שלב 11: המלצות (להוסיף על בייס)</h3>
+<ul>
+<li><strong>ולידציה לפני שמירה:</strong> clientName, clientPhone, roofArea לא ריקים.</li>
+<li><strong><code>addCustomItem</code> למקורות/צרכנים:</strong> prompt() + push ל-state + renderList.</li>
+<li><strong>חיפוש fuzzy:</strong> החלף <code>includes</code> ב-fuzzy match (או לפחות הוסף חיפוש לפי clientId).</li>
+<li><strong>כפתור "ייצא לאקסל":</strong> XLSX.full.min.js (כבר טעון).</li>
+</ul>
+
+<h3>20.12 שלב 12: בדיקות</h3>
+<ul>
+<li><strong>בדיקה 1:</strong> לקוח חדש + שמירה → אישור ב-Google Sheets.</li>
+<li><strong>בדיקה 2:</strong> חיפוש לקוח + selectCustomer → כל 28 השדות מוצגים.</li>
+<li><strong>בדיקה 3:</strong> הוסף 2 כרטיסיות → תגי מחיר מתעדכנים → מעבר בין כרטיסיות שומר תוכן.</li>
+<li><strong>בדיקה 4:</strong> הרץ runSuggestionEngine עם יעד 100kWh → 5+ שילובים מוצגים → "השתמש" יוצר כרטיסייה חדשה.</li>
+<li><strong>בדיקה 5:</strong> פתח מחשבון → הרץ סימולציה → סגור → חזור → "משוך נתונים" → 7 שדות מתעדכנים.</li>
+<li><strong>בדיקה 6:</strong> העלה תמונה → בחר ב-selector → "הדפס" → תמונה מופיעה ב-PDF.</li>
+<li><strong>בדיקה 7:</strong> מחק את עמודות 26-28 מהגיליון → הרץ oneTimeSetup_v2 → חזרו.</li>
+<li><strong>בדיקה 8:</strong> timeout 15s — נתק רשת באמצע טעינה → showFatalError.</li>
+</ul>
+
+<h3>20.13 קריטריוני סיום</h3>
+<ul>
+<li>☐ <strong>אין קוד שמתבסס על ניחושים:</strong> כל ערך מספרי מגיע ממקור מאומת או שדה ריק.</li>
+<li>☐ <strong>כל הקריאות לשרת מוגנות ב-error handler.</strong></li>
+<li>☐ <strong>אין localStorage שנשאר עם נתונים רגישים אחרי משיכה.</strong></li>
+<li>☐ <strong>אין קוד מת (dead code).</strong></li>
+<li>☐ <strong>אין duplicate functions בין הקבצים.</strong></li>
+<li>☐ <strong>כל הזיהויים של עמודות בשיטס מבוססי שם (לא מיקום).</strong></li>
+<li>☐ <strong>הערות מסבירות "למה" ולא "מה".</strong></li>
+</ul>
+</div>
+
+<hr>
+
+<h2>נספח: סיכום החלטות ארכיטקטוניות</h2>
+
+<table>
+<tr><th>החלטה</th><th>למה</th></tr>
+<tr><td>בייס Backend = code.js</td><td>יחיד שעובד עם 28 עמודות + backward compat + migration</td></tr>
+<tr><td>בייס Frontend = ...וניתוח (4)</td><td>יחיד שמימש את שני השיפורים + state management מלא + error handling</td></tr>
+<tr><td>כרטיסיות: 5 סקשנים משוכפלים פר-כרטיסייה</td><td>פשטות state + UX ברור (טאב עצמאי = סקשנים עצמאיים)</td></tr>
+<tr><td>5 העמודות הישנות ממשיכות להיכתב</td><td>תאימות לאחור — משהו אחר עלול להסתמך עליהן</td></tr>
+<tr><td>Twin fields (לא duplicate)</td><td>מניעת אי-סנכרון, חיסכון בקוד</td></tr>
+<tr><td>Suggestion: fitScore (לא מחיר)</td><td>דיוק מול דרישה עדיף על זול</td></tr>
+<tr><td>calculatorDataPulled guard</td><td>מניעת דריסת תוצאות מדויקות</td></tr>
+<tr><td>openPrintWindow (לא window.print)</td><td>עימוד מותאם + תמונות + נתונים מחושבים</td></tr>
+<tr><td>localStorage להעברת Calculator→Quote</td><td>Same-Origin חוסם, רק localStorage של אותו origin עובד</td></tr>
+<tr><td>isClientSaved check</td><td>מניעת טעינת טופס ללקוח שלא קיים בשיטס</td></tr>
+</table>
+
+<p style="text-align:center; color:var(--ink-faint); font-size:13px; margin-top:40px;">
+<strong>סוף דוח הביקורת.</strong> גרסת הבייס המומלצת היא <code>code.js</code> + <code>...וניתוח אנרגטי (4).html</code> + 3 רכיבים מומלצים (PMT/NPV/IRR, addCustomItem, validation).
+</p>
+
+</div>
+</body>
+</html>
