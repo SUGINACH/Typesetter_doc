@@ -19,6 +19,8 @@
 | [`Issue_resolution_protocol.md`](Issue_resolution_protocol.md) | 115 | 16 | פרוטוקול פתרון בעיות — תהליך 9 השלבים לטיפול בבעיות עימוד. |
 | [`Master_work_register.md`](Master_work_register.md) | 1,092 | 147 | מרשם עבודות ראשי — יציבות, שלימות ושקיפות מנוע העימוד (V23). רשימת דרישות משתמש והחלטות… |
 | [`Plan_stability_completeness_transparency.md`](Plan_stability_completeness_transparency.md) | 207 | 21 | תכנית יציבות, שלמות ושקיפות — עקרונות מנחים לתיעוד ולפיתוח. |
+| [`README.md`](README.md) | 112 | 14 | קובץ `README` — 112 שורות, 14 כותרות. # 🌐 shared/plans > תכניות עבודה, כללי עבודה, ופרו… |
+| [`System_creation_plan.md`](System_creation_plan.md) | 365 | 38 | קובץ `System_creation_plan` — 365 שורות, 38 כותרות. --- title: "ספר מפרט אדריכלי והנדסי… |
 | [`Work_plan.md`](Work_plan.md) | 403 | 82 | תכנית עבודה לפיתוח מנוע העימוד — שלבים, יעדים, ומדדים. |
 | [`Workflows.md`](Workflows.md) | 245 | 22 | תהליכי עבודה — תיאור ה-workflows התקניים לפיתוח, בדיקה, והפצה. |
 | [`Working_rules.md`](Working_rules.md) | 160 | 14 | כללי עבודה — 14 כללים מחייבים לעבודה על מערכת העימוד. |
@@ -58,6 +60,30 @@
 
 ```
 --- title: "תכנית עבודה להגיע ליציבות, שלימות ושקיפות במנוע העימוד — V23" date: unknown version: shared type: plans source: shared --- # תכנית עבודה להגיע ליציבות, שלימות ושקיפות במנוע העימוד — V23 **
+```
+
+</details>
+
+### [`README.md`](README.md)
+
+קובץ `README` — 112 שורות, 14 כותרות. # 🌐 shared/plans > תכניות עבודה, כללי עבודה, ופרוטוקולים משותפים. כולל מרשם עבודות ראשי, תכנית עבודה, כללי עבודה, workfl…
+
+<details><summary>תקציר תוכן</summary>
+
+```
+# 🌐 shared/plans > תכניות עבודה, כללי עבודה, ופרוטוקולים משותפים. כולל מרשם עבודות ראשי, תכנית עבודה, כללי עבודה, workflows, פרוטוקול פתרון בעיות, ותכנית יציבות/שלמות/שקיפות. --- ## 🌐 אודות הפרויקט רי
+```
+
+</details>
+
+### [`System_creation_plan.md`](System_creation_plan.md)
+
+קובץ `System_creation_plan` — 365 שורות, 38 כותרות. --- title: "ספר מפרט אדריכלי והנדסי: מנוע עימוד תורני מקצועי לדפי A4" date: unknown version: shared type: plans source: …
+
+<details><summary>תקציר תוכן</summary>
+
+```
+--- title: "ספר מפרט אדריכלי והנדסי: מנוע עימוד תורני מקצועי לדפי A4" date: unknown version: shared type: plans source: shared --- # ספר מפרט אדריכלי והנדסי: מנוע עימוד תורני מקצועי לדפי A4 --- ## תוכ
 ```
 
 </details>

@@ -16,6 +16,9 @@
 
 | קובץ | שורות | כותרות | תיאור |
 |------|-------|--------|-------|
+| [`Original_chats_collection.md`](Original_chats_collection.md) | 19,508 | 1006 | קובץ `Original_chats_collection` — 19,508 שורות, 1006 כותרות. --- title: "אוסף שיחות מק… |
+| [`README.md`](README.md) | 125 | 15 | קובץ `README` — 125 שורות, 15 כותרות. # 📘 claude_v20/transcripts > תמלילי שיחות הפיתוח … |
+| [`V20.0_panel_settings_review.md`](V20.0_panel_settings_review.md) | 482 | 66 | קובץ `V20.0_panel_settings_review` — 482 שורות, 66 כותרות. --- title: "שיחה מקדימה — סק… |
 | [`V20.1_version_comparison.md`](V20.1_version_comparison.md) | 5,315 | 483 | תמליל V20.1 — השוואת גרסאות מערכת עימוד ספר תורני. שיחת הפתיחה של גרסת V20. |
 | [`V20.2_html_split.md`](V20.2_html_split.md) | 5,078 | 351 | תמליל V20.2 — חלוקת קובץ HTML יחיד לשלושה קבצים (HTML, CSS, JS) בזהירות רבה. |
 | [`V20.3_footnote_settings.md`](V20.3_footnote_settings.md) | 4,083 | 318 | תמליל V20.3 — הגדרות הערות שוליים ומזהים במערכת העימוד. |
@@ -26,6 +29,42 @@
 
 
 ## 📋 פירוט קבצים
+
+### [`Original_chats_collection.md`](Original_chats_collection.md)
+
+קובץ `Original_chats_collection` — 19,508 שורות, 1006 כותרות. --- title: "אוסף שיחות מקוריות עם Claude — 8 שיחות" date: 2026-08-25 version: V20 type: transcripts source: Claude --- #…
+
+<details><summary>תקציר תוכן</summary>
+
+```
+--- title: "אוסף שיחות מקוריות עם Claude — 8 שיחות" date: 2026-08-25 version: V20 type: transcripts source: Claude --- # אוסף שיחות מקוריות עם Claude — 8 שיחות (תיקון, בדיקה, השוואה, חלוקה, עדכון ממשק
+```
+
+</details>
+
+### [`README.md`](README.md)
+
+קובץ `README` — 125 שורות, 15 כותרות. # 📘 claude_v20/transcripts > תמלילי שיחות הפיתוח עם Claude (V20.1–V20.5). כל קובץ מתעד שיחה אחת, כולל פניות המשתמש ותגוב…
+
+<details><summary>תקציר תוכן</summary>
+
+```
+# 📘 claude_v20/transcripts > תמלילי שיחות הפיתוח עם Claude (V20.1–V20.5). כל קובץ מתעד שיחה אחת, כולל פניות המשתמש ותגובות ה-AI. V20.4 חולק ל-3 חלקים בשל גודלו (11,713 שורות מקור). --- ## 🌐 אודות הפרו
+```
+
+</details>
+
+### [`V20.0_panel_settings_review.md`](V20.0_panel_settings_review.md)
+
+קובץ `V20.0_panel_settings_review` — 482 שורות, 66 כותרות. --- title: "שיחה מקדימה — סקירת לוח ההגדרות והצעות להרחבה" date: unknown version: V20 type: transcripts source: Claude -…
+
+<details><summary>תקציר תוכן</summary>
+
+```
+--- title: "שיחה מקדימה — סקירת לוח ההגדרות והצעות להרחבה" date: unknown version: V20 type: transcripts source: Claude --- # שיחה מקדימה — סקירת לוח ההגדרות והצעות להרחבה אני מניח פה שיחה שהיתה לי אית
+```
+
+</details>
 
 ### [`V20.1_version_comparison.md`](V20.1_version_comparison.md)
 

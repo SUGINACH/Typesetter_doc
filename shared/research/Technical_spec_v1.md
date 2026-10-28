@@ -1,3 +1,11 @@
+---
+title: "מפרט טכני וארכיטקטורה: מערכת מנוע עימוד לספרות תורנית (v1.0.0)"
+date: unknown
+version: shared
+type: research
+source: shared
+---
+
 # 1 - מפרט טכני וארכיטקטורה: מערכת מנוע עימוד לספרות תורנית
 **גרסת מסמך:** 1.0.0  
 **סיווג:** Core Architecture & Technical Documentation  

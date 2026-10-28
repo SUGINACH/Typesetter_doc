@@ -1,3 +1,11 @@
+---
+title: "מסמך ארכיטקטורה — מנוע עימוד תורני רב-ערוצי מאפס"
+date: unknown
+version: shared
+type: research
+source: shared
+---
+
 מסמך ארכיטקטורה זה מפרט את ה-Lifecycle, מבני הנתונים והאלגוריתמים הנדרשים לבניית מנוע עימוד תורני רב-ערוצי (Multi-stream Synchronized Typesetting Engine) מאפס, המיושם ב-Python או ב-Node.js/TypeScript.
 
 ---

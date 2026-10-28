@@ -1,3 +1,11 @@
+---
+title: "מסמך ארכיטקטורה, מפרט אלגוריתמי ותיעוד הנדסי מקיף — Master Studio Edition"
+date: unknown
+version: shared
+type: research
+source: shared
+---
+
 # מסמך ארכיטקטורה, מפרט אלגוריתמי ותיעוד הנדסי מקיף
 ## מערכת עימוד והוצאה לאור לספרות תורנית ועיונית (Master Studio Edition)
 

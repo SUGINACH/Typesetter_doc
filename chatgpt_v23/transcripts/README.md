@@ -26,6 +26,7 @@
 | [`Chat_08.md`](Chat_08.md) | 2,349 | 205 | תמליל שיחה 8 עם ChatGPT. |
 | [`Chat_09.md`](Chat_09.md) | 1,418 | 92 | תמליל שיחה 9 עם ChatGPT. |
 | [`Chat_10.md`](Chat_10.md) | 1,472 | 123 | תמליל שיחה 10 עם ChatGPT — השיחה האחרונה בסדרה. |
+| [`README.md`](README.md) | 164 | 18 | קובץ `README` — 164 שורות, 18 כותרות. # 💚 chatgpt_v23/transcripts > 10 תמלילי שיחות הפי… |
 
 
 ## 📋 פירוט קבצים
@@ -146,6 +147,18 @@
 
 ```
 --- title: "המשך אימות ממצאים V23" date: 2026-27-10 version: V23 type: transcripts source: ChatGPT --- # המשך אימות ממצאים V23 **User:** Anonymous **Created:** 10/27/2026 18:09:27 **Updated:** 10/28/2
+```
+
+</details>
+
+### [`README.md`](README.md)
+
+קובץ `README` — 164 שורות, 18 כותרות. # 💚 chatgpt_v23/transcripts > 10 תמלילי שיחות הפיתוח עם ChatGPT (מספר 1 עד 10). --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מ…
+
+<details><summary>תקציר תוכן</summary>
+
+```
+# 💚 chatgpt_v23/transcripts > 10 תמלילי שיחות הפיתוח עם ChatGPT (מספר 1 עד 10). --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני
 ```
 
 </details>

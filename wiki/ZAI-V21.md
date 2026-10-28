@@ -4,10 +4,10 @@
 
 ## 📊 סטטיסטיקות התיקייה
 
-- **מספר קבצים:** 19
-- **סך כל השורות:** 33,807
-- **סך כל הגודל:** 1.73 MB
-- **סך כל הכותרות שזוהו:** 2046
+- **מספר קבצים:** 25
+- **סך כל השורות:** 34,261
+- **סך כל הגודל:** 1.75 MB
+- **סך כל הכותרות שזוהו:** 2112
 
 ## 📝 תיאור התיקייה
 
@@ -17,31 +17,73 @@
 
 | # | שם הקובץ | סוג | שורות | כותרות | קישור ישיר |
 |---|-----------|-----|-------|--------|------------|
-| 1 | `Repo_audit_and_testing.md` | md | 243 | 28 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/Repo_audit_and_testing.md) |
-| 2 | `Step_by_step_audit_method.md` | md | 654 | 72 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/Step_by_step_audit_method.md) |
-| 3 | `Audit_expansion_plan.md` | md | 422 | 52 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Audit_expansion_plan.md) |
-| 4 | `Comprehensive_issues_review.md` | md | 204 | 29 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Comprehensive_issues_review.md) |
-| 5 | `Defining_layout_issues.md` | md | 996 | 185 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Defining_layout_issues.md) |
-| 6 | `Issues_table.md` | md | 96 | 12 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Issues_table.md) |
-| 7 | `Verifying_layout_issues.md` | md | 1,447 | 157 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Verifying_layout_issues.md) |
-| 8 | `Operating_instructions.md` | md | 28 | 4 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/Operating_instructions.md) |
-| 9 | `Session_handoff.md` | md | 354 | 54 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/Session_handoff.md) |
-| 10 | `Comprehensive_technical_documentation.md` | md | 2,109 | 194 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/Comprehensive_technical_documentation.md) |
-| 11 | `Layout_dependency_map.md` | md | 674 | 74 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/Layout_dependency_map.md) |
-| 12 | `Technical_documentation.md` | md | 397 | 42 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/Technical_documentation.md) |
-| 13 | `Chat_01_part_1.md` | md | 4,596 | 144 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_01_part_1.md) |
-| 14 | `Chat_01_part_2.md` | md | 2,684 | 131 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_01_part_2.md) |
-| 15 | `Chat_02_part_1.md` | md | 5,171 | 214 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_02_part_1.md) |
-| 16 | `Chat_02_part_2.md` | md | 4,298 | 227 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_02_part_2.md) |
-| 17 | `Chat_03.md` | md | 4,937 | 170 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_03.md) |
-| 18 | `Chat_04.md` | md | 3,519 | 108 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_04.md) |
-| 19 | `Chat_05.md` | md | 978 | 149 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_05.md) |
+| 1 | `README.md` | md | 60 | 10 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md) |
+| 2 | `Repo_audit_and_testing.md` | md | 243 | 28 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/Repo_audit_and_testing.md) |
+| 3 | `Step_by_step_audit_method.md` | md | 654 | 72 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/Step_by_step_audit_method.md) |
+| 4 | `Audit_expansion_plan.md` | md | 422 | 52 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Audit_expansion_plan.md) |
+| 5 | `Comprehensive_issues_review.md` | md | 204 | 29 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Comprehensive_issues_review.md) |
+| 6 | `Defining_layout_issues.md` | md | 996 | 185 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Defining_layout_issues.md) |
+| 7 | `Issues_table.md` | md | 96 | 12 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Issues_table.md) |
+| 8 | `README.md` | md | 99 | 13 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md) |
+| 9 | `Verifying_layout_issues.md` | md | 1,447 | 157 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Verifying_layout_issues.md) |
+| 10 | `README.md` | md | 37 | 7 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md) |
+| 11 | `Operating_instructions.md` | md | 28 | 4 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/Operating_instructions.md) |
+| 12 | `README.md` | md | 60 | 10 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md) |
+| 13 | `Session_handoff.md` | md | 354 | 54 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/Session_handoff.md) |
+| 14 | `Comprehensive_technical_documentation.md` | md | 2,109 | 194 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/Comprehensive_technical_documentation.md) |
+| 15 | `Layout_dependency_map.md` | md | 674 | 74 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/Layout_dependency_map.md) |
+| 16 | `README.md` | md | 73 | 11 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md) |
+| 17 | `Technical_documentation.md` | md | 397 | 42 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/Technical_documentation.md) |
+| 18 | `Chat_01_part_1.md` | md | 4,596 | 144 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_01_part_1.md) |
+| 19 | `Chat_01_part_2.md` | md | 2,684 | 131 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_01_part_2.md) |
+| 20 | `Chat_02_part_1.md` | md | 5,171 | 214 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_02_part_1.md) |
+| 21 | `Chat_02_part_2.md` | md | 4,298 | 227 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_02_part_2.md) |
+| 22 | `Chat_03.md` | md | 4,937 | 170 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_03.md) |
+| 23 | `Chat_04.md` | md | 3,519 | 108 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_04.md) |
+| 24 | `Chat_05.md` | md | 978 | 149 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_05.md) |
+| 25 | `README.md` | md | 125 | 15 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md) |
 
 ---
 
 ## 📚 אינדקס מפורט לפי קובץ
 
-## 📝 1. `Repo_audit_and_testing.md`
+## 📝 1. `README.md`
+
+**נתיב:** [`zai_v21/audits/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md)  
+**סוג:** md  ·  **שורות:** 60  ·  **גודל:** 2.4 KB  ·  **כותרות שזוהו:** 10
+
+<details>
+<summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
+
+```text
+# 🥇 zai_v21/audits > ביקורות — ביקורת ריפו ובדיקות, ושיטת אימות יד-ביד (step-by-step). --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `zai_v21/audits` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|--------|-------| | [`Repo_audit_and_testing.md`](Repo_audit_and_testing.m
+```
+
+</details>
+
+
+<details>
+<summary>📋 <b>כל הכותרות בקובץ (10 פריטים) — לחץ להרחבה</b></summary>
+
+| # | רמה | כותרת | שורה | תוכן מקדים |
+|---|-----|--------|------|-------------|
+| 1 | H1 | [`🥇 zai_v21/audits`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#-zaiv21audits) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L1) | > ביקורות — ביקורת ריפו ובדיקות, ושיטת אימות יד-ביד (step-by-step). |
+| 2 | H2 |   [`> ביקורות — ביקורת ריפו ובדיקות, ושיטת אימות יד-ביד (step-by-step).`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%95%D7%AA--%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%A8%D7%99%D7%A4%D7%95-%D7%95%D7%91%D7%93%D7%99%D7%A7%D7%95%D7%AA-%D7%95%D7%A9%D7%99%D7%98%D7%AA-%D7%90%D7%99%D7%9E%D7%95%D7%AA-%D7%99%D7%93-%D7%91%D7%99%D7%93-step-by-step) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L3) | --- |
+| 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
+| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`Repo_audit_and_te… |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L23](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L23) |  |
+| 6 | H3 |     [`[`Repo_audit_and_testing.md`](Repo_audit_and_testing.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#repoauditandtestingmdrepoauditandtestingmd) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L25) | ביקורת ריפו ובדיקות — סקירת כל הריפו ומצב הבדיקות. |
+| 7 | H3 |     [`[`Step_by_step_audit_method.md`](Step_by_step_audit_method.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#stepbystepauditmethodmdstepbystepauditmethodmd) | [L37](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L37) | שיטת אימות יד-ביד (step-by-step) — מדריך לביצוע ביקורת ידנית מלאה. |
+| 8 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#details) | [L47](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L47) | --- |
+| 9 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L51) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 10 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L56](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/README.md#L56) | --- |
+
+</details>
+
+
+---
+
+## 📝 2. `Repo_audit_and_testing.md`
 
 **נתיב:** [`zai_v21/audits/Repo_audit_and_testing.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/Repo_audit_and_testing.md)  
 **סוג:** md  ·  **שורות:** 243  ·  **גודל:** 12.1 KB  ·  **כותרות שזוהו:** 28
@@ -95,7 +137,7 @@
 
 ---
 
-## 📝 2. `Step_by_step_audit_method.md`
+## 📝 3. `Step_by_step_audit_method.md`
 
 **נתיב:** [`zai_v21/audits/Step_by_step_audit_method.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/audits/Step_by_step_audit_method.md)  
 **סוג:** md  ·  **שורות:** 654  ·  **גודל:** 35.6 KB  ·  **כותרות שזוהו:** 72
@@ -193,7 +235,7 @@
 
 ---
 
-## 📝 3. `Audit_expansion_plan.md`
+## 📝 4. `Audit_expansion_plan.md`
 
 **נתיב:** [`zai_v21/issues/Audit_expansion_plan.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Audit_expansion_plan.md)  
 **סוג:** md  ·  **שורות:** 422  ·  **גודל:** 18.3 KB  ·  **כותרות שזוהו:** 52
@@ -271,7 +313,7 @@
 
 ---
 
-## 📝 4. `Comprehensive_issues_review.md`
+## 📝 5. `Comprehensive_issues_review.md`
 
 **נתיב:** [`zai_v21/issues/Comprehensive_issues_review.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Comprehensive_issues_review.md)  
 **סוג:** md  ·  **שורות:** 204  ·  **גודל:** 12.7 KB  ·  **כותרות שזוהו:** 29
@@ -326,7 +368,7 @@
 
 ---
 
-## 📝 5. `Defining_layout_issues.md`
+## 📝 6. `Defining_layout_issues.md`
 
 **נתיב:** [`zai_v21/issues/Defining_layout_issues.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Defining_layout_issues.md)  
 **סוג:** md  ·  **שורות:** 996  ·  **גודל:** 51.6 KB  ·  **כותרות שזוהו:** 185
@@ -537,7 +579,7 @@
 
 ---
 
-## 📝 6. `Issues_table.md`
+## 📝 7. `Issues_table.md`
 
 **נתיב:** [`zai_v21/issues/Issues_table.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Issues_table.md)  
 **סוג:** md  ·  **שורות:** 96  ·  **גודל:** 15.0 KB  ·  **כותרות שזוהו:** 12
@@ -575,7 +617,46 @@
 
 ---
 
-## 📝 7. `Verifying_layout_issues.md`
+## 📝 8. `README.md`
+
+**נתיב:** [`zai_v21/issues/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md)  
+**סוג:** md  ·  **שורות:** 99  ·  **גודל:** 4.5 KB  ·  **כותרות שזוהו:** 13
+
+<details>
+<summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
+
+```text
+# 🥇 zai_v21/issues > קטלוגי בעיות — הגדרת בעיות, אימות בעיות, טבלת בעיות, סקירה מקיפה, ותכנית הרחבת ביקורת. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `zai_v21/issues` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|--------|-------| | [`Audit_expansion_plan.md`](Audit
+```
+
+</details>
+
+
+<details>
+<summary>📋 <b>כל הכותרות בקובץ (13 פריטים) — לחץ להרחבה</b></summary>
+
+| # | רמה | כותרת | שורה | תוכן מקדים |
+|---|-----|--------|------|-------------|
+| 1 | H1 | [`🥇 zai_v21/issues`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#-zaiv21issues) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L1) | > קטלוגי בעיות — הגדרת בעיות, אימות בעיות, טבלת בעיות, סקירה מקיפה, ותכנית הרחבת ביקורת. |
+| 2 | H2 |   [`> קטלוגי בעיות — הגדרת בעיות, אימות בעיות, טבלת בעיות, סקירה מקיפה, ותכנית הרחבת ביקורת.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#-%D7%A7%D7%98%D7%9C%D7%95%D7%92%D7%99-%D7%91%D7%A2%D7%99%D7%95%D7%AA--%D7%94%D7%92%D7%93%D7%A8%D7%AA-%D7%91%D7%A2%D7%99%D7%95%D7%AA-%D7%90%D7%99%D7%9E%D7%95%D7%AA-%D7%91%D7%A2%D7%99%D7%95%D7%AA-%D7%98%D7%91%D7%9C%D7%AA-%D7%91%D7%A2%D7%99%D7%95%D7%AA-%D7%A1%D7%A7%D7%99%D7%A8%D7%94-%D7%9E%D7%A7%D7%99%D7%A4%D7%94-%D7%95%D7%AA%D7%9B%D7%A0%D7%99%D7%AA-%D7%94%D7%A8%D7%97%D7%91%D7%AA-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L3) | --- |
+| 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
+| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`Audit_expansion_p… |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L26) |  |
+| 6 | H3 |     [`[`Audit_expansion_plan.md`](Audit_expansion_plan.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#auditexpansionplanmdauditexpansionplanmd) | [L28](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L28) | תכנית הרחבת ביקורת — אילו בדיקות נוספות יש להוסיף. |
+| 7 | H3 |     [`[`Comprehensive_issues_review.md`](Comprehensive_issues_review.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#comprehensiveissuesreviewmdcomprehensiveissuesreviewmd) | [L40](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L40) | סקירה מקיפה של בעיות — ניתוח מעמיק של כל בעיה. |
+| 8 | H3 |     [`[`Defining_layout_issues.md`](Defining_layout_issues.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#defininglayoutissuesmddefininglayoutissuesmd) | [L52](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L52) | הגדרת בעיות עימוד — טקסונומיה מלאה של 15+ בעיות עימוד ידועות. |
+| 9 | H3 |     [`[`Issues_table.md`](Issues_table.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#issuestablemdissuestablemd) | [L64](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L64) | טבלת בעיות — רשימה מקיפה של כל הבעיות עם מזהים, תיאורים, וסטטוס. |
+| 10 | H3 |     [`[`Verifying_layout_issues.md`](Verifying_layout_issues.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#verifyinglayoutissuesmdverifyinglayoutissuesmd) | [L76](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L76) | אימות בעיות עימוד — כיצד לבדוק כל בעיה, כולל סקריפטים וכלי עזר. |
+| 11 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#details) | [L86](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L86) | --- |
+| 12 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L90](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L90) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 13 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L95](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/README.md#L95) | --- |
+
+</details>
+
+
+---
+
+## 📝 9. `Verifying_layout_issues.md`
 
 **נתיב:** [`zai_v21/issues/Verifying_layout_issues.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/issues/Verifying_layout_issues.md)  
 **סוג:** md  ·  **שורות:** 1,447  ·  **גודל:** 64.2 KB  ·  **כותרות שזוהו:** 157
@@ -758,7 +839,40 @@
 
 ---
 
-## 📝 8. `Operating_instructions.md`
+## 📝 10. `README.md`
+
+**נתיב:** [`zai_v21/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md)  
+**סוג:** md  ·  **שורות:** 37  ·  **גודל:** 1.9 KB  ·  **כותרות שזוהו:** 7
+
+<details>
+<summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
+
+```text
+# 🥇 zai_v21 > תיקיית גרסת **z.ai (GLM)** — V21 (Gold). מכילה את כל התיעוד שנוצר על ידי z.ai. מאופיינת בשילוב של מחקר אקדמי עם תיעוד טכני מפורט, ובדגש חזק על CI/CD ו-GitHub Actions. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `zai_v21` ← [חזרה לתיקיית הורה](../README.md) ## 📁 תיקיות משנה | תיקייה | תיאור | |--------|-------| | [`
+```
+
+</details>
+
+
+<details>
+<summary>📋 <b>כל הכותרות בקובץ (7 פריטים) — לחץ להרחבה</b></summary>
+
+| # | רמה | כותרת | שורה | תוכן מקדים |
+|---|-----|--------|------|-------------|
+| 1 | H1 | [`🥇 zai_v21`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#-zaiv21) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#L1) | > תיקיית גרסת **z.ai (GLM)** — V21 (Gold). מכילה את כל התיעוד שנוצר על ידי z.ai. מאופיינת בשילוב של … |
+| 2 | H2 |   [`> תיקיית גרסת **z.ai (GLM)** — V21 (Gold). מכילה את כל התיעוד שנוצר על ידי z.ai. מאופיינת …`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#-%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%92%D7%A8%D7%A1%D7%AA-zai-glm--v21-gold-%D7%9E%D7%9B%D7%99%D7%9C%D7%94-%D7%90%D7%AA-%D7%9B%D7%9C-%D7%94%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%A0%D7%95%D7%A6%D7%A8-%D7%A2%D7%9C-%D7%99%D7%93%D7%99-zai-%D7%9E%D7%90%D7%95%D7%A4%D7%99%D7%99%D7%A0%D7%AA-%D7%91%D7%A9%D7%99%D7%9C%D7%95%D7%91-%D7%A9%D7%9C-%D7%9E%D7%97%D7%A7%D7%A8-%D7%90%D7%A7%D7%93%D7%9E%D7%99-%D7%A2%D7%9D-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%95%D7%91%D7%93%D7%92%D7%A9-%D7%97%D7%96%D7%A7-%D7%A2%D7%9C-cicd-%D7%95-github-actions) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#L3) | --- |
+| 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
+| 4 | H2 |   [`📁 תיקיות משנה`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#-%D7%AA%D7%99%D7%A7%D7%99%D7%95%D7%AA-%D7%9E%D7%A9%D7%A0%D7%94) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#L15) | \| תיקייה \| תיאור \| \|--------\|-------\| \| [`audits/`](audits/README.md) \| ביקורות — ביקורת ריפ… |
+| 5 | H2 |   [`\| [`transcripts/`](transcripts/README.md) \| תמלילי שיחות הפיתוח עם z.ai. כולל 4 שיחות רא…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#-transcriptstranscriptsreadmemd--%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%94%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A2%D7%9D-zai-%D7%9B%D7%95%D7%9C%D7%9C-4-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%A8%D7%90%D7%A9%D7%99%D7%95%D7%AA--chat05-%D7%A9%D7%90%D7%99%D7%97%D7%93-3-%D7%94%D7%9E%D7%A9%D7%9B%D7%99%D7%9D-chat01-%D7%95-chat02-%D7%97%D7%95-) | [L23](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#L23) | --- |
+| 6 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L28](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#L28) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 7 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L33](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/README.md#L33) | --- |
+
+</details>
+
+
+---
+
+## 📝 11. `Operating_instructions.md`
 
 **נתיב:** [`zai_v21/session/Operating_instructions.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/Operating_instructions.md)  
 **סוג:** md  ·  **שורות:** 28  ·  **גודל:** 940 B  ·  **כותרות שזוהו:** 4
@@ -788,7 +902,43 @@
 
 ---
 
-## 📝 9. `Session_handoff.md`
+## 📝 12. `README.md`
+
+**נתיב:** [`zai_v21/session/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md)  
+**סוג:** md  ·  **שורות:** 60  ·  **גודל:** 2.3 KB  ·  **כותרות שזוהו:** 10
+
+<details>
+<summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
+
+```text
+# 🥇 zai_v21/session > העברות סשן — מסמך העברה לסשן הבא והוראות הפעלה למשתמש המשך. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `zai_v21/session` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|--------|-------| | [`Operating_instructions.md`](Operating_instructions.md) |
+```
+
+</details>
+
+
+<details>
+<summary>📋 <b>כל הכותרות בקובץ (10 פריטים) — לחץ להרחבה</b></summary>
+
+| # | רמה | כותרת | שורה | תוכן מקדים |
+|---|-----|--------|------|-------------|
+| 1 | H1 | [`🥇 zai_v21/session`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#-zaiv21session) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L1) | > העברות סשן — מסמך העברה לסשן הבא והוראות הפעלה למשתמש המשך. |
+| 2 | H2 |   [`> העברות סשן — מסמך העברה לסשן הבא והוראות הפעלה למשתמש המשך.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#-%D7%94%D7%A2%D7%91%D7%A8%D7%95%D7%AA-%D7%A1%D7%A9%D7%9F--%D7%9E%D7%A1%D7%9E%D7%9A-%D7%94%D7%A2%D7%91%D7%A8%D7%94-%D7%9C%D7%A1%D7%A9%D7%9F-%D7%94%D7%91%D7%90-%D7%95%D7%94%D7%95%D7%A8%D7%90%D7%95%D7%AA-%D7%94%D7%A4%D7%A2%D7%9C%D7%94-%D7%9C%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9-%D7%94%D7%9E%D7%A9%D7%9A) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L3) | --- |
+| 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
+| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`Operating_instruc… |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L23](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L23) |  |
+| 6 | H3 |     [`[`Operating_instructions.md`](Operating_instructions.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#operatinginstructionsmdoperatinginstructionsmd) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L25) | הוראות הפעלה — הנחיות קצרות להפעלת המערכת. |
+| 7 | H3 |     [`[`Session_handoff.md`](Session_handoff.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#sessionhandoffmdsessionhandoffmd) | [L37](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L37) | מסמך העברה לסשן הבא — מצב נוכחי, משימות מיידיות, והנחיות עבודה. |
+| 8 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#details) | [L47](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L47) | --- |
+| 9 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L51) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 10 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L56](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/README.md#L56) | --- |
+
+</details>
+
+
+---
+
+## 📝 13. `Session_handoff.md`
 
 **נתיב:** [`zai_v21/session/Session_handoff.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/session/Session_handoff.md)  
 **סוג:** md  ·  **שורות:** 354  ·  **גודל:** 17.6 KB  ·  **כותרות שזוהו:** 54
@@ -868,7 +1018,7 @@
 
 ---
 
-## 📝 10. `Comprehensive_technical_documentation.md`
+## 📝 14. `Comprehensive_technical_documentation.md`
 
 **נתיב:** [`zai_v21/technical/Comprehensive_technical_documentation.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/Comprehensive_technical_documentation.md)  
 **סוג:** md  ·  **שורות:** 2,109  ·  **גודל:** 132.9 KB  ·  **כותרות שזוהו:** 194
@@ -1088,7 +1238,7 @@
 
 ---
 
-## 📝 11. `Layout_dependency_map.md`
+## 📝 15. `Layout_dependency_map.md`
 
 **נתיב:** [`zai_v21/technical/Layout_dependency_map.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/Layout_dependency_map.md)  
 **סוג:** md  ·  **שורות:** 674  ·  **גודל:** 61.2 KB  ·  **כותרות שזוהו:** 74
@@ -1188,7 +1338,44 @@
 
 ---
 
-## 📝 12. `Technical_documentation.md`
+## 📝 16. `README.md`
+
+**נתיב:** [`zai_v21/technical/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md)  
+**סוג:** md  ·  **שורות:** 73  ·  **גודל:** 3.1 KB  ·  **כותרות שזוהו:** 11
+
+<details>
+<summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
+
+```text
+# 🥇 zai_v21/technical > תיעוד טכני מקיף — המסמך הטכני המורחב, תיעוד טכני קצר, ומפת תלות של הגרסה. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `zai_v21/technical` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|--------|-------| | [`Comprehensive_technical_documentation.
+```
+
+</details>
+
+
+<details>
+<summary>📋 <b>כל הכותרות בקובץ (11 פריטים) — לחץ להרחבה</b></summary>
+
+| # | רמה | כותרת | שורה | תוכן מקדים |
+|---|-----|--------|------|-------------|
+| 1 | H1 | [`🥇 zai_v21/technical`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#-zaiv21technical) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L1) | > תיעוד טכני מקיף — המסמך הטכני המורחב, תיעוד טכני קצר, ומפת תלות של הגרסה. |
+| 2 | H2 |   [`> תיעוד טכני מקיף — המסמך הטכני המורחב, תיעוד טכני קצר, ומפת תלות של הגרסה.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99-%D7%9E%D7%A7%D7%99%D7%A3--%D7%94%D7%9E%D7%A1%D7%9E%D7%9A-%D7%94%D7%98%D7%9B%D7%A0%D7%99-%D7%94%D7%9E%D7%95%D7%A8%D7%97%D7%91-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99-%D7%A7%D7%A6%D7%A8-%D7%95%D7%9E%D7%A4%D7%AA-%D7%AA%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C-%D7%94%D7%92%D7%A8%D7%A1%D7%94) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L3) | --- |
+| 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
+| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`Comprehensive_tec… |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L24) |  |
+| 6 | H3 |     [`[`Comprehensive_technical_documentation.md`](Comprehensive_technical_documentation.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#comprehensivetechnicaldocumentationmdcomprehensivetechnicaldocumentationmd) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L26) | תיעוד טכני מקיף ומורחב — המסמך הטכני הרשמי של גרסת V21. |
+| 7 | H3 |     [`[`Layout_dependency_map.md`](Layout_dependency_map.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#layoutdependencymapmdlayoutdependencymapmd) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L38) | מפת תלות של רכיבי העימוד בגרסת V21. |
+| 8 | H3 |     [`[`Technical_documentation.md`](Technical_documentation.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#technicaldocumentationmdtechnicaldocumentationmd) | [L50](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L50) | תיעוד טכני קצר — גרסה מתומצתת של המסמך הטכני. |
+| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#details) | [L60](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L60) | --- |
+| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L64](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L64) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L69](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/README.md#L69) | --- |
+
+</details>
+
+
+---
+
+## 📝 17. `Technical_documentation.md`
 
 **נתיב:** [`zai_v21/technical/Technical_documentation.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/technical/Technical_documentation.md)  
 **סוג:** md  ·  **שורות:** 397  ·  **גודל:** 25.3 KB  ·  **כותרות שזוהו:** 42
@@ -1256,7 +1443,7 @@
 
 ---
 
-## 📝 13. `Chat_01_part_1.md`
+## 📝 18. `Chat_01_part_1.md`
 
 **נתיב:** [`zai_v21/transcripts/Chat_01_part_1.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_01_part_1.md)  
 **סוג:** md  ·  **שורות:** 4,596  ·  **גודל:** 230.4 KB  ·  **כותרות שזוהו:** 144
@@ -1426,7 +1613,7 @@
 
 ---
 
-## 📝 14. `Chat_01_part_2.md`
+## 📝 19. `Chat_01_part_2.md`
 
 **נתיב:** [`zai_v21/transcripts/Chat_01_part_2.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_01_part_2.md)  
 **סוג:** md  ·  **שורות:** 2,684  ·  **גודל:** 119.0 KB  ·  **כותרות שזוהו:** 131
@@ -1583,7 +1770,7 @@
 
 ---
 
-## 📝 15. `Chat_02_part_1.md`
+## 📝 20. `Chat_02_part_1.md`
 
 **נתיב:** [`zai_v21/transcripts/Chat_02_part_1.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_02_part_1.md)  
 **סוג:** md  ·  **שורות:** 5,171  ·  **גודל:** 261.9 KB  ·  **כותרות שזוהו:** 214
@@ -1823,7 +2010,7 @@
 
 ---
 
-## 📝 16. `Chat_02_part_2.md`
+## 📝 21. `Chat_02_part_2.md`
 
 **נתיב:** [`zai_v21/transcripts/Chat_02_part_2.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_02_part_2.md)  
 **סוג:** md  ·  **שורות:** 4,298  ·  **גודל:** 240.0 KB  ·  **כותרות שזוהו:** 227
@@ -2076,7 +2263,7 @@
 
 ---
 
-## 📝 17. `Chat_03.md`
+## 📝 22. `Chat_03.md`
 
 **נתיב:** [`zai_v21/transcripts/Chat_03.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_03.md)  
 **סוג:** md  ·  **שורות:** 4,937  ·  **גודל:** 242.1 KB  ·  **כותרות שזוהו:** 170
@@ -2272,7 +2459,7 @@
 
 ---
 
-## 📝 18. `Chat_04.md`
+## 📝 23. `Chat_04.md`
 
 **נתיב:** [`zai_v21/transcripts/Chat_04.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_04.md)  
 **סוג:** md  ·  **שורות:** 3,519  ·  **גודל:** 171.0 KB  ·  **כותרות שזוהו:** 108
@@ -2406,7 +2593,7 @@
 
 ---
 
-## 📝 19. `Chat_05.md`
+## 📝 24. `Chat_05.md`
 
 **נתיב:** [`zai_v21/transcripts/Chat_05.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_05.md)  
 **סוג:** md  ·  **שורות:** 978  ·  **גודל:** 58.0 KB  ·  **כותרות שזוהו:** 149
@@ -2575,6 +2762,47 @@
 | 147 | H2 |   [`קישורים חיצוניים (עדכון)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_05.md#%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D-%D7%97%D7%99%D7%A6%D7%95%D7%A0%D7%99%D7%99%D7%9D-%D7%A2%D7%93%D7%9B%D7%95%D7%9F) | [L950](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_05.md#L950) | - **GitHub**: https://github.com/SUGINACH/IMUD_TORANI - Branch `v18-knuth-plass` — גרסת KP בסיסית - … |
 | 148 | H2 |   [`- `Reports_Summaries_Studies/Knuth_Plass_research_report_2.md``](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_05.md#--reportssummariesstudiesknuthplassresearchreport2md) | [L959](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_05.md#L959) | --- |
 | 149 | H2 |   [`הצעדים הבאים המומלצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_05.md#%D7%94%D7%A6%D7%A2%D7%93%D7%99%D7%9D-%D7%94%D7%91%D7%90%D7%99%D7%9D-%D7%94%D7%9E%D7%95%D7%9E%D7%9C%D7%A6%D7%99%D7%9D) | [L963](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/Chat_05.md#L963) | 1. **איזון טורים אחרי `applyKpLineBreaks`** — הרצת איזון נוספת אחרי החלת `<br>`, כדי לתקן את האי-איז… |
+
+</details>
+
+
+---
+
+## 📝 25. `README.md`
+
+**נתיב:** [`zai_v21/transcripts/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md)  
+**סוג:** md  ·  **שורות:** 125  ·  **גודל:** 5.5 KB  ·  **כותרות שזוהו:** 15
+
+<details>
+<summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
+
+```text
+# 🥇 zai_v21/transcripts > תמלילי שיחות הפיתוח עם z.ai. כולל 4 שיחות ראשיות + Chat_05 (שאיחד 3 המשכים). Chat_01 ו-Chat_02 חולקו ל-2 חלקים כל אחד בשל גודלם. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `zai_v21/transcripts` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|-
+```
+
+</details>
+
+
+<details>
+<summary>📋 <b>כל הכותרות בקובץ (15 פריטים) — לחץ להרחבה</b></summary>
+
+| # | רמה | כותרת | שורה | תוכן מקדים |
+|---|-----|--------|------|-------------|
+| 1 | H1 | [`🥇 zai_v21/transcripts`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#-zaiv21transcripts) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L1) | > תמלילי שיחות הפיתוח עם z.ai. כולל 4 שיחות ראשיות + Chat_05 (שאיחד 3 המשכים). Chat_01 ו-Chat_02 חול… |
+| 2 | H2 |   [`> תמלילי שיחות הפיתוח עם z.ai. כולל 4 שיחות ראשיות + Chat_05 (שאיחד 3 המשכים). Chat_01 ו-C…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#-%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%94%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A2%D7%9D-zai-%D7%9B%D7%95%D7%9C%D7%9C-4-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%A8%D7%90%D7%A9%D7%99%D7%95%D7%AA--chat05-%D7%A9%D7%90%D7%99%D7%97%D7%93-3-%D7%94%D7%9E%D7%A9%D7%9B%D7%99%D7%9D-chat01-%D7%95-chat02-%D7%97%D7%95%D7%9C%D7%A7%D7%95-%D7%9C-2-%D7%97%D7%9C%D7%A7%D7%99%D7%9D-%D7%9B%D7%9C-%D7%90%D7%97%D7%93-%D7%91%D7%A9%D7%9C-%D7%92%D7%95%D7%93%D7%9C%D7%9D) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L3) | --- |
+| 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
+| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`Chat_01_part_1.md… |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L28](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L28) |  |
+| 6 | H3 |     [`[`Chat_01_part_1.md`](Chat_01_part_1.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#chat01part1mdchat01part1md) | [L30](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L30) | תמליל שיחה 1 עם z.ai (חלק 1 מתוך 2) — שיחת הפתיחה, כולל סקירת קוד מקיפה וזיהוי בעיות קריטיות. |
+| 7 | H3 |     [`[`Chat_01_part_2.md`](Chat_01_part_2.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#chat01part2mdchat01part2md) | [L42](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L42) | תמליל שיחה 1 עם z.ai (חלק 2 מתוך 2) — המשך השיחה. |
+| 8 | H3 |     [`[`Chat_02_part_1.md`](Chat_02_part_1.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#chat02part1mdchat02part1md) | [L54](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L54) | תמליל שיחה 2 עם z.ai (חלק 1 מתוך 2) — המשך משיחה קודמת, העלאת ZIP עם קבצים. |
+| 9 | H3 |     [`[`Chat_02_part_2.md`](Chat_02_part_2.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#chat02part2mdchat02part2md) | [L66](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L66) | תמליל שיחה 2 עם z.ai (חלק 2 מתוך 2) — המשך השיחה. |
+| 10 | H3 |     [`[`Chat_03.md`](Chat_03.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#chat03mdchat03md) | [L78](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L78) | תמליל שיחה 3 עם z.ai — המשך עבודה על מנוע העימוד V21. |
+| 11 | H3 |     [`[`Chat_04.md`](Chat_04.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#chat04mdchat04md) | [L90](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L90) | תמליל שיחה 4 עם z.ai — המשך העבודה, כולל 9-step process על בעיות. |
+| 12 | H3 |     [`[`Chat_05.md`](Chat_05.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#chat05mdchat05md) | [L102](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L102) | תמליל שיחה 5 עם z.ai — איחוד של שלושה המשכי שיחות קצרים. |
+| 13 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#details) | [L112](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L112) | --- |
+| 14 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L116](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L116) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 15 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L121](https://github.com/SUGINACH/Typesetter_doc/blob/main/zai_v21/transcripts/README.md#L121) | --- |
 
 </details>
 

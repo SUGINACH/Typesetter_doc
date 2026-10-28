@@ -18,6 +18,7 @@
 |------|-------|--------|-------|
 | [`Consolidated_engineering_history.md`](Consolidated_engineering_history.md) | 4,045 | 430 | היסטוריה הנדסית מאוחדת — כרונולוגיה מלאה של החלטות, תיקונים, וניסיונות שנפסלו. |
 | [`Layout_dependency_map.md`](Layout_dependency_map.md) | 822 | 93 | מפת תלות של רכיבי העימוד — איזה קובץ/פונקציה תלוי במה. |
+| [`README.md`](README.md) | 73 | 11 | קובץ `README` — 73 שורות, 11 כותרות. # 💚 chatgpt_v23/technical > תיעוד טכני — היסטוריה … |
 | [`Technical_history_and_architecture.md`](Technical_history_and_architecture.md) | 838 | 95 | היסטוריה טכנית וארכיטקטורה — סקירה כללית של המערכת, קובצי מקור, זרימת עבודה, ועקרונות ת… |
 
 
@@ -43,6 +44,18 @@
 
 ```
 --- title: "מפת התלויות הגיאומטריות במנוע העימוד — V23" date: unknown version: V23 type: technical source: ChatGPT --- # מפת התלויות הגיאומטריות במנוע העימוד — V23 > **מדיניות ענפים:** `V21` ו-`V23` ה
+```
+
+</details>
+
+### [`README.md`](README.md)
+
+קובץ `README` — 73 שורות, 11 כותרות. # 💚 chatgpt_v23/technical > תיעוד טכני — היסטוריה טכנית וארכיטקטורה, מפת תלות, והיסטוריה הנדסית מאוחדת. --- ## 🌐 אודות ה…
+
+<details><summary>תקציר תוכן</summary>
+
+```
+# 💚 chatgpt_v23/technical > תיעוד טכני — היסטוריה טכנית וארכיטקטורה, מפת תלות, והיסטוריה הנדסית מאוחדת. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קו
 ```
 
 </details>

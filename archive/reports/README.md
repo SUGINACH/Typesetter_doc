@@ -18,6 +18,7 @@
 |------|-------|--------|-------|
 | [`AI_chats_summary.md`](AI_chats_summary.md) | 2,883 | 447 | סיכום שיחות AI קודמות — סיכום שיחות מוקדמות על מערכת לעימוד ספר תורני. |
 | [`Audit_report.md`](Audit_report.md) | 402 | 23 | דוח בדיקה — דוח ישן של ביקורת מעמיקה מקצה לקצה, ניתוח ארכיטקטורה, וזיהוי כשלים. |
+| [`README.md`](README.md) | 73 | 11 | קובץ `README` — 73 שורות, 11 כותרות. # 📦 archive/reports > דוחות ישנים — דוח בדיקה, נית… |
 | [`Software_analysis.md`](Software_analysis.md) | 288 | 18 | ניתוח תוכנה — ניתוח ישן של המערכת. |
 
 
@@ -43,6 +44,18 @@
 
 ```
 --- title: "מערכת עימוד תורנית מקצועית לדפי A4 — Master Edition" date: unknown version: archive type: reports source: archive --- ARCHITECTURAL AUDIT & E2E VERIFICATION REPORT # מערכת עימוד תורנית מקצ
+```
+
+</details>
+
+### [`README.md`](README.md)
+
+קובץ `README` — 73 שורות, 11 כותרות. # 📦 archive/reports > דוחות ישנים — דוח בדיקה, ניתוח תוכנה, וסיכום שיחות AI קודמות. --- ## 🌐 אודות הפרויקט ריפו תיעוד של…
+
+<details><summary>תקציר תוכן</summary>
+
+```
+# 📦 archive/reports > דוחות ישנים — דוח בדיקה, ניתוח תוכנה, וסיכום שיחות AI קודמות. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס הת
 ```
 
 </details>
