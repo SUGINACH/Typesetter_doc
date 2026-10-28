@@ -7,16 +7,17 @@
 ## אינדקסים
 
 - 🎯 **[אינדקס נושאי-היררכי](Topical-Index)** — ארגון לפי נושאים (מלמעלה למטה)
-- 🔤 **[אינדקס אלפביתי](Glossary)** — 2,775 מונחים טכניים מקושרים
+- 🔤 **[אינדקס אלפביתי](Glossary)** — 2,929 מונחים טכניים מקושרים
 
 ---
 
 ## תיקיות ראשיות (לפי קבצים)
 
-- 📘 [Claude — IMUD TORANI v20](Claude-IMUD-TORANI-V20)
-- 💚 [ChatGPT — Green V23](ChatGPT-Green-V23)
-- 🥇 [z.ai — Gold V21](ZAI-Gold-V21)
-- 📦 [ארכיון ישן — old_doc](Old-Doc-Archive)
+- 📘 [Claude — V20](Claude-V20)
+- 💚 [ChatGPT — V23](ChatGPT-V23)
+- 🥇 [z.ai — V21](ZAI-V21)
+- 🌐 [מסמכים משותפים](Shared)
+- 📦 [ארכיון היסטורי](Archive)
 
 ---
 
@@ -40,9 +41,9 @@
 
 ## קישורי מפתח
 
-- [קובץ ה-README של הריפו](https://github.com/SUGINACH/Typesetter_doc/blob/main/README.MD)
 - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc)
+- [קובץ ה-README הראשי](https://github.com/SUGINACH/Typesetter_doc/blob/main/README.md)
 
 ---
 
-_הויקי נבנה אוטומטית על ידי סריקת 83 קבצי התיעוד (7,637 כותרות)._
+_הויקי נבנה אוטומטית על ידי סריקת 76 קבצי התיעוד המאורגנים ב-5 תיקיות ראשיות._
