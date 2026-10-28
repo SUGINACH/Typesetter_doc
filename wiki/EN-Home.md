@@ -17,10 +17,10 @@ The [`SUGINACH/Typesetter_doc`](https://github.com/SUGINACH/Typesetter_doc) repo
 
 ## 📊 Overall Statistics
 
-- **Total files:** 175
-- **Total lines:** 199,986
-- **Total size:** 31.95 MB
-- **Total headings detected:** 14313
+- **Total files:** 221
+- **Total lines:** 470,318
+- **Total size:** 53.23 MB
+- **Total headings detected:** 22329
 
 ## 🗺 Navigation Map
 
@@ -40,13 +40,13 @@ Documentation created by **ChatGPT (OpenAI)** — Version V23. Contains 5 sub-fo
 
 Documentation created by **z.ai (GLM)** — Version V21. Contains 5 sub-folders: `transcripts/` (7 transcripts: 4 main chats + Chat_05 which merged 3 continuations, with Chat_01 and Chat_02 each split into 2 parts), `technical/` (3 documents), `issues/` (5 issue catalogs), `audits/` (2 audits), `session/` (session handoff + operating instructions). Characterized by combining academic research with detailed technical documentation, with strong emphasis on CI/CD and GitHub Actions.
 
-➡️ **[Open the full index for z.ai folder](EN-ZAI-V21)** (25 files)
+➡️ **[Open the full index for z.ai folder](EN-ZAI-V21)** (45 files)
 
 ### 🌐 Shared Documents
 
 **Shared documents** — content not specific to one version. Contains 5 sub-folders: `research/` (13 research documents: Knuth-Plass algorithm, dual-column RTL design, deterministic typesetting engine, Torah typesetting challenges, multi-stream architecture, technical specifications, functional gaps analysis, plus 2 PDFs), `plans/` (7 work plans: master work register, work plan, working rules, workflows, issue resolution protocol, system creation plan, plan stability), `comparisons/` (4 comparison reports: version comparison, Tag software comparison, integration recommendation, upgrade plan), `prompts/` (prompt collection), `menu_spec/` (menu/theme specifications).
 
-➡️ **[Open the full index for Shared folder](EN-Shared)** (34 files)
+➡️ **[Open the full index for Shared folder](EN-Shared)** (51 files)
 
 ### 📦 Historical Archive
 
@@ -58,7 +58,7 @@ Documentation created by **z.ai (GLM)** — Version V21. Contains 5 sub-folders:
 
 **Source code snapshot** — the original system code (HTML+CSS+JS) at a specific point in time. This is a documentation repository, but the file is kept here for historical context.
 
-➡️ **[Open the full index for Source Code folder](EN-source_code)** (1 files)
+➡️ **[Open the full index for Source Code folder](EN-source_code)** (2 files)
 
 ## 🔍 How to use this index
 

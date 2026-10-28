@@ -9,27 +9,27 @@
 ## 📊 Folder Statistics
 
 - **Number of files:** 25
-- **Total lines:** 23,771
-- **Total size:** 1.80 MB
-- **Total headings detected:** 2052
+- **Total lines:** 23,857
+- **Total size:** 1.81 MB
+- **Total headings detected:** 2066
 
 ## 🗂 Quick File Map
 
 | # | File Name | Type | Lines | Headings | Direct Link |
 |---|-----------|------|-------|----------|-------------|
 | 1 | `Baseline_long_audit.md` | md | 106 | 10 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/Baseline_long_audit.md) |
-| 2 | `README.md` | md | 47 | 9 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md) |
+| 2 | `README.md` | md | 60 | 11 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md) |
 | 3 | `Issue_coverage_matrix.md` | md | 66 | 5 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/Issue_coverage_matrix.md) |
 | 4 | `Layout_issue_catalog.md` | md | 294 | 28 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/Layout_issue_catalog.md) |
-| 5 | `README.md` | md | 73 | 11 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md) |
+| 5 | `README.md` | md | 86 | 13 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md) |
 | 6 | `Transcript_deletion_audit.md` | md | 189 | 18 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/Transcript_deletion_audit.md) |
-| 7 | `README.md` | md | 37 | 7 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md) |
+| 7 | `README.md` | md | 58 | 11 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md) |
 | 8 | `Continuations.md` | md | 220 | 27 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/Continuations.md) |
-| 9 | `README.md` | md | 60 | 10 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md) |
+| 9 | `README.md` | md | 73 | 12 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md) |
 | 10 | `Session_handoff.md` | md | 139 | 20 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/Session_handoff.md) |
 | 11 | `Consolidated_engineering_history.md` | md | 4,045 | 430 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/Consolidated_engineering_history.md) |
 | 12 | `Layout_dependency_map.md` | md | 822 | 93 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/Layout_dependency_map.md) |
-| 13 | `README.md` | md | 73 | 11 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md) |
+| 13 | `README.md` | md | 86 | 13 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md) |
 | 14 | `Technical_history_and_architecture.md` | md | 838 | 95 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/Technical_history_and_architecture.md) |
 | 15 | `Chat_01.md` | md | 1,885 | 146 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/Chat_01.md) |
 | 16 | `Chat_02.md` | md | 1,318 | 82 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/Chat_02.md) |
@@ -41,7 +41,7 @@
 | 22 | `Chat_08.md` | md | 2,349 | 205 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/Chat_08.md) |
 | 23 | `Chat_09.md` | md | 1,418 | 92 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/Chat_09.md) |
 | 24 | `Chat_10.md` | md | 1,472 | 123 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/Chat_10.md) |
-| 25 | `README.md` | md | 164 | 18 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md) |
+| 25 | `README.md` | md | 177 | 20 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md) |
 
 ---
 
@@ -86,7 +86,7 @@
 ## 2. `README.md`
 
 **Path:** [`chatgpt_v23/audits/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md)  
-**Type:** md  ·  **Lines:** 47  ·  **Size:** 1.7 KB  ·  **Headings detected:** 9
+**Type:** md  ·  **Lines:** 60  ·  **Size:** 2.5 KB  ·  **Headings detected:** 11
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
@@ -98,7 +98,7 @@
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (9 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (11 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -106,11 +106,13 @@
 | 2 | H2 |   [`> ביקורות — ביקורת בזלין ארוכה של מצב המערכת.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%95%D7%AA--%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%91%D7%96%D7%9C%D7%99%D7%9F-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A9%D7%9C-%D7%9E%D7%A6%D7%91-%D7%94%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L22](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L22) |  |
-| 6 | H3 |     [`[`Baseline_long_audit.md`](Baseline_long_audit.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#baselinelongauditmdbaselinelongauditmd) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L24) | ביקורת בזלין ארוכה — תמונת מצב מלאה של המערכת בנקודת זמן מוגדרת. |
-| 7 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#details) | [L34](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L34) | --- |
-| 8 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L38) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 9 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L43](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L43) | --- |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L23](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L23) |  |
+| 6 | H3 |     [`[`Baseline_long_audit.md`](Baseline_long_audit.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#baselinelongauditmdbaselinelongauditmd) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L25) | ביקורת בזלין ארוכה — תמונת מצב מלאה של המערכת בנקודת זמן מוגדרת. |
+| 7 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#readmemdreadmemd) | [L37](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L37) | קובץ `README` — 47 שורות, 9 כותרות. # 💚 chatgpt_v23/audits > ביקורות — ביקורת בז… |
+| 8 | H1 | [`💚 chatgpt_v23/audits > ביקורות — ביקורת בזלין ארוכה של מצב המערכת. --- ## 🌐 אודו…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#-chatgptv23audits--%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%95%D7%AA--%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%91%D7%96%D7%9C%D7%99%D7%9F-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A9%D7%9C-%D7%9E%D7%A6%D7%91-%D7%94%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99-%D7%A7%D7%95%D7%93%D7%A9-%D7%9C%D7%A4%D7%99-%D7%9B%D7%9C%D7%9C%D7%99-%D7%94%D7%93%D7%A4%D7%95%D7%A1-%D7%94%D7%AA%D7%95%D7%A8%D7%A0%D7%99-%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%AA%D7%99-%D7%94) | [L44](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L44) | ``` |
+| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#details) | [L47](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L47) | --- |
+| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L51) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L56](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/audits/README.md#L56) | --- |
 
 </details>
 
@@ -200,7 +202,7 @@
 ## 5. `README.md`
 
 **Path:** [`chatgpt_v23/issues/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md)  
-**Type:** md  ·  **Lines:** 73  ·  **Size:** 3.3 KB  ·  **Headings detected:** 11
+**Type:** md  ·  **Lines:** 86  ·  **Size:** 4.2 KB  ·  **Headings detected:** 13
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
@@ -212,7 +214,7 @@
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (11 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (13 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -220,13 +222,15 @@
 | 2 | H2 |   [`> קטלוגי בעיות — קטלוג מקיף של בעיות עימוד, מטריצת כיסוי, וביקורת מחיקת תמלילים.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#-%D7%A7%D7%98%D7%9C%D7%95%D7%92%D7%99-%D7%91%D7%A2%D7%99%D7%95%D7%AA--%D7%A7%D7%98%D7%9C%D7%95%D7%92-%D7%9E%D7%A7%D7%99%D7%A3-%D7%A9%D7%9C-%D7%91%D7%A2%D7%99%D7%95%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%9E%D7%98%D7%A8%D7%99%D7%A6%D7%AA-%D7%9B%D7%99%D7%A1%D7%95%D7%99-%D7%95%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%9E%D7%97%D7%99%D7%A7%D7%AA-%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99%D7%9D) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L24) |  |
-| 6 | H3 |     [`[`Issue_coverage_matrix.md`](Issue_coverage_matrix.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#issuecoveragematrixmdissuecoveragematrixmd) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L26) | מטריצת כיסוי — אילו בעיות מכוסות על ידי אילו בדיקות. |
-| 7 | H3 |     [`[`Layout_issue_catalog.md`](Layout_issue_catalog.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#layoutissuecatalogmdlayoutissuecatalogmd) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L38) | קטלוג מקיף של בעיות עימוד ותכנית טקסט בדיקה — רשימת כל הבעיות הידועות וכיצד לבדו… |
-| 8 | H3 |     [`[`Transcript_deletion_audit.md`](Transcript_deletion_audit.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#transcriptdeletionauditmdtranscriptdeletionauditmd) | [L50](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L50) | ביקורת מחיקת תמלילים — האם בטוח למחוק את שש השיחות הקודמות? השוואה מול תיעוד טכנ… |
-| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#details) | [L60](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L60) | --- |
-| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L64](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L64) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L69](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L69) | --- |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L25) |  |
+| 6 | H3 |     [`[`Issue_coverage_matrix.md`](Issue_coverage_matrix.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#issuecoveragematrixmdissuecoveragematrixmd) | [L27](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L27) | מטריצת כיסוי — אילו בעיות מכוסות על ידי אילו בדיקות. |
+| 7 | H3 |     [`[`Layout_issue_catalog.md`](Layout_issue_catalog.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#layoutissuecatalogmdlayoutissuecatalogmd) | [L39](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L39) | קטלוג מקיף של בעיות עימוד ותכנית טקסט בדיקה — רשימת כל הבעיות הידועות וכיצד לבדו… |
+| 8 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#readmemdreadmemd) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L51) | קובץ `README` — 73 שורות, 11 כותרות. # 💚 chatgpt_v23/issues > קטלוגי בעיות — קטל… |
+| 9 | H1 | [`💚 chatgpt_v23/issues > קטלוגי בעיות — קטלוג מקיף של בעיות עימוד, מטריצת כיסוי, ו…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#-chatgptv23issues--%D7%A7%D7%98%D7%9C%D7%95%D7%92%D7%99-%D7%91%D7%A2%D7%99%D7%95%D7%AA--%D7%A7%D7%98%D7%9C%D7%95%D7%92-%D7%9E%D7%A7%D7%99%D7%A3-%D7%A9%D7%9C-%D7%91%D7%A2%D7%99%D7%95%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%9E%D7%98%D7%A8%D7%99%D7%A6%D7%AA-%D7%9B%D7%99%D7%A1%D7%95%D7%99-%D7%95%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%9E%D7%97%D7%99%D7%A7%D7%AA-%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99%D7%9D-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99-%D7%A7%D7%95) | [L58](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L58) | ``` |
+| 10 | H3 |     [`[`Transcript_deletion_audit.md`](Transcript_deletion_audit.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#transcriptdeletionauditmdtranscriptdeletionauditmd) | [L63](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L63) | ביקורת מחיקת תמלילים — האם בטוח למחוק את שש השיחות הקודמות? השוואה מול תיעוד טכנ… |
+| 11 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#details) | [L73](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L73) | --- |
+| 12 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L77](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L77) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 13 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L82](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/issues/README.md#L82) | --- |
 
 </details>
 
@@ -277,7 +281,7 @@
 ## 7. `README.md`
 
 **Path:** [`chatgpt_v23/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md)  
-**Type:** md  ·  **Lines:** 37  ·  **Size:** 1.8 KB  ·  **Headings detected:** 7
+**Type:** md  ·  **Lines:** 58  ·  **Size:** 2.8 KB  ·  **Headings detected:** 11
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
@@ -289,7 +293,7 @@
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (7 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (11 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -297,9 +301,13 @@
 | 2 | H2 |   [`> תיקיית גרסת **ChatGPT (OpenAI)** — V23 (Green). מכילה את כל התיעוד שנוצר על יד…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#-%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%92%D7%A8%D7%A1%D7%AA-chatgpt-openai--v23-green-%D7%9E%D7%9B%D7%99%D7%9C%D7%94-%D7%90%D7%AA-%D7%9B%D7%9C-%D7%94%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%A0%D7%95%D7%A6%D7%A8-%D7%A2%D7%9C-%D7%99%D7%93%D7%99-chatgpt-%D7%9E%D7%90%D7%95%D7%A4%D7%99%D7%99%D7%A0%D7%AA-%D7%91%D7%92%D7%99%D7%A9%D7%94-%D7%9E%D7%91%D7%95%D7%96%D7%A8%D7%AA-%D7%A2%D7%9D-%D7%94%D7%A4%D7%A8%D7%93%D7%94-%D7%91%D7%A8%D7%95%D7%A8%D7%94-%D7%91%D7%99%D7%9F-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%9E%D7%97%D7%A7%D7%A8-%D7%95%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📁 תיקיות משנה`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#-%D7%AA%D7%99%D7%A7%D7%99%D7%95%D7%AA-%D7%9E%D7%A9%D7%A0%D7%94) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L15) | \| תיקייה \| תיאור \| \|--------\|-------\| \| [`audits/`](audits/README.md) \| … |
-| 5 | H2 |   [`\| [`transcripts/`](transcripts/README.md) \| 10 תמלילי שיחות הפיתוח עם ChatGPT …`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#-transcriptstranscriptsreadmemd--10-%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%94%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A2%D7%9D-chatgpt-%D7%9E%D7%A1%D7%A4%D7%A8-1-%D7%A2%D7%93-10-) | [L23](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L23) | --- |
-| 6 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L28](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L28) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 7 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L33](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L33) | --- |
+| 5 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L26) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
+| 6 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L33](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L33) |  |
+| 7 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#readmemdreadmemd) | [L35](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L35) | קובץ `README` — 37 שורות, 7 כותרות. # 💚 chatgpt_v23 > תיקיית גרסת **ChatGPT (Ope… |
+| 8 | H1 | [`💚 chatgpt_v23 > תיקיית גרסת **ChatGPT (OpenAI)** — V23 (Green). מכילה את כל התיע…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#-chatgptv23--%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%92%D7%A8%D7%A1%D7%AA-chatgpt-openai--v23-green-%D7%9E%D7%9B%D7%99%D7%9C%D7%94-%D7%90%D7%AA-%D7%9B%D7%9C-%D7%94%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%A0%D7%95%D7%A6%D7%A8-%D7%A2%D7%9C-%D7%99%D7%93%D7%99-chatgpt-%D7%9E%D7%90%D7%95%D7%A4%D7%99%D7%99%D7%A0%D7%AA-%D7%91%D7%92%D7%99%D7%A9%D7%94-%D7%9E%D7%91%D7%95%D7%96%D7%A8%D7%AA-%D7%A2%D7%9D-%D7%94%D7%A4%D7%A8%D7%93%D7%94-%D7%91%D7%A8%D7%95%D7%A8%D7%94-%D7%91%D7%99%D7%9F-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%9E%D7%97%D7%A7%D7%A8-%D7%95%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95) | [L42](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L42) | ``` |
+| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#details) | [L45](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L45) | --- |
+| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L49](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L49) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L54](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/README.md#L54) | --- |
 
 </details>
 
@@ -359,7 +367,7 @@
 ## 9. `README.md`
 
 **Path:** [`chatgpt_v23/session/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md)  
-**Type:** md  ·  **Lines:** 60  ·  **Size:** 2.3 KB  ·  **Headings detected:** 10
+**Type:** md  ·  **Lines:** 73  ·  **Size:** 3.1 KB  ·  **Headings detected:** 12
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
@@ -371,7 +379,7 @@
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (10 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (12 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -379,12 +387,14 @@
 | 2 | H2 |   [`> העברות סשן בין שיחות — מסמכי handoff והמשכים מאוחדים.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#-%D7%94%D7%A2%D7%91%D7%A8%D7%95%D7%AA-%D7%A1%D7%A9%D7%9F-%D7%91%D7%99%D7%9F-%D7%A9%D7%99%D7%97%D7%95%D7%AA--%D7%9E%D7%A1%D7%9E%D7%9B%D7%99-handoff-%D7%95%D7%94%D7%9E%D7%A9%D7%9B%D7%99%D7%9D-%D7%9E%D7%90%D7%95%D7%97%D7%93%D7%99%D7%9D) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L23](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L23) |  |
-| 6 | H3 |     [`[`Continuations.md`](Continuations.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#continuationsmdcontinuationsmd) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L25) | המשכי שיחות — איחוד של שני קבצי המשך קצרים (27.10 ו-28.10). |
-| 7 | H3 |     [`[`Session_handoff.md`](Session_handoff.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#sessionhandoffmdsessionhandoffmd) | [L37](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L37) | מסמך העברה לסשן הבא — סיכום מצב, בעיות פתוחות, והנחיות להמשך. |
-| 8 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#details) | [L47](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L47) | --- |
-| 9 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L51) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 10 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L56](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L56) | --- |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L24) |  |
+| 6 | H3 |     [`[`Continuations.md`](Continuations.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#continuationsmdcontinuationsmd) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L26) | המשכי שיחות — איחוד של שני קבצי המשך קצרים (27.10 ו-28.10). |
+| 7 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#readmemdreadmemd) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L38) | קובץ `README` — 60 שורות, 10 כותרות. # 💚 chatgpt_v23/session > העברות סשן בין שי… |
+| 8 | H1 | [`💚 chatgpt_v23/session > העברות סשן בין שיחות — מסמכי handoff והמשכים מאוחדים. --…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#-chatgptv23session--%D7%94%D7%A2%D7%91%D7%A8%D7%95%D7%AA-%D7%A1%D7%A9%D7%9F-%D7%91%D7%99%D7%9F-%D7%A9%D7%99%D7%97%D7%95%D7%AA--%D7%9E%D7%A1%D7%9E%D7%9B%D7%99-handoff-%D7%95%D7%94%D7%9E%D7%A9%D7%9B%D7%99%D7%9D-%D7%9E%D7%90%D7%95%D7%97%D7%93%D7%99%D7%9D-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99-%D7%A7%D7%95%D7%93%D7%A9-%D7%9C%D7%A4%D7%99-%D7%9B%D7%9C%D7%9C%D7%99-%D7%94%D7%93%D7%A4%D7%95%D7%A1-%D7%94%D7%AA%D7%95%D7%A8%D7%A0%D7%99) | [L45](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L45) | ``` |
+| 9 | H3 |     [`[`Session_handoff.md`](Session_handoff.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#sessionhandoffmdsessionhandoffmd) | [L50](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L50) | מסמך העברה לסשן הבא — סיכום מצב, בעיות פתוחות, והנחיות להמשך. |
+| 10 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#details) | [L60](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L60) | --- |
+| 11 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L64](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L64) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 12 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L69](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/session/README.md#L69) | --- |
 
 </details>
 
@@ -779,7 +789,7 @@
 ## 13. `README.md`
 
 **Path:** [`chatgpt_v23/technical/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md)  
-**Type:** md  ·  **Lines:** 73  ·  **Size:** 3.4 KB  ·  **Headings detected:** 11
+**Type:** md  ·  **Lines:** 86  ·  **Size:** 4.2 KB  ·  **Headings detected:** 13
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
@@ -791,7 +801,7 @@
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (11 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (13 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -799,13 +809,15 @@
 | 2 | H2 |   [`> תיעוד טכני — היסטוריה טכנית וארכיטקטורה, מפת תלות, והיסטוריה הנדסית מאוחדת.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99--%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94-%D7%98%D7%9B%D7%A0%D7%99%D7%AA-%D7%95%D7%90%D7%A8%D7%9B%D7%99%D7%98%D7%A7%D7%98%D7%95%D7%A8%D7%94-%D7%9E%D7%A4%D7%AA-%D7%AA%D7%9C%D7%95%D7%AA-%D7%95%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94-%D7%94%D7%A0%D7%93%D7%A1%D7%99%D7%AA-%D7%9E%D7%90%D7%95%D7%97%D7%93%D7%AA) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L24) |  |
-| 6 | H3 |     [`[`Consolidated_engineering_history.md`](Consolidated_engineering_history.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#consolidatedengineeringhistorymdconsolidatedengineeringhistorymd) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L26) | היסטוריה הנדסית מאוחדת — כרונולוגיה מלאה של החלטות, תיקונים, וניסיונות שנפסלו. |
-| 7 | H3 |     [`[`Layout_dependency_map.md`](Layout_dependency_map.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#layoutdependencymapmdlayoutdependencymapmd) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L38) | מפת תלות של רכיבי העימוד — איזה קובץ/פונקציה תלוי במה. |
-| 8 | H3 |     [`[`Technical_history_and_architecture.md`](Technical_history_and_architecture.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#technicalhistoryandarchitecturemdtechnicalhistoryandarchitecturemd) | [L50](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L50) | היסטוריה טכנית וארכיטקטורה — סקירה כללית של המערכת, קובצי מקור, זרימת עבודה, ועק… |
-| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#details) | [L60](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L60) | --- |
-| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L64](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L64) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L69](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L69) | --- |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L25) |  |
+| 6 | H3 |     [`[`Consolidated_engineering_history.md`](Consolidated_engineering_history.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#consolidatedengineeringhistorymdconsolidatedengineeringhistorymd) | [L27](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L27) | היסטוריה הנדסית מאוחדת — כרונולוגיה מלאה של החלטות, תיקונים, וניסיונות שנפסלו. |
+| 7 | H3 |     [`[`Layout_dependency_map.md`](Layout_dependency_map.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#layoutdependencymapmdlayoutdependencymapmd) | [L39](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L39) | מפת תלות של רכיבי העימוד — איזה קובץ/פונקציה תלוי במה. |
+| 8 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#readmemdreadmemd) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L51) | קובץ `README` — 73 שורות, 11 כותרות. # 💚 chatgpt_v23/technical > תיעוד טכני — הי… |
+| 9 | H1 | [`💚 chatgpt_v23/technical > תיעוד טכני — היסטוריה טכנית וארכיטקטורה, מפת תלות, והי…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#-chatgptv23technical--%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99--%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94-%D7%98%D7%9B%D7%A0%D7%99%D7%AA-%D7%95%D7%90%D7%A8%D7%9B%D7%99%D7%98%D7%A7%D7%98%D7%95%D7%A8%D7%94-%D7%9E%D7%A4%D7%AA-%D7%AA%D7%9C%D7%95%D7%AA-%D7%95%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94-%D7%94%D7%A0%D7%93%D7%A1%D7%99%D7%AA-%D7%9E%D7%90%D7%95%D7%97%D7%93%D7%AA-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99-%D7%A7%D7%95) | [L58](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L58) | ``` |
+| 10 | H3 |     [`[`Technical_history_and_architecture.md`](Technical_history_and_architecture.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#technicalhistoryandarchitecturemdtechnicalhistoryandarchitecturemd) | [L63](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L63) | היסטוריה טכנית וארכיטקטורה — סקירה כללית של המערכת, קובצי מקור, זרימת עבודה, ועק… |
+| 11 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#details) | [L73](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L73) | --- |
+| 12 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L77](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L77) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 13 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L82](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/technical/README.md#L82) | --- |
 
 </details>
 
@@ -2385,7 +2397,7 @@
 ## 25. `README.md`
 
 **Path:** [`chatgpt_v23/transcripts/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md)  
-**Type:** md  ·  **Lines:** 164  ·  **Size:** 5.7 KB  ·  **Headings detected:** 18
+**Type:** md  ·  **Lines:** 177  ·  **Size:** 6.5 KB  ·  **Headings detected:** 20
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
@@ -2397,7 +2409,7 @@
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (18 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (20 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -2405,20 +2417,22 @@
 | 2 | H2 |   [`> 10 תמלילי שיחות הפיתוח עם ChatGPT (מספר 1 עד 10).`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#-10-%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%94%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A2%D7%9D-chatgpt-%D7%9E%D7%A1%D7%A4%D7%A8-1-%D7%A2%D7%93-10) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L31](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L31) |  |
-| 6 | H3 |     [`[`Chat_01.md`](Chat_01.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat01mdchat01md) | [L33](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L33) | תמליל שיחה 1 עם ChatGPT — שיחת הפתיחה, כולל סקירת יכולות אינטראקטיביות והתחלת עב… |
-| 7 | H3 |     [`[`Chat_02.md`](Chat_02.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat02mdchat02md) | [L45](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L45) | תמליל שיחה 2 עם ChatGPT. |
-| 8 | H3 |     [`[`Chat_03.md`](Chat_03.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat03mdchat03md) | [L57](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L57) | תמליל שיחה 3 עם ChatGPT. |
-| 9 | H3 |     [`[`Chat_04.md`](Chat_04.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat04mdchat04md) | [L69](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L69) | תמליל שיחה 4 עם ChatGPT. |
-| 10 | H3 |     [`[`Chat_05.md`](Chat_05.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat05mdchat05md) | [L81](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L81) | תמליל שיחה 5 עם ChatGPT. |
-| 11 | H3 |     [`[`Chat_06.md`](Chat_06.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat06mdchat06md) | [L93](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L93) | תמליל שיחה 6 עם ChatGPT. |
-| 12 | H3 |     [`[`Chat_07.md`](Chat_07.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat07mdchat07md) | [L105](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L105) | תמליל שיחה 7 עם ChatGPT. |
-| 13 | H3 |     [`[`Chat_08.md`](Chat_08.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat08mdchat08md) | [L117](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L117) | תמליל שיחה 8 עם ChatGPT. |
-| 14 | H3 |     [`[`Chat_09.md`](Chat_09.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat09mdchat09md) | [L129](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L129) | תמליל שיחה 9 עם ChatGPT. |
-| 15 | H3 |     [`[`Chat_10.md`](Chat_10.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat10mdchat10md) | [L141](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L141) | תמליל שיחה 10 עם ChatGPT — השיחה האחרונה בסדרה. |
-| 16 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#details) | [L151](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L151) | --- |
-| 17 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L155](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L155) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 18 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L160](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L160) | --- |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L32](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L32) |  |
+| 6 | H3 |     [`[`Chat_01.md`](Chat_01.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat01mdchat01md) | [L34](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L34) | תמליל שיחה 1 עם ChatGPT — שיחת הפתיחה, כולל סקירת יכולות אינטראקטיביות והתחלת עב… |
+| 7 | H3 |     [`[`Chat_02.md`](Chat_02.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat02mdchat02md) | [L46](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L46) | תמליל שיחה 2 עם ChatGPT. |
+| 8 | H3 |     [`[`Chat_03.md`](Chat_03.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat03mdchat03md) | [L58](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L58) | תמליל שיחה 3 עם ChatGPT. |
+| 9 | H3 |     [`[`Chat_04.md`](Chat_04.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat04mdchat04md) | [L70](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L70) | תמליל שיחה 4 עם ChatGPT. |
+| 10 | H3 |     [`[`Chat_05.md`](Chat_05.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat05mdchat05md) | [L82](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L82) | תמליל שיחה 5 עם ChatGPT. |
+| 11 | H3 |     [`[`Chat_06.md`](Chat_06.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat06mdchat06md) | [L94](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L94) | תמליל שיחה 6 עם ChatGPT. |
+| 12 | H3 |     [`[`Chat_07.md`](Chat_07.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat07mdchat07md) | [L106](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L106) | תמליל שיחה 7 עם ChatGPT. |
+| 13 | H3 |     [`[`Chat_08.md`](Chat_08.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat08mdchat08md) | [L118](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L118) | תמליל שיחה 8 עם ChatGPT. |
+| 14 | H3 |     [`[`Chat_09.md`](Chat_09.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat09mdchat09md) | [L130](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L130) | תמליל שיחה 9 עם ChatGPT. |
+| 15 | H3 |     [`[`Chat_10.md`](Chat_10.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#chat10mdchat10md) | [L142](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L142) | תמליל שיחה 10 עם ChatGPT — השיחה האחרונה בסדרה. |
+| 16 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#readmemdreadmemd) | [L154](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L154) | קובץ `README` — 164 שורות, 18 כותרות. # 💚 chatgpt_v23/transcripts > 10 תמלילי שי… |
+| 17 | H1 | [`💚 chatgpt_v23/transcripts > 10 תמלילי שיחות הפיתוח עם ChatGPT (מספר 1 עד 10). --…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#-chatgptv23transcripts--10-%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%94%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A2%D7%9D-chatgpt-%D7%9E%D7%A1%D7%A4%D7%A8-1-%D7%A2%D7%93-10-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99-%D7%A7%D7%95%D7%93%D7%A9-%D7%9C%D7%A4%D7%99-%D7%9B%D7%9C%D7%9C%D7%99-%D7%94%D7%93%D7%A4%D7%95%D7%A1-%D7%94%D7%AA%D7%95%D7%A8%D7%A0%D7%99) | [L161](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L161) | ``` |
+| 18 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#details) | [L164](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L164) | --- |
+| 19 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L168](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L168) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 20 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L173](https://github.com/SUGINACH/Typesetter_doc/blob/main/chatgpt_v23/transcripts/README.md#L173) | --- |
 
 </details>
 

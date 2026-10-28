@@ -9,9 +9,9 @@
 ## 📊 Folder Statistics
 
 - **Number of files:** 11
-- **Total lines:** 4,312
+- **Total lines:** 4,393
 - **Total size:** 0.43 MB
-- **Total headings detected:** 577
+- **Total headings detected:** 591
 
 ## 🗂 Quick File Map
 
@@ -19,15 +19,15 @@
 |---|-----------|------|-------|----------|-------------|
 | 1 | `Display_style_transition_plan.md` | md | 153 | 9 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/Display_style_transition_plan.md) |
 | 2 | `Fix_and_improve_plan.md` | md | 237 | 22 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/Fix_and_improve_plan.md) |
-| 3 | `README.md` | md | 60 | 10 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md) |
+| 3 | `README.md` | md | 73 | 12 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md) |
 | 4 | `Checklist.md` | md | 107 | 15 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/Checklist.md) |
-| 5 | `README.md` | md | 47 | 9 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md) |
-| 6 | `README.md` | md | 36 | 7 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md) |
+| 5 | `README.md` | md | 60 | 11 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md) |
+| 6 | `README.md` | md | 57 | 11 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md) |
 | 7 | `AI_chats_summary.md` | md | 2,883 | 447 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/AI_chats_summary.md) |
 | 8 | `Audit_report.md` | md | 402 | 23 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/Audit_report.md) |
-| 9 | `README.md` | md | 73 | 11 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md) |
+| 9 | `README.md` | md | 86 | 13 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md) |
 | 10 | `Software_analysis.md` | md | 288 | 18 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/Software_analysis.md) |
-| 11 | `README.md` | md | 26 | 6 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md) |
+| 11 | `README.md` | md | 47 | 10 | [Open](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md) |
 
 ---
 
@@ -117,7 +117,7 @@
 ## 3. `README.md`
 
 **Path:** [`archive/plans/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md)  
-**Type:** md  ·  **Lines:** 60  ·  **Size:** 2.4 KB  ·  **Headings detected:** 10
+**Type:** md  ·  **Lines:** 73  ·  **Size:** 3.3 KB  ·  **Headings detected:** 12
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
@@ -129,7 +129,7 @@
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (10 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (12 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -137,12 +137,14 @@
 | 2 | H2 |   [`> תכניות ישנות — תכנית לתיקון ושיפור, ותכנית מעבר סגנון תצוגה.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#-%D7%AA%D7%9B%D7%A0%D7%99%D7%95%D7%AA-%D7%99%D7%A9%D7%A0%D7%95%D7%AA--%D7%AA%D7%9B%D7%A0%D7%99%D7%AA-%D7%9C%D7%AA%D7%99%D7%A7%D7%95%D7%9F-%D7%95%D7%A9%D7%99%D7%A4%D7%95%D7%A8-%D7%95%D7%AA%D7%9B%D7%A0%D7%99%D7%AA-%D7%9E%D7%A2%D7%91%D7%A8-%D7%A1%D7%92%D7%A0%D7%95%D7%9F-%D7%AA%D7%A6%D7%95%D7%92%D7%94) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L23](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L23) |  |
-| 6 | H3 |     [`[`Display_style_transition_plan.md`](Display_style_transition_plan.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#displaystyletransitionplanmddisplaystyletransitionplanmd) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L25) | תכנית מעבר סגנון תצוגה — תכנית ישנה לשינוי סגנון התצוגה. |
-| 7 | H3 |     [`[`Fix_and_improve_plan.md`](Fix_and_improve_plan.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#fixandimproveplanmdfixandimproveplanmd) | [L37](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L37) | תכנית לתיקון ושיפור — תכנית ישנה לטיפול בבעיות. |
-| 8 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#details) | [L47](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L47) | --- |
-| 9 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L51) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 10 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L56](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L56) | --- |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L24) |  |
+| 6 | H3 |     [`[`Display_style_transition_plan.md`](Display_style_transition_plan.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#displaystyletransitionplanmddisplaystyletransitionplanmd) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L26) | תכנית מעבר סגנון תצוגה — תכנית ישנה לשינוי סגנון התצוגה. |
+| 7 | H3 |     [`[`Fix_and_improve_plan.md`](Fix_and_improve_plan.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#fixandimproveplanmdfixandimproveplanmd) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L38) | תכנית לתיקון ושיפור — תכנית ישנה לטיפול בבעיות. |
+| 8 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#readmemdreadmemd) | [L50](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L50) | קובץ `README` — 60 שורות, 10 כותרות. # 📦 archive/plans > תכניות ישנות — תכנית לת… |
+| 9 | H1 | [`📦 archive/plans > תכניות ישנות — תכנית לתיקון ושיפור, ותכנית מעבר סגנון תצוגה. -…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#-archiveplans--%D7%AA%D7%9B%D7%A0%D7%99%D7%95%D7%AA-%D7%99%D7%A9%D7%A0%D7%95%D7%AA--%D7%AA%D7%9B%D7%A0%D7%99%D7%AA-%D7%9C%D7%AA%D7%99%D7%A7%D7%95%D7%9F-%D7%95%D7%A9%D7%99%D7%A4%D7%95%D7%A8-%D7%95%D7%AA%D7%9B%D7%A0%D7%99%D7%AA-%D7%9E%D7%A2%D7%91%D7%A8-%D7%A1%D7%92%D7%A0%D7%95%D7%9F-%D7%AA%D7%A6%D7%95%D7%92%D7%94-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99-%D7%A7%D7%95%D7%93%D7%A9-%D7%9C%D7%A4%D7%99-%D7%9B%D7%9C%D7%9C%D7%99-%D7%94%D7%93%D7%A4%D7%95%D7%A1-%D7%94%D7%AA%D7%95%D7%A8%D7%A0) | [L57](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L57) | ``` |
+| 10 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#details) | [L60](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L60) | --- |
+| 11 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L64](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L64) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 12 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L69](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/plans/README.md#L69) | --- |
 
 </details>
 
@@ -190,19 +192,19 @@
 ## 5. `README.md`
 
 **Path:** [`archive/qa/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md)  
-**Type:** md  ·  **Lines:** 47  ·  **Size:** 1.6 KB  ·  **Headings detected:** 9
+**Type:** md  ·  **Lines:** 60  ·  **Size:** 2.4 KB  ·  **Headings detected:** 11
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
 
 ```text
-# 📦 archive/qa > אבטחת איכות ישנה — צ'קליסט כללי. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `archive/qa` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|--------|-------| | [`Checklist.md`](Checklist.md) | 107 | 15 | צ'קליסט ישן — רשימת בדיקות כללית. | ## 📋 פירוט קבצי
+# 📦 archive/qa > אבטחת איכות ישנה — צ'קליסט כללי. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `archive/qa` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|--------|-------| | [`Checklist.md`](Checklist.md) | 107 | 15 | צ'קליסט ישן — רשימת בדיקות כללית. | | [`README.md`]
 ```
 
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (9 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (11 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -210,11 +212,13 @@
 | 2 | H2 |   [`> אבטחת איכות ישנה — צ'קליסט כללי.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#-%D7%90%D7%91%D7%98%D7%97%D7%AA-%D7%90%D7%99%D7%9B%D7%95%D7%AA-%D7%99%D7%A9%D7%A0%D7%94--%D7%A6%D7%A7%D7%9C%D7%99%D7%A1%D7%98-%D7%9B%D7%9C%D7%9C%D7%99) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L22](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L22) |  |
-| 6 | H3 |     [`[`Checklist.md`](Checklist.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#checklistmdchecklistmd) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L24) | צ'קליסט ישן — רשימת בדיקות כללית. |
-| 7 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#details) | [L34](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L34) | --- |
-| 8 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L38) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 9 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L43](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L43) | --- |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L23](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L23) |  |
+| 6 | H3 |     [`[`Checklist.md`](Checklist.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#checklistmdchecklistmd) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L25) | צ'קליסט ישן — רשימת בדיקות כללית. |
+| 7 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#readmemdreadmemd) | [L37](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L37) | קובץ `README` — 47 שורות, 9 כותרות. # 📦 archive/qa > אבטחת איכות ישנה — צ'קליסט … |
+| 8 | H1 | [`📦 archive/qa > אבטחת איכות ישנה — צ'קליסט כללי. --- ## 🌐 אודות הפרויקט ריפו תיעו…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#-archiveqa--%D7%90%D7%91%D7%98%D7%97%D7%AA-%D7%90%D7%99%D7%9B%D7%95%D7%AA-%D7%99%D7%A9%D7%A0%D7%94--%D7%A6%D7%A7%D7%9C%D7%99%D7%A1%D7%98-%D7%9B%D7%9C%D7%9C%D7%99-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99-%D7%A7%D7%95%D7%93%D7%A9-%D7%9C%D7%A4%D7%99-%D7%9B%D7%9C%D7%9C%D7%99-%D7%94%D7%93%D7%A4%D7%95%D7%A1-%D7%94%D7%AA%D7%95%D7%A8%D7%A0%D7%99-%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%AA%D7%99-%D7%94%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A4%D7%95%D7%AA%D7%97%D7%94-%D7%91%D7%9E%D7%A7%D7%91%D7%99%D7%9C) | [L44](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L44) | ``` |
+| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#details) | [L47](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L47) | --- |
+| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L51) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L56](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/qa/README.md#L56) | --- |
 
 </details>
 
@@ -223,7 +227,7 @@
 ## 6. `README.md`
 
 **Path:** [`archive/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md)  
-**Type:** md  ·  **Lines:** 36  ·  **Size:** 1.6 KB  ·  **Headings detected:** 7
+**Type:** md  ·  **Lines:** 57  ·  **Size:** 2.7 KB  ·  **Headings detected:** 11
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
@@ -235,7 +239,7 @@
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (7 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (11 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -243,9 +247,13 @@
 | 2 | H2 |   [`> תיקיית **ארכיון היסטורי** — מסמכים ישנים מהשלבים הראשונים של הפרויקט, שלא שויכ…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#-%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%90%D7%A8%D7%9B%D7%99%D7%95%D7%9F-%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99--%D7%9E%D7%A1%D7%9E%D7%9B%D7%99%D7%9D-%D7%99%D7%A9%D7%A0%D7%99%D7%9D-%D7%9E%D7%94%D7%A9%D7%9C%D7%91%D7%99%D7%9D-%D7%94%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%99%D7%9D-%D7%A9%D7%9C-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A9%D7%9C%D7%90-%D7%A9%D7%95%D7%99%D7%9B%D7%95-%D7%9C%D7%92%D7%A8%D7%A1%D7%94-%D7%A1%D7%A4%D7%A6%D7%99%D7%A4%D7%99%D7%AA-%D7%9E%D7%99%D7%99%D7%A6%D7%92%D7%AA-%D7%90%D7%AA-%D7%94%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94-%D7%9C%D7%A4%D7%A0%D7%99-%D7%94%D7%A4%D7%99%D7%A6%D7%95%D7%9C-%D7%9C%D7%A9%D7%9C%D7%95%D7%A9-%D7%92%D7%A8%D7%A1%D7%90%D7%95%D7%AA) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📁 תיקיות משנה`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#-%D7%AA%D7%99%D7%A7%D7%99%D7%95%D7%AA-%D7%9E%D7%A9%D7%A0%D7%94) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L15) | \| תיקייה \| תיאור \| \|--------\|-------\| \| [`plans/`](plans/README.md) \| תכ… |
-| 5 | H2 |   [`\| [`research/`](research/README.md) \| מחקרים ישנים שלא הועברו ל-`shared/resear…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#-researchresearchreadmemd--%D7%9E%D7%97%D7%A7%D7%A8%D7%99%D7%9D-%D7%99%D7%A9%D7%A0%D7%99%D7%9D-%D7%A9%D7%9C%D7%90-%D7%94%D7%95%D7%A2%D7%91%D7%A8%D7%95-%D7%9C-sharedresearch-%D7%91%D7%93%D7%A8%D7%9A-%D7%9B%D7%9C%D7%9C-%D7%A8%D7%99%D7%A7--%D7%A8%D7%95%D7%91-%D7%94%D7%9E%D7%97%D7%A7%D7%A8%D7%99%D7%9D-%D7%94%D7%95%D7%A2%D7%91%D7%A8%D7%95-%D7%9C-shared-) | [L22](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L22) | --- |
-| 6 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L27](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L27) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 7 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L32](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L32) | --- |
+| 5 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L25) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
+| 6 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L32](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L32) |  |
+| 7 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#readmemdreadmemd) | [L34](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L34) | קובץ `README` — 36 שורות, 7 כותרות. # 📦 archive > תיקיית **ארכיון היסטורי** — מס… |
+| 8 | H1 | [`📦 archive > תיקיית **ארכיון היסטורי** — מסמכים ישנים מהשלבים הראשונים של הפרויקט…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#-archive--%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%90%D7%A8%D7%9B%D7%99%D7%95%D7%9F-%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99--%D7%9E%D7%A1%D7%9E%D7%9B%D7%99%D7%9D-%D7%99%D7%A9%D7%A0%D7%99%D7%9D-%D7%9E%D7%94%D7%A9%D7%9C%D7%91%D7%99%D7%9D-%D7%94%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%99%D7%9D-%D7%A9%D7%9C-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A9%D7%9C%D7%90-%D7%A9%D7%95%D7%99%D7%9B%D7%95-%D7%9C%D7%92%D7%A8%D7%A1%D7%94-%D7%A1%D7%A4%D7%A6%D7%99%D7%A4%D7%99%D7%AA-%D7%9E%D7%99%D7%99%D7%A6%D7%92%D7%AA-%D7%90%D7%AA-%D7%94%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94-%D7%9C%D7%A4%D7%A0%D7%99-%D7%94%D7%A4%D7%99%D7%A6%D7%95%D7%9C-%D7%9C%D7%A9%D7%9C%D7%95%D7%A9-%D7%92%D7%A8%D7%A1%D7%90%D7%95%D7%AA-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA) | [L41](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L41) | ``` |
+| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#details) | [L44](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L44) | --- |
+| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L48](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L48) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L53](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/README.md#L53) | --- |
 
 </details>
 
@@ -526,7 +534,7 @@
 ## 9. `README.md`
 
 **Path:** [`archive/reports/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md)  
-**Type:** md  ·  **Lines:** 73  ·  **Size:** 3.0 KB  ·  **Headings detected:** 11
+**Type:** md  ·  **Lines:** 86  ·  **Size:** 3.9 KB  ·  **Headings detected:** 13
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
@@ -538,7 +546,7 @@
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (11 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (13 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
@@ -546,13 +554,15 @@
 | 2 | H2 |   [`> דוחות ישנים — דוח בדיקה, ניתוח תוכנה, וסיכום שיחות AI קודמות.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#-%D7%93%D7%95%D7%97%D7%95%D7%AA-%D7%99%D7%A9%D7%A0%D7%99%D7%9D--%D7%93%D7%95%D7%97-%D7%91%D7%93%D7%99%D7%A7%D7%94-%D7%A0%D7%99%D7%AA%D7%95%D7%97-%D7%AA%D7%95%D7%9B%D7%A0%D7%94-%D7%95%D7%A1%D7%99%D7%9B%D7%95%D7%9D-%D7%A9%D7%99%D7%97%D7%95%D7%AA-ai-%D7%A7%D7%95%D7%93%D7%9E%D7%95%D7%AA) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
 | 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L24) |  |
-| 6 | H3 |     [`[`AI_chats_summary.md`](AI_chats_summary.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#aichatssummarymdaichatssummarymd) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L26) | סיכום שיחות AI קודמות — סיכום שיחות מוקדמות על מערכת לעימוד ספר תורני. |
-| 7 | H3 |     [`[`Audit_report.md`](Audit_report.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#auditreportmdauditreportmd) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L38) | דוח בדיקה — דוח ישן של ביקורת מעמיקה מקצה לקצה, ניתוח ארכיטקטורה, וזיהוי כשלים. |
-| 8 | H3 |     [`[`Software_analysis.md`](Software_analysis.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#softwareanalysismdsoftwareanalysismd) | [L50](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L50) | ניתוח תוכנה — ניתוח ישן של המערכת. |
-| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#details) | [L60](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L60) | --- |
-| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L64](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L64) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L69](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L69) | --- |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L25) |  |
+| 6 | H3 |     [`[`AI_chats_summary.md`](AI_chats_summary.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#aichatssummarymdaichatssummarymd) | [L27](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L27) | סיכום שיחות AI קודמות — סיכום שיחות מוקדמות על מערכת לעימוד ספר תורני. |
+| 7 | H3 |     [`[`Audit_report.md`](Audit_report.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#auditreportmdauditreportmd) | [L39](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L39) | דוח בדיקה — דוח ישן של ביקורת מעמיקה מקצה לקצה, ניתוח ארכיטקטורה, וזיהוי כשלים. |
+| 8 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#readmemdreadmemd) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L51) | קובץ `README` — 73 שורות, 11 כותרות. # 📦 archive/reports > דוחות ישנים — דוח בדי… |
+| 9 | H1 | [`📦 archive/reports > דוחות ישנים — דוח בדיקה, ניתוח תוכנה, וסיכום שיחות AI קודמות…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#-archivereports--%D7%93%D7%95%D7%97%D7%95%D7%AA-%D7%99%D7%A9%D7%A0%D7%99%D7%9D--%D7%93%D7%95%D7%97-%D7%91%D7%93%D7%99%D7%A7%D7%94-%D7%A0%D7%99%D7%AA%D7%95%D7%97-%D7%AA%D7%95%D7%9B%D7%A0%D7%94-%D7%95%D7%A1%D7%99%D7%9B%D7%95%D7%9D-%D7%A9%D7%99%D7%97%D7%95%D7%AA-ai-%D7%A7%D7%95%D7%93%D7%9E%D7%95%D7%AA-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99-%D7%A7%D7%95%D7%93%D7%A9-%D7%9C%D7%A4%D7%99-%D7%9B%D7%9C%D7%9C%D7%99-%D7%94%D7%93%D7%A4%D7%95%D7%A1-%D7%94%D7%AA) | [L58](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L58) | ``` |
+| 10 | H3 |     [`[`Software_analysis.md`](Software_analysis.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#softwareanalysismdsoftwareanalysismd) | [L63](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L63) | ניתוח תוכנה — ניתוח ישן של המערכת. |
+| 11 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#details) | [L73](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L73) | --- |
+| 12 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L77](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L77) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 13 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L82](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/reports/README.md#L82) | --- |
 
 </details>
 
@@ -603,28 +613,32 @@
 ## 11. `README.md`
 
 **Path:** [`archive/research/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md)  
-**Type:** md  ·  **Lines:** 26  ·  **Size:** 0.9 KB  ·  **Headings detected:** 6
+**Type:** md  ·  **Lines:** 47  ·  **Size:** 1.9 KB  ·  **Headings detected:** 10
 
 <details>
 <summary>📖 <b>File Content Summary</b> (click to expand)</summary>
 
 ```text
-# 📦 archive/research > מחקרים ישנים שלא הועברו ל-`shared/research/` (בדרך כלל ריק — רוב המחקרים הועברו ל-shared). --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `archive/research` ← [חזרה לתיקיית הורה](../README.md) --- ## 🔗 קישורים - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU
+# 📦 archive/research > מחקרים ישנים שלא הועברו ל-`shared/research/` (בדרך כלל ריק — רוב המחקרים הועברו ל-shared). --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `archive/research` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|--------|-------| | [`README.md`](README.md) 
 ```
 
 </details>
 
 <details>
-<summary>📋 <b>All headings in this file (6 items) — click to expand</b></summary>
+<summary>📋 <b>All headings in this file (10 items) — click to expand</b></summary>
 
 | # | Level | Heading (Hebrew original) | Line | First context line |
 |---|-------|---------------------------|------|---------------------|
 | 1 | H1 | [`📦 archive/research`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#-archiveresearch) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L1) | > מחקרים ישנים שלא הועברו ל-`shared/research/` (בדרך כלל ריק — רוב המחקרים הועבר… |
 | 2 | H2 |   [`> מחקרים ישנים שלא הועברו ל-`shared/research/` (בדרך כלל ריק — רוב המחקרים הועבר…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#-%D7%9E%D7%97%D7%A7%D7%A8%D7%99%D7%9D-%D7%99%D7%A9%D7%A0%D7%99%D7%9D-%D7%A9%D7%9C%D7%90-%D7%94%D7%95%D7%A2%D7%91%D7%A8%D7%95-%D7%9C-sharedresearch-%D7%91%D7%93%D7%A8%D7%9A-%D7%9B%D7%9C%D7%9C-%D7%A8%D7%99%D7%A7--%D7%A8%D7%95%D7%91-%D7%94%D7%9E%D7%97%D7%A7%D7%A8%D7%99%D7%9D-%D7%94%D7%95%D7%A2%D7%91%D7%A8%D7%95-%D7%9C-shared) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי … |
-| 4 | H2 |   [`← [חזרה לתיקיית הורה](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#-%D7%97%D7%96%D7%A8%D7%94-%D7%9C%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%94%D7%95%D7%A8%D7%94readmemd) | [L13](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L13) | --- |
-| 5 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L17](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L17) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
-| 6 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L22](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L22) | --- |
+| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \|… |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L22](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L22) |  |
+| 6 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#readmemdreadmemd) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L24) | קובץ `README` — 26 שורות, 6 כותרות. # 📦 archive/research > מחקרים ישנים שלא הועב… |
+| 7 | H1 | [`📦 archive/research > מחקרים ישנים שלא הועברו ל-`shared/research/` (בדרך כלל ריק …`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#-archiveresearch--%D7%9E%D7%97%D7%A7%D7%A8%D7%99%D7%9D-%D7%99%D7%A9%D7%A0%D7%99%D7%9D-%D7%A9%D7%9C%D7%90-%D7%94%D7%95%D7%A2%D7%91%D7%A8%D7%95-%D7%9C-sharedresearch-%D7%91%D7%93%D7%A8%D7%9A-%D7%9B%D7%9C%D7%9C-%D7%A8%D7%99%D7%A7--%D7%A8%D7%95%D7%91-%D7%94%D7%9E%D7%97%D7%A7%D7%A8%D7%99%D7%9D-%D7%94%D7%95%D7%A2%D7%91%D7%A8%D7%95-%D7%9C-shared-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E) | [L31](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L31) | ``` |
+| 8 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#details) | [L34](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L34) | --- |
+| 9 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L38) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](h… |
+| 10 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L43](https://github.com/SUGINACH/Typesetter_doc/blob/main/archive/research/README.md#L43) | --- |
 
 </details>
 

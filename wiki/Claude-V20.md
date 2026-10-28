@@ -5,9 +5,9 @@
 ## 📊 סטטיסטיקות התיקייה
 
 - **מספר קבצים:** 17
-- **סך כל השורות:** 57,905
+- **סך כל השורות:** 57,991
 - **סך כל הגודל:** 7.52 MB
-- **סך כל הכותרות שזוהו:** 3405
+- **סך כל הכותרות שזוהו:** 3417
 
 ## 📝 תיאור התיקייה
 
@@ -17,15 +17,15 @@
 
 | # | שם הקובץ | סוג | שורות | כותרות | קישור ישיר |
 |---|-----------|-----|-------|--------|------------|
-| 1 | `README.md` | md | 47 | 9 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md) |
+| 1 | `README.md` | md | 60 | 11 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md) |
 | 2 | `System_checklist.md` | md | 1,553 | 63 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/System_checklist.md) |
-| 3 | `README.md` | md | 35 | 7 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md) |
+| 3 | `README.md` | md | 56 | 11 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md) |
 | 4 | `Engine_guide.md` | md | 1,683 | 162 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/Engine_guide.md) |
 | 5 | `Handoff_documentation.md` | md | 1,730 | 96 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/Handoff_documentation.md) |
-| 6 | `README.md` | md | 73 | 11 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md) |
+| 6 | `README.md` | md | 86 | 13 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md) |
 | 7 | `Technical_specification.md` | md | 2,056 | 96 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/Technical_specification.md) |
 | 8 | `Original_chats_collection.md` | md | 19,508 | 1006 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/Original_chats_collection.md) |
-| 9 | `README.md` | md | 125 | 15 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md) |
+| 9 | `README.md` | md | 164 | 19 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md) |
 | 10 | `V20.0_panel_settings_review.md` | md | 482 | 66 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/V20.0_panel_settings_review.md) |
 | 11 | `V20.1_version_comparison.md` | md | 5,315 | 483 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/V20.1_version_comparison.md) |
 | 12 | `V20.2_html_split.md` | md | 5,078 | 351 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/V20.2_html_split.md) |
@@ -42,32 +42,34 @@
 ## 📝 1. `README.md`
 
 **נתיב:** [`claude_v20/qa/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md)  
-**סוג:** md  ·  **שורות:** 47  ·  **גודל:** 1.8 KB  ·  **כותרות שזוהו:** 9
+**סוג:** md  ·  **שורות:** 60  ·  **גודל:** 2.7 KB  ·  **כותרות שזוהו:** 11
 
 <details>
 <summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
 
 ```text
-# 📘 claude_v20/qa > אבטחת איכות — צ'קליסט מערכת העימוד לבדיקה ידנית של כל התכונות. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `claude_v20/qa` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|--------|-------| | [`System_checklist.md`](System_checklist.md) | 1,553 | 63 |
+# 📘 claude_v20/qa > אבטחת איכות — צ'קליסט מערכת העימוד לבדיקה ידנית של כל התכונות. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `claude_v20/qa` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|-------|--------|-------| | [`README.md`](README.md) | 47 | 9 | קובץ `README` — 47 שורו
 ```
 
 </details>
 
 
 <details>
-<summary>📋 <b>כל הכותרות בקובץ (9 פריטים) — לחץ להרחבה</b></summary>
+<summary>📋 <b>כל הכותרות בקובץ (11 פריטים) — לחץ להרחבה</b></summary>
 
 | # | רמה | כותרת | שורה | תוכן מקדים |
 |---|-----|--------|------|-------------|
 | 1 | H1 | [`📘 claude_v20/qa`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-claudev20qa) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L1) | > אבטחת איכות — צ'קליסט מערכת העימוד לבדיקה ידנית של כל התכונות. |
 | 2 | H2 |   [`> אבטחת איכות — צ'קליסט מערכת העימוד לבדיקה ידנית של כל התכונות.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-%D7%90%D7%91%D7%98%D7%97%D7%AA-%D7%90%D7%99%D7%9B%D7%95%D7%AA--%D7%A6%D7%A7%D7%9C%D7%99%D7%A1%D7%98-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94-%D7%99%D7%93%D7%A0%D7%99%D7%AA-%D7%A9%D7%9C-%D7%9B%D7%9C-%D7%94%D7%AA%D7%9B%D7%95%D7%A0%D7%95%D7%AA) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
-| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`System_checklist.… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L22](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L22) |  |
-| 6 | H3 |     [`[`System_checklist.md`](System_checklist.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#systemchecklistmdsystemchecklistmd) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L24) | צ'קליסט מערכת העימוד — 159 בדיקות ב-9 קבוצות שנבדקו בדפדפן אמיתי על ספרי בדיקה של 34–87 עמודים. |
-| 7 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#details) | [L34](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L34) | --- |
-| 8 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L38) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
-| 9 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L43](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L43) | --- |
+| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`README.md`](READM… |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L23](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L23) |  |
+| 6 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#readmemdreadmemd) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L25) | קובץ `README` — 47 שורות, 9 כותרות. # 📘 claude_v20/qa > אבטחת איכות — צ'קליסט מערכת העימוד לבדיקה יד… |
+| 7 | H1 | [`📘 claude_v20/qa > אבטחת איכות — צ'קליסט מערכת העימוד לבדיקה ידנית של כל התכונות. --- ## 🌐 …`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-claudev20qa--%D7%90%D7%91%D7%98%D7%97%D7%AA-%D7%90%D7%99%D7%9B%D7%95%D7%AA--%D7%A6%D7%A7%D7%9C%D7%99%D7%A1%D7%98-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94-%D7%99%D7%93%D7%A0%D7%99%D7%AA-%D7%A9%D7%9C-%D7%9B%D7%9C-%D7%94%D7%AA%D7%9B%D7%95%D7%A0%D7%95%D7%AA-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99-%D7%A7%D7%95%D7%93%D7%A9-%D7%9C%D7%A4%D7%99-%D7%9B%D7%9C%D7%9C%D7%99-%D7%94%D7%93%D7%A4%D7%95%D7%A1-%D7%94%D7%AA%D7%95) | [L32](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L32) | ``` |
+| 8 | H3 |     [`[`System_checklist.md`](System_checklist.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#systemchecklistmdsystemchecklistmd) | [L37](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L37) | צ'קליסט מערכת העימוד — 159 בדיקות ב-9 קבוצות שנבדקו בדפדפן אמיתי על ספרי בדיקה של 34–87 עמודים. |
+| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#details) | [L47](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L47) | --- |
+| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L51) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L56](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/qa/README.md#L56) | --- |
 
 </details>
 
@@ -166,7 +168,7 @@
 ## 📝 3. `README.md`
 
 **נתיב:** [`claude_v20/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md)  
-**סוג:** md  ·  **שורות:** 35  ·  **גודל:** 1.6 KB  ·  **כותרות שזוהו:** 7
+**סוג:** md  ·  **שורות:** 56  ·  **גודל:** 2.6 KB  ·  **כותרות שזוהו:** 11
 
 <details>
 <summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
@@ -179,7 +181,7 @@
 
 
 <details>
-<summary>📋 <b>כל הכותרות בקובץ (7 פריטים) — לחץ להרחבה</b></summary>
+<summary>📋 <b>כל הכותרות בקובץ (11 פריטים) — לחץ להרחבה</b></summary>
 
 | # | רמה | כותרת | שורה | תוכן מקדים |
 |---|-----|--------|------|-------------|
@@ -187,9 +189,13 @@
 | 2 | H2 |   [`> תיקיית גרסת **Claude (Anthropic)** — V20 (IMUD TORANI). מכילה את כל התיעוד שנוצר על ידי …`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#-%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%92%D7%A8%D7%A1%D7%AA-claude-anthropic--v20-imud-torani-%D7%9E%D7%9B%D7%99%D7%9C%D7%94-%D7%90%D7%AA-%D7%9B%D7%9C-%D7%94%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%A0%D7%95%D7%A6%D7%A8-%D7%A2%D7%9C-%D7%99%D7%93%D7%99-claude-%D7%91%D7%9E%D7%94%D7%9C%D7%9A-%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%94%D7%92%D7%A8%D7%A1%D7%94-%D7%94%D7%96%D7%95-%D7%9E%D7%90%D7%95%D7%A4%D7%99%D7%99%D7%A0%D7%AA-%D7%91%D7%92%D7%99%D7%A9%D7%94-%D7%A9%D7%9E%D7%A8%D7%A0%D7%99%D7%AA-%D7%95%D7%9E%D7%A1%D7%95%D7%93%D7%A8%D7%AA-%D7%A2%D7%9D-%D7%93%D7%92%D7%A9-%D7%A2%D7%9C-%D7%9E%D7%A4%D7%A8%D7%98%D7%99%D7%9D-%D7%9E%D7%93%D7%95%D7%99%D7%A7%D7%99%D7%9D) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
 | 4 | H2 |   [`📁 תיקיות משנה`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#-%D7%AA%D7%99%D7%A7%D7%99%D7%95%D7%AA-%D7%9E%D7%A9%D7%A0%D7%94) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L15) | \| תיקייה \| תיאור \| \|--------\|-------\| \| [`qa/`](qa/README.md) \| אבטחת איכות — צ'קליסט מערכת … |
-| 5 | H2 |   [`\| [`transcripts/`](transcripts/README.md) \| תמלילי שיחות הפיתוח עם Claude (V20.1–V20.5).…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#-transcriptstranscriptsreadmemd--%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%94%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A2%D7%9D-claude-v201v205-%D7%9B%D7%9C-%D7%A7%D7%95%D7%91%D7%A5-%D7%9E%D7%AA%D7%A2%D7%93-%D7%A9%D7%99%D7%97%D7%94-%D7%90%D7%97%D7%AA-%D7%9B%D7%95%D7%9C%D7%9C-%D7%A4%D7%A0%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9-%D7%95%D7%AA%D7%92%D7%95%D7%91%D7%95%D7%AA-%D7%94-a-) | [L21](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L21) | --- |
-| 6 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L26) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
-| 7 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L31](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L31) | --- |
+| 5 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L24) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`README.md`](READM… |
+| 6 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L31](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L31) |  |
+| 7 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#readmemdreadmemd) | [L33](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L33) | קובץ `README` — 35 שורות, 7 כותרות. # 📘 claude_v20 > תיקיית גרסת **Claude (Anthropic)** — V20 (IMUD … |
+| 8 | H1 | [`📘 claude_v20 > תיקיית גרסת **Claude (Anthropic)** — V20 (IMUD TORANI). מכילה את כל התיעוד …`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#-claudev20--%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%92%D7%A8%D7%A1%D7%AA-claude-anthropic--v20-imud-torani-%D7%9E%D7%9B%D7%99%D7%9C%D7%94-%D7%90%D7%AA-%D7%9B%D7%9C-%D7%94%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%A0%D7%95%D7%A6%D7%A8-%D7%A2%D7%9C-%D7%99%D7%93%D7%99-claude-%D7%91%D7%9E%D7%94%D7%9C%D7%9A-%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%94%D7%92%D7%A8%D7%A1%D7%94-%D7%94%D7%96%D7%95-%D7%9E%D7%90%D7%95%D7%A4%D7%99%D7%99%D7%A0%D7%AA-%D7%91%D7%92%D7%99%D7%A9%D7%94-%D7%A9%D7%9E%D7%A8%D7%A0%D7%99%D7%AA-%D7%95%D7%9E%D7%A1%D7%95%D7%93%D7%A8%D7%AA-%D7%A2%D7%9D-%D7%93%D7%92%D7%A9-%D7%A2%D7%9C-%D7%9E%D7%A4%D7%A8%D7%98%D7%99%D7%9D-%D7%9E%D7%93%D7%95%D7%99%D7%A7%D7%99%D7%9D------) | [L40](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L40) | ``` |
+| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#details) | [L43](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L43) | --- |
+| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L47](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L47) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L52](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/README.md#L52) | --- |
 
 </details>
 
@@ -509,7 +515,7 @@
 ## 📝 6. `README.md`
 
 **נתיב:** [`claude_v20/technical/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md)  
-**סוג:** md  ·  **שורות:** 73  ·  **גודל:** 3.4 KB  ·  **כותרות שזוהו:** 11
+**סוג:** md  ·  **שורות:** 86  ·  **גודל:** 4.3 KB  ·  **כותרות שזוהו:** 13
 
 <details>
 <summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
@@ -522,7 +528,7 @@
 
 
 <details>
-<summary>📋 <b>כל הכותרות בקובץ (11 פריטים) — לחץ להרחבה</b></summary>
+<summary>📋 <b>כל הכותרות בקובץ (13 פריטים) — לחץ להרחבה</b></summary>
 
 | # | רמה | כותרת | שורה | תוכן מקדים |
 |---|-----|--------|------|-------------|
@@ -530,13 +536,15 @@
 | 2 | H2 |   [`> תיעוד טכני של המערכת — מפרט טכני מלא, מסמך העברה (handoff), ומדריך מנוע העימוד.`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99-%D7%A9%D7%9C-%D7%94%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA--%D7%9E%D7%A4%D7%A8%D7%98-%D7%98%D7%9B%D7%A0%D7%99-%D7%9E%D7%9C%D7%90-%D7%9E%D7%A1%D7%9E%D7%9A-%D7%94%D7%A2%D7%91%D7%A8%D7%94-handoff-%D7%95%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%9E%D7%A0%D7%95%D7%A2-%D7%94%D7%A2%D7%99%D7%9E%D7%95%D7%93) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
 | 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`Engine_guide.md`]… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L24) |  |
-| 6 | H3 |     [`[`Engine_guide.md`](Engine_guide.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#engineguidemdengineguidemd) | [L26](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L26) | מדריך מנוע העימוד — סקירה ידידותית של כל פונקציה ב-`typesetter.js` והפונקציות הקשורות. |
-| 7 | H3 |     [`[`Handoff_documentation.md`](Handoff_documentation.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#handoffdocumentationmdhandoffdocumentationmd) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L38) | מסמך העברה (handoff) המסכם את הארכיטקטורה, האלגוריתמים, התקלות והניסיונות שנפסלו, ומצב הקוד. |
-| 8 | H3 |     [`[`Technical_specification.md`](Technical_specification.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#technicalspecificationmdtechnicalspecificationmd) | [L50](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L50) | מפרט טכני מלא של המערכת — ארכיטקטורה, מודל נתונים, מנוע העימוד, וכל הפונקציות. מכיל סימוני רמת אימות… |
-| 9 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#details) | [L60](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L60) | --- |
-| 10 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L64](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L64) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
-| 11 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L69](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L69) | --- |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L25](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L25) |  |
+| 6 | H3 |     [`[`Engine_guide.md`](Engine_guide.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#engineguidemdengineguidemd) | [L27](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L27) | מדריך מנוע העימוד — סקירה ידידותית של כל פונקציה ב-`typesetter.js` והפונקציות הקשורות. |
+| 7 | H3 |     [`[`Handoff_documentation.md`](Handoff_documentation.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#handoffdocumentationmdhandoffdocumentationmd) | [L39](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L39) | מסמך העברה (handoff) המסכם את הארכיטקטורה, האלגוריתמים, התקלות והניסיונות שנפסלו, ומצב הקוד. |
+| 8 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#readmemdreadmemd) | [L51](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L51) | קובץ `README` — 73 שורות, 11 כותרות. # 📘 claude_v20/technical > תיעוד טכני של המערכת — מפרט טכני מלא… |
+| 9 | H1 | [`📘 claude_v20/technical > תיעוד טכני של המערכת — מפרט טכני מלא, מסמך העברה (handoff), ומדרי…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#-claudev20technical--%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99-%D7%A9%D7%9C-%D7%94%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA--%D7%9E%D7%A4%D7%A8%D7%98-%D7%98%D7%9B%D7%A0%D7%99-%D7%9E%D7%9C%D7%90-%D7%9E%D7%A1%D7%9E%D7%9A-%D7%94%D7%A2%D7%91%D7%A8%D7%94-handoff-%D7%95%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%9E%D7%A0%D7%95%D7%A2-%D7%94%D7%A2%D7%99%D7%9E%D7%95%D7%93-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D-%D7%AA%D7%95%D7%A8%D7%A0%D7%99%D7%99%D7%9D--%D7%9B%D7%9C%D7%99-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%D7%99-%D7%9C%D7%A2%D7%99%D7%9E%D7%95%D7%93-%D7%A1%D7%A4%D7%A8%D7%99) | [L58](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L58) | ``` |
+| 10 | H3 |     [`[`Technical_specification.md`](Technical_specification.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#technicalspecificationmdtechnicalspecificationmd) | [L63](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L63) | מפרט טכני מלא של המערכת — ארכיטקטורה, מודל נתונים, מנוע העימוד, וכל הפונקציות. מכיל סימוני רמת אימות… |
+| 11 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#details) | [L73](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L73) | --- |
+| 12 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L77](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L77) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 13 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L82](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/technical/README.md#L82) | --- |
 
 </details>
 
@@ -1700,7 +1708,7 @@
 ## 📝 9. `README.md`
 
 **נתיב:** [`claude_v20/transcripts/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md)  
-**סוג:** md  ·  **שורות:** 125  ·  **גודל:** 6.0 KB  ·  **כותרות שזוהו:** 15
+**סוג:** md  ·  **שורות:** 164  ·  **גודל:** 8.5 KB  ·  **כותרות שזוהו:** 19
 
 <details>
 <summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
@@ -1713,25 +1721,29 @@
 
 
 <details>
-<summary>📋 <b>כל הכותרות בקובץ (15 פריטים) — לחץ להרחבה</b></summary>
+<summary>📋 <b>כל הכותרות בקובץ (19 פריטים) — לחץ להרחבה</b></summary>
 
 | # | רמה | כותרת | שורה | תוכן מקדים |
 |---|-----|--------|------|-------------|
 | 1 | H1 | [`📘 claude_v20/transcripts`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-claudev20transcripts) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L1) | > תמלילי שיחות הפיתוח עם Claude (V20.1–V20.5). כל קובץ מתעד שיחה אחת, כולל פניות המשתמש ותגובות ה-AI… |
 | 2 | H2 |   [`> תמלילי שיחות הפיתוח עם Claude (V20.1–V20.5). כל קובץ מתעד שיחה אחת, כולל פניות המשתמש ות…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%94%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A2%D7%9D-claude-v201v205-%D7%9B%D7%9C-%D7%A7%D7%95%D7%91%D7%A5-%D7%9E%D7%AA%D7%A2%D7%93-%D7%A9%D7%99%D7%97%D7%94-%D7%90%D7%97%D7%AA-%D7%9B%D7%95%D7%9C%D7%9C-%D7%A4%D7%A0%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9-%D7%95%D7%AA%D7%92%D7%95%D7%91%D7%95%D7%AA-%D7%94-ai-v204-%D7%97%D7%95%D7%9C%D7%A7-%D7%9C-3-%D7%97%D7%9C%D7%A7%D7%99%D7%9D-%D7%91%D7%A9%D7%9C-%D7%92%D7%95%D7%93%D7%9C%D7%95-11713-%D7%A9%D7%95%D7%A8%D7%95%D7%AA-%D7%9E%D7%A7%D7%95%D7%A8) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L3) | --- |
 | 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
-| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`V20.1_version_com… |
-| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L28](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L28) |  |
-| 6 | H3 |     [`[`V20.1_version_comparison.md`](V20.1_version_comparison.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v201versioncomparisonmdv201versioncomparisonmd) | [L30](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L30) | תמליל V20.1 — השוואת גרסאות מערכת עימוד ספר תורני. שיחת הפתיחה של גרסת V20. |
-| 7 | H3 |     [`[`V20.2_html_split.md`](V20.2_html_split.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v202htmlsplitmdv202htmlsplitmd) | [L42](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L42) | תמליל V20.2 — חלוקת קובץ HTML יחיד לשלושה קבצים (HTML, CSS, JS) בזהירות רבה. |
-| 8 | H3 |     [`[`V20.3_footnote_settings.md`](V20.3_footnote_settings.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v203footnotesettingsmdv203footnotesettingsmd) | [L54](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L54) | תמליל V20.3 — הגדרות הערות שוליים ומזהים במערכת העימוד. |
-| 9 | H3 |     [`[`V20.4_attached_file_review_part_1.md`](V20.4_attached_file_review_part_1.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v204attachedfilereviewpart1mdv204attachedfilereviewpart1md) | [L66](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L66) | תמליל V20.4 חלק 1 מתוך 3 — בדיקה ושיפור קובץ מצורף. החלק הראשון של השיחה הארוכה ביותר (203 פניות). |
-| 10 | H3 |     [`[`V20.4_attached_file_review_part_2.md`](V20.4_attached_file_review_part_2.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v204attachedfilereviewpart2mdv204attachedfilereviewpart2md) | [L78](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L78) | תמליל V20.4 חלק 2 מתוך 3 — המשך בדיקה ושיפור הקובץ המצורף. |
-| 11 | H3 |     [`[`V20.4_attached_file_review_part_3.md`](V20.4_attached_file_review_part_3.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v204attachedfilereviewpart3mdv204attachedfilereviewpart3md) | [L90](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L90) | תמליל V20.4 חלק 3 מתוך 3 — חלקו האחרון של השיחה הארוכה ביותר. |
-| 12 | H3 |     [`[`V20.5_paste_area_ui.md`](V20.5_paste_area_ui.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v205pasteareauimdv205pasteareauimd) | [L102](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L102) | תמליל V20.5 — עדכון ממשק איזור הדבקת הטקסט ולוח ההגדרות. |
-| 13 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#details) | [L112](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L112) | --- |
-| 14 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L116](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L116) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
-| 15 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L121](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L121) | --- |
+| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`Original_chats_co… |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L31](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L31) |  |
+| 6 | H3 |     [`[`Original_chats_collection.md`](Original_chats_collection.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#originalchatscollectionmdoriginalchatscollectionmd) | [L33](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L33) | קובץ `Original_chats_collection` — 19,508 שורות, 1006 כותרות. --- title: "אוסף שיחות מקוריות עם Clau… |
+| 7 | H3 |     [`[`README.md`](README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#readmemdreadmemd) | [L45](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L45) | קובץ `README` — 125 שורות, 15 כותרות. # 📘 claude_v20/transcripts > תמלילי שיחות הפיתוח עם Claude (V2… |
+| 8 | H1 | [`📘 claude_v20/transcripts > תמלילי שיחות הפיתוח עם Claude (V20.1–V20.5). כל קובץ מתעד שיחה …`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-claudev20transcripts--%D7%AA%D7%9E%D7%9C%D7%99%D7%9C%D7%99-%D7%A9%D7%99%D7%97%D7%95%D7%AA-%D7%94%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A2%D7%9D-claude-v201v205-%D7%9B%D7%9C-%D7%A7%D7%95%D7%91%D7%A5-%D7%9E%D7%AA%D7%A2%D7%93-%D7%A9%D7%99%D7%97%D7%94-%D7%90%D7%97%D7%AA-%D7%9B%D7%95%D7%9C%D7%9C-%D7%A4%D7%A0%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9-%D7%95%D7%AA%D7%92%D7%95%D7%91%D7%95%D7%AA-%D7%94-ai-v204-%D7%97%D7%95%D7%9C%D7%A7-%D7%9C-3-%D7%97%D7%9C%D7%A7%D7%99%D7%9D-%D7%91%D7%A9%D7%9C-%D7%92%D7%95%D7%93%D7%9C%D7%95-11713-%D7%A9%D7%95%D7%A8%D7%95%D7%AA-%D7%9E%D7%A7%D7%95%D7%A8-------%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95) | [L52](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L52) | ``` |
+| 9 | H3 |     [`[`V20.0_panel_settings_review.md`](V20.0_panel_settings_review.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v200panelsettingsreviewmdv200panelsettingsreviewmd) | [L57](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L57) | קובץ `V20.0_panel_settings_review` — 482 שורות, 66 כותרות. --- title: "שיחה מקדימה — סקירת לוח ההגדר… |
+| 10 | H3 |     [`[`V20.1_version_comparison.md`](V20.1_version_comparison.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v201versioncomparisonmdv201versioncomparisonmd) | [L69](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L69) | תמליל V20.1 — השוואת גרסאות מערכת עימוד ספר תורני. שיחת הפתיחה של גרסת V20. |
+| 11 | H3 |     [`[`V20.2_html_split.md`](V20.2_html_split.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v202htmlsplitmdv202htmlsplitmd) | [L81](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L81) | תמליל V20.2 — חלוקת קובץ HTML יחיד לשלושה קבצים (HTML, CSS, JS) בזהירות רבה. |
+| 12 | H3 |     [`[`V20.3_footnote_settings.md`](V20.3_footnote_settings.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v203footnotesettingsmdv203footnotesettingsmd) | [L93](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L93) | תמליל V20.3 — הגדרות הערות שוליים ומזהים במערכת העימוד. |
+| 13 | H3 |     [`[`V20.4_attached_file_review_part_1.md`](V20.4_attached_file_review_part_1.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v204attachedfilereviewpart1mdv204attachedfilereviewpart1md) | [L105](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L105) | תמליל V20.4 חלק 1 מתוך 3 — בדיקה ושיפור קובץ מצורף. החלק הראשון של השיחה הארוכה ביותר (203 פניות). |
+| 14 | H3 |     [`[`V20.4_attached_file_review_part_2.md`](V20.4_attached_file_review_part_2.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v204attachedfilereviewpart2mdv204attachedfilereviewpart2md) | [L117](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L117) | תמליל V20.4 חלק 2 מתוך 3 — המשך בדיקה ושיפור הקובץ המצורף. |
+| 15 | H3 |     [`[`V20.4_attached_file_review_part_3.md`](V20.4_attached_file_review_part_3.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v204attachedfilereviewpart3mdv204attachedfilereviewpart3md) | [L129](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L129) | תמליל V20.4 חלק 3 מתוך 3 — חלקו האחרון של השיחה הארוכה ביותר. |
+| 16 | H3 |     [`[`V20.5_paste_area_ui.md`](V20.5_paste_area_ui.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#v205pasteareauimdv205pasteareauimd) | [L141](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L141) | תמליל V20.5 — עדכון ממשק איזור הדבקת הטקסט ולוח ההגדרות. |
+| 17 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#details) | [L151](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L151) | --- |
+| 18 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L155](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L155) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 19 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L160](https://github.com/SUGINACH/Typesetter_doc/blob/main/claude_v20/transcripts/README.md#L160) | --- |
 
 </details>
 

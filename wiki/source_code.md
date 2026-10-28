@@ -4,10 +4,10 @@
 
 ## 📊 סטטיסטיקות התיקייה
 
-- **מספר קבצים:** 1
-- **סך כל השורות:** 6,887
-- **סך כל הגודל:** 330.0 KB
-- **סך כל הכותרות שזוהו:** 21
+- **מספר קבצים:** 2
+- **סך כל השורות:** 6,934
+- **סך כל הגודל:** 331.9 KB
+- **סך כל הכותרות שזוהו:** 30
 
 ## 📝 תיאור התיקייה
 
@@ -17,13 +17,49 @@
 
 | # | שם הקובץ | סוג | שורות | כותרות | קישור ישיר |
 |---|-----------|-----|-------|--------|------------|
-| 1 | `V_current_snapshot.txt` | txt | 6,887 | 21 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/V_current_snapshot.txt) |
+| 1 | `README.md` | md | 47 | 9 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md) |
+| 2 | `V_current_snapshot.txt` | txt | 6,887 | 21 | [פתח](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/V_current_snapshot.txt) |
 
 ---
 
 ## 📚 אינדקס מפורט לפי קובץ
 
-## 📄 1. `V_current_snapshot.txt`
+## 📝 1. `README.md`
+
+**נתיב:** [`source_code/README.md`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md)  
+**סוג:** md  ·  **שורות:** 47  ·  **גודל:** 1.9 KB  ·  **כותרות שזוהו:** 9
+
+<details>
+<summary>📖 <b>תקציר תוכן הקובץ</b> (לחץ להרחבה)</summary>
+
+```text
+# 📁 source_code > תיקיית **תצלום קוד מקור** — הקוד המקורי של מערכת העימוד (HTML, CSS, JS) בנקודת זמן מסוימת. ריפו זה הוא ריפו תיעוד, אך קובץ זה נשמר כאן להקשר היסטורי. --- ## 🌐 אודות הפרויקט ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המסורתי. המערכת פותחה במקביל על ידי שלושה כלי AI (Claude, ChatGPT, z.ai). 📍 **מיקום נוכחי:** `source_code` ← [חזרה לתיקיית הורה](../README.md) ## 📄 קבצים בתיקייה זו | קובץ | שורות | כותרות | תיאור | |------|----
+```
+
+</details>
+
+
+<details>
+<summary>📋 <b>כל הכותרות בקובץ (9 פריטים) — לחץ להרחבה</b></summary>
+
+| # | רמה | כותרת | שורה | תוכן מקדים |
+|---|-----|--------|------|-------------|
+| 1 | H1 | [`📁 source_code`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#-sourcecode) | [L1](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#L1) | > תיקיית **תצלום קוד מקור** — הקוד המקורי של מערכת העימוד (HTML, CSS, JS) בנקודת זמן מסוימת. ריפו זה… |
+| 2 | H2 |   [`> תיקיית **תצלום קוד מקור** — הקוד המקורי של מערכת העימוד (HTML, CSS, JS) בנקודת זמן מסוימ…`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#-%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%AA%D7%A6%D7%9C%D7%95%D7%9D-%D7%A7%D7%95%D7%93-%D7%9E%D7%A7%D7%95%D7%A8--%D7%94%D7%A7%D7%95%D7%93-%D7%94%D7%9E%D7%A7%D7%95%D7%A8%D7%99-%D7%A9%D7%9C-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A2%D7%99%D7%9E%D7%95%D7%93-html-css-js-%D7%91%D7%A0%D7%A7%D7%95%D7%93%D7%AA-%D7%96%D7%9E%D7%9F-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%AA-%D7%A8%D7%99%D7%A4%D7%95-%D7%96%D7%94-%D7%94%D7%95%D7%90-%D7%A8%D7%99%D7%A4%D7%95-%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%90%D7%9A-%D7%A7%D7%95%D7%91%D7%A5-%D7%96%D7%94-%D7%A0%D7%A9%D7%9E%D7%A8-%D7%9B%D7%90%D7%9F-%D7%9C%D7%94%D7%A7%D7%A9%D7%A8-%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99) | [L3](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#L3) | --- |
+| 3 | H2 |   [`🌐 אודות הפרויקט`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#-%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98) | [L7](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#L7) | ריפו תיעוד של **מערכת עימוד ספרים תורניים** — כלי אינטרנטי לעימוד ספרי קודש לפי כללי הדפוס התורני המ… |
+| 4 | H2 |   [`📄 קבצים בתיקייה זו`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#-%D7%A7%D7%91%D7%A6%D7%99%D7%9D-%D7%91%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%94-%D7%96%D7%95) | [L15](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#L15) | \| קובץ \| שורות \| כותרות \| תיאור \| \|------\|-------\|--------\|-------\| \| [`V_current_snapsho… |
+| 5 | H2 |   [`📋 פירוט קבצים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#-%D7%A4%D7%99%D7%A8%D7%95%D7%98-%D7%A7%D7%91%D7%A6%D7%99%D7%9D) | [L22](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#L22) |  |
+| 6 | H3 |     [`[`V_current_snapshot.txt`](V_current_snapshot.txt)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#vcurrentsnapshottxtvcurrentsnapshottxt) | [L24](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#L24) | קובץ `V_current_snapshot` — 6,887 שורות, 21 כותרות. ================================================… |
+| 7 | H2 |   [`</details>`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#details) | [L34](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#L34) | --- |
+| 8 | H2 |   [`🔗 קישורים`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#-%D7%A7%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D) | [L38](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#L38) | - [הריפו ב-GitHub](https://github.com/SUGINACH/Typesetter_doc) - [הויקי הרשמי](https://github.com/SU… |
+| 9 | H2 |   [`- [דף הבית של הריפו](../README.md)`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#--%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA-%D7%A9%D7%9C-%D7%94%D7%A8%D7%99%D7%A4%D7%95readmemd) | [L43](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/README.md#L43) | --- |
+
+</details>
+
+
+---
+
+## 📄 2. `V_current_snapshot.txt`
 
 **נתיב:** [`source_code/V_current_snapshot.txt`](https://github.com/SUGINACH/Typesetter_doc/blob/main/source_code/V_current_snapshot.txt)  
 **סוג:** txt  ·  **שורות:** 6,887  ·  **גודל:** 330.0 KB  ·  **כותרות שזוהו:** 21

@@ -19,65 +19,67 @@
 
 ## 📊 סטטיסטיקות
 
-- **סך כל המונחים באינדקס:** 3,757
-- **סך כל המופעים המקושרים:** 45,488
-- **עמודי אותיות:** 47
+- **סך כל המונחים באינדקס:** 7,169
+- **סך כל המופעים המקושרים:** 104,663
+- **עמודי אותיות:** 49
 
 ## 📑 תוכן עניינים — עברית (א-ת)
 
 | אות | מונחים | קישור |
 |-----|--------|-------|
-| **א** | 131 | [פתח](G-Hebrew-א) |
-| **ב** | 226 | [פתח](G-Hebrew-ב) |
-| **ג** | 40 | [פתח](G-Hebrew-ג) |
-| **ד** | 46 | [פתח](G-Hebrew-ד) |
-| **ה** | 624 | [פתח](G-Hebrew-ה) |
-| **ו** | 253 | [פתח](G-Hebrew-ו) |
-| **ז** | 13 | [פתח](G-Hebrew-ז) |
-| **ח** | 73 | [פתח](G-Hebrew-ח) |
-| **ט** | 29 | [פתח](G-Hebrew-ט) |
-| **י** | 56 | [פתח](G-Hebrew-י) |
-| **כ** | 59 | [פתח](G-Hebrew-כ) |
-| **ל** | 268 | [פתח](G-Hebrew-ל) |
-| **מ** | 383 | [פתח](G-Hebrew-מ) |
-| **נ** | 92 | [פתח](G-Hebrew-נ) |
-| **ס** | 70 | [פתח](G-Hebrew-ס) |
-| **ע** | 89 | [פתח](G-Hebrew-ע) |
-| **פ** | 60 | [פתח](G-Hebrew-פ) |
-| **צ** | 17 | [פתח](G-Hebrew-צ) |
-| **ק** | 67 | [פתח](G-Hebrew-ק) |
-| **ר** | 58 | [פתח](G-Hebrew-ר) |
-| **ש** | 220 | [פתח](G-Hebrew-ש) |
-| **ת** | 95 | [פתח](G-Hebrew-ת) |
+| **א** | 172 | [פתח](G-Hebrew-א) |
+| **ב** | 346 | [פתח](G-Hebrew-ב) |
+| **ג** | 58 | [פתח](G-Hebrew-ג) |
+| **ד** | 63 | [פתח](G-Hebrew-ד) |
+| **ה** | 911 | [פתח](G-Hebrew-ה) |
+| **ו** | 507 | [פתח](G-Hebrew-ו) |
+| **ז** | 18 | [פתח](G-Hebrew-ז) |
+| **ח** | 96 | [פתח](G-Hebrew-ח) |
+| **ט** | 41 | [פתח](G-Hebrew-ט) |
+| **י** | 80 | [פתח](G-Hebrew-י) |
+| **כ** | 88 | [פתח](G-Hebrew-כ) |
+| **ל** | 404 | [פתח](G-Hebrew-ל) |
+| **מ** | 555 | [פתח](G-Hebrew-מ) |
+| **נ** | 137 | [פתח](G-Hebrew-נ) |
+| **ס** | 82 | [פתח](G-Hebrew-ס) |
+| **ע** | 111 | [פתח](G-Hebrew-ע) |
+| **פ** | 84 | [פתח](G-Hebrew-פ) |
+| **צ** | 27 | [פתח](G-Hebrew-צ) |
+| **ק** | 87 | [פתח](G-Hebrew-ק) |
+| **ר** | 72 | [פתח](G-Hebrew-ר) |
+| **ש** | 310 | [פתח](G-Hebrew-ש) |
+| **ת** | 132 | [פתח](G-Hebrew-ת) |
 
 ## 📑 תוכן עניינים — English (A-Z)
 
 | Letter | Terms | Link |
 |--------|-------|------|
-| **A** | 42 | [Open](G-English-A) |
-| **B** | 30 | [Open](G-English-B) |
-| **C** | 76 | [Open](G-English-C) |
-| **D** | 48 | [Open](G-English-D) |
-| **E** | 20 | [Open](G-English-E) |
-| **F** | 41 | [Open](G-English-F) |
-| **G** | 36 | [Open](G-English-G) |
-| **H** | 25 | [Open](G-English-H) |
-| **I** | 35 | [Open](G-English-I) |
-| **J** | 10 | [Open](G-English-J) |
-| **K** | 6 | [Open](G-English-K) |
-| **L** | 24 | [Open](G-English-L) |
-| **M** | 30 | [Open](G-English-M) |
-| **N** | 12 | [Open](G-English-N) |
-| **O** | 17 | [Open](G-English-O) |
-| **P** | 53 | [Open](G-English-P) |
-| **Q** | 1 | [Open](G-English-Q) |
-| **R** | 58 | [Open](G-English-R) |
-| **S** | 83 | [Open](G-English-S) |
-| **T** | 62 | [Open](G-English-T) |
-| **U** | 7 | [Open](G-English-U) |
-| **V** | 40 | [Open](G-English-V) |
-| **W** | 25 | [Open](G-English-W) |
-| **Z** | 6 | [Open](G-English-Z) |
+| **A** | 183 | [Open](G-English-A) |
+| **B** | 104 | [Open](G-English-B) |
+| **C** | 301 | [Open](G-English-C) |
+| **D** | 163 | [Open](G-English-D) |
+| **E** | 139 | [Open](G-English-E) |
+| **F** | 145 | [Open](G-English-F) |
+| **G** | 80 | [Open](G-English-G) |
+| **H** | 80 | [Open](G-English-H) |
+| **I** | 179 | [Open](G-English-I) |
+| **J** | 12 | [Open](G-English-J) |
+| **K** | 13 | [Open](G-English-K) |
+| **L** | 86 | [Open](G-English-L) |
+| **M** | 130 | [Open](G-English-M) |
+| **N** | 44 | [Open](G-English-N) |
+| **O** | 80 | [Open](G-English-O) |
+| **P** | 206 | [Open](G-English-P) |
+| **Q** | 8 | [Open](G-English-Q) |
+| **R** | 202 | [Open](G-English-R) |
+| **S** | 281 | [Open](G-English-S) |
+| **T** | 166 | [Open](G-English-T) |
+| **U** | 43 | [Open](G-English-U) |
+| **V** | 70 | [Open](G-English-V) |
+| **W** | 57 | [Open](G-English-W) |
+| **X** | 1 | [Open](G-English-X) |
+| **Y** | 2 | [Open](G-English-Y) |
+| **Z** | 12 | [Open](G-English-Z) |
 
 ## 📑 תוכן עניינים — סמלים ומספרים
 
@@ -89,36 +91,36 @@
 
 | מונח | מופעים | אות | קישור לאות |
 |------|--------|-----|-----------|
-| `assistant` | 447 | A | [→](G-English-A) |
-| `user` | 447 | U | [→](G-English-U) |
-| `V2` | 294 | V | [→](G-English-V) |
-| `עימוד` | 238 | ע | [→](G-Hebrew-ע) |
-| `הערות` | 228 | ה | [→](G-Hebrew-ה) |
-| `שוליימ` | 200 | ש | [→](G-Hebrew-ש) |
-| `בינ` | 185 | ב | [→](G-Hebrew-ב) |
-| `טורימ` | 174 | ט | [→](G-Hebrew-ט) |
-| `העימוד` | 170 | ה | [→](G-Hebrew-ה) |
-| `V23` | 168 | V | [→](G-English-V) |
-| `המערכת` | 158 | ה | [→](G-Hebrew-ה) |
-| `עדכונ` | 156 | ע | [→](G-Hebrew-ע) |
-| `בדיקת` | 154 | ב | [→](G-Hebrew-ב) |
-| `מצב` | 150 | מ | [→](G-Hebrew-מ) |
-| `תיקונ` | 144 | ת | [→](G-Hebrew-ת) |
-| `CI` | 144 | C | [→](G-English-C) |
-| `TeX` | 144 | T | [→](G-English-T) |
-| `איזונ` | 132 | א | [→](G-Hebrew-א) |
-| `https` | 124 | H | [→](G-English-H) |
-| `מנוע` | 121 | מ | [→](G-Hebrew-מ) |
-| `HTML` | 121 | H | [→](G-English-H) |
-| `העמוד` | 119 | ה | [→](G-Hebrew-ה) |
-| `מנגנונ` | 117 | מ | [→](G-Hebrew-מ) |
-| `CSS` | 116 | C | [→](G-English-C) |
-| `הטקסט` | 114 | ה | [→](G-Hebrew-ה) |
-| `פאנל` | 113 | פ | [→](G-Hebrew-פ) |
-| `github.com` | 112 | G | [→](G-English-G) |
-| `קובצ` | 111 | ק | [→](G-Hebrew-ק) |
-| `suginach` | 110 | S | [→](G-English-S) |
-| `העבודה` | 109 | ה | [→](G-Hebrew-ה) |
+| `CI` | 806 | C | [→](G-English-C) |
+| `user` | 580 | U | [→](G-English-U) |
+| `קובצ` | 504 | ק | [→](G-Hebrew-ק) |
+| `TeX` | 482 | T | [→](G-English-T) |
+| `HTML` | 466 | H | [→](G-English-H) |
+| `assistant` | 464 | A | [→](G-English-A) |
+| `עימוד` | 440 | ע | [→](G-Hebrew-ע) |
+| `הערות` | 410 | ה | [→](G-Hebrew-ה) |
+| `המערכת` | 370 | ה | [→](G-Hebrew-ה) |
+| `V2` | 364 | V | [→](G-English-V) |
+| `CSS` | 361 | C | [→](G-English-C) |
+| `שוליימ` | 337 | ש | [→](G-Hebrew-ש) |
+| `google` | 328 | G | [→](G-English-G) |
+| `focusing` | 312 | F | [→](G-English-F) |
+| `typesetter.js` | 295 | T | [→](G-English-T) |
+| `העימוד` | 289 | ה | [→](G-Hebrew-ה) |
+| `מזהה` | 280 | מ | [→](G-Hebrew-מ) |
+| `טורימ` | 279 | ט | [→](G-Hebrew-ט) |
+| `בינ` | 274 | ב | [→](G-Hebrew-ב) |
+| `Footnote` | 269 | F | [→](G-English-F) |
+| `text` | 258 | T | [→](G-English-T) |
+| `also` | 253 | A | [→](G-English-A) |
+| `מצורפ` | 252 | מ | [→](G-Hebrew-מ) |
+| `drive` | 246 | D | [→](G-English-D) |
+| `specifically` | 240 | S | [→](G-English-S) |
+| `within` | 235 | W | [→](G-English-W) |
+| `Word` | 232 | W | [→](G-English-W) |
+| `מנוע` | 225 | מ | [→](G-Hebrew-מ) |
+| `ללא` | 221 | ל | [→](G-Hebrew-ל) |
+| `לפי` | 212 | ל | [→](G-Hebrew-ל) |
 
 ---
 
@@ -128,152 +130,167 @@
 
 | מונח | מופעים | אות | קישור לאות |
 |------|--------|-----|-----------|
-| `9-step` | 4 | # | [→](G-Symbols) |
-| `A4` | 87 | A | [→](G-English-A) |
-| `Adobe` | 8 | A | [→](G-English-A) |
-| `app.js` | 74 | A | [→](G-English-A) |
-| `AST` | 76 | A | [→](G-English-A) |
-| `Audit` | 149 | A | [→](G-English-A) |
-| `Badness` | 10 | B | [→](G-English-B) |
-| `balanceColumns` | 122 | B | [→](G-English-B) |
+| `9-step` | 5 | # | [→](G-Symbols) |
+| `A4` | 144 | A | [→](G-English-A) |
+| `Adobe` | 16 | A | [→](G-English-A) |
+| `app.js` | 364 | A | [→](G-English-A) |
+| `AST` | 203 | A | [→](G-English-A) |
+| `Audit` | 192 | A | [→](G-English-A) |
+| `Badness` | 14 | B | [→](G-English-B) |
+| `balanceColumns` | 416 | B | [→](G-English-B) |
 | `balanceColumnsV2` | 8 | B | [→](G-English-B) |
-| `base64` | 10 | B | [→](G-English-B) |
-| `Baseline` | 58 | B | [→](G-English-B) |
-| `Baseline Grid` | 5 | B | [→](G-English-B) |
-| `Box` | 36 | B | [→](G-English-B) |
+| `base64` | 14 | B | [→](G-English-B) |
+| `Baseline` | 88 | B | [→](G-English-B) |
+| `Baseline Grid` | 7 | B | [→](G-English-B) |
+| `Box` | 170 | B | [→](G-English-B) |
 | `Box-Glue-Penalty` | 4 | B | [→](G-English-B) |
-| `Bracket` | 4 | B | [→](G-English-B) |
+| `Bracket` | 31 | B | [→](G-English-B) |
 | `Canvas API` | 10 | C | [→](G-English-C) |
-| `Chapter Balancing` | 9 | C | [→](G-English-C) |
-| `CI` | 144 | C | [→](G-English-C) |
-| `clientHeight` | 6 | C | [→](G-English-C) |
-| `Collision` | 4 | C | [→](G-English-C) |
-| `Column Balancing` | 11 | C | [→](G-English-C) |
-| `Constraint` | 6 | C | [→](G-English-C) |
-| `Cost Function` | 2 | C | [→](G-English-C) |
-| `CSS` | 209 | C | [→](G-English-C) |
-| `debounce` | 25 | D | [→](G-English-D) |
-| `decorations.js` | 28 | D | [→](G-English-D) |
-| `Deterministic` | 8 | D | [→](G-English-D) |
-| `DFA AST Parser` | 2 | D | [→](G-English-D) |
-| `DOM` | 190 | D | [→](G-English-D) |
-| `Drop Word` | 19 | D | [→](G-English-D) |
-| `DropWord` | 7 | D | [→](G-English-D) |
-| `Dropword` | 7 | D | [→](G-English-D) |
-| `Dynamic Programming` | 5 | D | [→](G-English-D) |
-| `Endnote` | 7 | E | [→](G-English-E) |
+| `Chapter Balancing` | 11 | C | [→](G-English-C) |
+| `CI` | 806 | C | [→](G-English-C) |
+| `clientHeight` | 8 | C | [→](G-English-C) |
+| `Collision` | 46 | C | [→](G-English-C) |
+| `Collision Detection` | 3 | C | [→](G-English-C) |
+| `Column Balancing` | 47 | C | [→](G-English-C) |
+| `Constraint` | 30 | C | [→](G-English-C) |
+| `Cost Function` | 3 | C | [→](G-English-C) |
+| `CSS` | 648 | C | [→](G-English-C) |
+| `debounce` | 52 | D | [→](G-English-D) |
+| `decorations.js` | 231 | D | [→](G-English-D) |
+| `Deterministic` | 14 | D | [→](G-English-D) |
+| `DFA AST Parser` | 3 | D | [→](G-English-D) |
+| `DOM` | 356 | D | [→](G-English-D) |
+| `Drop Cap` | 3 | D | [→](G-English-D) |
+| `Drop Word` | 28 | D | [→](G-English-D) |
+| `DropWord` | 23 | D | [→](G-English-D) |
+| `Dropword` | 23 | D | [→](G-English-D) |
+| `Dynamic Programming` | 6 | D | [→](G-English-D) |
+| `Endnote` | 34 | E | [→](G-English-E) |
 | `False Negative` | 3 | F | [→](G-English-F) |
-| `False Positive` | 9 | F | [→](G-English-F) |
-| `Feathering` | 8 | F | [→](G-English-F) |
-| `Float` | 37 | F | [→](G-English-F) |
-| `Font Fallback` | 6 | F | [→](G-English-F) |
+| `False Positive` | 10 | F | [→](G-English-F) |
+| `Feathering` | 18 | F | [→](G-English-F) |
+| `Float` | 67 | F | [→](G-English-F) |
+| `Font Fallback` | 8 | F | [→](G-English-F) |
 | `fonts-def.css` | 5 | F | [→](G-English-F) |
-| `fonts.json` | 10 | F | [→](G-English-F) |
-| `Footnote` | 105 | F | [→](G-English-F) |
-| `gematria` | 27 | G | [→](G-English-G) |
+| `fonts.json` | 19 | F | [→](G-English-F) |
+| `Footnote` | 451 | F | [→](G-English-F) |
+| `Footnote Overflow` | 1 | F | [→](G-English-F) |
+| `Footnote Reference` | 2 | F | [→](G-English-F) |
+| `Footwork` | 4 | F | [→](G-English-F) |
+| `Gemara` | 4 | G | [→](G-English-G) |
+| `gematria` | 68 | G | [→](G-English-G) |
 | `Geometry Audit` | 4 | G | [→](G-English-G) |
-| `getBoundingClientRect` | 19 | G | [→](G-English-G) |
-| `GitHub Actions` | 12 | G | [→](G-English-G) |
-| `Glue` | 6 | G | [→](G-English-G) |
-| `Glyph` | 4 | G | [→](G-English-G) |
-| `Gold` | 24 | G | [→](G-English-G) |
-| `Green` | 17 | G | [→](G-English-G) |
-| `HarfBuzz` | 6 | H | [→](G-English-H) |
-| `Hebrew` | 14 | H | [→](G-English-H) |
-| `HTML` | 203 | H | [→](G-English-H) |
-| `Hyphenation` | 6 | H | [→](G-English-H) |
-| `Imbalance` | 16 | I | [→](G-English-I) |
-| `Immediate-Mode Rebuild` | 3 | I | [→](G-English-I) |
-| `IMUD_TORANI` | 110 | I | [→](G-English-I) |
-| `InDesign` | 12 | I | [→](G-English-I) |
-| `index.html` | 28 | I | [→](G-English-I) |
-| `Initial` | 13 | I | [→](G-English-I) |
+| `getBoundingClientRect` | 26 | G | [→](G-English-G) |
+| `GitHub Actions` | 17 | G | [→](G-English-G) |
+| `Glue` | 14 | G | [→](G-English-G) |
+| `Glyph` | 12 | G | [→](G-English-G) |
+| `Gold` | 28 | G | [→](G-English-G) |
+| `Green` | 28 | G | [→](G-English-G) |
+| `HarfBuzz` | 14 | H | [→](G-English-H) |
+| `Hebrew` | 156 | H | [→](G-English-H) |
+| `HTML` | 751 | H | [→](G-English-H) |
+| `HTML Export` | 2 | H | [→](G-English-H) |
+| `Hyphenation` | 18 | H | [→](G-English-H) |
+| `Imbalance` | 41 | I | [→](G-English-I) |
+| `Immediate-Mode Rebuild` | 4 | I | [→](G-English-I) |
+| `IMUD_TORANI` | 121 | I | [→](G-English-I) |
+| `InDesign` | 32 | I | [→](G-English-I) |
+| `index.html` | 270 | I | [→](G-English-I) |
+| `Initial` | 145 | I | [→](G-English-I) |
 | `Initial Window` | 2 | I | [→](G-English-I) |
-| `iScript` | 4 | I | [→](G-English-I) |
-| `JavaScript` | 20 | J | [→](G-English-J) |
-| `Justification` | 49 | J | [→](G-English-J) |
-| `Justify` | 50 | J | [→](G-English-J) |
-| `Kerning` | 4 | K | [→](G-English-K) |
-| `Knuth-Plass` | 68 | K | [→](G-English-K) |
+| `iScript` | 8 | I | [→](G-English-I) |
+| `JavaScript` | 158 | J | [→](G-English-J) |
+| `Justification` | 169 | J | [→](G-English-J) |
+| `Justify` | 105 | J | [→](G-English-J) |
+| `Kerning` | 6 | K | [→](G-English-K) |
+| `Knuth-Plass` | 92 | K | [→](G-English-K) |
 | `layoutInvalidator` | 6 | L | [→](G-English-L) |
 | `LCG` | 14 | L | [→](G-English-L) |
-| `Marginalia` | 72 | M | [→](G-English-M) |
-| `Master Work Register` | 2 | M | [→](G-English-M) |
-| `Microsoft Word` | 2 | M | [→](G-English-M) |
-| `Multi-column` | 16 | M | [→](G-English-M) |
-| `MultiTextPager` | 4 | M | [→](G-English-M) |
-| `offsetTop` | 16 | O | [→](G-English-O) |
-| `offsetWidth` | 8 | O | [→](G-English-O) |
-| `OpenType` | 18 | O | [→](G-English-O) |
-| `Orphan` | 90 | O | [→](G-English-O) |
-| `Overflow` | 70 | O | [→](G-English-O) |
-| `Overlap` | 4 | O | [→](G-English-O) |
-| `Parser` | 10 | P | [→](G-English-P) |
-| `PDF` | 150 | P | [→](G-English-P) |
-| `Penalty` | 14 | P | [→](G-English-P) |
-| `performTypeset` | 18 | P | [→](G-English-P) |
-| `performTypeset_V2` | 6 | P | [→](G-English-P) |
-| `Playwright` | 12 | P | [→](G-English-P) |
+| `Marginalia` | 120 | M | [→](G-English-M) |
+| `Master Work Register` | 3 | M | [→](G-English-M) |
+| `Microsoft Word` | 4 | M | [→](G-English-M) |
+| `Multi-column` | 30 | M | [→](G-English-M) |
+| `MultiTextPager` | 6 | M | [→](G-English-M) |
+| `new_page_1col` | 6 | N | [→](G-English-N) |
+| `offsetTop` | 25 | O | [→](G-English-O) |
+| `offsetWidth` | 12 | O | [→](G-English-O) |
+| `OpenType` | 30 | O | [→](G-English-O) |
+| `Orphan` | 233 | O | [→](G-English-O) |
+| `Overflow` | 188 | O | [→](G-English-O) |
+| `Overlap` | 29 | O | [→](G-English-O) |
+| `Packing` | 2 | P | [→](G-English-P) |
+| `Parser` | 14 | P | [→](G-English-P) |
+| `PDF` | 193 | P | [→](G-English-P) |
+| `Penalty` | 26 | P | [→](G-English-P) |
+| `performTypeset` | 58 | P | [→](G-English-P) |
+| `performTypeset_V2` | 10 | P | [→](G-English-P) |
+| `Playwright` | 16 | P | [→](G-English-P) |
 | `Private Use Area` | 3 | P | [→](G-English-P) |
-| `Pure Web` | 3 | P | [→](G-English-P) |
-| `Rashi` | 17 | R | [→](G-English-R) |
-| `RavText` | 6 | R | [→](G-English-R) |
-| `Recto` | 32 | R | [→](G-English-R) |
-| `Reflow` | 13 | R | [→](G-English-R) |
-| `RTL` | 40 | R | [→](G-English-R) |
-| `Run-on Footnotes` | 2 | R | [→](G-English-R) |
-| `Running Headers` | 24 | R | [→](G-English-R) |
-| `Screenshot` | 11 | S | [→](G-English-S) |
+| `Pure Web` | 4 | P | [→](G-English-P) |
+| `Rashi` | 34 | R | [→](G-English-R) |
+| `RavText` | 18 | R | [→](G-English-R) |
+| `Recto` | 56 | R | [→](G-English-R) |
+| `Reflow` | 19 | R | [→](G-English-R) |
+| `ResizeObserver` | 2 | R | [→](G-English-R) |
+| `RTL` | 86 | R | [→](G-English-R) |
+| `Run-on Footnotes` | 3 | R | [→](G-English-R) |
+| `Running Headers` | 46 | R | [→](G-English-R) |
+| `Screenshot` | 15 | S | [→](G-English-S) |
 | `seeded` | 22 | S | [→](G-English-S) |
-| `Serif` | 8 | S | [→](G-English-S) |
-| `Session Handoff` | 2 | S | [→](G-English-S) |
-| `Side Heading` | 23 | S | [→](G-English-S) |
-| `Side Note` | 11 | S | [→](G-English-S) |
-| `Side Notes` | 9 | S | [→](G-English-S) |
-| `SILE` | 8 | S | [→](G-English-S) |
-| `Single-file` | 4 | S | [→](G-English-S) |
-| `Smoke Test` | 6 | S | [→](G-English-S) |
-| `Spacing` | 19 | S | [→](G-English-S) |
-| `Span` | 40 | S | [→](G-English-S) |
+| `Serif` | 24 | S | [→](G-English-S) |
+| `Session Handoff` | 3 | S | [→](G-English-S) |
+| `Side Heading` | 35 | S | [→](G-English-S) |
+| `Side Note` | 30 | S | [→](G-English-S) |
+| `Side Notes` | 23 | S | [→](G-English-S) |
+| `SILE` | 23 | S | [→](G-English-S) |
+| `Single-file` | 9 | S | [→](G-English-S) |
+| `Smoke Test` | 7 | S | [→](G-English-S) |
+| `Spacing` | 64 | S | [→](G-English-S) |
+| `Span` | 130 | S | [→](G-English-S) |
 | `Span Columns` | 2 | S | [→](G-English-S) |
-| `span_1col` | 18 | S | [→](G-English-S) |
-| `Spanning` | 4 | S | [→](G-English-S) |
-| `style.css` | 44 | S | [→](G-English-S) |
-| `Tag` | 23 | T | [→](G-English-T) |
-| `TeX` | 151 | T | [→](G-English-T) |
-| `Tofu` | 14 | T | [→](G-English-T) |
-| `toGematria` | 33 | T | [→](G-English-T) |
-| `Tokenizer` | 6 | T | [→](G-English-T) |
-| `Tora_Book_Typesetter` | 14 | T | [→](G-English-T) |
+| `span_1col` | 48 | S | [→](G-English-S) |
+| `Spanning` | 30 | S | [→](G-English-S) |
+| `style.css` | 234 | S | [→](G-English-S) |
+| `sub_shaar` | 8 | S | [→](G-English-S) |
+| `Tag` | 84 | T | [→](G-English-T) |
+| `Talmud` | 4 | T | [→](G-English-T) |
+| `TeX` | 495 | T | [→](G-English-T) |
+| `Tofu` | 22 | T | [→](G-English-T) |
+| `toGematria` | 53 | T | [→](G-English-T) |
+| `Tokenizer` | 14 | T | [→](G-English-T) |
+| `Tora_Book_Typesetter` | 12 | T | [→](G-English-T) |
 | `Total-Fit` | 4 | T | [→](G-English-T) |
-| `trace-manager.js` | 12 | T | [→](G-English-T) |
-| `Tracking` | 19 | T | [→](G-English-T) |
-| `typesetter.js` | 136 | T | [→](G-English-T) |
-| `Typst` | 8 | T | [→](G-English-T) |
-| `U+E000` | 6 | U | [→](G-English-U) |
-| `V1` | 94 | V | [→](G-English-V) |
+| `trace-manager.js` | 16 | T | [→](G-English-T) |
+| `Tracking` | 46 | T | [→](G-English-T) |
+| `typesetter.js` | 599 | T | [→](G-English-T) |
+| `Typst` | 28 | T | [→](G-English-T) |
+| `U+E000` | 10 | U | [→](G-English-U) |
+| `V1` | 114 | V | [→](G-English-V) |
 | `V11` | 18 | V | [→](G-English-V) |
 | `V15` | 4 | V | [→](G-English-V) |
-| `V16` | 22 | V | [→](G-English-V) |
+| `V16` | 19 | V | [→](G-English-V) |
 | `V17` | 24 | V | [→](G-English-V) |
-| `V18` | 50 | V | [→](G-English-V) |
-| `V2` | 294 | V | [→](G-English-V) |
+| `V18` | 56 | V | [→](G-English-V) |
+| `V2` | 364 | V | [→](G-English-V) |
 | `V2 Engine` | 3 | V | [→](G-English-V) |
 | `V2 Layout Engine` | 3 | V | [→](G-English-V) |
-| `V20` | 50 | V | [→](G-English-V) |
-| `V21` | 81 | V | [→](G-English-V) |
-| `V23` | 320 | V | [→](G-English-V) |
-| `Verso` | 34 | V | [→](G-English-V) |
-| `Vertical Justification` | 10 | V | [→](G-English-V) |
-| `VLM` | 19 | V | [→](G-English-V) |
-| `Widow` | 103 | W | [→](G-English-W) |
+| `V20` | 82 | V | [→](G-English-V) |
+| `V21` | 103 | V | [→](G-English-V) |
+| `V23` | 343 | V | [→](G-English-V) |
+| `Verso` | 58 | V | [→](G-English-V) |
+| `Vertical Justification` | 32 | V | [→](G-English-V) |
+| `Vilna` | 12 | V | [→](G-English-V) |
+| `Visual Test` | 1 | V | [→](G-English-V) |
+| `VLM` | 21 | V | [→](G-English-V) |
+| `Widow` | 212 | W | [→](G-English-W) |
 | `WOFF2` | 5 | W | [→](G-English-W) |
-| `Word` | 104 | W | [→](G-English-W) |
+| `Word` | 343 | W | [→](G-English-W) |
 | `Work Plan` | 2 | W | [→](G-English-W) |
-| `Working Rules` | 2 | W | [→](G-English-W) |
+| `Working Rules` | 4 | W | [→](G-English-W) |
 | `Worklog` | 21 | W | [→](G-English-W) |
-| `Zero-Backend` | 6 | Z | [→](G-English-Z) |
-| `תג` | 86 | ת | [→](G-Hebrew-ת) |
+| `Yellow` | 2 | Y | [→](G-English-Y) |
+| `Zero-Backend` | 8 | Z | [→](G-English-Z) |
+| `תג` | 153 | ת | [→](G-Hebrew-ת) |
 
 ---
 
