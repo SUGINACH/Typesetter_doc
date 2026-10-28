@@ -59,7 +59,7 @@ Explore six beautiful libraries, one photograph and two surprising facts at a ti
 
 תוכל לבדוק את התוכנה שלי [https://github.com/SUGINACH/IMUD_TORANI](https://github.com/SUGINACH/IMUD_TORANI) [https://suginach.github.io/IMUD_TORANI/](https://suginach.github.io/IMUD_TORANI/) . הבעיה שלי היא שכשיש טקסט מסוגר בסוגריים כאלה () בתוך הטקסט, יש הרבה אי איזון בטורים.
 
-### 🤖 תגובה 2: (הודעה ריקה)
+### 🤖 תגובה 2: בדקתי את הקוד שבמאגר שלך ואת ממשק התוכנה הפעיל. מצאתי נקודה חשובה במנגנון…
 22.10.2026, 0:01:11 · gpt-6
 
 > **Remembering**
@@ -189,7 +189,7 @@ Explore six beautiful libraries, one photograph and two surprising facts at a ti
 
 חקור חקירה עמוקה יותר, והתחשב גם במקרים שהסוגריים מתחילים בטור ראשון ומסתיימים בטור השני. וכן במקרים שהסוגריים מתחילים בעמוד אחד ומסתיימים בעמוד הבא.
 
-### 🤖 תגובה 4: (הודעה ריקה)
+### 🤖 תגובה 4: הרחבת הבדיקה למעברים בין טורים ובין עמודים משנה את היקף האבחון: לא מספיק לוודא…
 22.10.2026, 0:22:13 · gpt-6
 
 > **Searched 6 websites**
@@ -348,7 +348,7 @@ if (parenDepth > 0 && !p.querySelector('.paren-text') && openCount === 0 && clos
 
 הכן, בדוק, ודא תיקון
 
-### 🤖 תגובה 5: (הודעה ריקה)
+### 🤖 תגובה 5: בדקתי מחדש את typesetter.js שבמאגר…
 22.10.2026, 0:50:10 · gpt-6
 
 > **Planning the paragraph fix**
@@ -441,7 +441,7 @@ if (parenDepth > 0 && !p.querySelector('.paren-text') && openCount === 0 && clos
 
 נסה פתרון ממוקד יותר
 
-### 🤖 תגובה 7: (הודעה ריקה)
+### 🤖 תגובה 7: הייתי מצמצם את הפתרון באופן משמעותי: לא לשכתב את מנגנון הסוגריים ולא להכניס…
 22.10.2026, 1:12:41 · gpt-6
 
 > **Remembering**
@@ -497,7 +497,7 @@ if (parenDepth > 0 && !p.querySelector('.paren-text') && openCount === 0 && clos
 
 התיקון לא עזר, אבל בינתיים הצלחתי לתקן זאת בצורה לא כל כך אלגנטית, עבור על V21 המעודכן, הייתי שמח שבעקבות תיקון שעידכנתי וההבנה שהובילה אליו תנסה להציע תכנית לארגון מנוע העימוד בצורה שתהיה יותר קלה ופשוטה בחיזוי התוצאות ששינוי בקוד יגרום, ופעם הבאה נסה לבדוק בעצמך לפני שתציע בדיקה, השתמש בכלי המדוייק הבא: [https://github.com/SUGINACH/IMUD_TORANI/blob/fix/paren-layout-balance/geometry-audit.js ](https://github.com/SUGINACH/IMUD_TORANI/blob/fix/paren-layout-balance/geometry-audit.js) , ונסה לעמד את הקובץ הבא:[https://github.com/SUGINACH/IMUD_TORANI/blob/fix/paren-layout-balance/long_test_text.txt](https://github.com/SUGINACH/IMUD_TORANI/blob/fix/paren-layout-balance/long_test_text.txt)
 
-### 🤖 תגובה 8: (הודעה ריקה)
+### 🤖 תגובה 8: עברתי על הקוד המעודכן בענף V21 והשוויתי אותו לענף fix/paren-layout-balance\. יש…
 22.10.2026, 12:16:04 · gpt-6
 
 > **Remembering**
@@ -1215,7 +1215,7 @@ node tools/geometry-audit-cli.js --input ./very_long_test_text.txt --full-model
 
 המשך!!!
 
-### 🤖 תגובה 14: (הודעה ריקה)
+### 🤖 תגובה 14: המשכתי לעבוד ישירות על ענף V23 במאגר שלך. ביצעתי תיקונים נוספים ובדקתי את הקוד…
 22.10.2026, 13:08:10 · gpt-6
 
 > **Inspected renderer bridges, geometry audits, and asynchronous typesetting behavior**
@@ -1306,7 +1306,7 @@ node tools/geometry-audit-cli.js --input ./very_long_test_text.txt --full-model
 
 המשך!!!
 
-### 🤖 תגובה 15: (הודעה ריקה)
+### 🤖 תגובה 15: המשכתי, ובבדיקה נוספת מצאתי תקלה חשובה נוספת שעלולה הייתה לפגוע באמינות תוצאות…
 22.10.2026, 13:10:57 · gpt-6
 
 > **Assessing CI behavior**
@@ -1361,7 +1361,7 @@ node tools/geometry-audit-cli.js --input ./very_long_test_text.txt --full-model
 
 המשך!!!
 
-### 🤖 תגובה 16: (הודעה ריקה)
+### 🤖 תגובה 16: המשכתי בבדיקת ענף V23 מול V21\. מצאתי נקודה נוספת שחשוב לתקן לפני שמריצים…
 22.10.2026, 13:20:10 · gpt-6
 
 > **Assessing test-runner performance**
