@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דוח הנדסי: מפרט וניתוח ארכיטקטורת מנוע העימוד התורני</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=David+Libre:wght@400;700&family=Frank+Ruhl+Libre:wght@400;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: #111827;
+      --bg-card-hover: #1e293b;
+      --bg-inset: #070a12;
+      --border-color: #1f293d;
+      --border-accent: #3b82f6;
+      --text-main: #f3f4f6;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --gold-main: #d97706;
+      --gold-light: #fbbf24;
+      --blue-main: #3b82f6;
+      --blue-glow: rgba(59, 130, 246, 0.25);
+      --red-alert: #ef4444;
+      --green-ok: #10b981;
+      --purple-accent: #a855f7;
+      --font-ui: 'Assistant', system-ui, sans-serif;
+      --font-torani: 'David Libre', serif;
+      --font-heading: 'Frank Ruhl Libre', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-ui);
+      line-height: 1.6;
+      direction: rtl;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1350px;
+      margin: 0 auto;
+    }
+
+    /* כותרת עליונה וכרטיס גיבור */
+    .hero-card {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(15, 23, 42, 0.98));
+      border: 1px solid var(--border-color);
+      border-top: 4px solid var(--gold-main);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 35px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: 'בס"ד';
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-family: var(--font-torani);
+      font-size: 16pt;
+      font-weight: 700;
+      color: var(--gold-main);
+      opacity: 0.85;
+    }
+
+    .doc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(217, 119, 6, 0.15);
+      color: var(--gold-light);
+      border: 1px solid rgba(217, 119, 6, 0.35);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1.doc-title {
+      font-family: var(--font-heading);
+      font-size: 2.7rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    p.doc-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 900px;
+      line-height: 1.7;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .meta-item { display: flex; align-items: center; gap: 6px; }
+    .meta-item strong { color: var(--text-muted); }
+
+    /* ניווט פנימי */
+    .quick-nav {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      position: sticky;
+      top: 15px;
+      z-index: 100;
+      background: rgba(11, 15, 25, 0.92);
+      backdrop-filter: blur(8px);
+      padding: 10px 0;
+    }
+
+    .nav-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .nav-pill:hover {
+      background: var(--blue-main);
+      color: #fff;
+      border-color: var(--blue-main);
+      box-shadow: 0 4px 12px var(--blue-glow);
+    }
+
+    /* מקטעים וכרטיסים */
+    .section-block {
+      margin-bottom: 45px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+
+    .section-num {
+      background: var(--gold-main);
+      color: #000;
+      font-weight: 900;
+      font-size: 1rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* טבלאות אלמנטים */
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 15px;
+    }
+
+    .matrix-table th {
+      background: var(--bg-inset);
+      color: var(--text-muted);
+      font-weight: 700;
+      text-align: right;
+      padding: 12px 16px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .matrix-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+    }
+
+    .matrix-table tr:hover td {
+      background: var(--bg-card-hover);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    .badge-text { background: #1e3a8a; color: #93c5fd; }
+    .badge-dom { background: #701a75; color: #f5d0fe; }
+    .badge-calc { background: #064e3b; color: #6ee7b7; }
+    .badge-ui { background: #78350f; color: #fcd34d; }
+
+    /* תרשים זרימה (Flowchart SVG) */
+    .flowchart-wrapper {
+      background: var(--bg-inset);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 25px;
+      overflow-x: auto;
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .flowchart-svg {
+      max-width: 100%;
+      height: auto;
+      min-width: 980px;
+    }
+
+    /* שלבים כרונולוגיים ממוספרים */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      counter-reset: engine-step;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+    }
+
+    .step-item::before {
+      counter-increment: engine-step;
+      content: counter(engine-step);
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      background: var(--bg-card-hover);
+      border: 2px solid var(--blue-main);
+      color: var(--blue-main);
+      font-weight: 900;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-content { flex: 1; }
+    .step-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .step-desc { font-size: 0.92rem; color: var(--text-muted); }
+    .step-code {
+      display: inline-block;
+      direction: ltr;
+      background: var(--bg-inset);
+      color: #38bdf8;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+
+    /* כרטיסי תקלות ומקרי קצה */
+    .edge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+    }
+
+    .edge-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .edge-card.severity-high { border-right: 5px solid var(--red-alert); }
+    .edge-card.severity-med { border-right: 5px solid var(--gold-main); }
+    .edge-card.severity-low { border-right: 5px solid var(--purple-accent); }
+
+    .edge-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .edge-card.severity-high .edge-tag { color: var(--red-alert); }
+    .edge-card.severity-med .edge-tag { color: var(--gold-light); }
+    .edge-card.severity-low .edge-tag { color: var(--purple-accent); }
+
+    .edge-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .edge-mechanism {
+      background: var(--bg-inset);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin: 10px 0;
+      border-right: 3px solid var(--border-accent);
+    }
+
+    .edge-solution {
+      font-size: 0.88rem;
+      color: #a7f3d0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    /* מודל מתמטי */
+    .formula-box {
+      background: var(--bg-inset);
+      border: 1px dashed #334155;
+      border-radius: 8px;
+      padding: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: #f1f5f9;
+      direction: ltr;
+      text-align: left;
+      margin: 12px 0;
+      overflow-x: auto;
+    }
+
+    .formula-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- כרטיס ראשי: פרטי הדוח והמערכת -->
+  <div class="hero-card">
+    <div class="doc-badge">תעודת ארכיטקטורה הנדסית • V-2026.1</div>
+    <h1 class="doc-title">מפרט הנדסי מלא: מנוע העימוד התורני לדפי A4</h1>
+    <p class="doc-subtitle">
+      ניתוח ארכיטקטוני רב-ממדי של מנוע העימוד הלקוחי (<code style="color:#60a5fa">typesetter.js</code>, <code style="color:#60a5fa">decorations.js</code>, <code style="color:#60a5fa">app.js</code>), כולל קטלוג כלל האלמנטים המשפיעים על הגאומטריה והשבירה, סדר הפעולות הכרונולוגי, תרשים זרימת מידע והחלטות, מודלים חישוביים, וקטלוג מקרי קצה וכשלים אפשריים.
+    </p>
+    <div class="meta-bar">
+      <div class="meta-item"><strong>מודל פריסה:</strong> A4 דו-טורי גמיש (210×297 מ"מ)</div>
+      <div class="meta-item"><strong>רשת עמודות:</strong> CSS Grid מודולרי 7 ערוצים</div>
+      <div class="meta-item"><strong>מנוע מדידה:</strong> DOM Probing אמיתי (Zero-Estimation)</div>
+      <div class="meta-item"><strong>מנגנון איזון:</strong> Discrete Line-Level Split Evaluation</div>
+    </div>
+  </div>
+
+  <!-- ניווט מהיר -->
+  <nav class="quick-nav">
+    <a href="#section-inputs" class="nav-pill">1. קטלוג אלמנטים משפיעים</a>
+    <a href="#section-order" class="nav-pill">2. סדר הפעולות הכרונולוגי</a>
+    <a href="#section-flowchart" class="nav-pill">3. תרשים זרימה ארכיטקטוני</a>
+    <a href="#section-math" class="nav-pill">4. מודל חישוב גבהים ואיזון</a>
+    <a href="#section-edges" class="nav-pill">5. ניתוח מקרי קצה וכשלים</a>
+  </nav>
+
+  <!-- חלק 1: קטלוג האלמנטים המשפיעים -->
+  <section id="section-inputs" class="section-block">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2 class="section-title">קטלוג האלמנטים המשפיעים על העימוד</h2>
+    </div>
+
+    <div class="card">
+      <h3>א. אלמנטים שמקורם בטקסט הגולמי (Text Stream Inputs)</h3>
+      <p style="color:var(--text-muted); font-size:0.95rem;">
+        הטקסט המוזן איננו מחרוזת טקסטואלית בלבד, אלא רצף של פקודות מבניות סמויות המשפיעות ישירות על חיתוך העמודים:
+      </p>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>אלמנט קלט</th>
+            <th>תחביר / זיהוי</th>
+            <th>אופן ההשפעה על העימוד</th>
+            <th>רמת השפעה</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>מטא-דאטה לשערים</strong></td>
+            <td><code>שם הספר - ...</code>, <code>מחבר - ...</code></td>
+            <td>נשלפים מהטקסט לחלוטין. מונעים יצירת פסקאות ומייצרים את תוכן דפי השער הראשי, האחורי ושערי המשנה.</td>
+            <td><span class="badge badge-text">מבנה גלובלי</span></td>
+          </tr>
+          <tr>
+            <td><strong>הערות עריכה מושמטות</strong></td>
+            <td><code>##...##</code></td>
+            <td>נמחקות לפני תחילת המדידה. משנות ישירות את מספר המילים ואת נקודות שבירת השורות של הפסקה.</td>
+            <td><span class="badge badge-calc">מדידת שורה</span></td>
+          </tr>
+          <tr>
+            <td><strong>כותרת 0 (הקדמה)</strong></td>
+            <td><code>כותרת 0 - ...</code></td>
+            <td>משנה את מצב הדף מ-2 טורים לרוחב טור אחד מלא (Single Wide Column). עוקפת את מנגנון איזון הטורים.</td>
+            <td><span class="badge badge-dom">שינוי Grid</span></td>
+          </tr>
+          <tr>
+            <td><strong>כותרת 1 (שער חלק)</strong></td>
+            <td><code>כותרת 1 - ...</code></td>
+            <td>יוצרת מעבר עמוד כפוי (Page Break), פותחת שער משנה עצמאי, ומאפסת את מונה הסימנים ומונה ההערות.</td>
+            <td><span class="badge badge-dom">מעבר עמוד</span></td>
+          </tr>
+          <tr>
+            <td><strong>כותרת 2 (סימן / פרק)</strong></td>
+            <td><code>כותרת 2 - ...</code></td>
+            <td>יוצרת דף חדש עם מרווח עליון מיוחד (<code>--h2-top-distance</code>), מוסיפה שורת "סימן א'", וגוזלת גובה מראש התקציב.</td>
+            <td><span class="badge badge-calc">תקציב גובה</span></td>
+          </tr>
+          <tr>
+            <td><strong>כותרת 3 רוחבית</strong></td>
+            <td><code>כותרת 3 - ...</code></td>
+            <td>חותכת את הרצף הדו-טורי באמצע הדף, כופה איזון טורים מיידי של הטקסט שמעליה, ומשתרעת לרוחב 2 הטורים.</td>
+            <td><span class="badge badge-calc">איזון כפוי</span></td>
+          </tr>
+          <tr>
+            <td><strong>הערות שוליים מובלעות</strong></td>
+            <td><code>[...]</code> או תוחמים מותאמים</td>
+            <td>נשלפות מגוף הפסקה ומתווספות לתור ההערות. גוזלות גובה נטו מתחתית העמוד ומקטינות את גובה הטורים.</td>
+            <td><span class="badge badge-calc">היזון חוזר</span></td>
+          </tr>
+          <tr>
+            <td><strong>הערות צד (כותרת 7)</strong></td>
+            <td><code>כותרת 7 - ...</code></td>
+            <td>מוצמדות אנכית במדויק לפסקה שאליה התייחסו, בתוך עמודות השוליים הקיצוניות (1 ו-7 ברשת ה-Grid).</td>
+            <td><span class="badge badge-dom">עגינה יחסית</span></td>
+          </tr>
+          <tr>
+            <td><strong>דיבור המתחיל (ד"ה)</strong></td>
+            <td>טקסט עד נקודה או מקף</td>
+            <td>משנה את משקל הגופן ל-900 (Bold) ולעיתים את משפחת הגופן; מרחיב את תפיסת הרוחב של השורה הראשונה.</td>
+            <td><span class="badge badge-text">מדידת שורה</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>ב. אלמנטים שמקורם בהגדרות הממשק והעיצוב (Styling & Configuration)</h3>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>הגדרה בממשק</th>
+            <th>משתנה / תכונה בקוד</th>
+            <th>כיצד זה משנה פיזית את העימוד?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>גופן, גודל וריווח שורות</strong></td>
+            <td><code>--fn-body</code>, <code>--sz-body</code>, <code>--line-height-body</code></td>
+            <td>הקריטריון הבסיסי ביותר של תיבת המדידה (<code>#measuring-box</code>). שינוי של 0.1 ב-line-height מוסיף או גורע 2-4 שורות מכל טור.</td>
+          </tr>
+          <tr>
+            <td><strong>מצב מילה ראשונה (חלון)</strong></td>
+            <td><code>#drop-word-mode</code> (window, inline, bold, none)</td>
+            <td>במצב "חלון", המילה מקבלת <code>float: right</code> וגובה של <code>1.25em</code>, מה שמקצר פיזית את 2 השורות הראשונות של הפסקה.</td>
+          </tr>
+          <tr>
+            <td><strong>רוחב עמודות ושוליים</strong></td>
+            <td><code>--w-col</code>, <code>--w-gutter</code>, <code>--w-margin</code></td>
+            <td>קובע את הרוחב בפיקסלים שמועבר לפונקציית המדידה <code>getLinesFromParagraph(text, colWidth)</code>.</td>
+          </tr>
+          <tr>
+            <td><strong>עיטורי כותרת 2</strong></td>
+            <td><code>#h2-ornament-top-style</code>, <code>dim-h2-top-h</code></td>
+            <td>מוסיפים בלוקי SVG בעלי גובה קבוע מראש. גובה זה נגרע ישירות מתקציב השטח הפנוי לפסקאות בעמוד הפתיחה.</td>
+          </tr>
+          <tr>
+            <td><strong>מניעת אלמנות ויתומות</strong></td>
+            <td><code>#avoid-orphans</code>, <code>#avoid-widows</code></td>
+            <td>אלגוריתם שדוחה שורות שלמות לעמוד הבא אם נשארה שורה בודדת (1) בסוף עמוד או בראש עמוד חדש.</td>
+          </tr>
+          <tr>
+            <td><strong>מספור ואיפוס הערות</strong></td>
+            <td><code>#fn-reset-mode</code> (page, siman, part)</td>
+            <td>משנה את רוחב תווי המרקר (א' מול קי"ח), ומשפיע על אורך שורת ההערה בתחתית הדף.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- חלק 2: סדר הפעולות הכרונולוגי -->
+  <section id="section-order" class="section-block">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2 class="section-title">סדר הפעולות הכרונולוגי של מנוע העימוד</h2>
+    </div>
+
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-content">
+          <div class="step-title">שלב א': אתחול CSS Variables ואיפוס מצב גלובלי</div>
+          <div class="step-desc">
+            קריאה ל-<code>updateGrid()</code> ול-<code>updateStyles()</code>. חישוב מחדש של יחסי האחוזים של הטורים ב-<code>:root</code>, איפוס מוני הערות (<code>noteCounters</code>, <code>noteUidCounter</code>), וריקון תורי ההערות הממתינות.
+          </div>
+          <span class="step-code">typesetter.js :: typesetDocument() -> updateGrid()</span>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-content">
+          <div class="step-title">שלב ב': טיהור טקסט וחילוץ מטא-דאטה סמנטי</div>
+          <div class="step-desc">
+            הסרת הערות עריכה (<code>stripEditorialNotes</code>), שליפת שדות השער (<code>parseMetadataFromText</code>), והסרת רווחים לבנים לפני סוגרי הערות (<code>[\s+(?=\[)</code>) כדי להבטיח הידבקות טיפוגרפית של מספר ההערה למילה שלפניה.
+          </div>
+          <span class="step-code">stripEditorialNotes() -> parseMetadataFromText() -> regex sanitize</span>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-content">
+          <div class="step-title">שלב ג': טוקניזציה שורתית (Line-by-Line Lexing)</div>
+          <div class="step-desc">
+            מעבר בלולאה על שורות הטקסט הגולמי:
+            1. זיהוי הערות סיום לפי קידומת (<code>enLinePrefix</code>).
+            2. זיהוי כותרות 0-7 או תוספים מותאמים אישית (Extensions).
+            3. איתור כותרות מובלעות (<code>run_in</code>) והצמדתן לראש הפסקה הבאה.
+            4. הצמדת הערות צד (כותרת 7) לפסקה הצמודה.
+            5. בניית מפת אינדקסים <code>lineToTokenMap</code> לסנכרון הסמן מול העורך.
+          </div>
+          <span class="step-code">tokens.push({ id, type, text, level, sideNote, endNote, lineIdx })</span>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-content">
+          <div class="step-title">שלב ד': חלוקה למקטעים מבניים (Section Partitioning)</div>
+          <div class="step-desc">
+            סריקת הטוקנים וחלוקתם למקטעים (<code>sections</code>) המוגדרים על ידי אירועי שבירת עמוד כפויה: שערי משנה (<code>sub_shaar</code>), פתיחות פרק (כותרת 2 / <code>new_page_1col</code>), והקדמות רחבות (כותרת 0).
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-content">
+          <div class="step-title">שלב ה': בניית עמודי פתיחה ומבוא (Front Matter)</div>
+          <div class="step-desc">
+            1. רינדור שער ראשי (<code>renderMainShaar</code>) ושער אחורי לפי בחירה.<br>
+            2. רינדור תוכן עניינים כללי (General TOC) תוך חישוב קיבוץ (Grouping) של כותרות משנה צמודות.<br>
+            3. קידום מונה העמודים (<code>pageIndex</code>) רק עבור דפים שהוגדר להם להיכלל במספור.
+          </div>
+          <span class="step-code">renderMainShaar() -> renderPaginatedTOC("תוכן עניינים כללי")</span>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-content">
+          <div class="step-title">שלב ו': לולאת העימוד הראשית (Layout & Flow Loop)</div>
+          <div class="step-desc">
+            עיבוד כל מקטע (Section) עמוד אחר עמוד:
+            <ol style="margin-right:20px; margin-top:6px;">
+              <li><strong>בדיקת עמוד אי-זוגי:</strong> הכנסת דף ריק (Blank Page) אם נדרשת פתיחה בימין.</li>
+              <li><strong>יצירת מעטפת דף:</strong> <code>createPageLayout</code> (כותרת עליונה 3 חלקים + היפוך ימין/שמאל).</li>
+              <li><strong>הקצאת שטח כותרת 2:</strong> הוספת Spacer, שורת סימן, עיטורי SVG וגריעת הגובה הכולל שלהם מ-<code>remPageHeight</code>.</li>
+              <li><strong>מילוי טורים (טור ימין תחילה, ואז טור שמאל):</strong>
+                מדידת פסקאות מול רוחב הטור ב-<code>#measuring-box</code>, בדיקת סף חלון (Drop-word), בדיקת אלמנות/יתומות, ופיצול פסקאות שאינן נכנסות במלואן.</li>
+              <li><strong>היזון חוזר של הערות שוליים:</strong> חישוב שטח ההערות שהצטברו במהלך מילוי הטורים וגריעתו מהתקציב.</li>
+              <li><strong>איזון טורים:</strong> הפעלת <code>balanceColumns()</code> בסוף פרק או לפני כותרת 3 רוחבית.</li>
+              <li><strong>פליטת הערות שוליים:</strong> <code>flushFootnotesInto()</code> להטמעת בלוק ההערות בתחתית הדף.</li>
+            </ol>
+          </div>
+          <span class="step-code">createPageLayout() -> getLinesFromParagraph() -> balanceColumns() -> flushFootnotesInto()</span>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-content">
+          <div class="step-title">שלב ז': עגינת פוסט-עיבוד וסנכרון תצוגה</div>
+          <div class="step-desc">
+            1. רינדור דפי הערות סיום מרוכזות (<code>flushEndnotesForPart</code>).<br>
+            2. השלמת מספרי העמודים בתוכן העניינים (Backfilling TOC Page Numbers לפי <code>headingPageMap</code>).<br>
+            3. התאמת רוחב עיטורי כותרת 2 לטקסט בפועל (<code>applyHeadingOrnamentTextFit</code>).<br>
+            4. עדכון מפרידי מעברי העמוד בתוך עורך הטקסט (<code>updateEditorWithPageBreaks</code>) וסנכרון זום רספונסיבי.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- חלק 3: תרשים זרימה ארכיטקטוני (SVG) -->
+  <section id="section-flowchart" class="section-block">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2 class="section-title">תרשים זרימה ארכיטקטוני (Engine Pipeline)</h2>
+    </div>
+
+    <div class="flowchart-wrapper">
+      <svg class="flowchart-svg" viewBox="0 0 1000 1320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1e3a8a"/>
+            <stop offset="100%" stop-color="#0f172a"/>
+          </linearGradient>
+          <linearGradient id="gradGold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d97706"/>
+            <stop offset="100%" stop-color="#78350f"/>
+          </linearGradient>
+          <linearGradient id="gradPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7e22ce"/>
+            <stop offset="100%" stop-color="#3b0764"/>
+          </linearGradient>
+          <linearGradient id="gradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0e7490"/>
+            <stop offset="100%" stop-color="#164e63"/>
+          </linearGradient>
+          <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+          </filter>
+          <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+          </marker>
+        </defs>
+
+        <style>
+          .flow-text { font-family: 'Assistant', sans-serif; fill: #ffffff; text-anchor: middle; font-size: 14px; font-weight: 600; }
+          .flow-sub { font-family: 'Assistant', sans-serif; fill: #94a3b8; text-anchor: middle; font-size: 11px; }
+          .flow-box { stroke: #334155; stroke-width: 1.5; rx: 8; filter: url(#shadow); }
+          .flow-line { stroke: #38bdf8; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+          .flow-diamond { stroke: #d97706; stroke-width: 2; fill: #1c1917; filter: url(#shadow); }
+        </style>
+
+        <!-- בלוק 1: קלט -->
+        <rect x="360" y="20" width="280" height="55" class="flow-box" fill="url(#gradBlue)" stroke="#3b82f6"/>
+        <text x="500" y="44" class="flow-text">1. טקסט גולמי + הגדרות ממשק</text>
+        <text x="500" y="60" class="flow-sub">קריאת raw-input וערכי פאנל בקרה</text>
+        <path d="M 500 75 L 500 105" class="flow-line"/>
+
+        <!-- בלוק 2: סניטציה ופירוק -->
+        <rect x="340" y="105" width="320" height="60" class="flow-box" fill="url(#gradBlue)"/>
+        <text x="500" y="130" class="flow-text">2. ניקוי מטא-דאטה וטוקניזציה</text>
+        <text x="500" y="148" class="flow-sub">הסרת ##..##, חילוץ פרטי שער, זיהוי כותרות 0-7</text>
+        <path d="M 500 165 L 500 195" class="flow-line"/>
+
+        <!-- בלוק 3: שערים ותוכן עניינים -->
+        <rect x="330" y="195" width="340" height="60" class="flow-box" fill="url(#gradPurple)"/>
+        <text x="500" y="220" class="flow-text">3. רינדור שערים ותוכן עניינים (TOC)</text>
+        <text x="500" y="238" class="flow-sub">Main/Back Shaar, תוכן עניינים כללי (GTOC), חישוב עמודי פתיחה</text>
+        <path d="M 500 255 L 500 290" class="flow-line"/>
+
+        <!-- מעוין החלטה: סוג מקטע -->
+        <polygon points="500,290 640,340 500,390 360,340" class="flow-diamond"/>
+        <text x="500" y="337" class="flow-text" fill="#fbbf24">האם שער משנה (כותרת 1)?</text>
+        <text x="500" y="352" class="flow-sub">sub_shaar</text>
+
+        <!-- ענף כן: שער משנה -->
+        <path d="M 640 340 L 780 340 L 780 430" class="flow-line"/>
+        <rect x="650" y="430" width="260" height="65" class="flow-box" fill="url(#gradPurple)"/>
+        <text x="780" y="455" class="flow-text">רינדור שער משנה (חלק)</text>
+        <text x="780" y="473" class="flow-sub">איפוס סימנים, תוכן מפורט (DTOC)</text>
+        <path d="M 780 495 L 780 1200 L 520 1200" class="flow-line"/>
+
+        <!-- ענף לא: המשך לעמוד רגיל -->
+        <path d="M 500 390 L 500 430" class="flow-line"/>
+
+        <!-- בלוק 4: יצירת דף A4 -->
+        <rect x="340" y="430" width="320" height="65" class="flow-box" fill="url(#gradCyan)"/>
+        <text x="500" y="455" class="flow-text">4. יצירת עמוד חדש (createPageLayout)</text>
+        <text x="500" y="473" class="flow-sub">Running Header, מספור עמודים, בדיקת עמוד אי-זוגי</text>
+        <path d="M 500 495 L 500 525" class="flow-line"/>
+
+        <!-- מעוין: האם פתיחת סימן (כותרת 2)? -->
+        <polygon points="500,525 630,570 500,615 370,570" class="flow-diamond"/>
+        <text x="500" y="567" class="flow-text" fill="#fbbf24">האם פתיחת סימן (כותרת 2)?</text>
+        <text x="500" y="582" class="flow-sub">h2-flow-page</text>
+
+        <!-- כן כותרת 2: שורת סימן ועיטורים -->
+        <path d="M 630 570 L 750 570 L 750 635" class="flow-line"/>
+        <rect x="620" y="635" width="260" height="65" class="flow-box" fill="url(#gradGold)"/>
+        <text x="750" y="660" class="flow-text">הוספת Spacer, סימן ועיטורי SVG</text>
+        <text x="750" y="678" class="flow-sub">גריעת גובהם מ-remPageHeight</text>
+        <path d="M 750 700 L 750 740 L 520 740" class="flow-line"/>
+
+        <!-- לא: המשך ישיר -->
+        <path d="M 500 615 L 500 740" class="flow-line"/>
+
+        <!-- בלוק 5: לולאת מילוי טורים -->
+        <rect x="330" y="740" width="340" height="70" class="flow-box" fill="url(#gradBlue)"/>
+        <text x="500" y="765" class="flow-text">5. לולאת מילוי טורים (ימין ואז שמאל)</text>
+        <text x="500" y="783" class="flow-sub">מדידה ב-#measuring-box, ייצור Drop Word,</text>
+        <text x="500" y="798" class="flow-sub">בדיקת אלמנות/יתומות ושמירת הערות שוליים</text>
+        <path d="M 500 810 L 500 845" class="flow-line"/>
+
+        <!-- מעוין: האם סוף פרק או כותרת 3 רוחבית? -->
+        <polygon points="500,845 650,895 500,945 350,895" class="flow-diamond"/>
+        <text x="500" y="890" class="flow-text" fill="#fbbf24">נדרש איזון טורים?</text>
+        <text x="500" y="907" class="flow-sub">סוף פרק / כותרת 3 / גלישת הערות</text>
+
+        <!-- כן לאיזון -->
+        <path d="M 650 895 L 770 895 L 770 965" class="flow-line"/>
+        <rect x="640" y="965" width="260" height="75" class="flow-box" fill="url(#gradGold)"/>
+        <text x="770" y="990" class="flow-text">הפעלת balanceColumns()</text>
+        <text x="770" y="1008" class="flow-sub">בדיקת כל נקודות הפיצול בשורות,</text>
+        <text x="770" y="1023" class="flow-sub">מזעור הפרש גבהים, justify עדין</text>
+        <path d="M 770 1040 L 770 1080 L 520 1080" class="flow-line"/>
+
+        <!-- לא לאיזון -->
+        <path d="M 500 945 L 500 1080" class="flow-line"/>
+
+        <!-- בלוק 6: פליטת הערות שוליים -->
+        <rect x="340" y="1080" width="320" height="60" class="flow-box" fill="url(#gradCyan)"/>
+        <text x="500" y="1105" class="flow-text">6. פליטת הערות שוליים (flushFootnotes)</text>
+        <text x="500" y="1123" class="flow-sub">הטמעת קו מפריד, חלוקה ל-1/2 טורים, איפוס מונה</text>
+        <path d="M 500 1140 L 500 1175" class="flow-line"/>
+
+        <!-- מעוין: האם נותרו טוקנים? -->
+        <polygon points="500,1175 620,1215 500,1255 380,1215" class="flow-diamond"/>
+        <text x="500" y="1212" class="flow-text" fill="#fbbf24">נותרו פסקאות / טוקנים?</text>
+
+        <!-- כן נותרו: חזרה לדף חדש -->
+        <path d="M 380 1215 L 240 1215 L 240 460 L 330 460" class="flow-line"/>
+
+        <!-- לא נותרו: סיום ופוסט-פרוססינג -->
+        <path d="M 500 1255 L 500 1285" class="flow-line"/>
+        <rect x="360" y="1285" width="280" height="35" class="flow-box" fill="#064e3b" stroke="#10b981"/>
+        <text x="500" y="1308" class="flow-text" fill="#a7f3d0">7. סיום, עדכון TOC וזום רספונסיבי</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- חלק 4: המודל החישובי ונוסחאות העימוד -->
+  <section id="section-math" class="section-block">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2 class="section-title">המודל המתמטי: חישובי גובה, תקציב ואיזון</h2>
+    </div>
+
+    <div class="card">
+      <h3>1. משוואת תקציב הגובה הפנוי לעמוד (Page Height Budget)</h3>
+      <p style="color:var(--text-muted); font-size:0.92rem;">
+        גובה הטקסט הפנוי לפסקאות ולטורים איננו קבוע מראש, אלא פונקציה דינמית המתעדכנת בכל הוספת אלמנט:
+      </p>
+      <div class="formula-box">
+H_available = H_totalFlow - H_h2Spacer - H_h2Title - H_h2Ornaments - H_footnotesReserved - Σ(H_h3Span)
+
+where:
+  H_totalFlow         ≈ clientHeight of (.page-body-flow) [typically ~870px to 900px]
+  H_h2Spacer          = H_totalFlow × (--h2-top-distance [default 22%])
+  H_h2Title           = measured height of .title-level-2-standalone + margins
+  H_h2Ornaments       = measured height of top/bottom SVG ornaments + margins
+  H_footnotesReserved = measureNoteBlockHeight(footnoteQueue) + ruleHeight (24px) + titleHeight (24px)
+      </div>
+      <p class="formula-desc">
+        <strong>השלכה קריטית:</strong> כל הערת שוליים שמתגלה בתוך הטקסט גורמת להגדלה של <code>H_footnotesReserved</code>, מה שמקטין ישירות ובזמן אמת את <code>H_available</code> עבור השורות הבאות באותו עמוד.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. פונקציית המטרה של איזון הטורים (Column Balancing Objective Function)</h3>
+      <p style="color:var(--text-muted); font-size:0.92rem;">
+        בעת הגעה לסוף פרק או מעבר כותרת, האלגוריתם <code>balanceColumns</code> בוחן מרחב מצבים בדיד של כל נקודות הפיצול האפשריות ברמת השורה ($S$), ופותר בעיית אופטימיזציה:
+      </p>
+      <div class="formula-box">
+Optimal_Split = argmin_{s ∈ S} | H_right(s) - H_left(s) |
+
+Subject to constraints:
+  1. H_right(s) ≤ H_available
+  2. H_left(s)  ≤ H_available
+  3. No orphan heading: Type(last_item(right_col)) ≠ 'h'
+  4. Tie-breaking rule: if |H_right(s₁) - H_left(s₁)| == |H_right(s₂) - H_left(s₂)|:
+       Prefer split where (H_right - H_left) ≥ 0  (Right column dominant)
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3. אלגוריתם יישור אנכי רך (Vertical Column Justification)</h3>
+      <div class="formula-box">
+ΔH = H_target - H_current
+
+if (2px < ΔH ≤ 60px):
+  if (count(p) > 1):
+    extra_margin_per_p = ΔH / (count(p) - 1)
+    p.marginBottom += extra_margin_per_p
+  else if (count(p) == 1 && lines > 1):
+    extra_lh = (ΔH / lines) / (fontSizePt × 1.333)
+    p.lineHeight += extra_lh
+      </div>
+      <p class="formula-desc">
+        מנגנון זה מונע מרווחים מלאכותיים מכוערים כשההפרש גדול מ-60 פיקסלים, אך מאחה באופן מושלם הפרשים קטנים הנובעים מאי-התאמה של שורה בודדת.
+      </p>
+    </div>
+  </section>
+
+  <!-- חלק 5: ניתוח מקרי קצה, כשלים ופתרונות -->
+  <section id="section-edges" class="section-block">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2 class="section-title">ניתוח מקרי קצה וכשלי עימוד פוטנציאליים (Failure Modes)</h2>
+    </div>
+
+    <div class="edge-grid">
+
+      <!-- כשל 1 -->
+      <div class="edge-card severity-high">
+        <div class="edge-tag">🚨 כשל חמור • א-סימטריה ותקציב גובה</div>
+        <h4 class="edge-title">לולאת היזון חוזר עיוורת בהערות שוליים בטור שמאל</h4>
+        <div class="edge-mechanism">
+          <strong>מנגנון הכשל:</strong> טור ימין ממולא ראשון בהנחה שאין הערות שוליים חדשות (או שיש רק את אלו שהתגלו בו). כשהמנוע עובר למלא את טור שמאל, מתגלות בו 4 הערות שוליים ארוכות. תור ההערות תופח, וגובה ההערות הנדרש (<code>H_footnotesReserved</code>) מזנק ב-120 פיקסלים.
+          <br><br>
+          <strong>התוצאה:</strong> תחתית טור ימין שכבר אוכלס <strong>חודרת ודורסת פיזית</strong> את קו המפריד של הערות השוליים, או מייצרת גלישה של העמוד (Overflow) מעבר ל-297 מ"מ של ה-A4.
+        </div>
+        <div class="edge-solution">
+          <span>💡</span>
+          <span><strong>תיקון נדרש:</strong> חישוב מקדים (Pre-pass) של פסקאות העמוד לצורך גילוי הערות שוליים פוטנציאליות <em>לפני</em> קביעת גובה המילוי של טור ימין.</span>
+        </div>
+      </div>
+
+      <!-- כשל 2 -->
+      <div class="edge-card severity-high">
+        <div class="edge-tag">🚨 כשל חמור • חוסר סנכרון DOM/מדידה</div>
+        <h4 class="edge-title">שבירת שורות שגויה עקב פענוח תוחמים מאוחר (Delimiters)</h4>
+        <div class="edge-mechanism">
+          <strong>מנגנון הכשל:</strong> הפונקציה <code>getLinesFromParagraph</code> מודדת טקסט נקי לחלוטין. רק <em>לאחר</em> חיתוך השורות מתבצעת קריאה ל-<code>applyDelimiterStyles</code>, אשר ממירה תוחמים כמו <code>[הערה ארוכה...]</code> לתו עילי בודד, או לחלופין מחליפה מילים בתגיות HTML עם גופן גדול ומודגש.
+          <br><br>
+          <strong>התוצאה:</strong> אם בטקסט הגולמי היה כתוב <code>[ביאור נרחב מדברי הראשונים]</code>, המדידה חישבה 30 תווים. בדיעבד הם הפכו לסימן בודד <code>א</code>. כל חישוב שבירת השורות של אותה פסקה קורס, ונוצרות שורות קצרות מדי או גלישות שורה בלתי צפויות.
+        </div>
+        <div class="edge-solution">
+          <span>💡</span>
+          <span><strong>תיקון נדרש:</strong> החלפת מחרוזות התוחמים במרקרים דקורטיביים <em>לפני</em> ביצוע המדידה ב-<code>#measuring-box</code>.</span>
+        </div>
+      </div>
+
+      <!-- כשל 3 -->
+      <div class="edge-card severity-med">
+        <div class="edge-tag">⚠️ כשל בינוני • הפרדת שדות זום</div>
+        <h4 class="edge-title">עיוות מדידות בגדלי מסך שונים (Scale Drift)</h4>
+        <div class="edge-mechanism">
+          <strong>מנגנון הכשל:</strong> בעת שינוי רוחב סרגל הצד או גודל המסך, פונקציית <code>updatePreviewScale</code> מחילה טרנספורמציית CSS על הלוח: <code>transform: scale(var(--preview-scale))</code>.
+          בחלק מהפונקציות נעשה שימוש ב-<code>getBoundingClientRect()</code> (המדווח פיקסלים מסוכיילים על המסך), ובחלקן ב-<code>scrollHeight</code> ו-<code>clientHeight</code> (המדווחים פיקסלים לא מסוכיילים של מנוע הפריסה).
+        </div>
+        <div class="edge-solution">
+          <span>💡</span>
+          <span><strong>תיקון נדרש:</strong> החלפת כל קריאות המדידה הגאומטריות לעבודה אחידה עם יחידות לא מסוכיילות (Unscaled DOM Layout Units בלבד).</span>
+        </div>
+      </div>
+
+      <!-- כשל 4 -->
+      <div class="edge-card severity-med">
+        <div class="edge-tag">⚠️ כשל בינוני • טיפוגרפיה תורנית</div>
+        <h4 class="edge-title">קריסת חלון מילה ראשונה (Drop Word) בפסקאות קצרות</h4>
+        <div class="edge-mechanism">
+          <strong>מנגנון הכשל:</strong> בעת מדידה ראשונית של הפסקה נמצא שיש לה 3 שורות, ולכן נקבע <code>hasWindow = true</code> (חלון שקוע עם float: right). אולם במהלך חלוקת הדף או מניעת שורות יתומות, הפסקה נחתכת ורק שורה אחת נותרת בטור הימני.
+          <br><br>
+          <strong>התוצאה:</strong> אלמנט ה-float השקוע בולט כלפי מטה אל מחוץ לפסקה, וחודר לתוך הפסקה הבאה או הכותרת שתחתיה, ומשבש את יישור השורות של כל הטור.
+        </div>
+        <div class="edge-solution">
+          <span>💡</span>
+          <span><strong>תיקון נדרש:</strong> בדיקה מותנית נוספת בעת פליטת <code>p-cut</code>: אם <code>bestFitLine &lt; 2</code>, ביטול אוטומטי של החלון ומעבר למילה מודגשת באותה שורה (Inline).</span>
+        </div>
+      </div>
+
+      <!-- כשל 5 -->
+      <div class="edge-card severity-low">
+        <div class="edge-tag">ℹ️ כשל קל • יציבות לולאה</div>
+        <h4 class="edge-title">לולאת עמודים אינסופית על כותרות גדולות במיוחד</h4>
+        <div class="edge-mechanism">
+          <strong>מנגנון הכשל:</strong> אם מוגדרת כותרת 3 גדולה במיוחד עם עיטורי צד שגובהם עולה על <code>H_available</code> בדף חדש וריק, התנאי <code>if (spanHeight &gt; remPageHeight)</code> גורם למנוע להסיר את הכותרת, לסגור את הדף ולפתוח דף חדש – שבו הכותרת שוב גדולה מדי.
+        </div>
+        <div class="edge-solution">
+          <span>💡</span>
+          <span><strong>תיקון נדרש:</strong> מנגנון הגנה כפוי (Forced Placement): אם העמוד ריק לחלוטין מתוכן (<code>pageHasContent == false</code>), חייבים להכניס את האלמנט גם אם הוא גולש, ולא לפתוח דף ריק חדש.</span>
+        </div>
+      </div>
+
+      <!-- כשל 6 -->
+      <div class="edge-card severity-high">
+        <div class="edge-tag">🚨 כשל חמור • אסינכרוניות וגופנים</div>
+        <h4 class="edge-title">מדידות שגויות בעימוד הראשון עקב איטיות ברשת (Font Metrics FOUT)</h4>
+        <div class="edge-mechanism">
+          <strong>מנגנון הכשל:</strong> הדפדפן מריץ את <code>typesetDocument()</code> באירוע <code>window.onload</code>. אף שקיימת פונקציה <code>ensureBuiltinFontsLoaded</code>, אם גופנים מקומיים או גופני מערכת (System Fonts) מתעכבים באימות, המדידה ב-<code>#measuring-box</code> משתמשת בגופן ברירת המחדל (Times / Arial).
+          <br><br>
+          <strong>התוצאה:</strong> ההבדל ברוחב האותיות (Advance Width) בין Arial ל-Frank Ruhl יוצר פער של עד 20% בשבירת השורות, מה שגורם לעימוד להיראות משובש עד שלוחצים ידנית על "עדכן ועמד מחדש".
+        </div>
+        <div class="edge-solution">
+          <span>💡</span>
+          <span><strong>תיקון נדרש:</strong> עטיפת כל הקריאה הראשונית ב-<code>document.fonts.ready.then(...)</code> מפורש ומניעת תחילת מדידה לפני פתרון ה-Promise של כל משפחות הגופנים הפעילות.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    דוח ארכיטקטורה הנדסית זה נוצר כבסיס עבודה ותיקון עבור מנוע העימוד התורני לדפי A4 • כל הזכויות שמורות
+  </footer>
+
+</div>
+
+</body>
+</html>

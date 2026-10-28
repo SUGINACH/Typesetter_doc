@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דו"ח השוואה טכנולוגי מעמיק: 4 גרסאות מערכת העימוד התורנית</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #0f172a;
+      --accent: #b45309;
+      --accent-light: #fef3c7;
+      --success: #059669;
+      --success-light: #d1fae5;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #cbd5e1;
+      --border-light: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Assistant', 'David Libre', serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+    }
+
+    header h1 {
+      font-size: 24pt;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      font-size: 11pt;
+      opacity: 0.9;
+      max-width: 900px;
+    }
+
+    .meta-bar {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+      font-size: 9pt;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 15px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    h2 {
+      font-size: 16pt;
+      color: var(--primary);
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h3 {
+      font-size: 13pt;
+      color: var(--primary-dark);
+      margin: 18px 0 10px 0;
+    }
+
+    p, li {
+      font-size: 10pt;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    ul, ol {
+      padding-right: 22px;
+      margin-bottom: 14px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .version-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 8.5pt;
+      font-weight: 700;
+    }
+    .badge-v1 { background: #e0e7ff; color: #3730a3; }
+    .badge-v2 { background: #fef3c7; color: #92400e; }
+    .badge-v3 { background: #dbeafe; color: #1e40af; }
+    .badge-v4 { background: #d1fae5; color: #065f46; }
+
+    .callout {
+      border-right: 4px solid var(--primary-light);
+      background: #eff6ff;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+    }
+
+    .callout-warning {
+      border-right-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .callout-danger {
+      border-right-color: var(--danger);
+      background: var(--danger-light);
+    }
+
+    .callout-success {
+      border-right-color: var(--success);
+      background: var(--success-light);
+    }
+
+    code {
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 9pt;
+      background: #f1f5f9;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: #b91c1c;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 14px;
+      border-radius: 8px;
+      direction: ltr;
+      text-align: left;
+      font-size: 8.5pt;
+      overflow-x: auto;
+      margin: 12px 0;
+    }
+
+    /* Comparison Table Styling */
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      text-align: right;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      font-weight: 800;
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    td.feature-title {
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 7.5pt;
+      font-weight: 700;
+    }
+    .tag-yes { background: var(--success-light); color: var(--success); }
+    .tag-no { background: var(--danger-light); color: var(--danger); }
+    .tag-partial { background: var(--accent-light); color: var(--accent); }
+
+    .blueprint-step {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .step-body h4 {
+      font-size: 11pt;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <h1>דו"ח השוואה מדוקדק: ארבע גרסאות מערכת העימוד התורנית (A4)</h1>
+    <p>ניתוח ארכיטקטוני, מתמטי ועיצובי בין קובצי המקור: <strong>השוואת.txt</strong> (גרסה 1), <strong>חלוקת.txt</strong> (גרסה 2), <strong>מערכת.txt</strong> (גרסה 3) ו-<strong>עדכון.txt</strong> (גרסה 4).</p>
+    <div class="meta-bar">
+      <span>סביבת פיתוח: HTML5 / Canvas & DOM Measuring / CSS Grid & Flex / Pure ES6</span>
+      <span>מיקוד: עימוד ספרים תורניים, שו"ת, מפרשים, ספרי הלכה ושערים</span>
+    </div>
+  </header>
+
+  <!-- Section 1: Executive Summary -->
+  <div class="card">
+    <h2>🎯 1. תקציר מנהלים ומהות ההבדלים הכללית</h2>
+    <p>
+      ארבעת הקבצים משקפים שרשרת התפתחות מואצת של מערכת עימוד מורכבת ביותר המבוססת דפדפן (Client-Side Typesetting Engine). המערכת מתמודדת עם האתגרים הקשים ביותר של הטיפוגרפיה העברית-תורנית: שבירת שורות מדויקת, פסקאות בעלות "חלון מילה ראשונה" (Drop Word), דיבור המתחיל (ד"ה), איזון טורים שוויוני (Column Balancing) בסופי פרקים, שריון דינמי של תחתית העמוד להערות שוליים (Footnotes) וסיום (Endnotes), מערכת שערי ספר ועיטורים גרפיים, וכותרות עליונות מתחלפות (Recto/Verso).
+    </p>
+    <div class="grid-2">
+      <div class="callout">
+        <strong>נקודת המוצא (גרסה 1 - "השוואת"):</strong> מנוע בסיסי שלם עם תמיכה מצוינת ב-SVG, אך סובל מחישובים חוזרים ונשנים על כל תו במקלדת, כשלים בשבירת הערות מרובות-שורות, היעדר זיכרון פרטני למיקומי תיבות שער, וכותרות עליונות מוגבלות.
+      </div>
+      <div class="callout callout-success">
+        <strong>נקודת השיא (גרסה 4 - "עדכון"):</strong> גרסה עמוקה ומלוטשת, שהוסיפה פריסה עצמאית לחלוטין של כותרות עמוד זוגי (Verso), תמיכה מובנית ב-4 חלקים מופרדים לשער האחורי, מנגנון אטומי לחסימת קריעת הערות שוליים (<code>\uE000</code>), ייצוא קובצי JSON מותאמים עם קואורדינטות שער, ומניעת Layout Shifts באמצעות טעינה מוקדמת של גופנים.
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Detailed Breakdown of Each Version -->
+  <div class="card">
+    <h2>🔍 2. ניתוח פרטני של 4 הגרסאות</h2>
+
+    <!-- V1 -->
+    <h3><span class="version-badge badge-v1">גרסה 1: השוואת.txt</span> — בסיס המנוע והמבנה המקורי</h3>
+    <ul>
+      <li><strong>צימוד הדוק וביצועים ירודים:</strong> כל שדה קלט ב-<code>index.html</code> מקושר ישירות ל-<code>typesetDocument(delay)</code> עם השהיות של 400–500ms. כל הקלדה של תו גורמת לעימוד מלא מחדש של כל המסמך.</li>
+      <li><strong>יתרון ייחודי שאבד בהמשך:</strong> קיים שדה <code>page-num-initial-value</code> המאפשר להתחיל מספור עמודים מערך שרירותי (כגון עמ' פז עבור כרך ב') בנפרד מ-<code>page-num-start-idx</code>.</li>
+      <li><strong>איזון טורים:</strong> אלגוריתם ה-<code>balanceColumns</code> בוחן אך ורק את הפער המינימלי בין גובה טור ימין לשמאל (<code>Math.abs(diff)</code>), תוך התעלמות מוחלטת מכך שהחלוקה המאוזנת עלולה לגלוש לתקציב הערות השוליים.</li>
+      <li><strong>תיבות שער:</strong> קואורדינטות תיבת השער נשמרות אך ורק בתוך שדות הקלט הגלובליים (<code>#builder-main-top</code> וכו'). ברגע שהמשתמש החליף שער, המיקומים של השער הקודם נדרסו ואבדו.</li>
+    </ul>
+
+    <!-- V2 -->
+    <h3><span class="version-badge badge-v2">גרסה 2: חלוקת.txt</span> — פיצול פעולות, ייבוא תיקיות ובקרת זוגי/אי-זוגי</h3>
+    <ul>
+      <li><strong>פיצול מנגנון העימוד:</strong> נוצר כפתור ייעודי בראש הפאנל <code>#btn-update-retypeset</code> (🔄 עדכן ועמד מחדש) עם אפקט פעימה זוהר (<code>pulse-pending</code>) כאשר קיימים שינויים ממתינים. שינויי הגדרות כבדים הפסיקו לעמד אוטומטית.</li>
+      <li><strong>ייבוא ישיר מתיקייה מקומית:</strong> נוספה הפונקציה <code>handleAssetsFolderSelected()</code> עם תגית <code>webkitdirectory</code> המאפשרת למשתמש לבחור תיקיית נכסים שלמה (כגון <code>THEMES/</code>, <code>header_ornaments/</code>) ולטעון את כולה ללא שרת.</li>
+      <li><strong>פתרון ראשוני לקריעת הערות שוליים:</strong> הוטמעה הפונקציה <code>adjustFitLineForNoteSpans()</code> המונעת חיתוך שורות באמצע תוחם <code>[...]</code>.</li>
+      <li><strong>שמירת מיקומי שער ב-localStorage:</strong> הוטמעו <code>saveShaarBoxPosition()</code> ו-<code>loadShaarBoxPosition()</code> ששמרו בדפדפן את המיקום הספציפי לכל מזהה שער.</li>
+      <li><strong>הגבלת גובה הטורים באיזון:</strong> לראשונה, אלגוריתם <code>balanceColumns</code> שוקל את <code>availableHeight</code> ומעדיף פיצול שנכנס בגובה על פני פיצול שגולש.</li>
+      <li><strong>חיסרון בולט:</strong> תפריטי הגופנים רוקנו ממאגר הגופנים הדינמי, והכילו רק אופציה מקודדת יחידה של David Libre.</li>
+    </ul>
+
+    <!-- V3 -->
+    <h3><span class="version-badge badge-v3">גרסה 3: מערכת.txt</span> — ייצוב טיפוגרפי, תווים אטומיים ואחסון בתבנית</h3>
+    <ul>
+      <li><strong>התו האטומי להגנה מושלמת על הערות:</strong> שודרג מנגנון <code>getLinesFromParagraph()</code>. כל הרווחים בתוך סוגרי ההערה <code>[...]</code> מוחלפים זמנית בתו Unicode מוגן (<code>\uE000</code>). כתוצאה מכך, תיבת המדידה אינה פורסת הערה של 50 מילים על פני שורות רבות בגוף הטקסט, אלא מודדת אותה כאות בודדת ("א") במקומה המדויק! זוהי פריצת דרך קריטית בדיוק העימוד.</li>
+      <li><strong>מניעת יתומות ואלמנות מובנית באיזון:</strong> נוספה בדיקה של <code>avoidWidows</code> ו-<code>avoidOrphans</code> ישירות בלולאת יצירת נקודות הפיצול של <code>balanceColumns</code> (למשל, פסילת חלוקה שמותירה שורה אחת בלבד בסוף טור ימין).</li>
+      <li><strong>תיקון קו מפריד אנכי בין טורים:</strong> הקו האנכי תוקן מ-<code>height: 100%</code> (שחרג תמיד מתחת לטור הנמוך) לחישוב מדויק של <code>Math.min(rCol.scrollHeight, lCol.scrollHeight)</code>.</li>
+      <li><strong>שמירת קואורדינטות שער בתבנית:</strong> האובייקט <code>shaarBoxPositions</code> נשמר כעת בתוך ה-JSON של <code>saveAsDefaultTemplate()</code> ומשוחזר בעת פתיחת הקובץ.</li>
+      <li><strong>פאנלים מתקפלים:</strong> כותרות הפאנלים הפכו ללחיצות (<code>clickable-header</code>) לפתיחה וסגירה קלה.</li>
+    </ul>
+
+    <!-- V4 -->
+    <h3><span class="version-badge badge-v4">גרסה 4: עדכון.txt</span> — מהדורת השיא: עצמאות כותרות, גב-שער מרובע וייצוא נכסים</h3>
+    <ul>
+      <li><strong>מערך כותרות עליונות כפול ובלתי-תלוי לחלוטין (Verso / Recto):</strong> הופרדו לחלוטין הגדרות ימין, מרכז ושמאל של עמוד זוגי (Verso) מעמוד אי-זוגי (Recto). כל שדה מאפשר בחירה עצמאית, יישור עצמאי וגופן עצמאי, או ירושה חכמה באמצעות <code>same_as_odd</code> / <code>same_as_even</code>.</li>
+      <li><strong>ארבעה מקטעים מובנים ועצמאיים לשער האחורי:</strong> ביטול התלות בשדות השער הראשי. גב הספר מכיל כעת 4 שדות טקסט ייעודיים נפרדים: 1. שמירת זכויות, 2. פרטי הוצאה לאור, 3. פרטי קשר, 4. פרטים נוספים ודפוס.</li>
+      <li><strong>מצבי עיטור עצמאיים לכותרת 2:</strong> בורר <code>h2-title-orn-mode</code> המאפשר להגדיר עיטור עליון/תחתון לשורת הסימן ("סימן א'"), ובמקביל עיטורי צד (ימין ושמאל) או עליון/תחתון לטקסט הכותרת עצמו!</li>
+      <li><strong>ייצוא קובצי JSON מעודכנים:</strong> כפתורים ייעודיים לייצוא <code>shaar_main.json</code>, <code>shaar_sub.json</code>, <code>shaar_back.json</code> הכוללים בתוכם את קואורדינטות ה-<code>box</code> שנערכו בעכבר.</li>
+      <li><strong>טעינת פונטים מוקדמת (WebFonts Ready):</strong> הוטמעה הפונקציה <code>ensureBuiltinFontsLoaded()</code> הממתינה לטעינת כל הגופנים מ-Google Fonts בטרם מתבצעת המדידה הראשונה, מה שמונע לחלוטין את "באג העימוד הכפול".</li>
+      <li><strong>פונקציית הגנת גופנים:</strong> נכתבה פונקציית <code>getFontVal()</code> המונעת נפילה חזרה לברירת מחדל של <code>'serif'</code> כללי במקרה של ערך ריק.</li>
+    </ul>
+  </div>
+
+  <!-- Section 3: Deep Technical Comparison -->
+  <div class="card">
+    <h2>⚙️ 3. השוואת עומק לפי מכלולים טכנולוגיים</h2>
+
+    <h3>א. מנוע העימוד וביצועים (Event Loop, Rendering Pipeline)</h3>
+    <p>
+      בגרסה 1, כל שינוי של מספר גודל גופן או מרחק גרר קריאה ישירה ל-<code>typesetDocument()</code>. במסמך של 50 עמודים, פעולה זו גורמת ל-Freeze של הדפדפן.
+      בגרסאות 2 ו-3 הוצג כפתור "עדכן ועמד מחדש" שמבודד שינויים כבדים.
+      בגרסה 4 הושג האיזון האידיאלי: שינויים מקומיים (כגון שערים ורקעים) מעדכנים דרך <code>typesetDocument()</code> עם Debounce קצר של 400ms, בעוד טעינת טקסט ושינויי רשת מעומדים באופן מבוקר. בנוסף, גרסה 4 פתרה את כשל המדידה הראשונית על ידי המתנה ל-<code>Promise.all(document.fonts.load)</code>.
+    </p>
+
+    <h3>ב. שבירת פסקאות, טיפול בהערות שוליים ואיזון טורים</h3>
+    <p>
+      הטיפול בהערות שוליים עבר מהפכה אמיתית:
+    </p>
+    <div class="callout callout-warning">
+      <strong>הכשל בגרסה 1:</strong> כאשר פסקה כללה הערת שוליים בסופה, פונקציית מדידת השורות (<code>getLinesFromParagraph</code>) חילקה את המילים של גוף ההערה כאילו היו חלק מגוף הפסקה. כאשר טור ימין התמלא, השורה נשברה בדיוק באמצע ההערה (למשל: המילה <code>[רמב"ם</code> בטור ימין, ו-<code>הלכות תפילה]</code> בטור שמאל). הדבר הרס את זיהוי ה-Regex של ההערה, ההערה נעלמה מרשימת ההערות בתחתית, והטקסט הפנימי שלה הוצג בגוף הספר!
+    </div>
+    <p>
+      <strong>הפתרון המושלם בגרסאות 3 ו-4:</strong> הפסקה עוברת Pre-processing:
+    </p>
+    <pre>
+// מתוך typesetter.js בגרסאות 3 ו-4
+safeText = safeText.replace(new RegExp(escO + '([\\s\\S]*?)' + escC, 'g'), (m, inner) => {
+    return fnOpen + inner.replace(/\s+/g, '\uE000') + fnClose;
+});
+// בתוך תיבת המדידה הערה תופסת רוחב של סימון בלבד (' א ') ולא עשרות מילים!
+const displayW = isNote ? ' א ' : w.replace(/\uE000/g, ' ');
+    </pre>
+    <p>
+      בנוסף, בגרסה 4 נוסף עונש גובה קשיח (<code>heightPenalty += (h - avail) * 2000</code>) באלגוריתם איזון הטורים, המבטיח שגם אם נקודת פיצול מסוימת מניבה טורים שווים יותר, היא תיפסל מיידית אם היא גולשת לתוך התקציב ששוריין להערות השוליים.
+    </p>
+
+    <h3>ג. שערי הספר וכוונון תיבות (Drag & Resize)</h3>
+    <p>
+      בגרסה 1, הכוונון היה תיאורטי בלבד – ברגע שהוחלף שער, המידות אבדו. בגרסה 2 נוסף <code>localStorage</code>, אך הוא היה מוגבל לדפדפן הספציפי.
+      בגרסה 4 הושלם המעגל:
+    </p>
+    <ol>
+      <li>לכל אלמנט תוכן שער מוצמד <code>data-shaar-id</code> מדויק.</li>
+      <li>בעת גרירה ושחרור של העכבר, הקואורדינטות נרשמות במבנה <code>shaarBoxSavedPositions[shaarType][shaarId]</code>.</li>
+      <li>המשתמש יכול ללחוץ על <strong>"💾 ייצוא shaar_main.json"</strong> ולקבל קובץ JSON שבו השער כולל את האובייקט <code>"box": { "top": "25.0", ... }</code> מוטמע לצמיתות בקובץ!</li>
+    </ol>
+  </div>
+
+  <!-- Section 4: Comprehensive Comparison Matrix -->
+  <div class="card">
+    <h2>📊 4. טבלת השוואת תכונות ומכלולים מלאה</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>מכלול / תכונה</th>
+            <th>גרסה 1 (השוואת)</th>
+            <th>גרסה 2 (חלוקת)</th>
+            <th>גרסה 3 (מערכת)</th>
+            <th>גרסה 4 (עדכון)</th>
+            <th>הערות ומשמעות מעשית</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Category: Engine & Performance -->
+          <tr>
+            <td class="feature-title">מנגנון הפעלת עימוד (Retypeset)</td>
+            <td><span class="status-tag tag-no">רציף (איטי)</span></td>
+            <td><span class="status-tag tag-yes">מפוצל (כפתור)</span></td>
+            <td><span class="status-tag tag-partial">מעורב + Debounce</span></td>
+            <td><span class="status-tag tag-yes">Debounce + שליטה</span></td>
+            <td>ב-V1 כל הקלדה תוקעת את הדפדפן. ב-V4 יש איזון מעולה.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">טעינה מוקדמת של גופנים (Layout Shifts)</td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-yes">קיים (Promise.all)</span></td>
+            <td>ב-V4 נפתרה לחלוטין בעיית "העימוד הכפול" שדרשה ריצה חוזרת.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">הגנה מנפילת גופנים ל-Generic Serif</td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-yes">קיים (getFontVal)</span></td>
+            <td>מונע מרווחי אותיות משובשים אם שדה גופן לא אותחל כראוי.</td>
+          </tr>
+
+          <!-- Category: Typography & Columns -->
+          <tr>
+            <td class="feature-title">הגנה אטומית על הערות בשבירת שורה</td>
+            <td><span class="status-tag tag-no">ללא (נשבר)</span></td>
+            <td><span class="status-tag tag-partial">חלקי (סריקת מילים)</span></td>
+            <td><span class="status-tag tag-yes">מלא (\uE000)</span></td>
+            <td><span class="status-tag tag-yes">מלא (\uE000)</span></td>
+            <td>ב-V3 ו-V4 הערה לעולם אינה נקרעת לשני חצאים בין עמודים או טורים.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">הערכת שטח להערות שטרם הופקו</td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-yes">קיים</span></td>
+            <td><span class="status-tag tag-no">הושמט בטעות</span></td>
+            <td><span class="status-tag tag-yes">משוחזר ומדויק</span></td>
+            <td>משריין גובה בעמוד גם להערות שנמצאות בפסקה הנמדדת כעת.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">עונש גובה באיזון סוף פרק (Penalty)</td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-partial">סינון בסיסי</span></td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-yes">קשיח (x2000)</span></td>
+            <td>מונע מטורים מאוזנים לדרוך על אזור הערות השוליים.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">גובה קו מפריד בין טורים</td>
+            <td><span class="status-tag tag-no">100% (חורג)</span></td>
+            <td><span class="status-tag tag-partial">גובה מקסימלי</span></td>
+            <td><span class="status-tag tag-yes">Math.min (מדויק)</span></td>
+            <td><span class="status-tag tag-yes">Math.min (מדויק)</span></td>
+            <td>הקו נעצר בדיוק בגובה הטור הנמוך ואינו בולט לתוך השוליים.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">יישור שורה אחרונה בפסקה (Justify)</td>
+            <td><span class="status-tag tag-no">קבוע למרכז</span></td>
+            <td><span class="status-tag tag-no">קבוע למרכז</span></td>
+            <td><span class="status-tag tag-no">קבוע למרכז</span></td>
+            <td><span class="status-tag tag-yes">נשלט (מרכז/ימין/מתוח)</span></td>
+            <td>הוספת משתנה <code>--last-line-align</code> ב-V4.</td>
+          </tr>
+
+          <!-- Category: Shaar & Covers -->
+          <tr>
+            <td class="feature-title">מבנה טקסט שער אחורי</td>
+            <td><span class="status-tag tag-no">Textarea בודד</span></td>
+            <td><span class="status-tag tag-partial">3 מקטעים</span></td>
+            <td><span class="status-tag tag-no">Textarea בודד</span></td>
+            <td><span class="status-tag tag-yes">4 שדות עצמאיים</span></td>
+            <td>ב-V4: זכויות, הוצאה לאור, פרטי קשר ודפוס מופרדים לחלוטין.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">זיכרון מיקום תיבת שער בעכבר</td>
+            <td><span class="status-tag tag-no">גלובלי בלבד</span></td>
+            <td><span class="status-tag tag-partial">localStorage</span></td>
+            <td><span class="status-tag tag-yes">בתבנית שמורה</span></td>
+            <td><span class="status-tag tag-yes">פר-שער + ייצוא JSON</span></td>
+            <td>V4 מאפשרת לייצא קובץ JSON מעודכן הכולל את ה-box לצמיתות.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">טעינת תמונות שער (JPG/PNG שאינם SVG)</td>
+            <td><span class="status-tag tag-no">SVG בלבד</span></td>
+            <td><span class="status-tag tag-yes">תומך בתמונות</span></td>
+            <td><span class="status-tag tag-no">SVG בלבד</span></td>
+            <td><span class="status-tag tag-yes">תמיכה מלאה (wrapShaarMedia)</span></td>
+            <td>תמיכה ברינדור שערים סרוקים מתמונות רגילות.</td>
+          </tr>
+
+          <!-- Category: Headers & Navigation -->
+          <tr>
+            <td class="feature-title">כותרות עליונות עמוד זוגי (Verso)</td>
+            <td><span class="status-tag tag-no">היפוך צדדים בלבד</span></td>
+            <td><span class="status-tag tag-partial">שדות עצמאיים</span></td>
+            <td><span class="status-tag tag-no">היפוך בלבד</span></td>
+            <td><span class="status-tag tag-yes">עצמאי מלא + ירושה</span></td>
+            <td>ב-V4 ניתן להגדיר כותרות, גופנים ויישורים שונים לחלוטין לעמוד שמאל.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">פיצול שם ספר בין ימין לשמאל</td>
+            <td><span class="status-tag tag-partial">טוגל ידני</span></td>
+            <td><span class="status-tag tag-partial">טוגל ידני</span></td>
+            <td><span class="status-tag tag-partial">טוגל ידני</span></td>
+            <td><span class="status-tag tag-yes">אוטומטי מלא</span></td>
+            <td>V4 מחשב את מילות שם הספר ומפצל שווה בשווה בין Recto ל-Verso.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">ערך התחלתי מותאם למספור עמודים</td>
+            <td><span class="status-tag tag-yes">קיים (initial-value)</span></td>
+            <td><span class="status-tag tag-no">הושמט</span></td>
+            <td><span class="status-tag tag-no">הושמט</span></td>
+            <td><span class="status-tag tag-no">הושמט</span></td>
+            <td><strong>תכונה מעולה מ-V1 שהושמטה ביתר הגרסאות ויש לשחזרה!</strong></td>
+          </tr>
+          <tr>
+            <td class="feature-title">שליטה פרטנית במספור דפי שער ותוכן</td>
+            <td><span class="status-tag tag-partial">שערים בלבד</span></td>
+            <td><span class="status-tag tag-yes">שערים + תוכן (TOC)</span></td>
+            <td><span class="status-tag tag-no">שערים בלבד</span></td>
+            <td><span class="status-tag tag-yes">שערים מלא (count/show)</span></td>
+            <td>ב-V2 הייתה גם שליטה אם תוכן העניינים נספר/מוצג. ב-V4 רק שערים.</td>
+          </tr>
+
+          <!-- Category: Ornaments & UI -->
+          <tr>
+            <td class="feature-title">עיטורי צד עצמאיים לכותרת 2</td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-partial">טוגל צד בלבד</span></td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-yes">מצב משולב (סימן+כותרת)</span></td>
+            <td>V4 מאפשרת עיטור עליון/תחתון ל"סימן א" ובו-זמנית עיטורי צד לשם הפרק.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">התאמת רוחב עיטור לרוחב הטקסט (Text-Fit)</td>
+            <td><span class="status-tag tag-partial">CSS Fit-Content</span></td>
+            <td><span class="status-tag tag-partial">CSS Fit-Content</span></td>
+            <td><span class="status-tag tag-yes">מדידת DOM (JS)</span></td>
+            <td><span class="status-tag tag-yes">מדידת DOM (JS)</span></td>
+            <td>CSS טהור נכשל בזה; ב-V3 ו-V4 זה נמדד בדיוק פיקסלי ב-JS.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">ייבוא תיקיית נכסים מקומית (Directory Scanner)</td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-yes">קיים (Folder Pick)</span></td>
+            <td><span class="status-tag tag-no">ללא</span></td>
+            <td><span class="status-tag tag-partial">דרך manifest.json</span></td>
+            <td>ב-V2 הייתה בחירת תיקייה ישירה דרך הדפדפן; ב-V4 נדרש manifest.</td>
+          </tr>
+          <tr>
+            <td class="feature-title">ממשק פאנלים מתקפל (Accordion UI)</td>
+            <td><span class="status-tag tag-no">גלול בלבד</span></td>
+            <td><span class="status-tag tag-no">גלול בלבד</span></td>
+            <td><span class="status-tag tag-yes">מתקפל (Toggle)</span></td>
+            <td><span class="status-tag tag-yes">מתקפל (Toggle)</span></td>
+            <td>שיפור ארגונומי עצום המונע גלילה אינסופית בסרגל הצד.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 5: The Blueprint for the Ultimate Version -->
+  <div class="card">
+    <h2>🏆 5. מפת הדרכים והמלצות ליצירת "הגרסה המושלמת" (The Master Edition)</h2>
+    <p>
+      על מנת להגיע למערכת עימוד מושלמת ללא פשרות, הבסיס המוביל חייב להיות <strong>גרסה 4 (עדכון.txt)</strong>. יחד עם זאת, במהלך פיתוח הגרסאות חלו מספר השמטות ("רגרסיות") ותכונות ייחודיות מגרסאות 1 ו-2 שלא נכללו בגרסה 4. להלן המתכון המדויק למיזוג המושלם:
+    </p>
+
+    <div class="blueprint-step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>שחזור ערך מספור עמודים התחלתי מגרסה 1 (השוואת)</h4>
+        <p>
+          בגרסה 1 הוטמע מנגנון קריטי לספרים מרובי-כרכים: <code>#page-num-initial-value</code>. יש להחזיר שדה זה ל-<code>index.html</code> (פאנל 10) ולעדכן את <code>formatPageNumberDisplay(pNum)</code> ב-<code>typesetter.js</code> בנוסחה:
+          <br>
+          <code>const effectiveNum = pNum - startIdx + initialValue;</code>
+          <br>
+          (כרגע בגרסה 4 המספור תמיד מתחיל מ-1, מה שלא מאפשר לעמד כרך שמתחיל בעמ' קכ).
+        </p>
+      </div>
+    </div>
+
+    <div class="blueprint-step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>שילוב סורק התיקיות המקומי מגרסה 2 (חלוקת) לתוך גרסה 4</h4>
+        <p>
+          בגרסה 4 הטעינה מתבססת על <code>assets_manifest.json</code> (שדורש קובץ מוכן מראש או שרת מקומי). יש למזג מגרסה 2 את כפתור <code>triggerAssetsFolderPick()</code> ואת פונקציית <code>handleAssetsFolderSelected()</code> עם תגית <code>webkitdirectory</code>. כך המשתמש יוכל פשוט לבחור תיקייה עם עיטורים ותמונות מהמחשב, והם ייטענו ישירות לבוררים הוויזואליים בזיכרון.
+        </p>
+      </div>
+    </div>
+
+    <div class="blueprint-step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>שחזור בקרת המספור על תוכן העניינים (TOC Numbering) מגרסה 2</h4>
+        <p>
+          בגרסה 2 הוטמעו הצ'קבוקסים <code>general-toc-count-numbering</code> ו-<code>detailed-toc-count-numbering</code>. הדבר קריטי לפרויקטים שבהם תוכן העניינים נדפס באותיות נפרדות (או שאינו נספר ברצף הספר). יש להחזיר צ'קבוקסים אלו ל-HTML ול-<code>performTypeset()</code>.
+        </p>
+      </div>
+    </div>
+
+    <div class="blueprint-step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>שימור כל היתרונות הבלעדיים של גרסה 4</h4>
+        <ul>
+          <li>להשאיר את מנגנון <strong>4 המקטעים המופרדים של השער האחורי</strong> (זכויות, הוצאה, קשר, דפוס).</li>
+          <li>להשאיר את מנגנון <strong>עמוד זוגי עצמאי (Verso)</strong> בכותרות עליונות, כולל ירושת <code>same_as_odd</code> ופיצול שם ספר.</li>
+          <li>להשאיר את <strong>התו האטומי <code>\uE000</code></strong> המבטיח שהערות שוליים לא ייקרעו לעולם בשבירת שורה.</li>
+          <li>להשאיר את <strong>ייצוא קובצי ה-JSON</strong> עם מיקומי ה-box המעודכנים של השערים.</li>
+          <li>להשאיר את <strong><code>ensureBuiltinFontsLoaded()</code></strong> שפותר את באג העימוד הכפול.</li>
+          <li>להשאיר את <strong>בורר עיטורי כותרת 2</strong> (טוגל בין עליון/תחתון לצדדיים עצמאיים).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blueprint-step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h4>ליטוש אלגוריתם שריון גובה הערות השוליים (Footnote Space Reservation)</h4>
+        <p>
+          יש לוודא שבתוך לולאת ה-<code>while</code> של העמודות ב-<code>performTypeset()</code>, שריון גובה ההערות (<code>getFootnotesReservedHeight()</code>) מתחשב גם בהערות שנמצאות בתוך הפסקה הנמדדת כעת (כפי שהוחל ב-V2 וב-V4), כדי שלא תיווצר חריגה של 1-2 שורות בתחתית הטור מעבר לגבול הדף.
+        </p>
+      </div>
+    </div>
+
+    <div class="callout callout-success" style="margin-top:25px;">
+      <strong>סיכום ההמלצה:</strong>
+      הגרסה המושלמת תהיה מבוססת על <strong>עדכון.txt (גרסה 4)</strong> במלואה, בתוספת <strong>שלושת החלקים שהושמטו ממנה</strong>: שדה מספור עמודים התחלתי (מגרסה 1), כפתור סריקת תיקיות מקומית ללא שרת (מגרסה 2), ומתגי ספירת עמודי תוכן העניינים (מגרסה 2). שילוב זה יניב מנוע עימוד ברמת איכות ודיוק שאינה נופלת מתוכנות עימוד מסחריות שולחניות (כדוגמת תג או InDesign).
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

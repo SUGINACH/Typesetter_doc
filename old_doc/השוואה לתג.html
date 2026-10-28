@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דו"ח השוואה הנדסי מקיף: מנוע העימוד Master Edition V2 מול תוכנת "תג" (Tag)</title>
+  <style>
+    :root {
+      --bg-main: #090d16;
+      --bg-card: #131b2e;
+      --bg-card-sub: #1e293b;
+      --border-color: #334155;
+      --border-accent: #38bdf8;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --code-bg: #060911;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: 'Fira Code', 'Cascadia Code', Consolas, Monaco, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      padding: 30px 20px;
+      direction: rtl;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .lead {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 1100px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .summary-title { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+    .summary-value { font-size: 1.85rem; font-weight: 800; margin: 4px 0; }
+    .summary-desc { font-size: 0.8rem; }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 32px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .nav-tab {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 10px 20px;
+      border-radius: 8px 8px 0 0;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-tab:hover, .nav-tab.active {
+      background: var(--primary);
+      color: #090d16;
+      border-color: var(--primary);
+    }
+
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+    }
+
+    .section-title-num {
+      background: var(--primary);
+      color: #090d16;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    h3 { font-size: 1.25rem; color: var(--primary); margin: 24px 0 10px 0; font-weight: 700; }
+    h4 { font-size: 1.05rem; color: var(--accent); margin: 18px 0 8px 0; }
+    p { margin-bottom: 12px; color: #cbd5e1; }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 16px 0 24px 0;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: var(--bg-card-sub);
+      color: #fff;
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+      padding: 11px 16px;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+      color: #cbd5e1;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: rgba(15, 23, 42, 0.3); }
+    tr:hover td { background: rgba(56, 189, 248, 0.04); }
+
+    .badge-status {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-align: center;
+      font-family: var(--font-mono);
+    }
+    .status-pass { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+    .status-fail { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+    .status-warn { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+    .status-info { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid #38bdf8; }
+
+    .alert {
+      border-right: 4px solid var(--accent);
+      background: rgba(245, 158, 11, 0.08);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+    .alert-danger {
+      border-right-color: var(--danger);
+      background: rgba(239, 68, 68, 0.08);
+    }
+    .alert-success {
+      border-right-color: var(--success);
+      background: rgba(16, 185, 129, 0.08);
+    }
+    .alert-info {
+      border-right-color: var(--primary);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .svg-diagram-wrap {
+      background: var(--code-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: auto;
+    }
+
+    .diagram-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    ul, ol {
+      margin-right: 26px;
+      margin-bottom: 16px;
+      color: #cbd5e1;
+    }
+    li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge">COMPARATIVE BENCHMARK & ARCHITECTURAL EVALUATION</div>
+      <h1>דו"ח ניתוח והשוואה הנדסית: מנוע העימוד (Master V2) מול תוכנת "תג" (Tag)</h1>
+      <div class="lead">
+        בחינה מדוקדקת של ארכיטקטורת המערכות, מנועי הליבה הטיפוגרפיים, יכולות ההתאמה האישית,
+        והערכה הנדסית מעשית: כיצד עומד מנוע ה-Pipeline התלת-שכבתי (DFA AST + Knuth-Plass + Multi-Column DP)
+        מול עמוד התווך ההיסטורי של הספר התורני ומערך הסקריפטים המסחרי של "תג".
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-title">חוויית משתמש ו-WYSIWYG</div>
+          <div class="summary-value" style="color: var(--success);">יתרון למנוע V2</div>
+          <div class="summary-desc" style="color: var(--primary);">תצוגה חיה מלאה מול חלון DOS ופלאג-אין TagDock</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-title">מודל "רב-טקסט" מרובה מפרשים</div>
+          <div class="summary-value" style="color: var(--accent);">יתרון מוחלט לתג</div>
+          <div class="summary-desc" style="color: var(--text-muted);">צורת הדף (גמרא/מקראות) ופריסת "ברך" דינמית</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-title">גמישות והתאמה אישית חזותית</div>
+          <div class="summary-value" style="color: var(--success);">יתרון למנוע V2</div>
+          <div class="summary-desc" style="color: var(--primary);">לוח אקורדיון, משתני CSS ובוררים ויזואליים</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-title">עלות בעלות כוללת (TCO)</div>
+          <div class="summary-value" style="color: var(--success);">0 ₪ לעומת ~8,500 ₪</div>
+          <div class="summary-desc" style="color: var(--text-muted);">רישיון תג (4,920 ₪) + סקריפטים מסחריים</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="nav-tabs">
+      <a href="#macro-arch" class="nav-tab active">1. ארכיטקטורת ליבה והשוואה מבנית</a>
+      <a href="#customization" class="nav-tab">2. מנגנוני התאמה אישית והרחבה</a>
+      <a href="#script-matrix" class="nav-tab">3. מיפוי כלי תג והסקריפטים מול V2</a>
+      <a href="#gaps-roadmap" class="nav-tab">4. פערי מפתח, עמדות הכרעה ומפת דרכים</a>
+    </div>
+
+    <!-- ====================================================================
+         חלק 1: ארכיטקטורת ליבה והשוואה מבנית
+         ==================================================================== -->
+    <section id="macro-arch" class="section-card">
+      <div class="section-title">
+        <div class="section-title-num">1</div>
+        <span>ארכיטקטורת ליבה והשוואה מבנית (Architecture & Engines)</span>
+      </div>
+
+      <p>
+        כדי להעריך את מנוע ה-Web המשודרג (Master V2) מול תוכנת "תג", יש לבחון את שתי התפיסות הפונדמנטליות של תוכנות DTP תורניות:
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">מאפיין הנדסי</th>
+              <th style="width: 40%;">תוכנת "תג" (Tag System + Ecosystem)</th>
+              <th style="width: 40%;">מנוע Master V2 (Web-Native 3-Layer Pipeline)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>בסיס הפלטפורמה</strong></td>
+              <td>קוד בינארי מבוסס DOS/Win32 קלאסי. מוגן ברכיב חומרה (דונגל HASP/USB). ממשק חלונות ישן.</td>
+              <td>טכנולוגיות Web פתוחות ותקניות (HTML5, CSS Variables, Canvas 2D, ES2024). רץ בכל דפדפן ללא התקנה.</td>
+            </tr>
+            <tr>
+              <td><strong>טכנולוגיית גופנים (Font Tech)</strong></td>
+              <td>אינו תומך ב-OpenType מובנה. נשען על גופני Type-1/TrueType ייעודיים עם טבלאות קרנינג בינאריות חיצוניות.</td>
+              <td>תמיכה מובנית מלאה ב-OpenType, TrueType, WOFF2 וגופני רשת מודרניים (Google Fonts, Noto, David Libre וכו').</td>
+            </tr>
+            <tr>
+              <td><strong>מיקרו-טיפוגרפיה ושבירה</strong></td>
+              <td>מנוע שבירה מהיר ויציב ביותר, חישובי רווחים XS/WS, מרכוז שורה אחרונה וחלונות מילה ראשונה מובנים.</td>
+              <td><strong>Hebrew Knuth-Plass:</strong> אופטימיזציית Total-Fit בזיכרון, קנסות על שבירת גרשיים/קיצורים, נעילת רשת Baseline.</td>
+            </tr>
+            <tr>
+              <td><strong>רב-טקסט וצורת הדף</strong></td>
+              <td><strong>פסגת היכולת בעולם הדפוס:</strong> ניהול סימולטני של עד 6 טקסטים במקביל, יצירת פריסת "ברך" (L-Shape), ואפס זליגה.</td>
+              <td><strong>מותאם ל-2 טורים + כותרות רוחביות:</strong> תומך ב-2 טורים, טור רחב, הערות שוליים, הערות סיום והערות צד, אך ללא פריסת L מורכבת.</td>
+            </tr>
+            <tr>
+              <td><strong>תצוגה מקדימה וזמן אמת</strong></td>
+              <td>חלוקת עמודים מקפיאה את התוכנה כברירת מחדל. נדרשים סקריפטים ייעודיים (DMD Imud, TagDock) כדי לראות תוצאה חיה.</td>
+              <td><strong>רינדור רספונסיבי חי:</strong> עדכון דפי A4 בזמן אמת (350ms debounce), זום רציף (ResizeObserver), ושימור סמן הקלדה מלא.</td>
+            </tr>
+            <tr>
+              <td><strong>ייצוא והדפסה</strong></td>
+              <td>הדפסה מובנית לקובצי דף (D), מודול פוסטסקריפט וייצוא PDF מסחרי ברזולוציית דפוס מלאה.</td>
+              <td>ייצוא הדפסה ישיר דרך מנוע ה-PDF של הדפדפן (A4 <code>@media print</code> נקי) או שמירת תבנית HTML עצמאית.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="svg-diagram-wrap">
+        <div class="diagram-title">השוואת זרימת המידע (Pipeline Comparison): תג מול מנוע Master V2</div>
+        <svg viewBox="0 0 980 220" width="100%" height="220" xmlns="http://www.w3.org/2000/svg" style="max-width:940px;">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+            </marker>
+          </defs>
+
+          <!-- TAG PIPELINE -->
+          <text x="20" y="30" fill="#f59e0b" font-size="12" font-weight="700">ארכיטקטורת תוכנת "תג" (Legacy Batch Pipeline):</text>
+          <rect x="20" y="45" width="120" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="80" y="70" fill="#fff" font-size="10" text-anchor="middle">Word / טקסט עם קודים</text>
+          
+          <rect x="180" y="45" width="150" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="255" y="70" fill="#fff" font-size="10" text-anchor="middle">קובצי הגדרות (tag.hdr / .sty)</text>
+
+          <rect x="370" y="45" width="160" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="450" y="70" fill="#fff" font-size="10" text-anchor="middle">מנוע רב-טקסט + קובצי קרנינג</text>
+
+          <rect x="570" y="45" width="160" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="650" y="70" fill="#fff" font-size="10" text-anchor="middle">סקריפטים חיצוניים (DMD/PRG)</text>
+
+          <rect x="770" y="45" width="150" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="845" y="70" fill="#fff" font-size="10" text-anchor="middle">קובצי דף (D) / ייצוא PDF</text>
+
+          <line x1="140" y1="65" x2="180" y2="65" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="330" y1="65" x2="370" y2="65" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="530" y1="65" x2="570" y2="65" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="730" y1="65" x2="770" y2="65" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+          <!-- MASTER V2 PIPELINE -->
+          <text x="20" y="130" fill="#38bdf8" font-size="12" font-weight="700">ארכיטקטורת מנוע Master V2 (Reactive In-Memory Pipeline):</text>
+          <rect x="20" y="145" width="130" height="40" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="85" y="170" fill="#fff" font-size="10" text-anchor="middle">עורך חי (Caret Preserved)</text>
+
+          <rect x="190" y="145" width="160" height="40" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="270" y="170" fill="#fff" font-size="10" text-anchor="middle">שכבה 1: DFA AST Parser</text>
+
+          <rect x="390" y="145" width="170" height="40" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="475" y="170" fill="#fff" font-size="10" text-anchor="middle">שכבה 2: Hebrew Knuth-Plass</text>
+
+          <rect x="600" y="145" width="170" height="40" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="685" y="170" fill="#fff" font-size="10" text-anchor="middle">שכבה 3: Multi-Column DP</text>
+
+          <rect x="810" y="145" width="150" height="40" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="885" y="170" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">A4 DOM / Instant PDF</text>
+
+          <line x1="150" y1="165" x2="190" y2="165" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="350" y1="165" x2="390" y2="165" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="560" y1="165" x2="600" y2="165" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="770" y1="165" x2="810" y2="165" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         חלק 2: מנגנוני התאמה אישית והרחבה
+         ==================================================================== -->
+    <section id="customization" class="section-card">
+      <div class="section-title">
+        <div class="section-title-num">2</div>
+        <span>מנגנוני התאמה אישית והרחבה (Customization & Extensibility)</span>
+      </div>
+
+      <p>
+        אחת הנקודות המרכזיות בהשוואה היא אופי ההתאמה האישית: האם היא דורשת קידוד טקסטואלי ותשלום על סקריפטים (כמו בתג), או מנוהלת ויזואלית ומודולרית (כמו ב-Master V2).
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">מישור התאמה אישית</th>
+              <th style="width: 40%;">פתרונות ההתאמה בתוכנת "תג"</th>
+              <th style="width: 40%;">פתרונות ההתאמה במנוע Master V2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>עיצוב סגנונות ופסקאות</strong></td>
+              <td>קובצי סגנון (<code>.sty</code>) המבוססים על קודים טקסטואליים מוקלדים (כגון <code>[f1]</code>, <code>[c2]</code>). עריכה ידנית או שימוש בתוספים בתשלום כגון Attr / ACI.</td>
+              <td><strong>פאנל טיפוגרפיה וכותרות (פאנל 5):</strong> שליטה ויזואלית מלאה בכל דרגות הכותרות (0 עד 7), גופנים, גדלים, מרווחי שורות, מצב חלון מילה וד"ה ללא שורת קוד.</td>
+            </tr>
+            <tr>
+              <td><strong>שערי ספר ורקעים</strong></td>
+              <td>עבודה מורכבת עם מסגרות טקסט ושתילת תמונות BMP בסיסיות (באמצעות פקודות סקריפט כגון <code>PasteBMP</code>, <code>InsBmp</code>). אין מתיחה וקטורית חיה.</td>
+              <td><strong>בונה ערכות נושא וירטואלי (פאנל 1 ו-2):</strong> יבוא SVG חי, עריכת קואורדינטות בעכבר (Drag & Resize), שמירת מיקומים פרטנית, וייצוא JSON שערים.</td>
+            </tr>
+            <tr>
+              <td><strong>עיטורים טיפוגרפיים</strong></td>
+              <td>שימוש בפונטים מיוחדים (Font Glyphs) או סקריפטים לעיטורים. קושי בהתאמת רוחב עיטור לרוחב הטקסט באופן גמיש.</td>
+              <td><strong>כרטיסיות בחירה ויזואליות (Visual Pickers):</strong> תצוגה מקדימה גרפית של סטים עליונים/תחתונים, עיטורי צד, מפרידי פרק, ומנגנון Text-Fit דינמי בפיקסלים.</td>
+            </tr>
+            <tr>
+              <td><strong>מערך כותרות רצות (Headers)</strong></td>
+              <td>קובץ הגדרות ייעודי (<code>tag.hdr</code>) הדורש תחביר פונקציות מסורבל ושליפת מחרוזות מורכבת. פתרון התנגשויות דורש את סקריפט <code>DMD HDR</code> ($100).</td>
+              <td><strong>מערך Recto / Verso עצמאי (פאנל 8):</strong> הפרדה מלאה בין עמוד ימין לעמוד שמאל, פיצול אוטומטי של שם הספר, ושילוב עיטורים/מספרי עמודים בקליק.</td>
+            </tr>
+            <tr>
+              <td><strong>תוספים והרחבות צד-שלישי</strong></td>
+              <td>מנוע מאקרו וסקריפטים מבוסס קובצי PRG/LIB סגורים. אקו-סיסטם מסחרי שבו כמעט כל תכונה דורשת רכישת סקריפט נוסף ממתכנתים עצמאיים.</td>
+              <td><strong>מערכת Extensions מבוססת JSON (פאנל 3):</strong> יבוא סוגי עמודים מותאמים, סגנונות טקסט עם תוחמים או קידומות, ושמירת תבנית מלאה (Single-file HTML).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         חלק 3: מטריצת מיפוי הכלים והסקריפטים של תג מול המערכת
+         ==================================================================== -->
+    <section id="script-matrix" class="section-card">
+      <div class="section-title">
+        <div class="section-title-num">3</div>
+        <span>מטריצת מיפוי הכלים והסקריפטים של "תג" מול מנוע Master V2</span>
+      </div>
+
+      <p>
+        הטבלה שלהלן ממפה את הכלים המובנים, העדכונים האחרונים (2021/2024), והסקריפטים המובילים באקו-סיסטם של תג (DMDscripts, קובי ישורון, חגי פאהן, דניאל וייסמן) — ובוחנת כיצד הם מיושמים או מוחלפים במנוע המשודרג:
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>כלי / סקריפט בתג</th>
+              <th>יוצר ועלות משוערת</th>
+              <th>תפקיד מקורי בתג</th>
+              <th>מקבילה במנוע Master V2</th>
+              <th>הערכה הנדסית וסטטוס</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>מנוע ליבה (Core Layout)</strong></td>
+              <td>דניאל וייסמן (חלק מהרישיון)</td>
+              <td>חישוב שבירת שורות, פסקאות וחלוקת עמודים.</td>
+              <td><code>typesetter.js</code> (שכבות 1, 2 ו-3)</td>
+              <td><span class="badge-status status-pass">מובנה ומשודרג</span> — החלפת מנוע חמדן ב-Knuth-Plass ו-DP מלא.</td>
+            </tr>
+            <tr>
+              <td><strong>מנוע רב-טקסט (Rav-Text)</strong></td>
+              <td>דניאל וייסמן (תוסף ליבה)</td>
+              <td>שילוב מפרשים מרובים על עמוד אחד ללא זליגה (צורת הדף).</td>
+              <td>שכבה 3: <code>MultiColumnPageBalancer</code></td>
+              <td><span class="badge-status status-warn">פער ארכיטקטוני</span> — המנוע תומך ב-2 טורים + הערות, אך טרם תומך בצורת דף גמרא מלאה (ברך).</td>
+            </tr>
+            <tr>
+              <td><strong>עימוד (DMD Imud)</strong></td>
+              <td>דוד דבאח ($400.00)</td>
+              <td>מניעת נעילת התוכנה בעת חלוקה, תצוגה חיה ועריכה ישירה על הדף.</td>
+              <td>מובנה כברירת מחדל בליבה</td>
+              <td><span class="badge-status status-pass">עולה על תג</span> — סביבת ה-Web אינה ננעלת לעולם; רינדור חי ב-350ms ללא עלות נוספת.</td>
+            </tr>
+            <tr>
+              <td><strong>התאמת פיסקה (Fit_7 / Fit)</strong></td>
+              <td>דניאל וייסמן / דבאח ($100.00)</td>
+              <td>שינוי מרווחי מילים והצרת אותיות לפתרון מילים בודדות ויתומות.</td>
+              <td>שכבה 2: <code>HebrewKnuthPlassEngine</code></td>
+              <td><span class="badge-status status-pass">מובנה אוטומטית</span> — קנות'-פלאס מאזן מראש את כל הפסקה; אין צורך בהפעלת סקריפט ידני!</td>
+            </tr>
+            <tr>
+              <td><strong>הכנסת גוף (Guf_7 / Guf)</strong></td>
+              <td>דבאח / ישורון ($100.00)</td>
+              <td>הוספת מרווחים אנכיים בין שורות ופסקאות בלחיצה.</td>
+              <td>פאנל 10 + משתני <code>--flow-mt</code></td>
+              <td><span class="badge-status status-pass">מובנה</span> — שינוי מרווחי פסקאות תוך נעילת Baseline Grid.</td>
+            </tr>
+            <tr>
+              <td><strong>TagDock (עיגון חלונות)</strong></td>
+              <td>יעקובוב פיתוח (~500 ₪)</td>
+              <td>הוצאת חלון התצוגה המעומד למסך נפרד בריבוי מסכים.</td>
+              <td>טבעי ב-Web (Multi-Window / Tabs)</td>
+              <td><span class="badge-status status-pass">מובנה טבעית</span> — ניתן להציג את ה-Preview בכל מסך, דפדפן או טאבלט ללא תוסף.</td>
+            </tr>
+            <tr>
+              <td><strong>השוואת קישורים (CN / CN-DMD)</strong></td>
+              <td>דניאל וייסמן / דבאח (חינם)</td>
+              <td>הצלבת מספרי הערות בין טקסט מקור לפירוש למניעת השמטות.</td>
+              <td>שכבה 1: <code>ToraniASTParser</code></td>
+              <td><span class="badge-status status-pass">מובנה בליבה</span> — סורק ה-AST קושר הערות למרקרים בטקסט במעבר יחיד וללא שגיאות.</td>
+            </tr>
+            <tr>
+              <td><strong>שומר הדף (Catchword)</strong></td>
+              <td>דניאל וייסמן (מובנה בתג)</td>
+              <td>העתקת המילה הפותחת של העמוד הבא לתחתית העמוד הנוכחי.</td>
+              <td>פונקציית <code>renderHeaderSectionHTML</code></td>
+              <td><span class="badge-status status-pass">מובנה</span> — תמיכה ב-<code>first_word_last_word</code> בכותרות עליונות ותחתיות.</td>
+            </tr>
+            <tr>
+              <td><strong>מסגרות (DMD Frames / Am)</strong></td>
+              <td>דוד דבאח ($150.00)</td>
+              <td>יצירה ועריכה של מסגרות טקסט בעכבר או לפי קוד.</td>
+              <td><code>initShaarBoxResizer</code> (פאנל 5)</td>
+              <td><span class="badge-status status-pass">מובנה</span> — 8 ידיות גרירה ושינוי גודל בעכבר עם ייצוא קואורדינטות JSON.</td>
+            </tr>
+            <tr>
+              <td><strong>זוג השער / זוג פרק</strong></td>
+              <td>דוד דבאח ($65.00)</td>
+              <td>הוספת דף חלק כדי שפרק יתחיל תמיד בעמוד אי-זוגי.</td>
+              <td><code>ensureOddPageStart</code> (פאנל 5)</td>
+              <td><span class="badge-status status-pass">מובנה ותוקן</span> — סנכרון מושלם מול תוכן העניינים ללא הפניה לדף ריק.</td>
+            </tr>
+            <tr>
+              <td><strong>אזן כותרות (DMD BRL)</strong></td>
+              <td>דוד דבאח ($50.00)</td>
+              <td>איזון מילים בכותרות ארוכות ומניעת שורה אחרונה של מילה אחת.</td>
+              <td><code>HebrewKnuthPlassEngine</code></td>
+              <td><span class="badge-status status-pass">מובנה</span> — חישוב ענישה על שבירות לא מאוזנות בשורות כותרת.</td>
+            </tr>
+            <tr>
+              <td><strong>צור מפתחות (Maf / Maf2)</strong></td>
+              <td>דניאל וייסמן / AYG (חינם)</td>
+              <td>חילוץ כותרות אוטומטי ויצירת תוכן עניינים מקושר.</td>
+              <td><code>buildStructuredTOC</code> + <code>renderPaginatedTOC</code></td>
+              <td><span class="badge-status status-pass">מובנה ומעוצב</span> — תוכן כללי ומפורט, קיבוץ רמות, וקישורי עוגן פעילים.</td>
+            </tr>
+            <tr>
+              <td><strong>סרגל ניקוד וטעמים</strong></td>
+              <td>יצחק רוזנבלום / דבאח (חינם / תוסף)</td>
+              <td>הזנה ידנית נוחה של טעמים וניקוד מתוך ממשק כפתורים.</td>
+              <td>עורך טקסט חיצוני / מנוע הקלדה</td>
+              <td><span class="badge-status status-info">עתידי</span> — מנוע ה-Web תומך בהצגת טעמים וניקוד OpenType, אך אין סרגל מקלדת וירטואלית.</td>
+            </tr>
+            <tr>
+              <td><strong>ברך (Berech לרב-טקסט)</strong></td>
+              <td>קובי ישורון (חינם)</td>
+              <td>יצירת פריסת L שבה פירוש גולש מתחת לטקסט המרכזי.</td>
+              <td>דורש הרחבה ב-CSS Grid / Polygon</td>
+              <td><span class="badge-status status-warn">פער הנדסי</span> — ב-Web נדרש יישום של <code>CSS Shapes / clip-path</code> או מנוע תיבות מרובה.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         חלק 4: פערי מפתח, עמדות הכרעה ומפת דרכים
+         ==================================================================== -->
+    <section id="gaps-roadmap" class="section-card">
+      <div class="section-title">
+        <div class="section-title-num">4</div>
+        <span>פערי מפתח, עמדות הכרעה ומפת דרכים הנדסית</span>
+      </div>
+
+      <h3>4.1 ניתוח הפער ההנדסי המרכזי: "צורת הדף" ורב-טקסט מורכב</h3>
+      <p>
+        היתרון הבלתי מעורער היחיד שנותר לתוכנת "תג" על פני מנוע ה-Web הנוכחי הוא <strong>מנוע הרב-טקסט הפוליגונלי (רב-מפרשים מבוסס ברך)</strong>:
+      </p>
+      <ul>
+        <li><strong>בתג:</strong> המעמד יכול להגדיר תיבה ראשית במרכז (גמרא), וסביבה תיבת רש"י ותוספות המקבלות צורת L הפוכה ("ברך"), כאשר שטח התיבות מתכנס מתמטית כדי שכל המפרשים יישארו בדיוק באותו דף.</li>
+        <li><strong>במנוע Master V2 הנוכחי:</strong> המבנה מבוסס על רשת טורים גמישה (2 טורים מפולסים, כותרות רוחביות Spanning, הערות שוליים רב-טוריות, הערות סיום והערות צד בשוליים). מודל זה מכסה כ-<strong>85% מספרי הקודש</strong> (ספרי שו"ת, ספרי הלכה, ביאורים, מאמרים, קבצים תורניים, ספרי מוסר ודרוש), אך עדיין אינו תומך בדף גמרא קלאסי מלא.</li>
+      </ul>
+
+      <div class="alert alert-info">
+        <strong>מפת דרכים טכנולוגית ליישום "צורת הדף" ב-Web:</strong>
+        כדי להביא את מנוע ה-Web לרמה של "תג" גם בדפי גמרא מורכבים, נדרש להרחיב את שכבה 3 (MultiColumnPageBalancer) ל-<strong>Constraint-Based Polygon Packing Engine</strong>:
+        <ol>
+          <li>הגדרת גיאומטריית תיבות באמצעות <code>CSS Shapes (shape-outside)</code> ו-<code>clip-path</code>.</li>
+          <li>שימוש בפתרון אלגוריתמי מבוסס Simplex / Linear Programming לקביעת נקודת השבירה האופטימלית של גובה תיבת הגמרא מול נפח הטקסט המדוד של רש"י ותוספות.</li>
+        </ol>
+      </div>
+
+      <h3>4.2 סיכום כלכלי ותפעולי (Cost-Benefit & ROI Analysis)</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>פרמטר</th>
+              <th>תוכנת "תג" המסורתית</th>
+              <th>מנוע Master V2 המשודרג</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>עלות כניסה</strong></td>
+              <td>רישיון בסיס: <strong>4,920 ₪</strong> + דונגל פיזי.</td>
+              <td><strong>0 ₪</strong> (קוד פתוח/עצמאי, רץ בדפדפן).</td>
+            </tr>
+            <tr>
+              <td><strong>עלות תוספים הכרחיים</strong></td>
+              <td>סוויטת סקריפטים ממוצעת: <strong>2,500 ₪ – 4,000 ₪</strong> (DMD Imud, Fit, Guf, Links, HDR).</td>
+              <td><strong>0 ₪</strong> — כל המנגנונים מובנים ישירות בליבת הקוד.</td>
+            </tr>
+            <tr>
+              <td><strong>עקומת למידה (Learning Curve)</strong></td>
+              <td>גבוהה וקשה ביותר (תחביר קודים מסורבל, עבודה בחלון DOS, עשרות קיצורי מקשים).</td>
+              <td>קלה וידידותית (ממשק מודרני, לוח הגדרות ויזואלי, WYSIWYG מלא).</td>
+            </tr>
+            <tr>
+              <td><strong>שיתוף פעולה ותחזוקה</strong></td>
+              <td>מוגבל למחשב בודד עם דונגל חומרה. קושי בהעברת קבצים למגיהים.</td>
+              <td>שיתוף מיידי בקובץ HTML יחיד; גישה מכל מחשב ומערכת הפעלה (Windows/Mac/Linux).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-success">
+        <strong>פסק דין מקצועי:</strong>
+        עבור <strong>85% מעבודות העימוד התורני</strong> (ספרי שו"ת, ביאורים, ספרי הלכה, מאמרים ומערכי מקור-וביאור בשני טורים) — <strong>מנוע Master V2 מציע פתרון עדיף, מהיר פי כמה, מודרני, ומדויק יותר מתוכנת "תג"</strong>, תוך חיסכון של אלפי שקלים על רישיונות ותוספים.
+        עבור <strong>15% הנותרים</strong> (דפי תלמוד ומקראות גדולות קלאסיות בעלי 4-6 מפרשים מפותלים בעמוד) — תוכנת "תג" עודנה שומרת על מעמדה הודות למנוע הרב-טקסט ההיסטורי שלה, עד להשלמת מודול ה-Polygon Packing העתידי במנוע ה-Web.
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

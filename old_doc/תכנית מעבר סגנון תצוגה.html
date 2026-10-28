@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>תכנית שדרוג חזותי: מיזוג מנוע גרסה משולבת 2 עם מראה סטודיו</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Rubik:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+  <style>
+    :root {
+      --ink: #14161a;
+      --ink-soft: #5b6270;
+      --ink-faint: #8b93a1;
+      --line: #e6e8ec;
+      --line-soft: #f1f2f5;
+      --paper: #ffffff;
+      --canvas: #f6f7f9;
+      --accent: #2f6f6b;
+      --accent-soft: #eaf2f1;
+      --accent-dark: #245552;
+      --danger: #a4442f;
+      --danger-soft: #fdf3ec;
+      --radius: 10px;
+      --radius-s: 6px;
+      --shadow-s: 0 1px 2px rgba(20, 22, 26, 0.05), 0 4px 14px rgba(20, 22, 26, 0.04);
+      --shadow-m: 0 2px 6px rgba(20, 22, 26, 0.07), 0 14px 40px rgba(20, 22, 26, 0.07);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: 'Assistant', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 14.5px;
+      line-height: 1.6;
+      padding: 32px 24px;
+      direction: rtl;
+    }
+
+    .doc-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: var(--paper);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-m);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    header.doc-header {
+      padding: 36px 40px 28px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--canvas) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: var(--ink-soft);
+      font-weight: 400;
+      max-width: 800px;
+    }
+
+    .doc-body {
+      padding: 36px 40px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 32px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--line-soft);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h2 .num {
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 20px 0 8px;
+    }
+
+    p { margin-bottom: 12px; color: var(--ink-soft); }
+
+    .callout {
+      background: var(--accent-soft);
+      border-right: 4px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: var(--radius-s);
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: var(--accent-dark);
+    }
+    .callout.danger {
+      background: var(--danger-soft);
+      border-right-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .grid-preview {
+      display: grid;
+      grid-template-columns: 240px 1fr 240px;
+      gap: 12px;
+      background: #e2e8f0;
+      padding: 12px;
+      border-radius: var(--radius-s);
+      margin: 18px 0;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .grid-col {
+      background: var(--paper);
+      padding: 24px 12px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px dashed #cbd5e1;
+    }
+    .grid-col.active {
+      border: 2px solid var(--accent);
+      background: #fcfdfd;
+      color: var(--accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 10px 12px;
+      text-align: right;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      background: var(--line-soft);
+      color: var(--ink);
+      font-weight: 600;
+    }
+    tr:hover td { background: #fafbfc; }
+
+    code {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      background: var(--line-soft);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--accent-dark);
+      direction: ltr;
+      display: inline-block;
+    }
+
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: var(--radius-s);
+      overflow-x: auto;
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      margin: 14px 0 20px;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .tag-safe {
+      color: #059669;
+      background: #ecfdf5;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+
+    ul, ol {
+      margin: 10px 24px 16px 0;
+      color: var(--ink-soft);
+    }
+    li { margin-bottom: 6px; }
+
+    .feature-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-s);
+      padding: 16px;
+      background: var(--paper);
+      margin-bottom: 14px;
+      transition: border-color .2s;
+    }
+    .feature-card:hover {
+      border-color: var(--accent);
+    }
+    .feature-title {
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="doc-container">
+  <header class="doc-header">
+    <div class="badge">תכנית מעבר מדויקת · אפס פגיעה במנוע העימוד</div>
+    <h1>הסבת גרסה משולבת 2 למראה הסטודיו (Studio Build)</h1>
+    <div class="subtitle">
+      תכנית הנדסית לשימור מלא ומוחלט של כל שמות המשתנים, מזהי ה-DOM, חיבורי ה-JSON, סורקי התיקיות ומנוע העימוד הקיים בגרסה 2 — תוך הלבשתו בממשק התלת-טורי הבהיר, הנקי והיוקרתי של סטודיו העימוד.
+    </div>
+  </header>
+
+  <div class="doc-body">
+
+    <div class="callout">
+      <b>עיקרון הברזל המנחה:</b> אין לגעת בשום לוגיקה פנימית של <code>typesetter.js</code>, <code>decorations.js</code>, או במזהי ה-ID וה-Name ב-DOM. כל השדות (Input, Select, Button, Textarea) שומרים על אותם IDs בדיוק נמרץ. השינוי הוא <b>ארכיטקטורת המעטפת ב-HTML</b> ו<b>מערכת הסגנונות ב-CSS</b>.
+    </div>
+
+    <!-- ---------------------------------------------------------------- -->
+    <h2><span class="num">1</span> ארכיטקטורת הפריסה: מעבר למבנה תלת-טורי (Workspace)</h2>
+    <p>
+      בגרסה 2 הקיימת, הממשק בנוי מסרגל צד דו-טורי בימין (עורך טקסט + פאנל הגדרות מתקפל) ואזור תצוגה מקדימה משמאל.
+      בסטודיו, המבנה מבוסס על <b>סרגל עליון קבוע</b>, <b>רצועת מדדים</b>, ו<b>גריד תלת-טורי מאוזן</b>:
+    </p>
+
+    <div class="grid-preview">
+      <div class="grid-col active">
+        <b>טור ימין (360px):</b><br>
+        לוח הגדרות עימוד מלא<br>
+        <code>#settings-pane</code>
+      </div>
+      <div class="grid-col active">
+        <b>מרכז (1fr):</b><br>
+        סרגל תצוגה + סביבת דפי A4<br>
+        <code>#preview-pane</code>
+      </div>
+      <div class="grid-col active">
+        <b>טור שמאל (380px):</b><br>
+        עורך תוכן וחלוקת עמודים<br>
+        <code>#text-pane</code>
+      </div>
+    </div>
+
+    <h3>פירוט ארגון השלד החדש ב-HTML:</h3>
+    <pre>&lt;!-- מבנה השלד החדש של index.html --&gt;
+&lt;body&gt;
+  &lt;!-- 1. סרגל עליון בסגנון Studio --&gt;
+  &lt;header id="topbar"&gt;
+    &lt;div class="brand"&gt;
+      &lt;span class="brand-mark"&gt;ס&lt;/span&gt;
+      &lt;div class="brand-text"&gt;
+        &lt;b&gt;מערכת עימוד תורנית מקצועית&lt;/b&gt;
+        &lt;i&gt;Master Edition — מנוע שלם משולב&lt;/i&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="top-actions"&gt;
+      &lt;button type="button" id="btn-retypeset" class="btn btn-primary" onclick="typesetDocument()"&gt;⚡ עדכן ועמד מחדש&lt;/button&gt;
+      &lt;button type="button" class="btn" onclick="document.getElementById('file-txt-import').click()"&gt;📄 ייבוא טקסט&lt;/button&gt;
+      &lt;button type="button" class="btn" onclick="window.print()"&gt;🖨️ הדפסה / PDF&lt;/button&gt;
+      &lt;button type="button" class="btn btn-ghost" onclick="saveAsDefaultTemplate()"&gt;💾 שמור תבנית&lt;/button&gt;
+      &lt;button type="button" class="btn btn-ghost" onclick="loadSystemFonts()"&gt;📂 גופני מחשב&lt;/button&gt;
+      &lt;input type="file" id="file-txt-import" accept=".txt,.text,.md" style="display:none" onchange="handleTxtFileImport(event)"&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;!-- 2. רצועת מדדים עליונה --&gt;
+  &lt;section id="stats-ribbon"&gt;
+    &lt;div class="stat-unit"&gt;&lt;span class="stat-v" id="stat-pages-count"&gt;0&lt;/span&gt;&lt;span class="stat-k"&gt;עמודים&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="stat-unit"&gt;&lt;span class="stat-v" id="stat-words-count"&gt;0&lt;/span&gt;&lt;span class="stat-k"&gt;מילים&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="stat-unit"&gt;&lt;span class="stat-v" id="stat-notes-count"&gt;0&lt;/span&gt;&lt;span class="stat-k"&gt;הערות שוליים&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="stat-chips" id="status-chips-container"&gt;
+      &lt;span class="chip chip-ok"&gt;✓ מנוע גרסה משולבת מוכן&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- 3. סביבת העבודה התלת-טורית --&gt;
+  &lt;main id="workspace"&gt;
+    &lt;!-- טור ימין: פאנל הגדרות מקורי מלא (כל 10 הפאנלים) --&gt;
+    &lt;aside id="settings-pane"&gt; ... &lt;/aside&gt;
+
+    &lt;!-- מרכז: סביבת דפי A4 + סרגל כלים מרחף --&gt;
+    &lt;section id="preview-pane"&gt;
+      &lt;div id="preview-toolbar"&gt;
+        &lt;label&gt;תצוגה (Zoom):
+          &lt;input type="range" id="scale-slider" min="0.2" max="1.5" step="0.05" value="1" oninput="onUserScaleInput(this.value)"&gt;
+          &lt;span id="scale-label"&gt;100%&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label&gt;&lt;input type="checkbox" id="toggle-grid-overlay" onchange="toggleGridOverlay(this.checked)"&gt; גריד בסיס&lt;/label&gt;
+        &lt;label&gt;&lt;input type="checkbox" id="toggle-diag-boxes" onchange="toggleDiagBoxes(this.checked)"&gt; מסגרות אבחון&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div id="book-container"&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- טור שמאל: עורך הטקסט המקורי --&gt;
+    &lt;aside id="text-pane"&gt; ... &lt;/aside&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</pre>
+
+    <!-- ---------------------------------------------------------------- -->
+    <h2><span class="num">2</span> פלטת צבעים, טיפוגרפיה ומשתני CSS</h2>
+    <p>
+      החלפת המראה הכהה (Slate `#334155`) במראה הנקי של הסטודיו. כל המשתנים מוגדרים ב-<code>:root</code> ללא התנגשות עם משתני הגופנים התורניים של מנוע העימוד:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>משתנה Studio</th>
+          <th>ערך hex/px</th>
+          <th>ייעוד במערכת</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>--canvas</code></td>
+          <td><code>#f6f7f9</code></td>
+          <td>רקע חלל העבודה סביב דפי ה-A4 והפאנלים (במקום הכחול-אפור הכהה)</td>
+        </tr>
+        <tr>
+          <td><code>--paper</code></td>
+          <td><code>#ffffff</code></td>
+          <td>רקע פאנלים, סרגלי כלים, כרטיסיות ועורך הטקסט</td>
+        </tr>
+        <tr>
+          <td><code>--ink</code> / <code>--ink-soft</code></td>
+          <td><code>#14161a</code> / <code>#5b6270</code></td>
+          <td>טיפוגרפיית ממשק מאופקת, קריאה ומודרנית</td>
+        </tr>
+        <tr>
+          <td><code>--accent</code></td>
+          <td><code>#2f6f6b</code></td>
+          <td>צבע הטורקיז-פטרול היוקרתי (כפתור עמד מחדש, מסגרות בחירה פעילות)</td>
+        </tr>
+        <tr>
+          <td><code>--accent-soft</code></td>
+          <td><code>#eaf2f1</code></td>
+          <td>רקע תגיות ומשבצות פעילות</td>
+        </tr>
+        <tr>
+          <td><code>--line</code> / <code>--line-soft</code></td>
+          <td><code>#e6e8ec</code> / <code>#f1f2f5</code></td>
+          <td>קווי הפרדה דקיקים ומעודנים במקום הגבולות הגסים הקיימים</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ---------------------------------------------------------------- -->
+    <h2><span class="num">3</span> עדכון לוח ההגדרות (Settings Pane)</h2>
+    <p>
+      לוח ההגדרות ישמור על <b>כל 10 הפאנלים</b> והרכיבים מגרסה משולבת 2, אך יעבור שינוי עיצובי פנימי:
+    </p>
+    <ul>
+      <li><b>כותרות הפאנלים (Accordion UI):</b> במקום הרקע האפור המגושם, כותרת הפאנל תעוצב ככותרת נקייה (<code>.sp-group-head</code>) עם טיפוגרפיה עדינה במשקל 500, וחץ פתיחה מעודן.</li>
+      <li><b>שורות הגדרה (<code>.inline-cfg-row</code>):</b> מעבר לגובה קבוע, מרווח תחתון של 8px עם קו מפריד מקווקו דקיק (<code>1px dashed var(--line-soft)</code>), ותוויות בצבע <code>var(--ink-soft)</code>.</li>
+      <li><b>בקרות טפסים (Inputs, Selects):</b> הסרת מסגרות כבדות; מעבר ל-Border מעודן (<code>1px solid var(--line)</code>), פינות ברדיוס 6px, ופוקוס עם הילת <code>var(--accent)</code>.</li>
+      <li><b>מתגים (Toggles):</b> עיצוב מחדש של כפתורי הבחירה (כגון שער ראשי, מניעת יתומות וכו') כ-Pills עדינים המחליפים צבע ל-<code>var(--accent-soft)</code> עם גופן <code>var(--accent)</code> במצב פעיל.</li>
+      <li><b>הבוררים הוויזואליים (Visual Card Selectors):</b> כרטיסיות העיטורים והשערים יעוצבו עם רקע לבן, צל עדין (<code>var(--shadow-s)</code>) ומסגרת שנצבעת ב-<code>var(--accent)</code> בעת בחירה.</li>
+    </ul>
+
+    <!-- ---------------------------------------------------------------- -->
+    <h2><span class="num">4</span> התאמת עורך הטקסט (Text Pane)</h2>
+    <p>
+      העורך עובר מהטור הימני לטור השמאלי כדי לפנות את המרחב הטבעי לקריאת דפי הספר במרכז, ומקבל את המראה של Studio:
+    </p>
+    <ul>
+      <li><b>ראש העורך (<code>.pane-head</code>):</b> כותרת שקטה <code>טקסט המקור והזנה</code> עם סטטיסטיקת מילים ושורות מעודנת.</li>
+      <li><b>גוף העורך (<code>#raw-input</code>):</b> גלילה נקייה ללא מסגרות כפולות, גופן קריא ותורני (David Libre), ושמירה על כל מנגנון חוצצי העמודים הוויזואליים (<code>.page-break-divider</code>).</li>
+      <li><b>תחתית העורך (<code>.pane-foot</code>):</b> הצגת מקרא מקוצר של קידומות תורניות (<code>כותרת 1: שער</code> · <code>כותרת 2: פרק</code> · <code>[הערה]</code> · <code>ד"ה</code>) בדיוק כמו בסטודיו.</li>
+    </ul>
+
+    <!-- ---------------------------------------------------------------- -->
+    <h2><span class="num">5</span> אלמנטים מומלצים מ"גרסה חדשה" להעברה בטוחה</h2>
+    <div class="callout">
+      האלמנטים המוצעים להלן הם <b>שכבות תצוגה בלבד (Add-ons)</b>. הם קוראים נתונים מה-DOM של גרסה משולבת 2 ואינם מתערבים בשום אופן באלגוריתמי החישוב של <code>performTypeset</code>.
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">
+        <span>1. תיבת חיפוש וסינון מהיר בלוח ההגדרות (Settings Search Filter)</span>
+        <span class="tag-safe">בטוח ב-100% · תצוגה בלבד</span>
+      </div>
+      <p>בלוח ההגדרות יש מעל 120 פקדים שונים ב-10 פאנלים. הוספת תיבת חיפוש בראש הפאנל מאפשרת להקליד למשל "סימן" או "יתומות" ומסננת מיידית את שורות ההגדרה הרלוונטיות, ופותחת את הפאנל המתאים אוטומטית.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">
+        <span>2. סליידר זום ידני מדויק בסרגל התצוגה (Zoom Scale Slider)</span>
+        <span class="tag-safe">בטוח ב-100% · שליטה ב-CSS</span>
+      </div>
+      <p>בגרסה 2 הזום נגזר אוטומטית מרוחב החלון. הוספת סליידר זום (50% עד 150%) בסרגל התצוגה המרכזי ששולט ישירות במשתנה <code>--preview-scale</code> הקיים, ומאפשר לראות את הדפים בגודל הרצוי ללא קשר לרוחב המסך.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">
+        <span>3. שכבת גריד בסיס ומסגרות אבחון (Diagnostic Overlays)</span>
+        <span class="tag-safe">בטוח ב-100% · שכבת CSS שקופה</span>
+      </div>
+      <p>מתג בסרגל המרכזי שמפעיל קווי גריד בסיס עדינים על גבי דפי ה-A4 ומסגרות מזהות לטורים (<code>show-boxes</code>) עבור בחינה מדויקת של פילוס שורות ויישור תחתית, ללא השפעה על הדפסה.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">
+        <span>4. רצועת מדדים חיים בראש המסך (Live Stats Ribbon)</span>
+        <span class="tag-safe">בטוח ב-100% · קריאה בלבד</span>
+      </div>
+      <p>הצגת קוביות מדד מהירות בראש הדף: מספר עמודים סופי, סך מילים, סך הערות שוליים, וזמן עימוד במילי-שניות (נמדד ב-<code>performance.now()</code> בתוך <code>performTypeset</code>).</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">
+        <span>5. מערכת חיווי קופצת צפה (Toast Notification)</span>
+        <span class="tag-safe">בטוח ב-100% · UI בלבד</span>
+      </div>
+      <p>החלפת פקודות ה-<code>alert()</code> החוסמות (בעת שמירת תבנית, ייצוא JSON, או טעינת תיקיית עיטורים) בהודעה קופצת ומעוצבת בתחתית המסך שנעלמת מעצמה לאחר 3 שניות.</p>
+    </div>
+
+    <!-- ---------------------------------------------------------------- -->
+    <h2><span class="num">6</span> שלבי היישום (Checklist)</h2>
+    <ol>
+      <li><b>שלב א' — CSS:</b> החלפת קובץ <code>style.css</code> במערכת הסגנונות החדשה המבוססת על משתני הסטודיו (White/Canvas/Accent/Ink), תוך שימור מלא של סגנונות הדפסת A4 ועיצובי הגופנים התורניים.</li>
+      <li><b>שלב ב' — HTML:</b> עדכון מעטפת <code>index.html</code> לגריד התלת-טורי (הגדרות בימין, דפים במרכז, עורך בשמאל), הטמעת ה-Header וה-Stats Ribbon בראש הדף, מבלי לשנות אף מזהה ID של פקד.</li>
+      <li><b>שלב ג' — JS עזר:</b> הוספת פונקציות ה-Scale Slider, ה-Stats Ribbon, וה-Search Filter לקובץ <code>app.js</code> ללא נגיעה בליבת <code>typesetter.js</code> ו-<code>decorations.js</code>.</li>
+      <li><b>שלב ד' — בדיקת אימות:</b> וידוא שכל בוררי ה-JSON, כפתורי ה-Drag & Resize של תיבות השער, סורק תיקיית העיטורים, וההדפסה ל-PDF מתפקדים ב-100% ללא שינוי תוצאה.</li>
+    </ol>
+
+  </div>
+</div>
+
+</body>
+</html>
